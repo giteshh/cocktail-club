@@ -7,13 +7,15 @@ import {BrowserModule} from "@angular/platform-browser";
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from "@angular/router";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FastFoodComponent } from './components/fast-food/fast-food.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FastFoodComponent
   ],
   imports: [
     CommonModule,
