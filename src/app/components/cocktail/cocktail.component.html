@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <!--cocktail menu-->
+  <h3 class="mt-3">Classic Cocktails Collection</h3>
+  <hr>
+  <div class="card-container">
+    <div class="card" *ngFor="let cocktails of cocktails">
+      <a>
+        <img src="{{cocktails.image}}"/>
+      </a>
+      <div class="card-body">
+        <h5 class="text-center mb-1">{{cocktails.name}}</h5>
+        <p class="text-center"><b>{{cocktails.price}}/-</b></p>
+      </div>
+      <button class="btn" (click)="addToCart(cocktails)">Add to bag</button>
+    </div>
+  </div>
+</div>
+
