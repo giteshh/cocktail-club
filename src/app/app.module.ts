@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from "@angular/router";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FastFoodComponent } from './components/fast-food/fast-food.component';
+import { FruitJuiceComponent } from './components/fruit-juice/fruit-juice.component';
+import { BeverageComponent } from './components/beverage/beverage.component';
+import { CocktailComponent } from './components/cocktail/cocktail.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { FastFoodComponent } from './components/fast-food/fast-food.component';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FastFoodComponent
+    FastFoodComponent,
+    FruitJuiceComponent,
+    BeverageComponent,
+    CocktailComponent
   ],
   imports: [
     CommonModule,

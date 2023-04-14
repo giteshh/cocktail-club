@@ -95,6 +95,4 @@ const fries = [
   }
 ]
 
-
-// console.log(JSON.parse(JSON.stringify(products)));
 export {Burger, Pizza, Fries, burgers, pizza, fries}
