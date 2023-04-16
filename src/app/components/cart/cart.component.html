@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <app-navbar></app-navbar>
-  <div class="text-center bg-warning text-light" id="noItemCardInCart" *ngIf="!showButton">
+  <div class="text-center bg-warning" id="noItemCardInCart" *ngIf="!showButton">
     <div class="card-body">
       <i class="fa fa-4x fa-shopping-cart"></i>
       <h2 class="card-title">Oops, your cart is empty!</h2>
-      <p class="card-text">Don't worry, we just got your back.
+      <p class="card-text">Don't worry, we've got your back.
         Just Click on shop now to fill your cart with delicious items.</p>
       <a class="btn" routerLink="/home">Shop Now</a>
     </div>
@@ -16,115 +16,38 @@
           src="{{item.image}}">
       </div>
       <div class="right">
-        <h4>{{item.name}}</h4>
-        <p>{{item.price}}</p>
+        <h5>{{item.name}}</h5>
+        <p>Price : {{item.price}} /-</p>
+        <label>Quantity</label>
         <input class="ml-3" type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"
                (change)="addQty(i, $event)">
+        <br>
         <a (click)="removeCartItem(i)" class="text-danger" style="font-size: 20px">
           <i class="fa fa-trash"></i>
         </a>
       </div>
     </div>
-
   </div>
 
   <div class="total-card" *ngIf="showButton">
     <div class="card">
       <div class="d-flex">
-        <p>Price</p>
-        <p>{{productPrice}}</p>
+        <p>Price :</p>
+        <p>{{productPrice}} /-</p>
       </div>
       <div class="d-flex">
-        <p>Delivery Charges</p>
-        <p>{{deliveryCharge}}</p>
+        <p>Delivery Charges :</p>
+        <p>{{deliveryCharge}} /-</p>
       </div>
-
       <div class="d-flex">
-        <p>Final Price</p>
-        <p>{{total}}</p>
+        <div>
+          <h4>Final Price :</h4>
+        </div>
+        <div>
+          <h4>{{total}} /-</h4>
+        </div>
       </div>
-
       <button class="btn" (click)="placeOrder()">Place Order</button>
     </div>
   </div>
 </div>
-
-<!--<app-navbar></app-navbar>-->
-
-<!--<div class="text-center bg-warning" id="noItemCardInCart" *ngIf="!showButton">-->
-<!--  <div class="card-body">-->
-<!--    <i class="fa fa-4x fa-shopping-cart"></i>-->
-<!--    <h3 class="card-title">Oops, your cart is empty!</h3>-->
-<!--    <p class="card-text">Click on shop now to fill your cart with happiness.</p>-->
-<!--    <a class="btn" routerLink="/home">Shop Now</a>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<div class="row mt-5">-->
-<!--  <div class="col-md-2"></div>-->
-<!--  <div class="col-md-4">-->
-<!--    <div class="card mb-3" style="max-width: 300px;" *ngFor="let item of cart, let i = index">-->
-<!--      <div class="row no-gutters">-->
-<!--        <div class="col-md-4">-->
-<!--          <img src="{{ item.image }}" class="card-img" alt="...">-->
-<!--        </div>-->
-<!--        <div class="col-md-8">-->
-<!--          <div class="card-body" id="cardBody-mobile">-->
-<!--            <p class="card-title">{{ item.name }}</p>-->
-<!--            <p>{{ item.price}}/-</p>-->
-<!--            <label><b>Quantity</b></label>-->
-<!--            <input class="ml-3" type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"-->
-<!--                   (change)="addQty(i, $event)">-->
-<!--            <br>-->
-<!--            <a (click)="removeCartItem(i)" class="text-danger font-weight-bold">-->
-<!--              <i class="fa fa-trash"></i>-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-4">-->
-<!--    <div class="total-cart-mobile">-->
-<!--      <div class="card" *ngIf="showButton">-->
-<!--        <div class="card-body">-->
-<!--          <table class="table">-->
-<!--            <tr>-->
-<!--              <td><b>Total Price</b></td>-->
-<!--              <td>{{totalPrice}}</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td><b>Transportation Charge</b></td>-->
-<!--              <td><s>80</s>/- Free</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--              <td><b>Total Amount</b></td>-->
-<!--              <td><h6 class="text-primary font-weight-bold">{{total}} /-</h6></td>-->
-<!--            </tr>-->
-<!--          </table>-->
-<!--          <hr>-->
-<!--          <div class="text-center">-->
-<!--            <span>Select Payment Mode</span> <br>-->
-<!--            <select class="mt-2 text-center">-->
-<!--              <option>Cash On Delivery</option>-->
-<!--              <option>Net Banking</option>-->
-<!--              <option>UPI Payment</option>-->
-<!--            </select>-->
-<!--          </div>-->
-<!--          <div class="text-center">-->
-<!--            <button class="btn mt-3" (click)="placeOrder()">-->
-<!--              <i class="fa fa-shopping-bag fa-lg mr-2"></i>-->
-<!--              Place Order-->
-<!--            </button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-2"></div>-->
-<!--</div>-->
-
-
-
-
-
