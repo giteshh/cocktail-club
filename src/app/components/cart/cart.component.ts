@@ -18,10 +18,12 @@ interface cartItems {
 
 
 export class CartComponent {
-  product: Product[] =[];
+  product: Product[] = [];
   total = 0;
   quantity = 1;
   totalPrice = 0;
+  deliveryCharge = 40;
+  productPrice = 0;
   cartProducts: cartItems[] = [];
   existingProduct = false;
   showButton = false;
@@ -58,9 +60,11 @@ export class CartComponent {
   doTotal() {
     this.total = 0;
     this.cart.forEach((product: Product) => {
-      let finalPrice = product.price * product.quantity;    //default quantity is 1
+      let finalPrice = (product.price * product.quantity);
       this.total += finalPrice;
     });
+    this.productPrice = this.total;
+    this.total += this.deliveryCharge;
   }
 
   // placing order and removing items from localstorage

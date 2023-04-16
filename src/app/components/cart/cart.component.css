@@ -1,8 +1,8 @@
-/*.card-container {*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*  margin: 50px;*/
-/*}*/
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
 
 .btn {
   padding: 6px 20px;
@@ -37,23 +37,23 @@
   right: 0;
 }
 
-/*.total-card {*/
-/*  position: fixed;*/
-/*  bottom: 0;*/
-/*  float: right;*/
-/*  right: 20px;*/
-/*}*/
+.total-card {
+  position: fixed;
+  bottom: 0;
+  float: right;
+  right: 20px;
+}
 
-/*.total-card .card {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*}*/
+.total-card .card {
+  display: flex;
+  flex-direction: column;
+}
 
-/*.card .d-flex {*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  padding: 10px;*/
-/*}*/
+.card .d-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
 
 #noItemCardInCart {
   margin-top: 200px;
