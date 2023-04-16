@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {Juices, Shakes, juices, shakes} from "../../../assets/data/fruitjuice";
+import {Component} from '@angular/core';
+import {AppService} from "../../app.service";
+import {Product, juices, shakes} from "../../../assets/data/products";
 
 
 @Component({
@@ -8,13 +9,53 @@ import {Juices, Shakes, juices, shakes} from "../../../assets/data/fruitjuice";
   styleUrls: ['./fruit-juice.component.css']
 })
 export class FruitJuiceComponent {
-  juices = juices; // from burgers array
-  juice: Juices[] = [];
-  shakes = shakes; // from pizza array
-  shake : Shakes[] = []; // from fries array
+  juices = juices;
+  juice: Product | any;
+  shakes = shakes;
+  shake: Product | any;
+
+  cart: Product[] = [];
+  existingProduct = false;
 
 
-  addToCart(juices: any, shakes: any) {
+  constructor(private appService: AppService) {
+  }
 
+
+  addJuiceToCart(juices: any) {
+    this.existingProduct = false;
+    if (this.appService.getCart()) {
+      this.cart = this.appService.getCart();
+      this.cart.forEach((cart: any) => {
+        if (cart.id == juices.id) {
+          this.existingProduct = true;
+        }
+      })
+    }
+    if (!this.existingProduct) {
+      this.appService.addToCart(juices);
+      alert('Your Juice has been added to the cart!');
+    } else {
+      alert('Selected Juice already exists in the cart!');
+    }
+
+  }
+
+  addShakeToCart(shakes: any) {
+    this.existingProduct = false;
+    if (this.appService.getCart()) {
+      this.cart = this.appService.getCart();
+      this.cart.forEach((cart: any) => {
+        if (cart.id == shakes.id) {
+          this.existingProduct = true;
+        }
+      })
+    }
+    if (!this.existingProduct) {
+      this.appService.addToCart(shakes);
+      alert('Your Shake has been added to the cart!');
+    } else {
+      alert('Selected Shake already exists in the cart!');
+    }
   }
 }

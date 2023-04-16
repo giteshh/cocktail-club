@@ -1,0 +1,73 @@
+/*.card-container {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  margin: 50px;*/
+/*}*/
+
+.btn {
+  padding: 6px 20px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgb(255, 105, 7);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.fa-shopping-cart {
+  color: rgb(255, 105, 7);;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 20rem;
+  padding: 10px;
+  margin: 20px 30px;
+}
+
+.card img {
+  margin-left: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.card a {
+  right: 0;
+}
+
+/*.total-card {*/
+/*  position: fixed;*/
+/*  bottom: 0;*/
+/*  float: right;*/
+/*  right: 20px;*/
+/*}*/
+
+/*.total-card .card {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.card .d-flex {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  padding: 10px;*/
+/*}*/
+
+#noItemCardInCart {
+  margin-top: 200px;
+  padding: 30px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);;
+}
+
+@media only screen and (max-width: 992px) {
+  #cardBody-mobile {
+    text-align: center;
+  }
+
+  .total-cart-mobile {
+    margin-bottom: 15px;
+  }
+
+}

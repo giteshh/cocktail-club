@@ -12,7 +12,7 @@
         <h5 class="text-center mb-1">{{burger.name}}</h5>
         <p class="text-center"><b>{{burger.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(burger, pizza)">Add to bag</button>
+      <button class="btn" (click)="addBurgerToCart(burger)">Add to bag</button>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <h5 class="text-center mb-1">{{pizza.name}}</h5>
         <p class="text-center"><b>{{pizza.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(burgers, pizza)">Add to bag</button>
+      <button class="btn" (click)="addPizzaToCart(pizza)">Add to bag</button>
     </div>
   </div>
   <!--fries menu-->
@@ -43,7 +43,7 @@
         <h5 class="text-center mb-1">{{fries.name}}</h5>
         <p class="text-center"><b>{{fries.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(burgers, pizza)">Add to bag</button>
+      <button class="btn" (click)="addFriesToCart(fries)">Add to bag</button>
     </div>
   </div>
 </div>

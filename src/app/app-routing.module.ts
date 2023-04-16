@@ -5,6 +5,7 @@ import {FastFoodComponent} from "./components/fast-food/fast-food.component";
 import {FruitJuiceComponent} from "./components/fruit-juice/fruit-juice.component";
 import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
+import {CartComponent} from "./components/cart/cart.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'fruit-juice', component: FruitJuiceComponent},
   {path: 'beverage', component: BeverageComponent},
   {path: 'cocktail', component: CocktailComponent},
+  {path: 'cart', component: CartComponent}
 ];
 
 @NgModule({

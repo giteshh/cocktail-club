@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {cocktail, Cocktail} from "../../../assets/data/cocktail";
+import {cocktail, Product} from "../../../assets/data/products";
+import {AppService} from "../../app.service";
 
 @Component({
   selector: 'app-cocktail',
@@ -8,11 +9,29 @@ import {cocktail, Cocktail} from "../../../assets/data/cocktail";
 })
 export class CocktailComponent {
   cocktails = cocktail;
-  cocktail: Cocktail[] = [];
+  cocktail: Product[] = [];
 
+  cart: Product[] = [];
+  existingProduct = false;
 
-
+  constructor(private appService: AppService) {
+  }
   addToCart(cocktails: any) {
+      this.existingProduct = false;
+      if (this.appService.getCart()) {
+        this.cart = this.appService.getCart();
+        this.cart.forEach((cart: any) => {
+          if (cart.id == cocktails.id) {
+            this.existingProduct = true;
+          }
+        })
+      }
+      if (!this.existingProduct) {
+        this.appService.addToCart(cocktails);
+        alert('Your Cocktail has been added to the cart!');
+      } else {
+        alert('Selected Cocktail already exists in the cart!');
+      }
 
   }
 }

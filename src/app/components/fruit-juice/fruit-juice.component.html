@@ -12,7 +12,7 @@
         <h5 class="text-center mb-1">{{juices.name}}</h5>
         <p class="text-center"><b>{{juices.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(juices, shakes)">Add to bag</button>
+      <button class="btn" (click)="addJuiceToCart(juices)">Add to bag</button>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <h5 class="text-center mb-1">{{shakes.name}}</h5>
         <p class="text-center"><b>{{shakes.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(juices, shakes)">Add to bag</button>
+      <button class="btn" (click)="addShakeToCart(shakes)">Add to bag</button>
     </div>
   </div>
 </div>

@@ -3,6 +3,7 @@ interface Juices {
   name: string;
   price: number;
   image: string;
+  quantity: number;
 }
 
 interface Shakes {
@@ -10,6 +11,7 @@ interface Shakes {
   name: string;
   price: number;
   image: string;
+  quantity: number;
 }
 
 const juices = [

@@ -11,6 +11,7 @@ import { FastFoodComponent } from './components/fast-food/fast-food.component';
 import { FruitJuiceComponent } from './components/fruit-juice/fruit-juice.component';
 import { BeverageComponent } from './components/beverage/beverage.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CocktailComponent } from './components/cocktail/cocktail.component';
     FastFoodComponent,
     FruitJuiceComponent,
     BeverageComponent,
-    CocktailComponent
+    CocktailComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

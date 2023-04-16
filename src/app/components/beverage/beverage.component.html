@@ -12,7 +12,7 @@
         <h5 class="text-center mb-1">{{hotBeverages.name}}</h5>
         <p class="text-center"><b>{{hotBeverages.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(hotBeverages, coldBeverages)">Add to bag</button>
+      <button class="btn" (click)="addHotBeverageToCart(hotBeverages)">Add to bag</button>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
         <h5 class="text-center mb-1">{{coldBeverages.name}}</h5>
         <p class="text-center"><b>{{coldBeverages.price}}/-</b></p>
       </div>
-      <button class="btn" (click)="addToCart(hotBeverages, coldBeverages)">Add to bag</button>
+      <button class="btn" (click)="addColdBeverageToCart(coldBeverages)">Add to bag</button>
     </div>
   </div>
 
