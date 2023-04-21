@@ -24,6 +24,7 @@
   border-radius: 50%;
   margin-top: -100px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  background-color: #fff;
 }
 
 .card-body {
@@ -35,7 +36,7 @@
   padding: 6px 20px;
   border-radius: 30px;
   color: white;
-  background-color: rgb(255,105,7);
+  background-color: rgb(255, 105, 7);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
