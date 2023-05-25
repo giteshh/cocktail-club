@@ -18,7 +18,6 @@
   font-weight: bold;
   font-size: 80px;
   letter-spacing: 6px;
-  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
 }
 
@@ -28,7 +27,6 @@
   font-weight: 500;
   font-size: 26px;
   letter-spacing: 2px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .imgOnLeft-section, .imgOnRight-section {
@@ -49,7 +47,6 @@
   font-weight: bold;
   font-size: 50px;
   letter-spacing: 3px;
-  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
 }
 
@@ -59,7 +56,6 @@
   font-size: 24px;
   max-width: 550px;
   letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .imgOnLeft-right-section img, .imgOnRight-left-section img {
