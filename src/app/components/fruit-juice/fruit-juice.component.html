@@ -9,10 +9,15 @@
         <img src="{{juices.image}}"/>
       </a>
       <div class="card-body">
-        <h5 class="text-center mb-1">{{juices.name}}</h5>
-        <p class="text-center"><b>{{juices.price}}/-</b></p>
+        <h5 class="mb-1">{{juices.name}}</h5>
+        <p class="desc">{{juices.description}}</p>
+        <div class="price-btn-sec">
+          <p><b>Rs. {{juices.price}}/-</b></p>
+          <a (click)="addJuiceToCart(juices)">
+            <i class="fa fa-lg fa-cart-shopping cart-icon"></i>
+          </a>
+        </div>
       </div>
-      <button class="btn" (click)="addJuiceToCart(juices)">Add to bag</button>
     </div>
   </div>
 
@@ -25,10 +30,16 @@
         <img src="{{shakes.image}}"/>
       </a>
       <div class="card-body">
-        <h5 class="text-center mb-1">{{shakes.name}}</h5>
-        <p class="text-center"><b>{{shakes.price}}/-</b></p>
+        <h5 class="mb-1">{{shakes.name}}</h5>
+        <p class="desc">{{shakes.description}}</p>
+        <div class="price-btn-sec">
+          <p><b>Rs. {{shakes.price}}/-</b></p>
+          <a (click)="addShakeToCart(shakes)">
+            <i class="fa fa-lg fa-cart-shopping cart-icon"></i>
+          </a>
+        </div>
       </div>
-      <button class="btn" (click)="addShakeToCart(shakes)">Add to bag</button>
+
     </div>
   </div>
 </div>

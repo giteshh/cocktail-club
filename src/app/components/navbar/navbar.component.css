@@ -1,5 +1,4 @@
 .navbar {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
 }
 
@@ -8,26 +7,28 @@
 }
 
 .nav-link {
-  color: #1e3932;
-  font-weight: 600;
+  color: rgb(255, 105, 7);
+  font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
 }
 
 .nav-link:hover {
-  color: rgb(255, 105, 7);
+  color: #1e3932;
 }
 
 .brand-logo {
   height: 40px;
-  width: 155px;
+  width: 125px;
 }
 
 .cart-icon {
   float: right;
   color: rgb(255, 105, 7);
 }
-
+.cart-icon:hover {
+  color: #1e3932;
+}
 #onMobileCartIcon {
   display: none;
 }

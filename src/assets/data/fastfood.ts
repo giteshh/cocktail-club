@@ -34,13 +34,13 @@ const burgers = [
   },
   {
     "id": 3,
-    "name": "Burger + Fries combo",
+    "name": "Burger + Fries",
     "price": 69,
     "image": "https://img.freepik.com/free-photo/big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion-wooden-table_2829-19631.jpg?w=996&t=st=1681404444~exp=1681405044~hmac=6ab49b1461fba4132b280affc3cfe8f42f64ca71eeb4c7a0b376df23beac26c2",
   },
   {
     "id": 4,
-    "name": "Double Burger combo",
+    "name": "Double Burger",
     "price": 319,
     "image": "https://img.freepik.com/free-photo/front-view-chicken-burger-with-cheese-green-salad-wooden-desk-sandwich-fast-food-meal-food_140725-25937.jpg?w=996&t=st=1681404399~exp=1681404999~hmac=56a16adf2347bad587eb9d42d0e036e6363043c91f91bfe39e5356a16a29be47",
   },
@@ -79,7 +79,7 @@ const pizza = [
   },
   {
     "id": 5,
-    "name": "Any 2 combo",
+    "name": "Any 2 pizzas",
     "price": 549,
     "image": "https://img.freepik.com/free-photo/two-kind-pizza-table_140725-5573.jpg?w=740&t=st=1681408398~exp=1681408998~hmac=b86366275089e8068bfb9541ae8ec96322eb2c11cda180390a8d75f87344a207",
   }
