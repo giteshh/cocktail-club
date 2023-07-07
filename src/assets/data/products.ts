@@ -47,7 +47,23 @@ const juices = [
     "image": "https://img.freepik.com/free-photo/watermelon-smoothie_1339-457.jpg?w=360&t=st=1681463485~exp=1681464085~hmac=7ed6d164a3eb65dcbe8cf05fceaa1b0bded52fd1681f7b187e4266e2bf09aeb3",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
+  {
+    "id": 6,
+    "name": "Mango",
+    "price": 39,
+    "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 7,
+    "name": "Berry berry",
+    "price": 39,
+    "image": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 
 ]
 const shakes = [
@@ -90,15 +106,31 @@ const shakes = [
     "image": "https://img.freepik.com/free-photo/fresh-strawberry-banana-smoothie-jar-wooden-table_123827-20782.jpg?w=996&t=st=1681464090~exp=1681464690~hmac=c9eac7540d6aaab4453a867e9e6039ebabb2ba780c65ae7cc42714a61907b47f",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
+  {
+    "id": 10,
+    "name": "Cold coco",
+    "price": 89,
+    "image": "https://images.unsplash.com/photo-1594489556673-c816408242f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 10,
+    "name": "Chocolate",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1595641190867-138b14a23a7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=347&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 
 ]
 
 const burgers = [
   {
     "id": 11,
-    "name": "Double patty burger",
-    "price": 69,
+    "name": "Double patty",
+    "price": 169,
     "image": "https://img.freepik.com/free-photo/delicious-meat-sandwich-with-tomatoes-green-dark-surface-close-up-shot_179666-42483.jpg?w=996&t=st=1681404423~exp=1681405023~hmac=37f088b8e36830cc2edea148cc56889112f21a45be189e30c634880886ad6e09",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -114,7 +146,7 @@ const burgers = [
   {
     "id": 13,
     "name": "Burger + Fries",
-    "price": 69,
+    "price": 189,
     "image": "https://img.freepik.com/free-photo/big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion-wooden-table_2829-19631.jpg?w=996&t=st=1681404444~exp=1681405044~hmac=6ab49b1461fba4132b280affc3cfe8f42f64ca71eeb4c7a0b376df23beac26c2",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -122,19 +154,35 @@ const burgers = [
   {
     "id": 14,
     "name": "Double Burger",
-    "price": 319,
+    "price": 229,
     "image": "https://img.freepik.com/free-photo/front-view-chicken-burger-with-cheese-green-salad-wooden-desk-sandwich-fast-food-meal-food_140725-25937.jpg?w=996&t=st=1681404399~exp=1681404999~hmac=56a16adf2347bad587eb9d42d0e036e6363043c91f91bfe39e5356a16a29be47",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "id": 15,
-    "name": "Cheese aaloo tikki",
-    "price": 319,
+    "name": "Aaloo tikki",
+    "price": 59,
     "image": "https://img.freepik.com/free-photo/burger-with-meat-cutlet-tomatoes-lettuce-cheese_141793-1132.jpg?w=360&t=st=1681405955~exp=1681406555~hmac=9cf1acad6207d388c2f4be61e31e4819a98f03b04c42711eb855819e9c5ea1ab",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
+  {
+    "id": 15,
+    "name": "Black bun",
+    "price": 199,
+    "image": "https://images.unsplash.com/photo-1582196016295-f8c8bd4b3a99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 15,
+    "name": "Mexican",
+    "price": 99,
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 
 ]
 const pizza = [
@@ -148,7 +196,7 @@ const pizza = [
   },
   {
     "id": 17,
-    "name": "Fresh veggie pizza",
+    "name": "Fresh veggie",
     "price": 399,
     "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?w=740&t=st=1681405880~exp=1681406480~hmac=282958a85d24a5a7a798f8105b4fd2f8359b945b69800835c2ea1fb6c5ddd3a3",
     "quantity": 1,
@@ -164,7 +212,7 @@ const pizza = [
   },
   {
     "id": 19,
-    "name": "Cheese pepperoni ",
+    "name": "Pepperoni ",
     "price": 319,
     "image": "https://img.freepik.com/free-photo/slice-cut-from-classic-pepperoni-pizza-with-green-pepper-rolls_114579-1963.jpg?w=900&t=st=1681408362~exp=1681408962~hmac=56d22176d09eb50c8fc4f3f598cdc37051fafdf53ec029d1196f26c2ed1af040",
     "quantity": 1,
@@ -172,12 +220,28 @@ const pizza = [
   },
   {
     "id": 20,
-    "name": "Any 2 combo",
+    "name": "Italian",
     "price": 549,
+    "image": "https://images.unsplash.com/photo-1555072956-7758afb20e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 20,
+    "name": "Paneer onion",
+    "price": 249,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=481&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 20,
+    "name": "Any 2 combo",
+    "price": 849,
     "image": "https://img.freepik.com/free-photo/two-kind-pizza-table_140725-5573.jpg?w=740&t=st=1681408398~exp=1681408998~hmac=b86366275089e8068bfb9541ae8ec96322eb2c11cda180390a8d75f87344a207",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
 
 ]
 
@@ -226,30 +290,6 @@ const hotBeverage = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 26,
-    "name": "Tea",
-    "price": 19,
-    "image": "https://img.freepik.com/free-photo/front-view-cup-cappuccino-with-sugar_140725-11389.jpg?w=740&t=st=1681465670~exp=1681466270~hmac=f8dfc15b7e1f5c166034b1c3c66203f544b7cdfeaed620335ea547b37a616952",
-    "quantity": 1,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
-    "id": 27,
-    "name": "Dark",
-    "price": 39,
-    "image": "https://img.freepik.com/free-photo/espresso-dark-background-steam-rises-coffee-coffee-breakfast-italian-cafe-shop-vertical-shot-selective-focus_166373-2022.jpg?w=360&t=st=1681465589~exp=1681466189~hmac=e393af4acacd55817695dcd0a9753a9042fb142863ffcbfe63598177263bf272",
-    "quantity": 1,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
-    "id": 28,
-    "name": "Black Tea",
-    "price": 19,
-    "image": "https://img.freepik.com/free-photo/tea-splashes-white-cup-black-background_8353-1512.jpg?w=996&t=st=1681465756~exp=1681466356~hmac=b31a3b1c3e0fb6f46924ffa3a25b26f32eaf23c771102617a4842e0fdce37375",
-    "quantity": 1,
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
     "id": 29,
     "name": "Americano",
     "price": 59,
@@ -265,6 +305,65 @@ const hotBeverage = [
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
+  {
+    "id": 27,
+    "name": "Dark Coffee",
+    "price": 39,
+    "image": "https://img.freepik.com/free-photo/espresso-dark-background-steam-rises-coffee-coffee-breakfast-italian-cafe-shop-vertical-shot-selective-focus_166373-2022.jpg?w=360&t=st=1681465589~exp=1681466189~hmac=e393af4acacd55817695dcd0a9753a9042fb142863ffcbfe63598177263bf272",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 26,
+    "name": "Ginger Tea",
+    "price": 19,
+    "image": "https://img.freepik.com/free-photo/front-view-cup-cappuccino-with-sugar_140725-11389.jpg?w=740&t=st=1681465670~exp=1681466270~hmac=f8dfc15b7e1f5c166034b1c3c66203f544b7cdfeaed620335ea547b37a616952",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 26,
+    "name": "Cardamom Tea",
+    "price": 19,
+    "image": "https://img.freepik.com/free-photo/front-view-cup-cappuccino-with-sugar_140725-11389.jpg?w=740&t=st=1681465670~exp=1681466270~hmac=f8dfc15b7e1f5c166034b1c3c66203f544b7cdfeaed620335ea547b37a616952",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 28,
+    "name": "Black Tea",
+    "price": 19,
+    "image": "https://img.freepik.com/free-photo/tea-splashes-white-cup-black-background_8353-1512.jpg?w=996&t=st=1681465756~exp=1681466356~hmac=b31a3b1c3e0fb6f46924ffa3a25b26f32eaf23c771102617a4842e0fdce37375",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 28,
+    "name": "Hot Lemon Tea",
+    "price": 29,
+    "image": "https://images.unsplash.com/photo-1604450655696-bdb0b1993bf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 28,
+    "name": "Lemon grass tea",
+    "price": 39,
+    "image": "" +
+      "https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 28,
+    "name": "Masala Latte Tea",
+    "price": 49,
+    "image": "https://images.unsplash.com/photo-1557760834-2f62fc5250de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
   {
     "id": 31,
     "name": "Cookies -6N",
@@ -356,6 +455,38 @@ const coldBeverage = [
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
+  {
+    "id": 41,
+    "name": "Frozen princess",
+    "price": 229,
+    "image": "https://images.unsplash.com/photo-1594492415237-24f03f84c506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 41,
+    "name": "Iced Tea",
+    "price": 69,
+    "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 41,
+    "name": "Iced coffee",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1642647391072-6a2416f048e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=386&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 41,
+    "name": "Iced lemon tea",
+    "price": 89,
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 
 ]
 const cocktail = [
@@ -438,6 +569,38 @@ const cocktail = [
     "name": "Long Island",
     "price": 279,
     "image": "https://img.freepik.com/free-photo/strawberry-mojito-with-ice-table_140725-6824.jpg?w=740&t=st=1681470438~exp=1681471038~hmac=71d9542772e97f2085bf327d103ddbf6f3f489e059e10cc86b72fe6c77a19e1f",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 52,
+    "name": "Pina Colada",
+    "price": 349,
+    "image": "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 53,
+    "name": "Berry Margarita",
+    "price": 279,
+    "image": "https://images.unsplash.com/photo-1653075857867-a299801cf126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 54,
+    "name": "Lime Margarita",
+    "price": 279,
+    "image": "https://images.unsplash.com/photo-1618799805265-4f27cb61ede9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 55,
+    "name": "Whiskey Sour",
+    "price": 279,
+    "image": "https://images.unsplash.com/photo-1586338211598-e2d64cf97e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
