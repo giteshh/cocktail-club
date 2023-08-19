@@ -17,7 +17,6 @@ export class FruitJuiceComponent {
   cart: Product[] = [];
   existingProduct = false;
 
-
   constructor(private appService: AppService) {
   }
 
@@ -58,4 +57,5 @@ export class FruitJuiceComponent {
       alert('Selected Shake already exists in the cart!');
     }
   }
+
 }

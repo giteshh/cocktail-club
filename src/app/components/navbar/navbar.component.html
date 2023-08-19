@@ -1,25 +1,39 @@
-<nav class="navbar navbar-expand-lg bg-light sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">
-      <img class="brand-logo" src="assets/logo-no-background%20.png">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" routerLink="../fruit-juice">Fruit Juices</a>
-        <a class="nav-link" routerLink="../beverage">Beverages</a>
-        <a class="nav-link" routerLink="../fast-food">Fast food</a>
-        <a class="nav-link" routerLink="../cocktail">Cocktails</a>
-        <a class="nav-link" routerLink="../cart" id="onMobileCartIcon">
-          <i class="fa fa-xl fa-cart-shopping cart-icon"></i>
-        </a>
+    <div class="sec-1">
+      <a class="navbar-brand" routerLink="/home">
+        <img class="brand-logo" src="assets/cocktail.gif" alt="logo">
+        <h4>Cocktail Club</h4>
+      </a>
+    </div>
+
+    <div class="sec-2">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" routerLink="../home">
+            <img class="nav-icons" src="assets/house.png" alt="home">
+          </a>
+          <a class="nav-link" routerLink="../cocktail">
+            <img class="nav-icons" src="assets/cocktail.png" alt="cocktail">
+          </a>
+          <a class="nav-link" routerLink="../fruit-juice">
+            <img class="nav-icons" src="assets/orange-juice.png" alt="juice">
+          </a>
+          <a class="nav-link" routerLink="../beverage">
+            <img class="nav-icons" src="assets/coffee-break.png" alt="beverage">
+          </a>
+          <a class="nav-link" routerLink="../fast-food">
+            <img class="nav-icons" src="assets/pizza.png" alt="fast-food">
+          </a>
+          <a class="nav-link" routerLink="../cart">
+            <img class="nav-icons" src="assets/trolley.png" alt="cart">
+          </a>
+        </div>
       </div>
     </div>
-    <a class="nav-link" routerLink="../cart" id="onDesktopCartIcon">
-      <i class="fa fa-xl fa-cart-shopping cart-icon"></i>
-    </a>
   </div>
 </nav>

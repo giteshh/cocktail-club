@@ -1,9 +1,7 @@
-.navbar {
-  padding: 5px 10px;
-}
-
-.navbar-nav {
-  padding: 0 20px;
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
 }
 
 .nav-link {
@@ -18,25 +16,38 @@
 }
 
 .brand-logo {
-  height: 40px;
-  width: 125px;
+  width: 100%;
+  height: 50px;
 }
 
-.cart-icon {
-  float: right;
+.nav-icons {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar-brand h4 {
   color: rgb(255, 105, 7);
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 2px;
 }
-.cart-icon:hover {
-  color: #1e3932;
-}
+
 #onMobileCartIcon {
   display: none;
 }
 
 @media only screen and (max-width: 600px) {
   .brand-logo {
+    width: 100%;
     height: 45px;
-    width: 150px;
   }
 
   #onMobileCartIcon {

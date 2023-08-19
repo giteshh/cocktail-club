@@ -31,7 +31,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CommonModule,
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   bootstrap: [AppComponent]
 })

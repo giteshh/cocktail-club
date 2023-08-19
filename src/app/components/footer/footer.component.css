@@ -1,5 +1,39 @@
+/*footer {*/
+/*  margin: 110px 0 -14px 0;*/
+/*  border: 1px solid silver;*/
+/*}*/
+
+
 footer {
-  margin: 110px 0 -14px 0;
-  border: 1px solid silver;
+  width: 100%;
+  min-height: 250px;
+  padding: 10px 0 -5  0px 0;
+  margin: 110px 0 -44px 0;
+  border-top: 1px solid silver;
 }
 
+
+footer p {
+  font-size: 14px;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}
+
+
+footer #flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.sec-1 {
+  width: 60%;
+}
+
+
+#copyright-section {
+  border-top: 1px solid silver;
+  margin-top: 15px;
+  padding-top: 10px;
+}
