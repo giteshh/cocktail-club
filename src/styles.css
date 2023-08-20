@@ -1,5 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+
+* {
   font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  background-color: rgba(255, 255, 247, 0.2);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 85px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 180px;
+  margin: 0 30px 110px 0;
+  border-radius: 15px;
+  border-top: 0;
+  padding: 10px;
+}
+
+.card img {
+  height: 70px;
+  width: 70px;
+  margin-top: -80px;
+  background-color: #fff;
+  margin-left: 40px;
+}
+
+.card h5 {
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: #1e3932;
+}
+
+.custom-margin {
+  margin-top: -70px;
+}
+
+.container-fluid h3 {
+  letter-spacing: 1px;
+  margin-left: 30px;
+  color: rgb(255, 105, 7);
+  font-size: 22px;
+}
+
+.desc {
+  font-size: 10px;
+  color: #1e3932;
+}
+
+.price-btn-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -30px;
+}
+
+.price-btn-sec .sec-1 {
+  width: 60%;
+}
+
+.price-btn-sec .sec-1 {
+  width: 40%;
+}
+
+.price-btn-sec img {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  margin-top: -20px;
+}
+
+.price-btn-sec p {
+  color: rgb(255, 105, 7);
+  font-size: 13px;
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+  }
+
+  .card {
+    margin: 10px 30px 120px 0;
+  }
 }
