@@ -7,7 +7,7 @@
 footer {
   width: 100%;
   min-height: 250px;
-  padding: 10px 0 -5  0px 0;
+  padding: 10px 0 0 0;
   margin: 110px 0 -44px 0;
   border-top: 1px solid silver;
 }
@@ -36,4 +36,14 @@ footer #flex {
   border-top: 1px solid silver;
   margin-top: 15px;
   padding-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  footer #flex {
+    flex-direction: column;
+  }
+
+  .sec-1 .sec-2 {
+    width: 100%;
+  }
 }
