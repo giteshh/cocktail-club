@@ -1,5 +1,5 @@
+<app-navbar></app-navbar>
 <div class="container-fluid">
-  <app-navbar></app-navbar>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -13,36 +13,44 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <video class="d-block"
-               src="https://assets.mixkit.co/videos/preview/mixkit-dropping-ice-into-a-cocktail-27456-large.mp4"
-               autoplay loop muted></video>
+        <img class="d-block carousel-img"
+             src="assets/images/home/carousel/cocktail.png">
+        <!--        <video class="d-block"-->
+        <!--               src="https://assets.mixkit.co/videos/preview/mixkit-dropping-ice-into-a-cocktail-27456-large.mp4"-->
+        <!--               autoplay loop muted></video>-->
         <div class="carousel-caption d-none d-md-block">
           <h1>Cocktails Collection</h1>
           <p>Mojito | Gin buzz | Mai Tai | Bloody Mary | Pina colada | Apple Tini and many more ...</p>
         </div>
       </div>
       <div class="carousel-item">
-        <video class="d-block"
-               src="https://assets.mixkit.co/videos/preview/mixkit-three-different-types-of-pizza-29311-large.mp4"
-               autoplay loop muted></video>
+        <img class="d-block carousel-img"
+             src="assets/images/home/carousel/juice.png">
+        <!--        <video class="d-block"-->
+        <!--               src="https://assets.mixkit.co/videos/preview/mixkit-three-different-types-of-pizza-29311-large.mp4"-->
+        <!--               autoplay loop muted></video>-->
         <div class="carousel-caption d-none d-md-block">
           <h1>Fast Food</h1>
           <p>Veggie burger | Aaloo tikki | Margherita pizza | Fresh veggie and many more ...</p>
         </div>
       </div>
       <div class="carousel-item">
-        <video class="d-block"
-               src="https://assets.mixkit.co/videos/preview/mixkit-fresh-orange-juice-and-vegetables-26649-large.mp4"
-               autoplay loop muted></video>
+        <img class="d-block carousel-img"
+             src="assets/images/home/carousel/coffee.png">
+        <!--        <video class="d-block"-->
+        <!--               src="https://assets.mixkit.co/videos/preview/mixkit-fresh-orange-juice-and-vegetables-26649-large.mp4"-->
+        <!--               autoplay loop muted></video>-->
         <div class="carousel-caption d-none d-md-block">
           <h1>Fresh Fruit Juices</h1>
           <p>Fresh orange | Watermelon | Kiwi shake | Mango shake | Chocolate shake and many more ...</p>
         </div>
       </div>
       <div class="carousel-item">
-        <video class="d-block"
-               src="https://assets.mixkit.co/videos/preview/mixkit-demonstration-video-of-a-steaming-cup-of-coffee-43935-large.mp4"
-               autoplay loop muted></video>
+        <img class="d-block carousel-img"
+             src="assets/images/home/carousel/burger.png">
+        <!--        <video class="d-block"-->
+        <!--               src="https://assets.mixkit.co/videos/preview/mixkit-demonstration-video-of-a-steaming-cup-of-coffee-43935-large.mp4"-->
+        <!--               autoplay loop muted></video>-->
         <div class="carousel-caption d-none d-md-block">
           <h1>Hot & Cold Beverages</h1>
           <p>Latte | Capuccino | Dark coffee | Ginger tea | Cardamom Tea | Lemon grass tea and many more ...</p>
@@ -63,7 +71,7 @@
   <div class="imgOnRight-section">
     <div class="imgOnRight-left-section">
       <img routerLink="/cocktail" (click)="navigateToTop()"
-           src="/assets/images/home/champagne.png" alt="cocktail">
+           src="/assets/images/home/cocktails.png" alt="cocktail">
     </div>
     <div class="imgOnRight-right-section">
       <h1>Cocktails</h1>
@@ -90,7 +98,7 @@
   <div class="imgOnRight-section" id="sec-2">
     <div class="imgOnRight-left-section">
       <img routerLink="/beverage" (click)="navigateToTop()"
-           src="assets/images/home/beverage.png" alt="beverage">
+           src="assets/images/home/milkshake.png" alt="beverage">
     </div>
     <div class="imgOnRight-right-section">
       <h1>Beverages</h1>
@@ -108,7 +116,7 @@
     </div>
     <div class="imgOnLeft-right-section">
       <img routerLink="/fast-food" (click)="navigateToTop()"
-           src="/assets/images/home/fastfood.png" alt="fast-food">
+           src="/assets/images/home/fast-food.png" alt="fast-food">
     </div>
   </div>
 

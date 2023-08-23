@@ -6,7 +6,7 @@
   width: 100%;
   height: 100vh;
   margin-top: -85px;
-  object-fit: cover;
+  object-fit: contain;
   border: none;
 }
 
@@ -31,10 +31,16 @@
   letter-spacing: 1px;
 }
 
-video {
+#carousel-img {
   width: 100%;
+  height: 500px;
   position: relative;
 }
+
+/*video {*/
+/*  width: 100%;*/
+/*  position: relative;*/
+/*}*/
 
 .imgOnLeft-section, .imgOnRight-section {
   height: 600px;
