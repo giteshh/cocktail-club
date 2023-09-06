@@ -5,13 +5,11 @@ footer {
   border-top: 1px solid silver;
 }
 
-
 footer p {
   font-size: 14px;
   padding-bottom: 0;
   margin-bottom: 8px;
 }
-
 
 footer #flex {
   width: 100%;
@@ -23,7 +21,6 @@ footer #flex {
   padding-right: 20px;
   width: 80%;
 }
-
 
 #copyright-section {
   border-top: 1px solid silver;
@@ -37,11 +34,13 @@ footer #flex {
   }
 
   footer #flex {
+    width: 100%;
     flex-direction: column;
     text-align: justify;
   }
 
   .sec-1 {
     margin-bottom: 10px;
+    width: 100%;
   }
 }

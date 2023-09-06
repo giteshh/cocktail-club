@@ -34,7 +34,7 @@
   color: rgb(255, 105, 7);
 }
 
-.carousel-img-section p {
+.carousel-img-section p .happy-hour-section p {
   font-size: 20px;
   text-align: justify;
   line-height: 30px;
@@ -51,13 +51,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.happy-hour-section p {
-  font-size: 20px;
-  text-align: justify;
-  line-height: 30px;
-  letter-spacing: 1px;
 }
 
 #happy-hour {
@@ -116,30 +109,82 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .d-block {
+  .container-fluid {
     width: 100%;
-    height: 250px;
+  }
+
+  .text-lt {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  .text-dk {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .carousel-img-section {
+    flex-direction: column;
+  }
+
+  .carousel-img-section p .happy-hour-section p {
+    font-size: 15px;
+    text-align: justify;
+    line-height: 0;
+  }
+
+  .carousel-sec-1 {
+    flex-direction: row;
+  }
+
+  .carousel-sec-2 {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .carousel-img-section img {
+    width: 50%;
+    height: 100%;
+  }
+
+  .happy-hour-section {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .happy-hour-section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #happy-hour-img {
+    width: 100%;
+    height: 100%;
   }
 
   .imgOnLeft-section {
     flex-direction: column;
-    margin: 10px 0;
+    margin: -60px 0 0 0;
   }
 
   .imgOnRight-section {
     flex-direction: column-reverse;
-    margin: 30px 0;
+    margin: -60px 0 0 0;
   }
 
   .imgOnLeft-right-section img, .imgOnRight-left-section img {
-    padding: 40px;
-    height: 450px;
-    width: 450px;
-    margin: -40px 0;
+    width: 100%;
+    margin: -60px 0 0 0;
   }
 
   #sec-1 {
     margin: -20px 0;
+  }
+
+  #sec-3 {
+    margin-bottom: -100px;
   }
 
   .imgOnLeft-section h1, .imgOnRight-section h1 {
@@ -156,4 +201,5 @@
     margin-top: 5px;
     font-size: 14px;
   }
+
 }
