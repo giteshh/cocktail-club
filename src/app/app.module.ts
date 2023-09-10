@@ -13,6 +13,7 @@ import { BeverageComponent } from './components/beverage/beverage.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BeverageComponent,
     CocktailComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,

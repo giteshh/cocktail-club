@@ -6,6 +6,7 @@ import {FruitJuiceComponent} from "./components/fruit-juice/fruit-juice.componen
 import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
 import {CartComponent} from "./components/cart/cart.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'fruit-juice', component: FruitJuiceComponent},
   {path: 'beverage', component: BeverageComponent},
   {path: 'cocktail', component: CocktailComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
