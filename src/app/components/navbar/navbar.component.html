@@ -14,27 +14,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" routerLink="../home">
-<!--            <img class="nav-icons" src="assets/images/navbar/home.png" alt="home">-->
+          <a class="nav-link" *ngIf="shouldDisplayLink('/home')" routerLink="../home">
             Home
           </a>
-          <a class="nav-link" routerLink="../cocktail">
-<!--            <img class="nav-icons" src="assets/images/navbar/cocktail.png" alt="cocktail">-->
+          <a class="nav-link" *ngIf="shouldDisplayLink('/cocktail')" routerLink="../cocktail">
             Cocktails
           </a>
-          <a class="nav-link" routerLink="../fruit-juice">
-<!--            <img class="nav-icons" src="assets/images/navbar/juice.png" alt="juice">-->
+          <a class="nav-link" *ngIf="shouldDisplayLink('/fruit-juice')" routerLink="../fruit-juice">
             Juices
           </a>
-          <a class="nav-link" routerLink="../beverage">
-<!--            <img class="nav-icons" src="assets/images/navbar/beverage.png" alt="beverage">-->
+          <a class="nav-link" *ngIf="shouldDisplayLink('/beverage')" routerLink="../beverage">
             Beverages
           </a>
-          <a class="nav-link" routerLink="../fast-food">
-<!--            <img class="nav-icons" src="assets/images/navbar/fastfood.png" alt="fast-food">-->
+          <a class="nav-link" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
             Fast Food
           </a>
-          <a class="nav-link" routerLink="../cart">
+          <a class="nav-link" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
             <img class="nav-icons" src="assets/images/navbar/cart.png" alt="cart">
           </a>
         </div>
