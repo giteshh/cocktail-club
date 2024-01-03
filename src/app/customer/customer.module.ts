@@ -11,7 +11,6 @@ import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import {PageNotFoundComponent} from "../public/components/page-not-found/page-not-found.component";
 
 
 @NgModule({
@@ -24,8 +23,7 @@ import {PageNotFoundComponent} from "../public/components/page-not-found/page-no
     BeverageComponent,
     CocktailComponent,
     CartComponent,
-    FooterComponent,
-    PageNotFoundComponent
+    FooterComponent
 
   ],
   imports: [

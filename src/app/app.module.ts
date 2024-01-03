@@ -9,7 +9,6 @@ import {AdminModule} from "./admin/admin.module";
 import {CustomerModule} from "./customer/customer.module";
 import {PublicModule} from "./public/public.module";
 
-
 @NgModule({
   declarations: [
     AppComponent
