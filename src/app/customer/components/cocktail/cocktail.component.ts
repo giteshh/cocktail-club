@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {cocktail, Product} from "../../../assets/data/products";
-import {AppService} from "../../app.service";
+import {cocktail, Product} from "../../../../assets/data/products";
+import {AppService} from "../../../app.service";
 
 @Component({
   selector: 'app-cocktail',

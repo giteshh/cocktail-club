@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Product, coldBeverage, hotBeverage} from "../../../assets/data/products";
-import {AppService} from "../../app.service";
+import {Product, coldBeverage, hotBeverage} from "../../../../assets/data/products";
+import {AppService} from "../../../app.service";
 
 @Component({
   selector: 'app-beverage',

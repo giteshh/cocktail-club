@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AppService} from "../../app.service";
-import {Product} from "../../../assets/data/products";
+import {AppService} from "../../../app.service";
+import {Product} from "../../../../assets/data/products";
 
 interface cartItems {
   id: number,
