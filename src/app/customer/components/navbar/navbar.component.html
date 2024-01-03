@@ -29,6 +29,32 @@
           <a class="nav-link" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
             Fast Food
           </a>
+
+          <div>
+            <button class="dropdown-toggle menu-item">
+            <span>
+                 <img class="nav-icons" src="../../../../assets/images/navbar/profile.png" alt="profile">
+            </span>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="menu-item">
+                <span class="item-txt">
+                Gitesh Sharma
+                </span>
+              </li>
+              <li class="menu-item">
+                <span class="item-txt">
+                Orders
+                </span>
+              </li>
+              <li class="menu-item">
+                <span class="item-txt">
+                Logout
+                </span>
+              </li>
+            </ul>
+          </div>
+
           <a class="nav-link" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
             <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">
           </a>
