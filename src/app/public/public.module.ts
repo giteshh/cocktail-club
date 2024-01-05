@@ -6,13 +6,15 @@ import { PublicComponent } from './public.component';
 import { LoginComponent } from './components/login/login.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 @NgModule({
   declarations: [
     PublicComponent,
     LoginComponent,
-    VerifyOtpComponent
+    VerifyOtpComponent,
+    UpdateProfileComponent
   ],
   imports: [
     CommonModule,
