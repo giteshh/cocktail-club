@@ -10,6 +10,8 @@ import {CustomerModule} from "./customer/customer.module";
 import {PublicModule} from "./public/public.module";
 import {NgOtpInputModule} from "ng-otp-input";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     AppRoutingModule,
     NgOtpInputModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })

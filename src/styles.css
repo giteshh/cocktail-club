@@ -83,6 +83,13 @@
   font-size: 13px;
 }
 
+.toast-top-right {
+  top: 8%;
+}
+.toast-success {
+  background-color: rgb(255, 105, 7);
+}
+
 @media (min-width: 600px) and (max-width: 768px) {
   .card-container {
     justify-content: center;

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AppService} from "../../../app.service";
 import {Product, juices, shakes} from "../../../../assets/data/products";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class FruitJuiceComponent {
   cart: Product[] = [];
   existingProduct = false;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,
+              private toastr: ToastrService) {
   }
 
 
@@ -33,9 +35,15 @@ export class FruitJuiceComponent {
     }
     if (!this.existingProduct) {
       this.appService.addToCart(juices);
-      alert('Your Juice has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Juice already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
 
   }
@@ -52,9 +60,15 @@ export class FruitJuiceComponent {
     }
     if (!this.existingProduct) {
       this.appService.addToCart(shakes);
-      alert('Your Shake has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Shake already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
   }
 

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Product, burgers, pizza, fries} from "../../../../assets/data/products";
 import {AppService} from "../../../app.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-fast-food',
@@ -18,7 +19,8 @@ export class FastFoodComponent {
   existingPizza = false;
   existingFries = false;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,
+              private toastr: ToastrService) {
   }
 
   addBurgerToCart(burgers: any) {
@@ -33,9 +35,15 @@ export class FastFoodComponent {
     }
     if (!this.existingBurger) {
       this.appService.addToCart(burgers);
-      alert('Your Burger has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Burger already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
   }
 
@@ -51,9 +59,15 @@ export class FastFoodComponent {
     }
     if (!this.existingPizza) {
       this.appService.addToCart(pizza);
-      alert('Your Pizza has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Pizza already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
   }
 
@@ -69,9 +83,15 @@ export class FastFoodComponent {
     }
     if (!this.existingFries) {
       this.appService.addToCart(fries);
-      alert('Your Fries has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Fries already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
   }
 

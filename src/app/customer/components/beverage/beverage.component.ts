@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Product, coldBeverage, hotBeverage} from "../../../../assets/data/products";
 import {AppService} from "../../../app.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-beverage',
@@ -17,7 +18,8 @@ export class BeverageComponent {
   existingHotBeverages = false;
   existingColdBeverages = false;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,
+              private toastr: ToastrService) {
   }
 
   addHotBeverageToCart(hotBeverages: any) {
@@ -32,9 +34,15 @@ export class BeverageComponent {
     }
     if (!this.existingHotBeverages) {
       this.appService.addToCart(hotBeverages);
-      alert('Your Hot Beverage has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Hot Beverage already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
 
   }
@@ -51,9 +59,15 @@ export class BeverageComponent {
     }
     if (!this.existingColdBeverages) {
       this.appService.addToCart(coldBeverages);
-      alert('Your Cold Beverage has been added to the cart!');
+      this.toastr.success('Selected item has been added to the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     } else {
-      alert('Selected Cold Beverage already exists in the cart!');
+      this.toastr.info('Selected item already exists in the cart!', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 2000,
+      });
     }
 
   }
