@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
+import {NgOtpInputModule} from "ng-otp-input";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UpdateProfileComponent } from './components/update-profile/update-profi
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    NgOtpInputModule
   ]
 })
 export class PublicModule { }

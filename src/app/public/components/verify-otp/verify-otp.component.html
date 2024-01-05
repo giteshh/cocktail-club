@@ -1,1 +1,18 @@
-<p>verify-otp works!</p>
+<div class="containerfull">
+  <div class="signin-form">
+    <div class="header">
+      <h1>Cocktail Club</h1>
+      <p>Enter OTP sent on your mobile number</p>
+    </div>
+    <form>
+      <div class="input">
+        <ng-otp-input  [config]="config"></ng-otp-input>
+<!--        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>-->
+      </div>
+      <button type="submit" class="btn">Verify OTP</button>
+    </form>
+  </div>
+</div>
+
+
+
