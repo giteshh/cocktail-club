@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
 import { LoginComponent } from './components/login/login.component';
-import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 
 
 @NgModule({
