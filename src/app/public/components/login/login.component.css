@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.containerfull {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.signin-form {
+  width: 480px;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 2px 4px 8px #6b728040;
+  text-align: center;
+}
+
+.text-underline {
+  text-decoration-line: underline;
+}
+
+.text-danger {
+  text-align: left;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 28px;
+  color: rgb(255, 105, 7);
+  letter-spacing: 2px;
+}
+
+p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+#termAndConditionsText {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.input {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input input {
+  width: 100%;
+  padding: 15px 45px;
+  border-radius: 12px;
+  background-color: #FFF;
+  border: 1px solid #DFE3E7;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.input input::placeholder {
+  color: lightslategrey;
+}
+
+.input i {
+  top: 50%;
+  width: 36px;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  margin: 24px 0;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: white;
+  background-color: rgb(255, 105, 7);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+a {
+  color: #6366f1;
+  text-decoration: none;
+}

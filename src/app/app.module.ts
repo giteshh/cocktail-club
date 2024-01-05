@@ -8,19 +8,24 @@ import {RouterModule} from "@angular/router";
 import {AdminModule} from "./admin/admin.module";
 import {CustomerModule} from "./customer/customer.module";
 import {PublicModule} from "./public/public.module";
+import {NgOtpInputModule} from "ng-otp-input";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     PublicModule,
     AdminModule,
     CustomerModule,
-    BrowserModule,
     RouterModule,
     AppRoutingModule,
+    NgOtpInputModule,
   ],
   bootstrap: [AppComponent]
 })
