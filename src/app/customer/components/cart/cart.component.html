@@ -1,53 +1,121 @@
-<div class="container-fluid">
-  <app-navbar></app-navbar>
-  <div class="text-center" id="noItemCardInCart" *ngIf="!showButton">
-    <div class="card-body">
-      <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">
-      <h2 class="card-title">404, no delicious food item found !</h2>
-      <p class="card-text">Simply click "Explore Now" to peruse our scrumptious
-        menu and load your cart with delightful items.</p>
-      <a class="btn" routerLink="/home">Explore Now</a>
-    </div>
-  </div>
-  <div class="card-container">
-    <div class="card" *ngFor="let item of cart, let i = index">
-      <div class="left">
-        <img
-          src="{{item.image}}">
-      </div>
-      <div class="right">
-        <h5>{{item.name}}</h5>
-        <p>Price : {{item.price}} /-</p>
-        <label>Quantity</label>
-        <input class="ml-3" type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"
-               (change)="addQty(i, $event)">
-        <br>
-        <a (click)="removeCartItem(i)" class="text-danger" style="font-size: 20px">
-          <i class="fa fa-trash"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+<!--<div class="container-fluid">-->
+<!--  <app-navbar></app-navbar>-->
+<!--  <div class="text-center" id="noItemcustom-cardInCart" *ngIf="!showButton">-->
+<!--    <div class="custom-card-body">-->
+<!--      <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">-->
+<!--      <h2 class="custom-card-title">404, no delicious food item found !</h2>-->
+<!--      <p class="custom-card-text">Simply click "Explore Now" to peruse our scrumptious-->
+<!--        menu and load your cart with delightful items.</p>-->
+<!--      <a class="btn" routerLink="/home">Explore Now</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="custom-card-container">-->
+<!--    <div class="custom-card" *ngFor="let item of cart, let i = index">-->
+<!--      <div class="left">-->
+<!--        <img-->
+<!--          src="{{item.image}}">-->
+<!--      </div>-->
+<!--      <div class="right">-->
+<!--        <h5>{{item.name}}</h5>-->
+<!--        <p>Price : {{item.price}} /-</p>-->
+<!--        <label>Quantity</label>-->
+<!--        <input class="ml-3" type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"-->
+<!--               (change)="addQty(i, $event)">-->
+<!--        <br>-->
+<!--        <a (click)="removeCartItem(i)" class="text-danger" style="font-size: 20px">-->
+<!--          <i class="fa fa-trash"></i>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="total-card" *ngIf="showButton">
-    <div class="card">
-      <div class="d-flex">
-        <p>Price :</p>
-        <p>{{productPrice}} /-</p>
-      </div>
-      <div class="d-flex">
-        <p>Delivery Charges :</p>
-        <p>{{deliveryCharge}} /-</p>
-      </div>
-      <div class="d-flex">
-        <div>
-          <h4>Final Price :</h4>
+<!--  <div class="total-custom-card" *ngIf="showButton">-->
+<!--    <div class="custom-card">-->
+<!--      <div class="d-flex">-->
+<!--        <p>Price :</p>-->
+<!--        <p>{{productPrice}} /-</p>-->
+<!--      </div>-->
+<!--      <div class="d-flex">-->
+<!--        <p>Delivery Charges :</p>-->
+<!--        <p>{{deliveryCharge}} /-</p>-->
+<!--      </div>-->
+<!--      <div class="d-flex">-->
+<!--        <div>-->
+<!--          <h4>Final Price :</h4>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h4>{{total}} /-</h4>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <button class="btn" (click)="placeOrder()">Place Order</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<app-navbar></app-navbar>
+<div class="text-center" id="noItemInCart" *ngIf="!showButton">
+  <div class="custom-card-body">
+    <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">
+    <h2 class="custom-card-title">404, no delicious food item found !</h2>
+    <p class="custom-card-text">Simply click "Explore Now" to peruse our scrumptious
+      menu and load your cart with delightful items.</p>
+    <a class="btn" routerLink="/home">Explore Now</a>
+  </div>
+</div>
+
+<div class="row m-0">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="custom-card mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
+      <div class="row no-gutters">
+        <a (click)="removeCartItem(i)" class="text-danger" data-toggle="tooltip" data-placement="top" title="Remove">
+          <i class="fa fa-x"></i>
+        </a>
+        <div class="left col-md-4">
+          <img src="{{ item.image }}" class="custom-card-image" alt="...">
         </div>
-        <div>
-          <h4>{{total}} /-</h4>
+        <div class="right col-md-8">
+          <div class="custom-card-body" id="cardBody-mobile">
+            <p class="custom-card-title" id="itemName">{{ item.name }}</p>
+            <p>{{ item.description }}</p>
+            <label>Quantity</label>
+            <input type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"
+                   (change)="addQty(i, $event)">
+            <!--            <br>-->
+            <p id="itemPrice">{{ item.price | currency:'INR'}}/-</p>
+          </div>
         </div>
       </div>
-      <button class="btn" (click)="placeOrder()">Place Order</button>
     </div>
   </div>
+  <div class="col-md-4">
+    <div class="total-cart-mobile">
+      <div class="custom-card" *ngIf="showButton">
+        <div class="custom-card-body">
+          <table class="table">
+            <tr>
+              <td>Total Price</td>
+              <td class="td2">{{productPrice | currency: 'INR'}}</td>
+            </tr>
+            <tr>
+              <td>Delivery Charge</td>
+              <td class="td2">{{deliveryCharge | currency: 'INR'}}</td>
+            </tr>
+            <tr>
+              <td>Total Amount</td>
+              <td class="td2"><b>{{total | currency: 'INR'}} /-</b></td>
+            </tr>
+          </table>
+          <!--          <hr>-->
+          <div class="text-center">
+            <button class="btn btn-sm btn-primary mt-3 mb-3" (click)="placeOrder()">
+              <i class="fa fa-shopping-bag fa-lg mr-2"></i>
+              Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
 </div>

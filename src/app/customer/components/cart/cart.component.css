@@ -2,31 +2,31 @@
   background-color: rgba(255, 255, 247, 0.2);
 }
 
-.card-container {
+.custom-card-container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.card {
+.custom-card {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 24rem;
-  padding: 10px 5px;
+  padding: 10px -10px 8px;
   margin: 20px 30px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
 }
 
-.card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
-  background-color: #fff;
+.custom-card-image {
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
 }
 
-.card a {
-  right: 0;
+.row i {
+  font-size: 15px;
+  padding: 10px 8px;
 }
 
 .btn {
@@ -35,47 +35,52 @@
   margin-top: 15px;
   color: white;
   background-color: rgb(255, 105, 7);
+  border: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-.right input {
-  margin-bottom: 10px;
-  border-radius: 10px;
-  width: 20px;
+/*always show up and down arrow in input number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+  opacity: 1;
+
+}
+
+.right #itemName {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.right p {
+  font-size: 12px;
+}
+
+.right #itemPrice {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 15px;
 }
 
 .right label {
   padding-right: 8px;
   font-weight: 500;
+  font-size: 14px;
 }
 
-.right p {
-  font-weight: 500;
-}
-
-.total-card {
+.total-custom-card {
   position: fixed;
   bottom: 0;
   float: right;
   right: 20px;
 }
 
-.total-card .card {
+.total-custom-card .custom-card {
   display: flex;
   flex-direction: column;
 }
 
-.card .d-flex {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.d-flex p {
-  font-weight: 400;
-}
-
-#noItemCardInCart {
+#noItemInCart {
   margin-top: 200px;
   padding: 30px;
   border: 1px solid silver;
@@ -86,8 +91,16 @@
   height: 100px;
 }
 
+table {
+  display: table;
+}
+
+.td2 {
+  padding: 10px 0 20px 40px;
+}
+
 @media only screen and (max-width: 768px) {
-  .card {
+  .custom-card {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -96,7 +109,7 @@
     margin-bottom: 60px !important;
   }
 
-  .card img {
+  .custom-card-image {
     margin: -50px 0 2px 0;
     width: 120px;
     height: 120px;
@@ -106,12 +119,12 @@
     width: 100%;
   }
 
-  .total-card {
+  .total-custom-card {
     width: 100%;
     position: relative;
   }
 
-  .total-card .card {
+  .total-custom-card .custom-card {
     margin: 0 auto;
   }
 

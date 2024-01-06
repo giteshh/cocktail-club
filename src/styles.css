@@ -83,9 +83,20 @@
   font-size: 13px;
 }
 
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+td {
+  font-size: 14px;
+}
+
 .toast-top-right {
   top: 8%;
 }
+
 .toast-success {
   background-color: rgb(255, 105, 7);
 }
