@@ -13,10 +13,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-import { AngularFireModule } from "@angular/fire/compat";
+
+import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
-import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
+
 
 @NgModule({
   declarations: [
