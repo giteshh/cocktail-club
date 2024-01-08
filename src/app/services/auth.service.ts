@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import firebase from "firebase/compat/app";
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat';
 
 
 @Injectable({
@@ -9,17 +9,38 @@ import firebase from "firebase/compat/app";
 
 
 export class AuthService {
+  public confirmationResult?: firebase.auth.ConfirmationResult;
 
-  constructor(private afAuth: AngularFireAuth) {}
-
-  sendVerificationCode(phoneNumber: string) {
-    const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-    return this.afAuth.signInWithPhoneNumber(phoneNumber, appVerifier);
+  constructor(private fireAuth: AngularFireAuth) {
   }
 
-  verifyCode(verificationId: string, code: string) {
-    const credential = firebase.auth.PhoneAuthProvider.credential(verificationId, code);
-    return this.afAuth.signInWithCredential(credential);
+  signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
+    return new Promise<any>((resolve, reject) => {
+      this.fireAuth
+        .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
+        .then((confirmationResult) => {
+          this.confirmationResult = confirmationResult;
+          resolve(confirmationResult);
+        })
+        .catch((error) => {
+          console.log(error);
+          reject('SMS not sent');
+        });
+    });
+  }
+
+    enterVerificationCode(code: string) {
+    return new Promise<any>((resolve, reject) => {
+      this.confirmationResult
+        ?.confirm(code)
+        .then(async (result) => {
+          const user = result.user;
+          resolve(user);
+        })
+        .catch((error) => {
+          reject(error.message);
+        });
+    });
   }
 }
 

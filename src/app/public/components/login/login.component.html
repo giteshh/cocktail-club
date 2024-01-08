@@ -4,7 +4,7 @@
       <h1>Cocktail Club</h1>
       <p>Log in or Sign up</p>
     </div>
-    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit($event)">
       <div class="input">
         <i class="fa fa-phone"></i>
         <input formControlName="phoneNumber" type="text" placeholder="eg +919174520052"/>

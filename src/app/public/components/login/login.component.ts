@@ -18,11 +18,18 @@ import {environment} from "../../../../environments/environment";
 export class LoginComponent implements OnInit {
   public signinForm: FormGroup;
   winRef: any;
-  phoneNumber: any;
+  phoneNumber = '';
   verificationId: any;
-  user: any;
+  OTP: string = '';
+  Code: any;
+  // user: any;
   windowRef: any;
   appVerifier: any;
+  recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
+  user: any = {user_phone: ''};
+  confirmationResult: any;
+  CountryJson = environment.CountryJson;
+  CountryCode: any = '+91';
 
   // confirmationResult: any
 
@@ -34,7 +41,7 @@ export class LoginComponent implements OnInit {
               private auth: AngularFireAuth,
               private el: ElementRef) {
     this.signinForm = formBuilder.group({
-      phoneNumber: ['+919179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
+      phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
     // this.winRef = windowRef;
     this.auth.onAuthStateChanged((user) => {
@@ -43,13 +50,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    const recaptchaContainer = this.el.nativeElement.querySelector('#recaptcha-container');
-    this.appVerifier = new firebase.auth.RecaptchaVerifier(recaptchaContainer, {
+    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
       size: 'invisible',
       callback: (response: any) => {
-        // This callback will be called when the user completes the reCAPTCHA.
-        // You can leave it empty if you don't need any specific action.
       },
+      'expired-callback': () => {
+      }
     });
   }
 
@@ -65,25 +71,32 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  onSubmit($event: any) {
     // const recaptchaContainer = this.el.nativeElement.querySelector('#recaptcha-container');
     const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
       size: 'invisible',
       callback: (response: any) => {
-        // This callback will be called when the user completes the reCAPTCHA.
-        // You can leave it empty if you don't need any specific action.
       },
     });
 
-    console.log('app-verifier ' + appVerifier)
-    firebase.auth().signInWithPhoneNumber(this.phoneNumber, appVerifier)
-
-      .then(result => {
-        console.log(result)
-        console.log(this.winRef.verificationId)
-        this.windowRef.confirmationResult = result;
-        console.log(result + ' result')
-      })
-      .catch(error => console.log('error', error));
+    if (this.signinForm.value.phoneNumber) {
+      this.authService
+        .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
+        .then((confirmationResult) => {
+          localStorage.setItem(
+            'verificationId',
+            JSON.stringify(confirmationResult.verificationId)
+          );
+          localStorage.setItem(
+            'verificationCode',
+            JSON.stringify(confirmationResult.verificationCode)
+          );
+          this.confirmationResult = confirmationResult;
+          this.ngZone.run(() => {
+            this.router.navigate(['/verify-otp']);
+          });
+        });
+    }
   }
+
 }

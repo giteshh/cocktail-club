@@ -6,10 +6,9 @@
     </div>
     <form>
       <div class="input">
-        <ng-otp-input  [config]="config"></ng-otp-input>
-<!--        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>-->
+        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
       </div>
-      <button type="submit" class="btn">Verify OTP</button>
+      <button type="submit" class="btn" (click)="onSubmit()">Verify OTP</button>
     </form>
   </div>
 </div>
