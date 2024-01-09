@@ -9,7 +9,7 @@ import firebase from 'firebase/compat';
 
 
 export class AuthService {
-  public confirmationResult?: firebase.auth.ConfirmationResult;
+   confirmationResult?: firebase.auth.ConfirmationResult;
 
   constructor(private fireAuth: AngularFireAuth) {
   }
@@ -36,6 +36,8 @@ export class AuthService {
         .then(async (result) => {
           const user = result.user;
           resolve(user);
+          console.log('Correct otp')
+
         })
         .catch((error) => {
           reject(error.message);

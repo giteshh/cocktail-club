@@ -6,6 +6,8 @@ import firebase from 'firebase/compat/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import {WindowService} from "../../../services/window.service";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {logEvent} from "@angular/fire/analytics";
 
 @Component({
   selector: 'app-verify-otp',
@@ -13,18 +15,28 @@ import {WindowService} from "../../../services/window.service";
   styleUrls: ['./verify-otp.component.css']
 })
 export class VerifyOtpComponent implements OnInit {
-  otp!: string;
+  // otp: string = '';
   verify: any;
   windowRef: any;
-  verificationCode: string | undefined;
+  verificationCode: string = '';
+  verificationId: string = '';
   user: any = {phoneNumber: ''};
   @Input() phoneNumber = ''
-  confirmationResult?: firebase.auth.ConfirmationResult
+  @Input() confirmResult = ''
+  confirmationResult = '';
+  cred: any;
 
   constructor(private authService: AuthService,
               private router: Router,
               private ngZone: NgZone,
-              private win: WindowService) {
+              private win: WindowService,
+              private auth: AngularFireAuth) {
+    this.verify = (localStorage.getItem('verificationId') || '{}');
+    this.cred = firebase.auth.PhoneAuthProvider.credential(
+      this.verificationId,
+      this.verificationCode //otp
+    );
+    console.log('this.cred ' + this.verify)
   }
 
   config = {
@@ -40,36 +52,46 @@ export class VerifyOtpComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.windowRef = this.win.windowRef
-    this.verify = JSON.parse(localStorage.getItem('VerificationCode') || '{}');
-    console.log(this.verify)
+    this.windowRef = this.win.windowRef;
+    this.verify = (localStorage.getItem('verificationId') || '{}');
+    // console.log(this.verify)
+
   }
 
   onOtpChange(otp: string) {
-    this.otp = otp;
+    this.verificationCode = otp;
   }
 
   onSubmit() {
-    console.log(this.otp);
-    var credential = firebase.auth.PhoneAuthProvider.credential(
-      this.verify,
-      this.otp
-    );
 
-    firebase
-      .auth()
-      .signInWithCredential(credential)
-      .then((response) => {
-        localStorage.setItem('user_data', JSON.stringify(response));
-        this.confirmationResult?.confirm(this.verify).then();
-        this.ngZone.run(() => {
-          this.router.navigate(['/update-profile']);
-        });
+
+    const credential = firebase.auth.PhoneAuthProvider.credential(
+      this.verify,
+      this.verificationCode
+    );
+    // console.log('credential ' + (this.cred))
+
+    // this.authService.enterVerificationCode(this.verify).then(r => {
+    //   console.log(r.user)
+    // })
+
+    this.windowRef.confirmationResult
+      .confirm(this.verificationCode)
+      .then((result: { user: any; }) => {
+        this.user = result.user;
+        console.log(result);
       })
-      .catch((error) => {
-        console.log(error);
-        alert(error.message);
-      });
+      .catch((error: any) => console.log(error, 'Incorrect code entered?'));
+    // firebase.auth().signInWithCredential(credential)
+    //   .then((userCredential) => {
+    //     // User signed in successfully.
+    //     console.log(userCredential)
+    //     console.log('Authentication successful', userCredential.user);
+    //   })
+    //   .catch((error) => {
+    //     // Handle errors.
+    //     console.error('Authentication failed', error);
+    //   });
   }
 
 }

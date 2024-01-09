@@ -27,11 +27,12 @@ export class LoginComponent implements OnInit {
   appVerifier: any;
   recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
   user: any = {user_phone: ''};
-  confirmationResult: any;
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
 
-  // confirmationResult: any
+  // for otp
+  verificationCode: string = '';
+  confirmationResult: any;
 
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
@@ -48,6 +49,19 @@ export class LoginComponent implements OnInit {
       this.user = user;
     });
   }
+
+  config = {
+    allowNumbersOnly: true,
+    length: 6,
+    isPasswordInput: false,
+    disableAutoFocus: false,
+    placeholder: '',
+    inputStyles: {
+      width: '50px',
+      height: '50px',
+    },
+  };
+
 
   ngOnInit() {
     this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
@@ -87,16 +101,24 @@ export class LoginComponent implements OnInit {
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
-          localStorage.setItem(
-            'verificationCode',
-            JSON.stringify(confirmationResult.verificationCode)
-          );
+          this.winRef.confirmationResult = confirmationResult.verificationId;
           this.confirmationResult = confirmationResult;
-          this.ngZone.run(() => {
-            this.router.navigate(['/verify-otp']);
-          });
+          if (confirmationResult.verificationId) {
+            console.log(confirmationResult.verificationId)
+            this.ngZone.run(() => {
+              this.router.navigate(['/verify-otp']).then();
+            });
+          }
         });
     }
   }
 
+  onOtpChange(otp: string) {
+    this.verificationCode = otp;
+  }
+
+  onOTPSubmit() {
+
+    const result = this.confirmationResult.confirm(this.verificationCode)
+  }
 }
