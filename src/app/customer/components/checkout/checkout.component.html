@@ -1,0 +1,51 @@
+<div class="containerfull">
+  <div class="checkout-form">
+    <div class="header">
+      <p>Enter your shipping details</p>
+    </div>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="input">
+        <i class="fa fa-user"></i>
+        <input formControlName="fullName" type="text" placeholder="Name"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['fullName'].touched && checkoutForm.controls['fullName'].invalid"
+           class="text-danger">
+        Invalid Name
+      </div>
+      <div class="input">
+        <i class="fa fa-user"></i>
+        <input formControlName="address" type="text" placeholder="Address"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['address'].touched && checkoutForm.controls['address'].invalid"
+           class="text-danger">
+        Invalid Address
+      </div>
+      <div class="input">
+        <i class="fa fa-user"></i>
+        <input formControlName="city" type="text" placeholder="City"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['city'].touched && checkoutForm.controls['city'].invalid"
+           class="text-danger">
+        Invalid City
+      </div>
+      <div class="input">
+        <i class="fa fa-user"></i>
+        <input formControlName="state" type="text" placeholder="State"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['state'].touched && checkoutForm.controls['state'].invalid"
+           class="text-danger">
+        Invalid State
+      </div>
+      <div class="input">
+        <i class="fa fa-user"></i>
+        <input formControlName="zipCode" type="text" placeholder="Zip Code"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['zipCode'].touched && checkoutForm.controls['zipCode'].invalid"
+           class="text-danger">
+        Invalid Zip code
+      </div>
+
+      <button type="submit" class="btn">Continue to pay</button>
+    </form>
+  </div>
+</div>

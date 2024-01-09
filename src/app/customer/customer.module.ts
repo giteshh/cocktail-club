@@ -11,6 +11,8 @@ import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {FooterComponent} from "./components/footer/footer.component";
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,12 +25,15 @@ import {FooterComponent} from "./components/footer/footer.component";
     BeverageComponent,
     CocktailComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    CheckoutComponent
 
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CustomerModule { }
