@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AppService} from "../../../app.service";
 import {Product} from "../../../../assets/data/products";
+import {Router} from "@angular/router";
 
 interface cartItems {
   id: number,
@@ -29,7 +30,8 @@ export class CartComponent {
   showButton = false;
   cart: Product[] = [];
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,
+              private router: Router) {
     this.getCartItems();
   }
 
@@ -69,9 +71,9 @@ export class CartComponent {
 
   // placing order and removing items from localstorage
   placeOrder() {
+    this.router.navigate(['/checkout']);
     localStorage.clear();
     this.getCartItems();
-    alert("Your order is placed successfully ");
   }
 }
 

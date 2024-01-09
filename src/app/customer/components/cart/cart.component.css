@@ -7,17 +7,6 @@
   flex-wrap: wrap;
 }
 
-.custom-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 24rem;
-  padding: 10px -10px 8px;
-  margin: 20px 30px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
-  border-radius: 15px;
-}
-
 .custom-card-image {
   width: 80px;
   height: 80px;
@@ -94,9 +83,13 @@ input[type=number]::-webkit-outer-spin-button {
 table {
   display: table;
 }
-
-.td2 {
-  padding: 10px 0 20px 40px;
+.td2{
+  padding: 10px 0;
+}
+.finalAmount {
+  padding: 10px 0;
+  color: green;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 768px) {
