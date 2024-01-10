@@ -13,6 +13,7 @@ import {CartComponent} from "./components/cart/cart.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CocktailComponent,
     CartComponent,
     FooterComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    OrdersComponent
 
   ],
   imports: [
