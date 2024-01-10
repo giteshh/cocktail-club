@@ -7,6 +7,7 @@ import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {CheckoutComponent} from "./components/checkout/checkout.component";
+import {OrdersComponent} from "./components/orders/orders.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'cocktail', component: CocktailComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
+  {path: 'orders', component: OrdersComponent},
 
 ];
 

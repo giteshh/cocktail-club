@@ -72,7 +72,7 @@ export class CartComponent {
   // placing order and removing items from localstorage
   placeOrder() {
     this.router.navigate(['/checkout']);
-    localStorage.clear();
+    // localStorage.clear();
     this.getCartItems();
   }
 }
