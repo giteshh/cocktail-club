@@ -26,28 +26,21 @@ export class LoginComponent implements OnInit {
   windowRef: any;
   appVerifier: any;
   recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
-  user: any = {user_phone: ''};
+  // user: any = {user_phone: ''};
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
-
-  // for otp
-  verificationCode: string = '';
-  confirmationResult: any;
 
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
               private win: WindowService,
               private router: Router,
-              private ngZone: NgZone,
-              private auth: AngularFireAuth,
-              private el: ElementRef) {
+              private ngZone: NgZone) {
     this.signinForm = formBuilder.group({
       phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
-    // this.winRef = windowRef;
-    this.auth.onAuthStateChanged((user) => {
-      this.user = user;
-    });
+    // this.auth.onAuthStateChanged((user) => {
+    //   this.user = user;
+    // });
   }
 
   config = {
@@ -64,13 +57,6 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-      size: 'invisible',
-      callback: (response: any) => {
-      },
-      'expired-callback': () => {
-      }
-    });
   }
 
   markProfileFormTouched() {
@@ -86,7 +72,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit($event: any) {
-    // const recaptchaContainer = this.el.nativeElement.querySelector('#recaptcha-container');
+    this.markProfileFormTouched();
     const appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
       size: 'invisible',
       callback: (response: any) => {
@@ -101,24 +87,11 @@ export class LoginComponent implements OnInit {
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
-          this.winRef.confirmationResult = confirmationResult.verificationId;
-          this.confirmationResult = confirmationResult;
-          if (confirmationResult.verificationId) {
-            console.log(confirmationResult.verificationId)
-            this.ngZone.run(() => {
-              this.router.navigate(['/verify-otp']).then();
-            });
-          }
+          this.ngZone.run(() => {
+            this.router.navigate(['/verify-otp']).then();
+          });
         });
     }
   }
 
-  onOtpChange(otp: string) {
-    this.verificationCode = otp;
-  }
-
-  onOTPSubmit() {
-
-    const result = this.confirmationResult.confirm(this.verificationCode)
-  }
 }

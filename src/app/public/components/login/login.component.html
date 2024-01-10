@@ -7,7 +7,7 @@
     <form [formGroup]="signinForm" (ngSubmit)="onSubmit($event)">
       <div class="input">
         <i class="fa fa-phone"></i>
-        <input formControlName="phoneNumber" type="text" placeholder="eg +919174520052"/>
+        <input formControlName="phoneNumber" type="text" placeholder="eg 9174520052"/>
       </div>
       <div *ngIf="signinForm.controls['phoneNumber'].touched && signinForm.controls['phoneNumber'].invalid"
            class="text-danger">
@@ -19,20 +19,6 @@
     <p id="termAndConditionsText">By continuing, you agree to our <span class="text-underline">Terms of service & Privacy policy</span>
     </p>
   </div>
-
-  <!--  otp section-->
-<!--  <div class="signin-form">-->
-<!--    <div class="header">-->
-<!--      <h1>Cocktail Club</h1>-->
-<!--      <p>Enter OTP sent on your mobile number</p>-->
-<!--    </div>-->
-<!--    <form>-->
-<!--      <div class="input">-->
-<!--        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>-->
-<!--      </div>-->
-<!--      <button type="submit" class="btn" (click)="onOTPSubmit()">Verify OTP</button>-->
-<!--    </form>-->
-<!--  </div>-->
 </div>
 
 

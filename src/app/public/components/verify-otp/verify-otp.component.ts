@@ -15,28 +15,16 @@ import {logEvent} from "@angular/fire/analytics";
   styleUrls: ['./verify-otp.component.css']
 })
 export class VerifyOtpComponent implements OnInit {
-  // otp: string = '';
   verify: any;
   windowRef: any;
   verificationCode: string = '';
   verificationId: string = '';
   user: any = {phoneNumber: ''};
-  @Input() phoneNumber = ''
-  @Input() confirmResult = ''
   confirmationResult = '';
-  cred: any;
 
   constructor(private authService: AuthService,
               private router: Router,
-              private ngZone: NgZone,
-              private win: WindowService,
-              private auth: AngularFireAuth) {
-    this.verify = (localStorage.getItem('verificationId') || '{}');
-    this.cred = firebase.auth.PhoneAuthProvider.credential(
-      this.verificationId,
-      this.verificationCode //otp
-    );
-    console.log('this.cred ' + this.verify)
+              private ngZone: NgZone) {
   }
 
   config = {
@@ -52,10 +40,7 @@ export class VerifyOtpComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.windowRef = this.win.windowRef;
     this.verify = (localStorage.getItem('verificationId') || '{}');
-    // console.log(this.verify)
-
   }
 
   onOtpChange(otp: string) {
@@ -63,35 +48,13 @@ export class VerifyOtpComponent implements OnInit {
   }
 
   onSubmit() {
-
-
-    const credential = firebase.auth.PhoneAuthProvider.credential(
-      this.verify,
-      this.verificationCode
-    );
-    // console.log('credential ' + (this.cred))
-
-    // this.authService.enterVerificationCode(this.verify).then(r => {
-    //   console.log(r.user)
-    // })
-
-    this.windowRef.confirmationResult
-      .confirm(this.verificationCode)
-      .then((result: { user: any; }) => {
-        this.user = result.user;
-        console.log(result);
-      })
-      .catch((error: any) => console.log(error, 'Incorrect code entered?'));
-    // firebase.auth().signInWithCredential(credential)
-    //   .then((userCredential) => {
-    //     // User signed in successfully.
-    //     console.log(userCredential)
-    //     console.log('Authentication successful', userCredential.user);
-    //   })
-    //   .catch((error) => {
-    //     // Handle errors.
-    //     console.error('Authentication failed', error);
-    //   });
+    this.authService.enterVerificationCode(this.verificationCode).then(res => {
+      this.ngZone.run(() => {
+        this.router.navigate(['/update-profile']).then();
+      });
+    }).catch((error) => {
+      // Handle errors.
+    });
   }
 
 }
