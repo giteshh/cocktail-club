@@ -7,9 +7,9 @@
     <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
       <div class="input">
         <i class="fa fa-user"></i>
-        <input formControlName="name" type="text" placeholder="Full name"/>
+        <input formControlName="fullName" type="text" placeholder="Full name"/>
       </div>
-      <div *ngIf="updateProfileForm.controls['name'].touched && updateProfileForm.controls['name'].invalid"
+      <div *ngIf="updateProfileForm.controls['fullName'].touched && updateProfileForm.controls['fullName'].invalid"
            class="text-danger">
         Invalid name
       </div>

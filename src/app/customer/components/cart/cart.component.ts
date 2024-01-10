@@ -71,6 +71,8 @@ export class CartComponent {
 
   // placing order and removing items from localstorage
   placeOrder() {
+    //#TODO if not logged in navigate to signin
+
     this.router.navigate(['/checkout']);
     // localStorage.clear();
     this.getCartItems();

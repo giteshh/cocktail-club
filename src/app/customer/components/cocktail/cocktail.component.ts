@@ -32,12 +32,12 @@ export class CocktailComponent {
     if (!this.existingProduct) {
       this.appService.addToCart(cocktails);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
+        positionClass: 'toast-top-center',
         timeOut: 2000,
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
+        positionClass: 'toast-top-center',
         timeOut: 2000,
       });
     }

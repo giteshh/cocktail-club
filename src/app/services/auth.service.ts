@@ -41,5 +41,11 @@ export class AuthService {
         });
     });
   }
+
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user') as string);
+    console.log(user);
+    return user !== null;
+  }
 }
 

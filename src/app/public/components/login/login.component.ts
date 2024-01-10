@@ -22,11 +22,10 @@ export class LoginComponent implements OnInit {
   verificationId: any;
   OTP: string = '';
   Code: any;
-  // user: any;
+  user: any;
   windowRef: any;
   appVerifier: any;
   recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
-  // user: any = {user_phone: ''};
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
 
@@ -80,6 +79,10 @@ export class LoginComponent implements OnInit {
     });
 
     if (this.signinForm.value.phoneNumber) {
+      localStorage.setItem(
+        'phoneNumber',
+        JSON.stringify(this.signinForm.value.phoneNumber)
+      );
       this.authService
         .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
         .then((confirmationResult) => {
@@ -87,6 +90,11 @@ export class LoginComponent implements OnInit {
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
+          localStorage.setItem(
+            'user',
+            JSON.stringify(this.signinForm.value)
+          );
+          console.log(localStorage.getItem('user'))
           this.ngZone.run(() => {
             this.router.navigate(['/verify-otp']).then();
           });
