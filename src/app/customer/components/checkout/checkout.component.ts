@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-checkout',
@@ -13,7 +14,8 @@ export class CheckoutComponent {
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.checkoutForm = formBuilder.group({
       fullName: ['', Validators.required],
       address: ['', Validators.required],
@@ -60,6 +62,14 @@ export class CheckoutComponent {
       options.response = response;
       console.log(response);
       console.log(options);
+      this.toastr.success('Order placed successfully', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 3000,
+      });
+      this.toastr.info('Waiting for Restaurant to accept your order', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 3000,
+      });
       this.router.navigate(['/orders'])
       // call your backend api to verify payment signature & capture transaction
     });
