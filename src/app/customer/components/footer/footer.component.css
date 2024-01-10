@@ -3,6 +3,8 @@ footer {
   padding: 10px 0 0 0;
   margin: 110px 0 -44px 0;
   border-top: 1px solid silver;
+  background-color: rgba(192, 192, 192, 0.2);
+  color: grey;
 }
 
 footer p {

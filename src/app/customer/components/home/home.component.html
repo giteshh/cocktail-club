@@ -21,28 +21,78 @@
         Delivering expertly crafted cocktails, revitalizing fruit juices,
         a range of hot and cold beverages and delectable fast food to your doorstep.
       </p>
-      <p>
-        Order Online | Dine Inside | Grab and Go
-      </p>
     </div>
   </div>
 
-  <!--  happy hour section-->
-  <div class="happy-hour-section">
-    <div class="happy-hour-section-1">
-      <h1 class="text-lt">Happy Hour O'clock.</h1>
-      <p>Every Friday, 4pm to 8 pm. Free entry & Live music</p>
-      <p>Buy 1 Get 1 cocktail. Free pizza on order above 999 /-</p>
-      <p>Beverage, fast food and fruit juices upto 50% off.</p>
-      <p>*Offer applicable on Dine in only.</p>
+  <!--sale section-->
+  <section id="labels">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="dl" routerLink="/cocktail">
+            <div class="discount alizarin"> Buy 1
+              <div class="type">Get 1</div>
+            </div>
+            <div class="descr">
+              * Offer on Cocktails upto INR 599/-. Happy Hour O'clock.
+            </div>
+            <div class="coupon">
+              <a>Explore now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="dl" routerLink="/fast-food">
+            <div class="discount emerald">
+              FREE
+              <div class="type">
+                Pizza
+              </div>
+            </div>
+            <div class="descr">
+              * Free medium pizza of your choice above order of INR 999/-.
+            </div>
+            <div class="coupon">
+              <a>Explore now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="dl" routerLink="/beverage">
+            <div class="discount peter-river">
+              25%
+              <div class="type">
+                off
+              </div>
+            </div>
+            <div class="descr">
+              * 15% flat off on all hot and cold beverages.
+            </div>
+            <div class="coupon">
+              <a>Explore now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="dl">
+            <div class="discount amethyst">
+              15%
+              <div class="type">
+                off
+              </div>
+            </div>
+            <div class="descr">
+              * On total bill amount on or above INR 1999/-
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="happy-hour-section-2">
-      <img id="happy-hour-img" src="../../../../assets/images/home/happyhour.jpg">
-    </div>
-  </div>
+  </section>
+
 
   <!--cocktail section-->
-  <div class="imgOnRight-section">
+  <div class="imgOnRight-section sec-1">
     <div class="imgOnRight-left-section">
       <img routerLink="/cocktail" (click)="navigateToTop()"
            src="../../../../assets/images/home/cocktail.jpg" alt="cocktail">
@@ -55,7 +105,7 @@
   </div>
 
   <!--fruit juice section-->
-  <div class="imgOnLeft-section" id="sec-1">
+  <div class="imgOnLeft-section sec-2">
     <div class="imgOnLeft-left-section">
       <h1>Fruit Juices</h1>
       <p>Fresh fruit juices straight from Mother Nature herself.</p>
@@ -69,7 +119,7 @@
 
 
   <!--beverage section-->
-  <div class="imgOnRight-section" id="sec-2">
+  <div class="imgOnRight-section sec-3">
     <div class="imgOnRight-left-section">
       <img routerLink="/beverage" (click)="navigateToTop()"
            src="../../../../assets/images/home/beverage.jpg" alt="beverage">
@@ -82,7 +132,7 @@
   </div>
 
   <!--fast food section-->
-  <div class="imgOnLeft-section" id="sec-3">
+  <div class="imgOnLeft-section sec-4">
     <div class="imgOnLeft-left-section">
       <h1>Fast Food</h1>
       <p>Fast Fuel for Hungry Souls.</p>

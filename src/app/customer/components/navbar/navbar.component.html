@@ -29,29 +29,22 @@
           <a class="nav-link" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
             Fast Food
           </a>
-
-          <div>
-            <button class="dropdown-toggle menu-item">
-            <span>
-                 <img class="nav-icons" src="../../../../assets/images/navbar/profile.png" alt="profile">
-            </span>
+          <div class="dropdown nav-item">
+            <button type="button" class="btn dropdown-toggle border-0 nav-link" data-bs-toggle="dropdown">
+              <!--              <a class="nav-link">-->
+              <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">
+              <!--              </a>-->
             </button>
-            <ul class="dropdown-menu">
-              <li class="menu-item">
-                <span class="item-txt">
-                Gitesh Sharma
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="item-txt">
-                Orders
-                </span>
-              </li>
-              <li class="menu-item">
-                <span class="item-txt">
-                Logout
-                </span>
-              </li>
+            <ul class="dropdown-menu dropdown-menu-center">
+
+              <!--              ToDo ngif logged in-->
+              <li class="dropdown-item"><b>Hi Gitesh Sharma</b></li>
+              <li><a class="dropdown-item" href="#" routerLink="/update-profile">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="#" routerLink="/orders">My Orders</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+
+              <!--              ToDo ngIf not logged in-->
+              <li><a class="dropdown-item" href="#" routerLink="/signin">Sign in/Sign up</a></li>
             </ul>
           </div>
 

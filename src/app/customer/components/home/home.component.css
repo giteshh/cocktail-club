@@ -41,29 +41,6 @@
   letter-spacing: 1px;
 }
 
-.happy-hour-section {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 100px;
-}
-
-.happy-hour-section-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#happy-hour {
-  font-size: 35px;
-  color: rgb(255, 105, 7);
-  font-weight: bold;
-}
-
-#happy-hour-img {
-  width: 600px;
-  height: 600px;
-}
-
 .imgOnLeft-section, .imgOnRight-section {
   height: 600px;
   margin-top: 80px;
@@ -108,6 +85,109 @@
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
 }
 
+/*css for sale section*/
+section {
+  padding: 5% 0 0 0;
+}
+
+.alizarin {
+  background: #e74c3c;
+  border-radius: 20px 20px 0 0;
+}
+
+.amethyst {
+  background: #9b59b6;
+  border-radius: 20px 20px 0 0;
+}
+
+.emerald {
+  background: #2ecc71;
+  border-radius: 20px 20px 0 0;
+}
+
+.midnight-blue {
+  background: #2c3e50;
+  border-radius: 20px 20px 0 0;
+}
+
+.peter-river {
+  background: #3498db;
+  border-radius: 20px 20px 0 0;
+}
+
+.dl {
+  background-color: rgba(192, 192, 192, 0.2);
+  border-radius: 20px;
+  position: relative;
+  min-height: 350px;
+
+}
+
+.dl .discount {
+  height: 200px;
+  position: relative;
+  font-size: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 700;
+  padding: 40px 20px 0;
+  color: #f1c40f
+}
+
+.dl .discount:after {
+  content: " ";
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 20%
+}
+
+.dl .discount.alizarin:after {
+  border-top: 20px solid #e74c3c
+}
+
+.dl .discount.peter-river:after {
+  border-top: 20px solid #3498db
+}
+
+.dl .discount.emerald:after {
+  border-top: 20px solid #2ecc71
+}
+
+.dl .discount.amethyst:after {
+  border-top: 20px solid #9b59b6
+}
+
+.dl .discount .type {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: -15px
+}
+
+.dl .descr {
+  color: #999;
+  margin-top: 10px;
+  padding: 20px 15px
+}
+
+.dl .ends {
+  padding: 0 15px;
+  color: #f1c40f;
+  margin-bottom: 10px
+}
+
+.dl .coupon {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px 20px 15px;
+  text-decoration: none;
+  color: rgb(255, 105, 7);
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
   .container-fluid {
     width: 100%;
@@ -148,43 +228,25 @@
     height: 100%;
   }
 
-  .happy-hour-section {
-    flex-direction: column;
-    margin-top: 30px;
-  }
-
-  .happy-hour-section-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  #happy-hour-img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .imgOnLeft-section {
-    flex-direction: column;
-    margin: -60px 0 0 0;
-  }
-
-  .imgOnRight-section {
+  .sec-1 {
     flex-direction: column-reverse;
-    margin: -60px 0 0 0;
+  }
+
+  .sec-2 {
+    flex-direction: column;
+  }
+
+  .sec-3 {
+    flex-direction: column-reverse;
+  }
+
+  .sec-4 {
+    flex-direction: column;
   }
 
   .imgOnLeft-right-section img, .imgOnRight-left-section img {
     width: 100%;
-    margin: -60px 0 0 0;
-  }
-
-  #sec-1 {
-    margin: -20px 0;
-  }
-
-  #sec-3 {
-    margin-bottom: -100px;
+    padding: 20px;
   }
 
   .imgOnLeft-section h1, .imgOnRight-section h1 {
@@ -202,4 +264,8 @@
     font-size: 14px;
   }
 
+  .dl {
+    margin: 20px 0;
+  }
 }
+
