@@ -24,73 +24,6 @@
     </div>
   </div>
 
-  <!--sale section-->
-  <section id="labels">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-md-3">
-          <div class="dl" routerLink="/cocktail">
-            <div class="discount alizarin"> Buy 1
-              <div class="type">Get 1</div>
-            </div>
-            <div class="descr">
-              * Offer on Cocktails upto INR 599/-. Happy Hour O'clock.
-            </div>
-            <div class="coupon">
-              <a>Explore now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="dl" routerLink="/fast-food">
-            <div class="discount emerald">
-              FREE
-              <div class="type">
-                Pizza
-              </div>
-            </div>
-            <div class="descr">
-              * Free medium pizza of your choice above order of INR 999/-.
-            </div>
-            <div class="coupon">
-              <a>Explore now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="dl" routerLink="/beverage">
-            <div class="discount peter-river">
-              25%
-              <div class="type">
-                off
-              </div>
-            </div>
-            <div class="descr">
-              * 15% flat off on all hot and cold beverages.
-            </div>
-            <div class="coupon">
-              <a>Explore now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="dl">
-            <div class="discount amethyst">
-              15%
-              <div class="type">
-                off
-              </div>
-            </div>
-            <div class="descr">
-              * On total bill amount on or above INR 1999/-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!--cocktail section-->
   <div class="imgOnRight-section sec-1">
     <div class="imgOnRight-left-section">
@@ -100,6 +33,8 @@
     <div class="imgOnRight-right-section">
       <h1>Cocktails</h1>
       <p>Eat. Sleep. Cocktail. Repeat.</p>
+      <span class="sale-offer">* Buy 1 Get 1 on Cocktails upto INR 599/-. Happy Hour O'clock.</span>
+      <br>
       <button class="btn" routerLink="/cocktail" (click)="navigateToTop()">Explore now</button>
     </div>
   </div>
@@ -109,6 +44,8 @@
     <div class="imgOnLeft-left-section">
       <h1>Fruit Juices</h1>
       <p>Fresh fruit juices straight from Mother Nature herself.</p>
+      <span class="sale-offer">* 15% flat off on all juices.</span>
+      <br>
       <button class="btn" routerLink="/fruit-juice" (click)="navigateToTop()">Explore now</button>
     </div>
     <div class="imgOnLeft-right-section">
@@ -127,6 +64,8 @@
     <div class="imgOnRight-right-section">
       <h1>Beverages</h1>
       <p>Beverages that refreshes the body. Refreshes the soul.</p>
+      <span class="sale-offer"> * Buy 1 Get 1 on all hot and cold beverages.</span>
+      <br>
       <button class="btn" routerLink="/beverage" (click)="navigateToTop()">Explore now</button>
     </div>
   </div>
@@ -136,6 +75,8 @@
     <div class="imgOnLeft-left-section">
       <h1>Fast Food</h1>
       <p>Fast Fuel for Hungry Souls.</p>
+      <span class="sale-offer"> * Free medium pizza of your choice on above order of INR 999/-.</span>
+      <br>
       <button class="btn" routerLink="/fast-food" (click)="navigateToTop()">Explore now</button>
     </div>
     <div class="imgOnLeft-right-section">

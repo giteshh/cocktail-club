@@ -8,9 +8,13 @@ footer {
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 12px;
   padding-bottom: 0;
   margin-bottom: 8px;
+}
+
+h4 {
+  font-size: 20px;
 }
 
 footer #flex {
@@ -27,7 +31,7 @@ footer #flex {
 #copyright-section {
   border-top: 1px solid silver;
   margin-top: 15px;
-  padding-top: 10px;
+  padding: 12px 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -44,5 +48,13 @@ footer #flex {
   .sec-1 {
     margin-bottom: 10px;
     width: 100%;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 8px;
   }
 }

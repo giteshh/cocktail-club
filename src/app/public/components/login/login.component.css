@@ -86,3 +86,47 @@ a {
   color: #6366f1;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .containerfull {
+    padding: 20px;
+  }
+
+  .signin-form {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  #termAndConditionsText {
+    font-size: 8px;
+    color: #6b7280;
+  }
+
+  .input {
+    margin: 10px 0;
+  }
+
+  .input input {
+    padding: 10px 35px;
+    font-size: 12px;
+  }
+
+  .input i {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 70%;
+    margin: 10px 0 15px 0;
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}

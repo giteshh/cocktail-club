@@ -36,11 +36,6 @@ p {
   color: #6b7280;
 }
 
-#termAndConditionsText {
-  font-size: 12px;
-  color: #6b7280;
-}
-
 .input {
   position: relative;
   margin: 20px 0;
@@ -53,19 +48,6 @@ p {
   background-color: #FFF;
   border: 1px solid #DFE3E7;
   color: #1f2937;
-  font-size: 16px;
-}
-
-.input input::placeholder {
-  color: lightslategrey;
-}
-
-.input i {
-  top: 50%;
-  width: 36px;
-  position: absolute;
-  transform: translateY(-50%);
-  color: #6b7280;
   font-size: 16px;
 }
 
@@ -85,4 +67,48 @@ p {
 a {
   color: #6366f1;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerfull {
+    padding: 20px;
+  }
+
+  .signin-form {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+
+  .input {
+    margin: 10px 0;
+  }
+
+  .input input {
+    width: 100%;
+    padding: 8px 30px;
+    font-size: 8px;
+  }
+
+  .btn {
+    width: 70%;
+    margin: 10px 0 15px 0;
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  a {
+    color: #6366f1;
+    text-decoration: none;
+  }
 }

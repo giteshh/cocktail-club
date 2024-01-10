@@ -72,7 +72,10 @@ input[type=number]::-webkit-outer-spin-button {
 #noItemInCart {
   margin-top: 200px;
   padding: 30px;
-  border: 1px solid silver;
+}
+
+#noItemInCart h2 {
+  font-weight: bold;
 }
 
 .cart-icon {
@@ -83,13 +86,30 @@ input[type=number]::-webkit-outer-spin-button {
 table {
   display: table;
 }
-.td2{
-  padding: 10px 0;
+
+td {
+  float: left;
 }
+
+.td2 {
+  padding: 10px 0;
+  float: right;
+}
+
 .finalAmount {
   padding: 10px 0;
   color: green;
-  font-size: 16px;
+  font-size: 18px;
+  float: right;
+  font-weight: bold;
+}
+
+.right input {
+  width: 40px;
+}
+
+.total-amount-heading {
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
@@ -104,12 +124,45 @@ table {
 
   .custom-card-image {
     margin: -50px 0 2px 0;
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
+  }
+
+  #noItemInCart {
+    margin-top: 100px;
+    border: none;
+    font-size: 10px;
+  }
+
+  #noItemInCart h2 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .right #itemName {
+    font-size: 14px;
+  }
+
+  .right p {
+    font-size: 10px;
+  }
+
+  .right #itemPrice {
+    font-size: 12px;
+  }
+
+  .right label {
+    font-size: 10px;
+  }
+
+  .right input {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
   }
 
   .btn {
-    width: 100%;
+    font-size: 12px;
   }
 
   .total-custom-card {
@@ -121,4 +174,18 @@ table {
     margin: 0 auto;
   }
 
+  td {
+    font-size: 10px;
+  }
+
+  .td2 {
+    float: right;
+    padding: 5px 0;
+  }
+
+  .finalAmount {
+    font-size: 14px;
+    float: right;
+    font-weight: bold;
+  }
 }

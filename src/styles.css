@@ -101,12 +101,18 @@ td {
   background-color: rgb(255, 105, 7);
 }
 
-@media (min-width: 600px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .container-fluid h3 {
+    font-size: 12px;
+  }
+
   .card-container {
+    /*justify-content: space-between;*/
     justify-content: center;
   }
 
   .card {
+    /*flex: 0 1 24%;*/
     margin: 10px 30px 120px 0;
   }
 }

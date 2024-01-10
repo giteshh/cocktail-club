@@ -24,9 +24,9 @@
           <div class="right col-md-8">
             <div class="custom-card-body" id="cardBody-mobile">
               <p class="custom-card-title" id="itemName">{{ item.name }}</p>
-              <p>{{ item.description }}</p>
+              <p class="item-description">{{ item.description }}</p>
               <label>Quantity</label>
-              <input type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"
+              <input type="number" min="1" max="5" value="{{item.quantity}}"
                      (change)="addQty(i, $event)">
               <!--            <br>-->
               <p id="itemPrice">{{ item.price | currency:'INR'}}/-</p>
@@ -44,15 +44,15 @@
             <table class="table">
               <tr>
                 <td>Total Price</td>
-                <td class="td2">{{productPrice | currency: 'INR'}}</td>
+                <td class="td2">{{productPrice | currency: 'INR'}} /-</td>
               </tr>
               <tr>
                 <td>Delivery Charge</td>
-                <td class="td2">{{deliveryCharge | currency: 'INR'}}</td>
+                <td class="td2">{{deliveryCharge | currency: 'INR'}} /-</td>
               </tr>
               <tr>
-                <td>Total Amount</td>
-                <td class="td2 finalAmount"><b>{{total | currency: 'INR'}} /-</b></td>
+                <td class="total-amount-heading">Total Amount</td>
+                <td class="finalAmount">{{total | currency: 'INR'}} /-</td>
               </tr>
             </table>
             <hr>

@@ -75,3 +75,52 @@ a {
   color: #6366f1;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 768px) {
+  .containerfull {
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  .checkout-form {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+
+  .input {
+    margin: 10px 0;
+  }
+
+  .input input {
+    width: 100%;
+    padding: 10px 35px;
+    font-size: 12px;
+  }
+
+  .input i {
+    font-size: 12px;
+  }
+
+  .btn {
+    width: 70%;
+    margin: 10px 0 15px 0;
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  a {
+    color: #6366f1;
+    text-decoration: none;
+  }
+}
