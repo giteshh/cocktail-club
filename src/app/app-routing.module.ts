@@ -3,11 +3,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from "./public/components/page-not-found/page-not-found.component";
 import {CustomerComponent} from "./customer/customer.component";
 import {AdminComponent} from "./admin/admin.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
-  {path:'', redirectTo: 'customer', pathMatch: 'full'},
-  {path: 'customer', component: CustomerComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: '', redirectTo: 'customer', pathMatch: 'full'},
+  {path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   {path: '**', component: PageNotFoundComponent},
 ];
 

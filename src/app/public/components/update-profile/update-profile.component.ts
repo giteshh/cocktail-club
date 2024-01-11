@@ -11,19 +11,21 @@ export class UpdateProfileComponent implements OnInit {
 
   public updateProfileForm: FormGroup;
   user = JSON.parse(localStorage.getItem('user') || '{}');
+  phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
   userCart = JSON.parse(localStorage.getItem('cart') || '{}');
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) {
     this.updateProfileForm = formBuilder.group({
       fullName: [this.user.fullName, Validators.required],
-      email: [this.user.email, Validators.required]
+      phoneNumber: [{value: this.user.phoneNumber, disabled: true}, Validators.required],
+      email: [this.user.email, Validators.required],
     })
     console.log(this.userCart)
+    console.log(this.user)
   }
 
   ngOnInit() {
-    let userData = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   markProfileFormTouched() {

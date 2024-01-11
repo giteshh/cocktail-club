@@ -1,6 +1,8 @@
-import {Injectable} from '@angular/core';
+import {Injectable, NgZone} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat';
+import firebase from 'firebase/compat/app';
+import {Router} from "@angular/router";
+import {getAuth, signOut} from "@angular/fire/auth";
 
 
 @Injectable({
@@ -10,8 +12,10 @@ import firebase from 'firebase/compat';
 
 export class AuthService {
   confirmationResult?: firebase.auth.ConfirmationResult;
+  userLogInStatus: any;
 
-  constructor(private fireAuth: AngularFireAuth) {
+  constructor(private fireAuth: AngularFireAuth,
+              private router: Router) {
   }
 
   signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
@@ -42,9 +46,27 @@ export class AuthService {
     });
   }
 
+  doSignOut() {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      localStorage.removeItem('user');
+      // localStorage.removeItem('verificationId');
+      this.router.navigate(['/home']);
+      // localStorage.clear();
+      this.userStatus();
+    });
+  }
+
+  userStatus() {
+    const user = JSON.parse(localStorage.getItem('verificationId') || '{}');
+    if (user) {
+      return this.userLogInStatus = true;
+    }
+    return this.userLogInStatus = false;
+  }
+
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user') as string);
-    console.log(user);
+    const user = JSON.parse(localStorage.getItem('verificationId') || '{}');
     return user !== null;
   }
 }

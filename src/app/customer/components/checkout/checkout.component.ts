@@ -11,13 +11,17 @@ import {ToastrService} from "ngx-toastr";
 })
 export class CheckoutComponent {
   checkoutForm: FormGroup;
+  user: any;
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
               private router: Router,
               private toastr: ToastrService) {
+
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+
     this.checkoutForm = formBuilder.group({
-      fullName: ['', Validators.required],
+      fullName: [this.user.fullName, Validators.required],
       address: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
@@ -30,7 +34,6 @@ export class CheckoutComponent {
   }
 
   createRzpayOrder(data: any) {
-    console.log(data);
     this.payWithRazor();
   }
 

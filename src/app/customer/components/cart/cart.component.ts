@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AppService} from "../../../app.service";
 import {Product} from "../../../../assets/data/products";
 import {Router} from "@angular/router";
+import {AuthService} from "../../../services/auth.service";
 
 interface cartItems {
   id: number,
@@ -31,7 +32,8 @@ export class CartComponent {
   cart: Product[] = [];
 
   constructor(private appService: AppService,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
     this.getCartItems();
   }
 
@@ -71,11 +73,12 @@ export class CartComponent {
 
   // placing order and removing items from localstorage
   placeOrder() {
-    //#TODO if not logged in navigate to signin
-
-    this.router.navigate(['/checkout']);
-    // localStorage.clear();
-    this.getCartItems();
+    if (!this.authService.isLoggedIn) {
+      this.router.navigate(['/signin']);
+    } else {
+      this.router.navigate(['/checkout']);
+      this.getCartItems();
+    }
   }
 }
 

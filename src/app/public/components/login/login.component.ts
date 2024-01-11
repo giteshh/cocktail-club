@@ -18,16 +18,16 @@ import {environment} from "../../../../environments/environment";
 export class LoginComponent implements OnInit {
   public signinForm: FormGroup;
   winRef: any;
-  phoneNumber = '';
+  // phoneNumber = '';
   verificationId: any;
   OTP: string = '';
   Code: any;
-  user: any;
   windowRef: any;
   appVerifier: any;
   recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
+  user = JSON.parse(localStorage.getItem('user') || '{}');
 
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
@@ -37,23 +37,7 @@ export class LoginComponent implements OnInit {
     this.signinForm = formBuilder.group({
       phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
-    // this.auth.onAuthStateChanged((user) => {
-    //   this.user = user;
-    // });
   }
-
-  config = {
-    allowNumbersOnly: true,
-    length: 6,
-    isPasswordInput: false,
-    disableAutoFocus: false,
-    placeholder: '',
-    inputStyles: {
-      width: '50px',
-      height: '50px',
-    },
-  };
-
 
   ngOnInit() {
   }
@@ -80,24 +64,22 @@ export class LoginComponent implements OnInit {
 
     if (this.signinForm.value.phoneNumber) {
       localStorage.setItem(
-        'phoneNumber',
-        JSON.stringify(this.signinForm.value.phoneNumber)
+        'user',
+        JSON.stringify(this.signinForm.value)
       );
       this.authService
         .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
         .then((confirmationResult) => {
+          console.log(confirmationResult)
           localStorage.setItem(
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
-          localStorage.setItem(
-            'user',
-            JSON.stringify(this.signinForm.value)
-          );
-          console.log(localStorage.getItem('user'))
-          this.ngZone.run(() => {
-            this.router.navigate(['/verify-otp']).then();
-          });
+          // localStorage.setItem(
+          //   'phoneNumber',
+          //   JSON.stringify(this.signinForm.value.phoneNumber)
+          // );
+          this.router.navigate(['/verify-otp']).then();
         });
     }
   }
