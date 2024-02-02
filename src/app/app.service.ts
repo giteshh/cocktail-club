@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Product} from "../assets/data/products";
@@ -10,6 +10,7 @@ export class AppService {
 
   constructor() {
   }
+
   getCart(): any {
     return JSON.parse(<string>localStorage.getItem('cart'));
   }
@@ -38,6 +39,5 @@ export class AppService {
       arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
     }
     arr[index].quantity = quantity;
-    localStorage.setItem('cart', JSON.stringify(arr));
   }
 }

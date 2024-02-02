@@ -35,13 +35,15 @@ export class BeverageComponent {
     if (!this.existingHotBeverages) {
       this.appService.addToCart(hotBeverages);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
 
@@ -60,13 +62,15 @@ export class BeverageComponent {
     if (!this.existingColdBeverages) {
       this.appService.addToCart(coldBeverages);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
 

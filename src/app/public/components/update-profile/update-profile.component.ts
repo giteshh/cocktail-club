@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import firebase from "firebase/compat/app";
 
 @Component({
   selector: 'app-update-profile',
@@ -13,6 +14,7 @@ export class UpdateProfileComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('user') || '{}');
   phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
   userCart = JSON.parse(localStorage.getItem('cart') || '{}');
+  userData: any;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) {
@@ -23,6 +25,7 @@ export class UpdateProfileComponent implements OnInit {
     })
     console.log(this.userCart)
     console.log(this.user)
+    console.log('confirmation uidgg  '+ (localStorage.getItem('uid') || '{}'))
   }
 
   ngOnInit() {
@@ -39,12 +42,27 @@ export class UpdateProfileComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(updateProfileForm:any) {
     this.markProfileFormTouched();
     localStorage.setItem(
       'user',
       JSON.stringify(this.updateProfileForm.value)
     );
-    this.router.navigate(['/checkout'])
+    firebase.firestore().collection("users").doc(updateProfileForm.uid).update({
+      fullName: this.updateProfileForm.value.fullName,
+      email: this.updateProfileForm.value.email,
+      photoURL: "",
+      orders: "",
+      verificationId: "",
+      paymentId: "",
+      role: 2,
+      address: "",
+      state: "",
+      zipCode: "",
+    }).then(() => {
+      // ToDO add toaster msg
+      this.router.navigate(['/checkout']);
+    })
+
   }
 }

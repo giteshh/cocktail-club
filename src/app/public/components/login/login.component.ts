@@ -8,6 +8,7 @@ import firebase from "firebase/compat/app";
 import {getAuth, signInWithPhoneNumber} from "@angular/fire/auth";
 import auth = firebase.auth;
 import {environment} from "../../../../environments/environment";
+import {doc} from "@angular/fire/firestore";
 
 
 @Component({
@@ -32,8 +33,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
               private win: WindowService,
-              private router: Router,
-              private ngZone: NgZone) {
+              private router: Router) {
     this.signinForm = formBuilder.group({
       phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
@@ -79,7 +79,30 @@ export class LoginComponent implements OnInit {
           //   'phoneNumber',
           //   JSON.stringify(this.signinForm.value.phoneNumber)
           // );
-          this.router.navigate(['/verify-otp']).then();
+          firebase.firestore().collection("users").doc(confirmationResult.uid).set({
+            phoneNumber: this.signinForm.value.phoneNumber,
+            fullName: "",
+            email: "",
+            photoURL: "",
+            orders: "",
+            verificationId: "",
+            paymentId: "",
+            role: 2,
+            address: "",
+            state: "",
+            zipCode: "",
+          }).then(() => {
+            localStorage.setItem(
+              'uid',
+              JSON.stringify(confirmationResult.uid)
+            );
+            console.log('confirmation uid  '+ confirmationResult.uid)
+
+
+            // ToDO add toaster msg
+            this.router.navigate(['/verify-otp']).then();
+          })
+
         });
     }
   }

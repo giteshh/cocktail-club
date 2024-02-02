@@ -36,13 +36,15 @@ export class FastFoodComponent {
     if (!this.existingBurger) {
       this.appService.addToCart(burgers);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
   }
@@ -60,13 +62,15 @@ export class FastFoodComponent {
     if (!this.existingPizza) {
       this.appService.addToCart(pizza);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
   }
@@ -84,13 +88,15 @@ export class FastFoodComponent {
     if (!this.existingFries) {
       this.appService.addToCart(fries);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
   }

@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import {PageNotFoundComponent} from "./public/components/page-not-found/page-not-found.component";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {PageNotFoundComponent} from "./public/components/page-not-found/page-not
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     PublicModule,

@@ -82,6 +82,17 @@ nav {
   opacity: 0.5;
 }
 
+#lblCartCount {
+  font-weight: bold;
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  text-align: center;
+  background:  rgb(255, 105, 7);
+  margin-left: -20px;
+}
+
 
 @media only screen and (max-width: 600px) {
   nav {

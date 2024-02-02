@@ -33,12 +33,14 @@ export class CocktailComponent {
       this.appService.addToCart(cocktails);
       this.toastr.success('Selected item has been added to the cart!', '', {
         positionClass: 'toast-top-center',
-        timeOut: 2000,
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
         positionClass: 'toast-top-center',
-        timeOut: 2000,
+        timeOut: 3000,
+        closeButton: true
       });
     }
 

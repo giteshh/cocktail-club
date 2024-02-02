@@ -4,7 +4,7 @@
       <h1>Cocktail Club</h1>
       <p>Update profile to continue</p>
     </div>
-    <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit(updateProfileForm)">
       <div class="input">
         <i class="fa fa-user"></i>
         <input formControlName="fullName" type="text" placeholder="Full name"/>

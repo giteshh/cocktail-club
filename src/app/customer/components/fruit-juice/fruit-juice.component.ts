@@ -36,13 +36,15 @@ export class FruitJuiceComponent {
     if (!this.existingProduct) {
       this.appService.addToCart(juices);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
 
@@ -61,13 +63,15 @@ export class FruitJuiceComponent {
     if (!this.existingProduct) {
       this.appService.addToCart(shakes);
       this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     } else {
       this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 2000,
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true
       });
     }
   }

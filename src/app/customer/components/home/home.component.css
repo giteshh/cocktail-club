@@ -109,7 +109,7 @@
   }
 
   .carousel-img-section p {
-    font-size: 10px;
+    font-size: 12px;
     text-align: justify;
     line-height: 20px;
   }
@@ -156,18 +156,18 @@
   }
 
   .imgOnLeft-section p, .imgOnRight-section p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .btn {
     padding: 8px 24px;
     border-radius: 30px;
     margin-top: 15px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .sale-offer {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 

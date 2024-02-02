@@ -22,9 +22,14 @@ interface cartItems {
 export class CartComponent {
   product: Product[] = [];
   total = 0;
-  quantity = 1;
-  totalPrice = 0;
-  deliveryCharge = 40;
+  quantity = 0;
+  totalPrice = 0; //sum of all products added
+
+  min = 20;
+  max = 50;
+  sgst = 0;
+  cgst = 0;
+  deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20);
   productPrice = 0;
   cartProducts: cartItems[] = [];
   existingProduct = false;
@@ -64,11 +69,14 @@ export class CartComponent {
   doTotal() {
     this.total = 0;
     this.cart.forEach((product: Product) => {
-      let finalPrice = (product.price * product.quantity);
+      let finalPrice = (product.price * Number(product.quantity));
       this.total += finalPrice;
+      this.quantity += Number(product.quantity);
     });
     this.productPrice = this.total;
-    this.total += this.deliveryCharge;
+    this.sgst = (this.total * 5) / 100;
+    this.cgst = (this.total * 5) / 100;
+    this.total += this.deliveryCharge + this.sgst + this.cgst;
   }
 
   // placing order and removing items from localstorage

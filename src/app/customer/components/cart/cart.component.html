@@ -43,8 +43,20 @@
           <div class="custom-card-body">
             <table class="table">
               <tr>
+                <td>Total Items</td>
+                <td class="td2">{{quantity}} N</td>
+              </tr>
+              <tr>
                 <td>Total Price</td>
                 <td class="td2">{{productPrice | currency: 'INR'}} /-</td>
+              </tr>
+              <tr>
+                <td>SGST <span class="text-muted">(5%)</span></td>
+                <td class="td2">{{sgst | currency: 'INR'}} /-</td>
+              </tr>
+              <tr>
+                <td>CGST <span class="text-muted">(5%)</span></td>
+                <td class="td2">{{cgst | currency: 'INR'}} /-</td>
               </tr>
               <tr>
                 <td>Delivery Charge</td>
