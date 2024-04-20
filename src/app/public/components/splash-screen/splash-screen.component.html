@@ -1,0 +1,62 @@
+<div class="splash-screen-container" *ngIf="showSplash"
+     [ngStyle]="{
+    left: windowWidth,
+    opacity: opacityChange,
+    transition: splashTransition
+  }">
+  <div class="logo"></div>
+  <div class="label">
+    <div class="wrapper">
+
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1300 399">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #FAF8FF;
+            stroke:none;
+            stroke-width: 2px;
+            font-size: 387px;
+            font-family: Gabriola;
+            stroke-dasharray: 1360;
+            animation-iteration-count: 1;
+            animation: csvg 3s cubic-bezier(0, 0.23, 1, .1);
+          }
+
+          @keyframes csvg {
+            0% {
+              stroke: #fff;
+              stroke-width: 2px;
+              opacity: 0;
+              fill: none;
+              stroke-dasharray: 0;
+            }
+            30% {
+              stroke: #fff;
+              stroke-width: 2px;
+              opacity: 10;
+              fill: none;
+              /* stroke-dasharray: 1360; */
+            }
+            80% {
+              stroke: #fff;
+              stroke-width: 2px;
+              fill: rgba(255, 255, 255, 0);
+            }
+            100% {
+              opacity: 10;
+              fill: #FFE7FF;
+              stroke-dasharray: 1360;
+              outline: none;
+              stroke: none;
+            }
+          }
+
+        </style>
+      </defs>
+      <text id="id" data-name="Nihil Babu" class="cls-1" transform="translate(6 271)"><tspan x="0" y="0">Cocktail Club</tspan></text>
+      </svg>
+
+    </div>
+  </div>
+</div>

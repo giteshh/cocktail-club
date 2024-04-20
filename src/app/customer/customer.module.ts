@@ -14,6 +14,7 @@ import {FooterComponent} from "./components/footer/footer.component";
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrdersComponent } from './components/orders/orders.component';
+import {PublicModule} from "../public/public.module";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     CommonModule,
     CustomerRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PublicModule
   ]
 })
 export class CustomerModule { }
