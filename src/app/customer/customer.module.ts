@@ -15,6 +15,13 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrdersComponent } from './components/orders/orders.component';
 import {PublicModule} from "../public/public.module";
+import { BeersComponent } from './components/beers/beers.component';
+import { AlcoholComponent } from './components/alcohol/alcohol.component';
+import { CigarettesComponent } from './components/cigarettes/cigarettes.component';
+import { SnacksComponent } from './components/snacks/snacks.component';
+import { ColdDrinkComponent } from './components/cold-drink/cold-drink.component';
+import { PartyEssentialsComponent } from './components/party-essentials/party-essentials.component';
+import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.component';
 
 
 @NgModule({
@@ -29,7 +36,14 @@ import {PublicModule} from "../public/public.module";
     CartComponent,
     FooterComponent,
     CheckoutComponent,
-    OrdersComponent
+    OrdersComponent,
+    BeersComponent,
+    AlcoholComponent,
+    CigarettesComponent,
+    SnacksComponent,
+    ColdDrinkComponent,
+    PartyEssentialsComponent,
+    RentSpeakerComponent
 
   ],
   imports: [

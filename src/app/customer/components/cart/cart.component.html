@@ -29,7 +29,7 @@
               <input type="number" min="1" max="5" value="{{item.quantity}}"
                      (change)="addQty(i, $event)">
               <!--            <br>-->
-              <p id="itemPrice">{{ item.price | currency:'INR'}}/-</p>
+              <p id="itemPrice">{{ item.price | currency:'INR'}}</p>
             </div>
           </div>
           <hr>
@@ -48,23 +48,23 @@
               </tr>
               <tr>
                 <td>Total Price</td>
-                <td class="td2">{{productPrice | currency: 'INR'}} /-</td>
+                <td class="td2">{{productPrice | currency: 'INR'}}</td>
               </tr>
               <tr>
                 <td>SGST <span class="text-muted">(5%)</span></td>
-                <td class="td2">{{sgst | currency: 'INR'}} /-</td>
+                <td class="td2">{{sgst | currency: 'INR'}}</td>
               </tr>
               <tr>
                 <td>CGST <span class="text-muted">(5%)</span></td>
-                <td class="td2">{{cgst | currency: 'INR'}} /-</td>
+                <td class="td2">{{cgst | currency: 'INR'}}</td>
               </tr>
               <tr>
                 <td>Delivery Charge</td>
-                <td class="td2">{{deliveryCharge | currency: 'INR'}} /-</td>
+                <td class="td2">{{deliveryCharge | currency: 'INR'}}</td>
               </tr>
               <tr>
                 <td class="total-amount-heading">Total Amount</td>
-                <td class="finalAmount">{{total | currency: 'INR'}} /-</td>
+                <td class="finalAmount">{{total | currency: 'INR'}}</td>
               </tr>
             </table>
             <hr>
