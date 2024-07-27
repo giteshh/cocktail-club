@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Righteous);
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 nav {
   padding: 0;
@@ -7,7 +11,7 @@ nav {
 .container-fluid {
   display: flex;
   justify-content: space-between;
-  background: #ffffff;
+  background-color: rgba(255, 255, 247, 0.2);
 }
 
 .nav-link {
@@ -18,17 +22,12 @@ nav {
 }
 
 .nav-link:hover {
-  color: #1e3932;
-}
-
-.brand-logo {
-  width: 100%;
-  height: 100px;
+  font-weight: 600;
 }
 
 .nav-icons {
   width: 100%;
-  height: 30px;
+  height: 25px;
   padding: 0 10px;
 }
 
@@ -39,15 +38,18 @@ nav {
   text-align: center;
 }
 
+.navbar-brand img {
+  width: 50px;
+  height: 100%;
+}
+
 .navbar-brand h4 {
-  color: rgb(255, 105, 7);
-  //font-size: 22px;
   text-align: center;
+  font-weight: bolder;
+  font-size: 32px;
   letter-spacing: 2px;
-  //font-weight: bolder;
-  font-family: 'Righteous', serif;
-  font-size: 2em;
-  //text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+  color: rgb(255, 105, 7);
+  padding-top: 10px;
 }
 
 #onMobileCartIcon {
@@ -94,13 +96,14 @@ nav {
   width: 20px;
   border-radius: 50%;
   text-align: center;
-  background:  rgb(255, 105, 7);
+  background: rgb(255, 105, 7);
   margin-left: -20px;
 }
 
-.sec-3 {
-  display: flex;
+.category-links {
+  background-color: rgba(255, 255, 247, 0.2);
 }
+
 @media only screen and (max-width: 600px) {
   nav {
     width: 100%;
