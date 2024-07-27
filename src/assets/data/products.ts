@@ -1192,6 +1192,14 @@ const coldDrinks = [
 const partyEssentials = [
   {
     "id": 1,
+    "name": "Bottle Opener",
+    "price": 50,
+    "image": "/assets/images/products/party-essentials/bottle-opener.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 2,
     "name": "Lighter",
     "price": 10,
     "image": "/assets/images/products/party-essentials/lighter.png",
@@ -1199,7 +1207,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Match Box",
     "price": 5,
     "image": "/assets/images/products/party-essentials/matchbox.png",
@@ -1207,7 +1215,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Water Bottle",
     "price": 20,
     "image": "/assets/images/products/party-essentials/water-bottle.png",
@@ -1215,7 +1223,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "Ice Cubes",
     "price": 20,
     "image": "/assets/images/products/party-essentials/ice-box.png",
@@ -1224,7 +1232,7 @@ const partyEssentials = [
   },
 
   {
-    "id": 5,
+    "id": 6,
     "name": "Beer Mug",
     "price": 60,
     "image": "/assets/images/products/party-essentials/beer-mug.png",
@@ -1232,7 +1240,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Disposable Glass",
     "price": 10,
     "image": "/assets/images/products/party-essentials/disposable-glass.png",
@@ -1240,7 +1248,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Confetti",
     "price": 80,
     "image": "/assets/images/products/party-essentials/confetti.png",
