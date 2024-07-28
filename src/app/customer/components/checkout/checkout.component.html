@@ -1,4 +1,3 @@
-  <app-navbar></app-navbar>
 <div class="containerfull">
   <div class="checkout-form">
     <div class="header">
@@ -14,15 +13,23 @@
         Invalid Name
       </div>
       <div class="input">
-        <i class="fa fa-user"></i>
-        <input formControlName="address" type="text" placeholder="Address"/>
+        <i class="fa fa-phone"></i>
+        <input formControlName="phoneNumber" type="text" placeholder="Phone number"/>
+      </div>
+      <div *ngIf="checkoutForm.controls['phoneNumber'].touched && checkoutForm.controls['phoneNumber'].invalid"
+           class="text-danger">
+        Invalid Phone Number
+      </div>
+      <div class="input">
+        <i class="fa fa-house"></i>
+        <input formControlName="address" type="text" placeholder="House No. / Colony name"/>
       </div>
       <div *ngIf="checkoutForm.controls['address'].touched && checkoutForm.controls['address'].invalid"
            class="text-danger">
         Invalid Address
       </div>
       <div class="input">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-city"></i>
         <input formControlName="city" type="text" placeholder="City"/>
       </div>
       <div *ngIf="checkoutForm.controls['city'].touched && checkoutForm.controls['city'].invalid"
@@ -30,15 +37,7 @@
         Invalid City
       </div>
       <div class="input">
-        <i class="fa fa-user"></i>
-        <input formControlName="state" type="text" placeholder="State"/>
-      </div>
-      <div *ngIf="checkoutForm.controls['state'].touched && checkoutForm.controls['state'].invalid"
-           class="text-danger">
-        Invalid State
-      </div>
-      <div class="input">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-location-dot"></i>
         <input formControlName="zipCode" type="text" placeholder="Zip Code"/>
       </div>
       <div *ngIf="checkoutForm.controls['zipCode'].touched && checkoutForm.controls['zipCode'].invalid"
@@ -46,7 +45,8 @@
         Invalid Zip code
       </div>
 
-      <button type="submit" class="btn">Continue to pay</button>
+      <button type="submit" class="btn">Continue to pay {{total | currency:"INR"}}</button>
+      <a class="text-danger" href="#" routerLink="/cart">Cancel</a>
     </form>
   </div>
 </div>

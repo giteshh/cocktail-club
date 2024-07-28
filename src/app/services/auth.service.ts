@@ -51,7 +51,7 @@ export class AuthService {
     signOut(auth).then(() => {
       localStorage.removeItem('user');
       // localStorage.removeItem('verificationId');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/signin']);
       // localStorage.clear();
       this.userStatus();
     });
@@ -65,7 +65,7 @@ export class AuthService {
     return this.userLogInStatus = false;
   }
 
-  get isLoggedIn(): boolean {
+  get isLoggedIn(): any {
     const user = JSON.parse(localStorage.getItem('verificationId') || '{}');
     return user !== null;
   }

@@ -14,15 +14,17 @@ export class NavbarComponent {
 
   userLoggedIn = this.authService.userStatus();
   // userLoggedIn = this.authService.isLoggedIn;
-  userData = JSON.parse(localStorage.getItem('user') || '{}');
+  fullName;
   quantity;
 
 
   constructor(private router: Router,
               private authService: AuthService,
               private appService: AppService) {
+    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
     this.quantity = Number(localStorage.getItem('quantity'));
     console.log(this.quantity)
+    console.log(this.userLoggedIn)
   }
 
   shouldDisplayLink(link: string): boolean {

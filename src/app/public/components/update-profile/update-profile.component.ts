@@ -11,21 +11,26 @@ import firebase from "firebase/compat/app";
 export class UpdateProfileComponent implements OnInit {
 
   public updateProfileForm: FormGroup;
-  user = JSON.parse(localStorage.getItem('user') || '{}');
-  phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
-  userCart = JSON.parse(localStorage.getItem('cart') || '{}');
-  userData: any;
+  user: any = {};
+  phoneNumber;
+  verificationId;
+  fullName;
+  email;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) {
+    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
+    this.verificationId = JSON.parse(localStorage.getItem('verificationId') || '{}');
+    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
+    this.email = JSON.parse(localStorage.getItem('email') || '{}');
+
     this.updateProfileForm = formBuilder.group({
-      fullName: [this.user.fullName, Validators.required],
-      phoneNumber: [{value: this.user.phoneNumber, disabled: true}, Validators.required],
-      email: [this.user.email, Validators.required],
+      fullName: [this.fullName, Validators.required],
+      phoneNumber: [{value: this.phoneNumber, disabled: true}, Validators.required],
+      email: [this.email, Validators.required],
     })
-    console.log(this.userCart)
-    console.log(this.user)
-    console.log('confirmation uidgg  '+ (localStorage.getItem('uid') || '{}'))
+    this.getProfile();
+    console.log(firebase.auth().currentUser)
   }
 
   ngOnInit() {
@@ -42,26 +47,55 @@ export class UpdateProfileComponent implements OnInit {
     }
   }
 
-  onSubmit(updateProfileForm:any) {
+  getProfile() {
+
+    let userId = firebase.auth().currentUser?.uid;
+
+    firebase.firestore().collection("users").doc(userId).get().then((documentSnapshot) => {
+
+      this.user = documentSnapshot.data();
+      // this.user.id = documentSnapshot.id;
+      console.log(this.user);
+
+    }).catch((error) => {
+      console.log(error);
+    })
+
+  }
+
+
+  onSubmit(updateProfileForm: any) {
     this.markProfileFormTouched();
-    localStorage.setItem(
-      'user',
-      JSON.stringify(this.updateProfileForm.value)
-    );
-    firebase.firestore().collection("users").doc(updateProfileForm.uid).update({
-      fullName: this.updateProfileForm.value.fullName,
-      email: this.updateProfileForm.value.email,
+    let email: string = updateProfileForm.value.email;
+    let fullName: string = updateProfileForm.value.fullName;
+
+    let userId = firebase.auth().currentUser?.uid;
+
+    firebase.firestore().collection("users").doc(userId).set({
+      phoneNumber: this.phoneNumber,
+      fullName: fullName,
+      email: email,
       photoURL: "",
       orders: "",
-      verificationId: "",
+      verificationId: this.verificationId,
       paymentId: "",
       role: 2,
       address: "",
       state: "",
       zipCode: "",
     }).then(() => {
-      // ToDO add toaster msg
-      this.router.navigate(['/checkout']);
+      localStorage.setItem(
+        'fullName',
+        JSON.stringify(this.updateProfileForm.value.fullName)
+      );
+      localStorage.setItem(
+        'email',
+        JSON.stringify(this.updateProfileForm.value.email)
+      );
+      this.router.navigate(['/home']);
+
+    }).catch((error) => {
+      console.log(error)
     })
 
   }

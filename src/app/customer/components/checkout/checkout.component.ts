@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import firebase from "firebase/compat/app";
 
 @Component({
   selector: 'app-checkout',
@@ -12,25 +13,74 @@ import {ToastrService} from "ngx-toastr";
 export class CheckoutComponent {
   checkoutForm: FormGroup;
   user: any;
+  fullName;
+  phoneNumber;
+  address;
+  city;
+  zipCode;
+  total;
+
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
               private router: Router,
               private toastr: ToastrService) {
 
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
+    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
+    this.address = JSON.parse(localStorage.getItem('address') || '{}');
+    this.city = JSON.parse(localStorage.getItem('city') || '{}');
+    this.zipCode = JSON.parse(localStorage.getItem('zipCode') || '{}');
+    this.total = JSON.parse(localStorage.getItem('total') || '{}');
 
     this.checkoutForm = formBuilder.group({
-      fullName: [this.user.fullName, Validators.required],
+      fullName: [this.fullName, Validators.required],
+      phoneNumber: [this.phoneNumber, Validators.required],
       address: ['', Validators.required],
       city: ['', Validators.required],
-      state: ['', Validators.required],
-      zipCode: ['', Validators.required],
+      zipCode: [this.zipCode, Validators.required],
     })
   }
 
   onSubmit() {
-    this.payWithRazor();
+
+    let fullName: string = this.checkoutForm.value.fullName;
+    let address = JSON.stringify(this.checkoutForm.value.address);
+    let city = this.city;
+    let zipCode: string = this.checkoutForm.value.zipCode;
+
+    let userId = firebase.auth().currentUser?.uid;
+
+    firebase.firestore().collection("users").doc(userId).set({
+      phoneNumber: this.phoneNumber,
+      fullName: fullName,
+      photoURL: "",
+      orders: "",
+      paymentId: "",
+      role: 2,
+      address: address,
+      city: city,
+      zipCode: zipCode,
+    }).then(() => {
+      if(!address){
+      localStorage.setItem(
+        'address',
+        JSON.stringify(this.checkoutForm.value.address)
+      );
+      }
+      localStorage.setItem(
+        'city',
+        JSON.stringify(this.checkoutForm.value.city)
+      );
+      localStorage.setItem(
+        'zipCode',
+        JSON.stringify(this.checkoutForm.value.zipCode)
+      );
+      this.payWithRazor();
+
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   createRzpayOrder(data: any) {
@@ -40,14 +90,14 @@ export class CheckoutComponent {
   payWithRazor() {
     const options: any = {
       key: 'rzp_test_pKtL3VyA60NvPP',
-      amount: 125500, // amount should be in paise format to display Rs 1255 without decimal point
+      amount: this.total * 100, // amount should be in paise format to display Rs 1255 without decimal point
       currency: 'INR',
       name: 'Cocktail Club', // company name or product name
       description: '',
       id: Math.random().toString(36),
       prefill: {
-        name: 'sai kumar',
-        email: 'sai@gmail.com',
+        name: 'Cocktail Club',
+        email: 'info@cocktailclub.com',
         phone: '9898989898',
         method: "card"
       },
@@ -69,7 +119,7 @@ export class CheckoutComponent {
         positionClass: 'toast-top-right',
         timeOut: 3000,
       });
-      this.toastr.info('Waiting for Restaurant to accept your order', '', {
+      this.toastr.info('Waiting for Cocktail Club to accept your order', '', {
         positionClass: 'toast-top-right',
         timeOut: 3000,
       });
@@ -79,6 +129,10 @@ export class CheckoutComponent {
     options.modal.ondismiss = (() => {
       // handle the case when user closes the form while transaction is in progress
       console.log('Transaction cancelled.');
+      this.toastr.warning('Transaction failed. Please try again...', '', {
+        positionClass: 'toast-top-right',
+        timeOut: 3000,
+      });
       this.router.navigate(['/cart'])
     });
     const rzp = new this.winRef.nativeWindow.Razorpay(options);

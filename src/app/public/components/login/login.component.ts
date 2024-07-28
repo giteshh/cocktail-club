@@ -70,22 +70,22 @@ export class LoginComponent implements OnInit {
       this.authService
         .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
         .then((confirmationResult) => {
-          console.log(confirmationResult)
-          localStorage.setItem(
+          console.log(confirmationResult);
+         localStorage.setItem(
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
-          // localStorage.setItem(
-          //   'phoneNumber',
-          //   JSON.stringify(this.signinForm.value.phoneNumber)
-          // );
+          localStorage.setItem(
+            'phoneNumber',
+            JSON.stringify(this.signinForm.value.phoneNumber)
+          );
           firebase.firestore().collection("users").doc(confirmationResult.uid).set({
             phoneNumber: this.signinForm.value.phoneNumber,
             fullName: "",
             email: "",
             photoURL: "",
             orders: "",
-            verificationId: "",
+            verificationId:  confirmationResult.verificationId,
             paymentId: "",
             role: 2,
             address: "",

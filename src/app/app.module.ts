@@ -9,17 +9,21 @@ import {AdminModule} from "./admin/admin.module";
 import {CustomerModule} from "./customer/customer.module";
 import {PublicModule} from "./public/public.module";
 import {NgOtpInputModule} from "ng-otp-input";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 import {environment} from "../environments/environment";
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
 import {PageNotFoundComponent} from "./public/components/page-not-found/page-not-found.component";
 import {HttpClientModule} from "@angular/common/http";
+import firebase from "firebase/compat/app";
+
+
+firebase.initializeApp(environment.firebase);
 
 
 @NgModule({

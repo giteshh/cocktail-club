@@ -56,13 +56,13 @@
               <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">
               <!--              </a>-->
             </button>
-            <ul class="dropdown-menu dropdown-menu-center" *ngIf="userData">
-              <li class="dropdown-item"><b>Hi {{userData.fullName}}</b></li>
+            <ul class="dropdown-menu dropdown-menu-center" *ngIf="userLoggedIn">
+              <li class="dropdown-item"><b>Hi {{fullName}}</b></li>
               <li><a class="dropdown-item" href="#" routerLink="/update-profile">Edit Profile</a></li>
               <li><a class="dropdown-item" href="#" routerLink="/orders">My Orders</a></li>
               <li><a class="dropdown-item" href="#" (click)="logOut()">Logout</a></li>
             </ul>
-            <ul class="dropdown-menu dropdown-menu-center" *ngIf="!userData">
+            <ul class="dropdown-menu dropdown-menu-center" *ngIf="!userLoggedIn">
               <li><a class="dropdown-item" href="#" routerLink="/signin">Sign in/Sign up</a></li>
             </ul>
           </div>
