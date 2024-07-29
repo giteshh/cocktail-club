@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
   user = JSON.parse(localStorage.getItem('user') || '{}');
+  check;
 
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
@@ -37,6 +38,10 @@ export class LoginComponent implements OnInit {
     this.signinForm = formBuilder.group({
       phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
+    // console.log(this.user)
+    this.check = this.authService.isLoggedIn;
+    console.log(this.check)
+    console.log(JSON.parse(localStorage.getItem('verificationId') || '{}'))
   }
 
   ngOnInit() {

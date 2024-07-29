@@ -7,6 +7,7 @@ import {AuthGuard} from "../guards/auth.guard";
 import {SplashScreenComponent} from "./components/splash-screen/splash-screen.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: 'signin', pathMatch: "full"},
   {path: 'signin', component: LoginComponent},
   {path: 'verify-otp', component: VerifyOtpComponent},
   {path: 'update-profile', component: UpdateProfileComponent},

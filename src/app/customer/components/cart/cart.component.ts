@@ -35,11 +35,14 @@ export class CartComponent {
   existingProduct = false;
   showButton = false;
   cart: Product[] = [];
+  loggedIn;
 
   constructor(private appService: AppService,
               private router: Router,
               private authService: AuthService) {
     this.getCartItems();
+    this.loggedIn = this.authService.userStatus();
+    console.log(this.loggedIn + 'hhhhhhhhhhhh');
   }
 
   // get all the items added to cart from localstorage
@@ -77,6 +80,10 @@ export class CartComponent {
     this.sgst = (this.total * 5) / 100;
     this.cgst = (this.total * 5) / 100;
     this.total += this.deliveryCharge + this.sgst + this.cgst;
+    localStorage.setItem(
+      'total',
+      JSON.stringify(this.total)
+    );
   }
 
   // placing order and removing items from localstorage

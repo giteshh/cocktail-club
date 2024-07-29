@@ -608,7 +608,7 @@ const cocktail = [
 
 const beers = [
   {
-    "id": 1,
+    "id": 72,
     "name": "Budweiser Magnum",
     "price": 280,
     "image": "/assets/images/products/beers/budweiser-magnum.png",
@@ -616,7 +616,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 73,
     "name": "Budweiser",
     "price": 190,
     "image": "/assets/images/products/beers/budweiser.png",
@@ -624,7 +624,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 74,
     "name": "Carlsberg Elephant",
     "price": 220,
     "image": "/assets/images/products/beers/carlsberg-elephant.png",
@@ -632,7 +632,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 75,
     "name": "Kingfisher Ultra",
     "price": 180,
     "image": "/assets/images/products/beers/kingfisher-ultra.png",
@@ -641,7 +641,7 @@ const beers = [
   },
 
   {
-    "id": 5,
+    "id": 76,
     "name": "Kingfisher Strong",
     "price": 200,
     "image": "/assets/images/products/beers/kingfisher-strong.png",
@@ -649,7 +649,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 77,
     "name": "Tuborg",
     "price": 160,
     "image": "/assets/images/products/beers/tuborg.png",
@@ -657,7 +657,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 78,
     "name": "Bira Boom",
     "price": 190,
     "image": "/assets/images/products/beers/bira-boom.png",
@@ -666,7 +666,7 @@ const beers = [
   },
 
   {
-    "id": 8,
+    "id": 79,
     "name": "Heineken",
     "price": 240,
     "image": "/assets/images/products/beers/heineken.png",
@@ -674,7 +674,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 9,
+    "id": 80,
     "name": "Godfather",
     "price": 250,
     "image": "/assets/images/products/beers/godfather.png",
@@ -682,7 +682,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 10,
+    "id": 81,
     "name": "Bira Blonde",
     "price": 180,
     "image": "/assets/images/products/beers/bira-blonde.png",
@@ -690,7 +690,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 11,
+    "id": 82,
     "name": "Carlsberg",
     "price": 170,
     "image": "/assets/images/products/beers/carlsberg.png",
@@ -698,7 +698,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 12,
+    "id": 83,
     "name": "Royal Challenge",
     "price": 150,
     "image": "/assets/images/products/beers/royal-challenge-beer.png",
@@ -706,7 +706,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 13,
+    "id": 84,
     "name": "Haywards 5000",
     "price": 120,
     "image": "/assets/images/products/beers/haywards5000.png",
@@ -714,7 +714,7 @@ const beers = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 14,
+    "id": 85,
     "name": "Simba",
     "price": 140,
     "image": "/assets/images/products/beers/simba.png",
@@ -726,7 +726,7 @@ const beers = [
 
 const alcohol = [
   {
-    "id": 1,
+    "id": 86,
     "name": "Black Dog",
     "price": 6500,
     "image": "/assets/images/products/alcohol/black-dog.png",
@@ -734,7 +734,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 87,
     "name": "Ballentine's",
     "price": 5650,
     "image": "/assets/images/products/alcohol/ballentines.png",
@@ -742,7 +742,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 88,
     "name": "Jack Daniel's",
     "price": 4590,
     "image": "/assets/images/products/alcohol/jack-deniels.png",
@@ -750,7 +750,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 89,
     "name": "Chivas Regal",
     "price": 180,
     "image": "/assets/images/products/alcohol/chivas-regal.png",
@@ -759,7 +759,7 @@ const alcohol = [
   },
 
   {
-    "id": 5,
+    "id": 90,
     "name": "Jameson",
     "price": 3059,
     "image": "/assets/images/products/alcohol/jameson.png",
@@ -767,7 +767,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 91,
     "name": "Red Label",
     "price": 2830,
     "image": "/assets/images/products/alcohol/red-label.png",
@@ -775,7 +775,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 92,
     "name": "Blue Label",
     "price": 2900,
     "image": "/assets/images/products/alcohol/blue-label.png",
@@ -784,7 +784,7 @@ const alcohol = [
   },
 
   {
-    "id": 8,
+    "id": 93,
     "name": "Indri",
     "price": 3700,
     "image": "/assets/images/products/alcohol/indri.png",
@@ -792,7 +792,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 9,
+    "id": 94,
     "name": "Teacher's",
     "price": 2030,
     "image": "/assets/images/products/alcohol/teachers.png",
@@ -800,7 +800,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 10,
+    "id": 95,
     "name": "Vat 69",
     "price": 1856,
     "image": "/assets/images/products/alcohol/vat69.png",
@@ -808,7 +808,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 11,
+    "id": 96,
     "name": "McDowell's No1",
     "price": 1800,
     "image": "/assets/images/products/alcohol/mcdowells-no1.png",
@@ -816,7 +816,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 12,
+    "id": 97,
     "name": "Blender's Pride",
     "price": 1450,
     "image": "/assets/images/products/alcohol/blenders-pride.png",
@@ -824,7 +824,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 13,
+    "id": 98,
     "name": "Royal Challenge",
     "price": 970,
     "image": "/assets/images/products/alcohol/royal-challenge.png",
@@ -832,7 +832,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 14,
+    "id": 99,
     "name": "Royal Stag",
     "price": 990,
     "image": "/assets/images/products/alcohol/royal-stag.png",
@@ -840,7 +840,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 15,
+    "id": 100,
     "name": "Old Monk",
     "price": 1050,
     "image": "/assets/images/products/alcohol/old-monk.png",
@@ -848,7 +848,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 16,
+    "id": 101,
     "name": "Champagne",
     "price": 1200,
     "image": "/assets/images/products/alcohol/champagne.png",
@@ -856,7 +856,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 17,
+    "id": 102,
     "name": "Absolut Vodka",
     "price": 2090,
     "image": "/assets/images/products/alcohol/absolut-vodka.png",
@@ -864,7 +864,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 18,
+    "id": 103,
     "name": "Magic Moments Orange",
     "price": 880,
     "image": "/assets/images/products/alcohol/magic-moments-orange.png",
@@ -872,7 +872,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 19,
+    "id": 104,
     "name": "Magic Moments-Apple",
     "price": 880,
     "image": "/assets/images/products/alcohol/magic-moments-apple.png",
@@ -880,7 +880,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 20,
+    "id": 105,
     "name": "Red Wine",
     "price": 990,
     "image": "/assets/images/products/alcohol/red-wine.png",
@@ -888,7 +888,7 @@ const alcohol = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 21,
+    "id": 106,
     "name": "Joven Tequila",
     "price": 2070,
     "image": "/assets/images/products/alcohol/tequila.png",
@@ -900,7 +900,7 @@ const alcohol = [
 
 const cigarettes = [
   {
-    "id": 1,
+    "id": 107,
     "name": "Badi Goldflake",
     "price": 65,
     "image": "/assets/images/products/cigarettes/badi-goldflake.png",
@@ -908,7 +908,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 108,
     "name": "Choti Goldflake",
     "price": 56,
     "image": "/assets/images/products/cigarettes/choti-goldflake.png",
@@ -916,7 +916,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 109,
     "name": "Badi Goldflake Light",
     "price": 45,
     "image": "/assets/images/products/cigarettes/badi-goldflake-light.png",
@@ -924,7 +924,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 110,
     "name": "Choti Goldflake Light",
     "price": 40,
     "image": "/assets/images/products/cigarettes/choti-goldflake-light.png",
@@ -933,7 +933,7 @@ const cigarettes = [
   },
 
   {
-    "id": 5,
+    "id": 111,
     "name": "Paan",
     "price": 59,
     "image": "/assets/images/products/cigarettes/goldflake-paan.png",
@@ -941,7 +941,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 112,
     "name": "Regular",
     "price": 30,
     "image": "/assets/images/products/cigarettes/classic-regular.png",
@@ -949,7 +949,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 113,
     "name": "Mild",
     "price": 40,
     "image": "/assets/images/products/cigarettes/classic-mild.png",
@@ -958,7 +958,7 @@ const cigarettes = [
   },
 
   {
-    "id": 8,
+    "id": 114,
     "name": "Ultramild",
     "price": 80,
     "image": "/assets/images/products/cigarettes/classic-ultramild.png",
@@ -966,7 +966,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 9,
+    "id": 115,
     "name": "Connect",
     "price": 70,
     "image": "/assets/images/products/cigarettes/classic-connect.png",
@@ -974,7 +974,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 10,
+    "id": 116,
     "name": "Double Switch",
     "price": 65,
     "image": "/assets/images/products/cigarettes/classic-doubleswitch.png",
@@ -982,7 +982,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 11,
+    "id": 117,
     "name": "Advance",
     "price": 85,
     "image": "/assets/images/products/cigarettes/advance.png",
@@ -990,7 +990,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 12,
+    "id": 118,
     "name": "Choti Advance",
     "price": 95,
     "image": "/assets/images/products/cigarettes/choti-advance.png",
@@ -998,7 +998,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 13,
+    "id": 119,
     "name": "Clove Mix",
     "price": 97,
     "image": "/assets/images/products/cigarettes/clove-mix.png",
@@ -1006,7 +1006,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 14,
+    "id": 120,
     "name": "Marlboro Double Switch",
     "price": 99,
     "image": "/assets/images/products/cigarettes/double-switch.png",
@@ -1014,7 +1014,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 15,
+    "id": 121,
     "name": "Pocket",
     "price": 105,
     "image": "/assets/images/products/cigarettes/pocket.png",
@@ -1022,7 +1022,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 16,
+    "id": 122,
     "name": "American Fruit",
     "price": 120,
     "image": "/assets/images/products/cigarettes/american-fruit.png",
@@ -1030,7 +1030,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 17,
+    "id": 123,
     "name": "American Clove",
     "price": 110,
     "image": "/assets/images/products/cigarettes/american-clove.png",
@@ -1038,7 +1038,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 18,
+    "id": 124,
     "name": "Flake Excel",
     "price": 88,
     "image": "/assets/images/products/cigarettes/flake-excel.png",
@@ -1046,7 +1046,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 19,
+    "id": 125,
     "name": "Flake Liberty",
     "price": 88,
     "image": "/assets/images/products/cigarettes/flake-liberty.png",
@@ -1054,7 +1054,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 20,
+    "id": 126,
     "name": "Flake Mint",
     "price": 99,
     "image": "/assets/images/products/cigarettes/flake-mint.png",
@@ -1062,7 +1062,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 21,
+    "id": 127,
     "name": "Bristol",
     "price": 105,
     "image": "/assets/images/products/cigarettes/bristol.png",
@@ -1072,7 +1072,7 @@ const cigarettes = [
 ]
 const snacks = [
   {
-    "id": 1,
+    "id": 128,
     "name": "Peanuts",
     "price": 20,
     "image": "/assets/images/products/snacks/peanuts.png",
@@ -1080,7 +1080,7 @@ const snacks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 129,
     "name": "Cashew Nuts",
     "price": 60,
     "image": "/assets/images/products/snacks/cashew-nuts.png",
@@ -1088,7 +1088,7 @@ const snacks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 130,
     "name": "Simply Salted",
     "price": 30,
     "image": "/assets/images/products/snacks/simply-salted.png",
@@ -1096,7 +1096,7 @@ const snacks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 131,
     "name": "Cream & Onions",
     "price": 30,
     "image": "/assets/images/products/snacks/cream-and-onions.png",
@@ -1105,7 +1105,7 @@ const snacks = [
   },
 
   {
-    "id": 5,
+    "id": 132,
     "name": "Tomato Twist",
     "price": 30,
     "image": "/assets/images/products/snacks/tomato-twist.png",
@@ -1113,7 +1113,7 @@ const snacks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 133,
     "name": "Pringles",
     "price": 70,
     "image": "/assets/images/products/snacks/pringles.png",
@@ -1121,7 +1121,7 @@ const snacks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 134,
     "name": "Doritos",
     "price": 50,
     "image": "/assets/images/products/snacks/doritos.png",
@@ -1132,7 +1132,7 @@ const snacks = [
 
 const coldDrinks = [
   {
-    "id": 1,
+    "id": 135,
     "name": "Sprite",
     "price": 40,
     "image": "/assets/images/products/cold-drink/sprite.png",
@@ -1140,7 +1140,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 136,
     "name": "Soda",
     "price": 50,
     "image": "/assets/images/products/cold-drink/soda.png",
@@ -1148,7 +1148,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 137,
     "name": "Coca Cola",
     "price": 45,
     "image": "/assets/images/products/cold-drink/coca-cola.png",
@@ -1156,7 +1156,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 138,
     "name": "Pepsi",
     "price": 40,
     "image": "/assets/images/products/cold-drink/pepsi.png",
@@ -1165,7 +1165,7 @@ const coldDrinks = [
   },
 
   {
-    "id": 5,
+    "id": 139,
     "name": "Mountain Dew",
     "price": 45,
     "image": "/assets/images/products/cold-drink/mountain-dew.png",
@@ -1173,7 +1173,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 6,
+    "id": 140,
     "name": "Sting",
     "price": 20,
     "image": "/assets/images/products/cold-drink/sting.png",
@@ -1181,7 +1181,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 141,
     "name": "Jeeru",
     "price": 20,
     "image": "/assets/images/products/cold-drink/jeeru.png",
@@ -1191,7 +1191,15 @@ const coldDrinks = [
 ]
 const partyEssentials = [
   {
-    "id": 1,
+    "id": 142,
+    "name": "Vape Hookah",
+    "price": 150,
+    "image": "/assets/images/products/party-essentials/vape.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 143,
     "name": "Bottle Opener",
     "price": 50,
     "image": "/assets/images/products/party-essentials/bottle-opener.png",
@@ -1199,7 +1207,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 144,
     "name": "Lighter",
     "price": 10,
     "image": "/assets/images/products/party-essentials/lighter.png",
@@ -1207,7 +1215,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 3,
+    "id": 145,
     "name": "Match Box",
     "price": 5,
     "image": "/assets/images/products/party-essentials/matchbox.png",
@@ -1215,7 +1223,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 4,
+    "id": 146,
     "name": "Water Bottle",
     "price": 20,
     "image": "/assets/images/products/party-essentials/water-bottle.png",
@@ -1223,7 +1231,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 5,
+    "id": 147,
     "name": "Ice Cubes",
     "price": 20,
     "image": "/assets/images/products/party-essentials/ice-box.png",
@@ -1232,7 +1240,7 @@ const partyEssentials = [
   },
 
   {
-    "id": 6,
+    "id": 148,
     "name": "Beer Mug",
     "price": 60,
     "image": "/assets/images/products/party-essentials/beer-mug.png",
@@ -1240,7 +1248,7 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 7,
+    "id": 149,
     "name": "Disposable Glass",
     "price": 10,
     "image": "/assets/images/products/party-essentials/disposable-glass.png",
@@ -1248,32 +1256,112 @@ const partyEssentials = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 8,
-    "name": "Confetti",
+    "id": 150,
+    "name": "Disposable plate",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/disposable-plate.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 151,
+    "name": "Confetti/Bomber",
     "price": 80,
     "image": "/assets/images/products/party-essentials/confetti.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
+  {
+    "id": 152,
+    "name": "Playing Cards",
+    "price": 30,
+    "image": "/assets/images/products/party-essentials/cards.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 153,
+    "name": "UNO Cards",
+    "price": 40,
+    "image": "/assets/images/products/party-essentials/uno-cards.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 154,
+    "name": "Tissue Box",
+    "price": 50,
+    "image": "/assets/images/products/party-essentials/tissue-box.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 155,
+    "name": "Sunglass",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/party-glasses.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 156,
+    "name": "Party Mask",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/party-mask.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 157,
+    "name": "Perfume",
+    "price": 15,
+    "image": "/assets/images/products/party-essentials/perfume-spray.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 158,
+    "name": "Acidity Tablet",
+    "price": 40,
+    "image": "/assets/images/products/party-essentials/acidity-tablet.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 159,
+    "name": "Vomiting Tablet",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/vomit-tablet.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 ]
 
 const rentSpeaker = [
   {
-    "id": 1,
+    "id": 160,
     "name": "Party Speaker",
-    "price": 500,
+    "price": 200,
     "image": "/assets/images/products/rent-party-speaker/speaker.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
-    "id": 2,
+    "id": 161,
     "name": "Disco Lights",
-    "price": 350,
+    "price": 250,
     "image": "/assets/images/products/rent-party-speaker/disco-light.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+  },
+  {
+    "id": 162,
+    "name": "Hookah",
+    "price": 180,
+    "image": "/assets/images/products/rent-party-speaker/hookah.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
 ]
 
 export {
