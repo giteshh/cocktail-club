@@ -2,7 +2,6 @@ import {Injectable, NgZone} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import {Router} from "@angular/router";
-import {getAuth, signOut} from "@angular/fire/auth";
 
 
 @Injectable({
@@ -16,7 +15,7 @@ export class AuthService {
 
   constructor(private fireAuth: AngularFireAuth,
               private router: Router) {
-    this.userStatus();
+    // this.userStatus();
   }
 
   signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
@@ -48,8 +47,6 @@ export class AuthService {
   }
 
   doSignOut() {
-
-
     localStorage.removeItem('verificationId');
     this.userLogInStatus = false;
     firebase.auth().signOut();
@@ -59,7 +56,7 @@ export class AuthService {
   }
 
   userStatus() {
-    const user = JSON.parse(localStorage.getItem('verificationId') || '{}');
+    const user = (localStorage.getItem('verificationId') || '');
     if (user) {
       return this.userLogInStatus = true;
     }
@@ -67,7 +64,7 @@ export class AuthService {
   }
 
   get isLoggedIn(): any {
-    const user = JSON.parse(localStorage.getItem('verificationId') || '{}');
+    const user = JSON.parse(localStorage.getItem('verificationId') ?? '');
     return user !== null;
   }
 }

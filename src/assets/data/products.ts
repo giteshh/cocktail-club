@@ -137,7 +137,7 @@ const burgers = [
   },
   {
     "id": 16,
-    "name": "Veggie Burger",
+    "name": "Veggie",
     "price": 39,
     "image": "/assets/images/products/fastfood/veggie.png",
     "quantity": 1,
@@ -153,7 +153,7 @@ const burgers = [
   },
   {
     "id": 18,
-    "name": "Double Burger",
+    "name": "Double patty",
     "price": 229,
     "image": "/assets/images/products/fastfood/doubleburger.png",
     "quantity": 1,
@@ -188,7 +188,7 @@ const burgers = [
 const pizza = [
   {
     "id": 22,
-    "name": "Cheesilious pizza",
+    "name": "Cheesilious",
     "price": 699,
     "image": "/assets/images/products/fastfood/cheesilisious.png",
     "quantity": 1,
@@ -204,7 +204,7 @@ const pizza = [
   },
   {
     "id": 24,
-    "name": "Margherita pizza",
+    "name": "Margherita",
     "price": 299,
     "image": "/assets/images/products/fastfood/margherita.png",
     "quantity": 1,
@@ -212,7 +212,7 @@ const pizza = [
   },
   {
     "id": 25,
-    "name": "Pepperoni ",
+    "name": "Pepperoni",
     "price": 319,
     "image": "/assets/images/products/fastfood/pepperoni.png",
     "quantity": 1,
@@ -1193,7 +1193,7 @@ const partyEssentials = [
   {
     "id": 142,
     "name": "Vape Hookah",
-    "price": 150,
+    "price": 650,
     "image": "/assets/images/products/party-essentials/vape.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."

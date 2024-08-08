@@ -2,7 +2,6 @@
   <div class="signin-form">
     <div class="header">
       <h1>Cocktail Club</h1>
-      <p class="text-danger text-center">*You must be 18 years or above to Log in or Sign up</p>
     </div>
     <form [formGroup]="signinForm" (ngSubmit)="onSubmit($event)">
       <div class="input">
@@ -14,8 +13,9 @@
         Invalid Phone number
       </div>
       <div id="recaptcha-container"></div>
-      <button type="submit" class="btn">Continue</button>
+      <button type="submit" class="btn">Sign In</button>
     </form>
+    <p class="text-danger text-center"><strong> * You must be 18 years or above to Log in or Sign up</strong></p>
     <p id="termAndConditionsText">By continuing, you agree to our <span class="text-underline">Terms of service & Privacy policy</span>
     </p>
   </div>

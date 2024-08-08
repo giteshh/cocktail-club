@@ -42,7 +42,6 @@ export class CartComponent {
               private authService: AuthService) {
     this.getCartItems();
     this.loggedIn = this.authService.userStatus();
-    console.log(this.loggedIn + 'hhhhhhhhhhhh');
   }
 
   // get all the items added to cart from localstorage

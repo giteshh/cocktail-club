@@ -3,12 +3,10 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 import firebase from "firebase/compat/app";
-import {getAuth, signInWithPhoneNumber} from "@angular/fire/auth";
-import auth = firebase.auth;
 import {environment} from "../../../../environments/environment";
-import {doc} from "@angular/fire/firestore";
+import {ToastrService} from "ngx-toastr";
+
 
 
 @Component({
@@ -28,20 +26,19 @@ export class LoginComponent implements OnInit {
   recaptchaVerifier?: firebase.auth.RecaptchaVerifier;
   CountryJson = environment.CountryJson;
   CountryCode: any = '+91';
-  user = JSON.parse(localStorage.getItem('user') || '{}');
-  check;
+  userLoggedIn: any;
 
   constructor(private formBuilder: FormBuilder,
               public authService: AuthService,
               private win: WindowService,
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.signinForm = formBuilder.group({
       phoneNumber: ['9179616052', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
     })
+    this.userLoggedIn = this.authService.userStatus();
+    console.log(this.userLoggedIn);
     // console.log(this.user)
-    this.check = this.authService.isLoggedIn;
-    console.log(this.check)
-    console.log(JSON.parse(localStorage.getItem('verificationId') || '{}'))
   }
 
   ngOnInit() {
@@ -68,14 +65,13 @@ export class LoginComponent implements OnInit {
     });
 
     if (this.signinForm.value.phoneNumber) {
-      localStorage.setItem(
-        'user',
-        JSON.stringify(this.signinForm.value)
-      );
+      // localStorage.setItem(
+      //   'user',
+      //   JSON.stringify(this.signinForm.value)
+      // );
       this.authService
         .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
         .then((confirmationResult) => {
-          console.log(confirmationResult);
          localStorage.setItem(
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
@@ -84,31 +80,23 @@ export class LoginComponent implements OnInit {
             'phoneNumber',
             JSON.stringify(this.signinForm.value.phoneNumber)
           );
-          firebase.firestore().collection("users").doc(confirmationResult.uid).set({
-            phoneNumber: this.signinForm.value.phoneNumber,
-            fullName: "",
-            email: "",
-            photoURL: "",
-            orders: "",
-            verificationId:  confirmationResult.verificationId,
-            paymentId: "",
-            role: 2,
-            address: "",
-            state: "",
-            zipCode: "",
-          }).then(() => {
+          localStorage.setItem(
+            'user',
+            JSON.stringify(this.signinForm.value)
+          );
+
             localStorage.setItem(
               'uid',
               JSON.stringify(confirmationResult.uid)
             );
-            console.log('confirmation uid  '+ confirmationResult.uid)
 
-
-            // ToDO add toaster msg
+          this.toastr.success('OTP sent on your device!', '', {
+            positionClass: 'toast-top-center',
+            timeOut: 3000,
+            closeButton: true
+          });
             this.router.navigate(['/verify-otp']).then();
           })
-
-        });
     }
   }
 

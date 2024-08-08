@@ -22,10 +22,10 @@
         Invalid email
       </div>
       <div class="input" id="disabledInput">
-        <i class="fa fa-user"></i>
+        <i class="fa fa-phone"></i>
         <input formControlName="phoneNumber" type="tel" aria-disabled="true"/>
       </div>
-      <button type="submit" class="btn">Update Profile</button>
+      <button type="submit" class="btn" [disabled]="updateProfileForm.invalid">Update Profile</button>
     </form>
   </div>
 </div>

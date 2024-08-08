@@ -13,24 +13,23 @@ export class UpdateProfileComponent implements OnInit {
   public updateProfileForm: FormGroup;
   user: any = {};
   phoneNumber;
-  verificationId;
+  // verificationId;
   fullName;
   email;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) {
-    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
-    this.verificationId = JSON.parse(localStorage.getItem('verificationId') || '{}');
-    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
-    this.email = JSON.parse(localStorage.getItem('email') || '{}');
+    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '');
+    // this.verificationId = JSON.parse(localStorage.getItem('verificationId') || '{}');
+    this.fullName = JSON.parse(localStorage.getItem('fullName') || '');
+    this.email = JSON.parse(localStorage.getItem('email') || '');
+    this.user = JSON.parse(localStorage.getItem('user') || '');
 
     this.updateProfileForm = formBuilder.group({
       fullName: [this.fullName, Validators.required],
       phoneNumber: [{value: this.phoneNumber, disabled: true}, Validators.required],
       email: [this.email, Validators.required],
     })
-    this.getProfile();
-    console.log(firebase.auth().currentUser)
   }
 
   ngOnInit() {
@@ -47,56 +46,20 @@ export class UpdateProfileComponent implements OnInit {
     }
   }
 
-  getProfile() {
-
-    let userId = firebase.auth().currentUser?.uid;
-
-    firebase.firestore().collection("users").doc(userId).get().then((documentSnapshot) => {
-
-      this.user = documentSnapshot.data();
-      // this.user.id = documentSnapshot.id;
-      console.log(this.user);
-
-    }).catch((error) => {
-      console.log(error);
-    })
-
-  }
-
 
   onSubmit(updateProfileForm: any) {
     this.markProfileFormTouched();
     let email: string = updateProfileForm.value.email;
     let fullName: string = updateProfileForm.value.fullName;
 
-    let userId = firebase.auth().currentUser?.uid;
-
-    firebase.firestore().collection("users").doc(userId).set({
-      phoneNumber: this.phoneNumber,
-      fullName: fullName,
-      email: email,
-      photoURL: "",
-      orders: "",
-      verificationId: this.verificationId,
-      paymentId: "",
-      role: 2,
-      address: "",
-      state: "",
-      zipCode: "",
-    }).then(() => {
-      localStorage.setItem(
-        'fullName',
-        JSON.stringify(this.updateProfileForm.value.fullName)
-      );
-      localStorage.setItem(
-        'email',
-        JSON.stringify(this.updateProfileForm.value.email)
-      );
-      this.router.navigate(['/home']);
-
-    }).catch((error) => {
-      console.log(error)
-    })
-
+    localStorage.setItem(
+      'user',
+      JSON.stringify(this.updateProfileForm.value.fullName)
+    );
+    localStorage.setItem(
+      'user',
+      JSON.stringify(this.updateProfileForm.value.email)
+    );
+    this.router.navigate(['/home']);
   }
 }

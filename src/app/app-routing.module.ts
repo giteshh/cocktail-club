@@ -8,10 +8,10 @@ import {DashboardGuard} from "./guards/dashboard.guard";
 import {PublicComponent} from "./public/public.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'public', pathMatch: 'full'},
+  {path: '', redirectTo: 'customer', pathMatch: 'full'},
   {path: 'public', component: PublicComponent, canActivate: [AuthGuard]},
   {path: 'customer', component: CustomerComponent, canActivate: [AuthGuard]},
-  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: AdminComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 

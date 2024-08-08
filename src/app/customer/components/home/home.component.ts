@@ -7,25 +7,18 @@ import {AuthService} from "../../../services/auth.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  userData: any;
+  userData: any = {};
 
-  constructor(private authService: AuthService) {
-    this.getUser();
+  constructor() {
   }
 
   ngOnInit() {
-    let data = JSON.parse(localStorage.getItem('user') || '{}');
+    let data = (localStorage.getItem('user') || []);
     // this.userData = data.user.phoneNumber;
     console.log('User data : ' + data);
     console.log(localStorage.getItem('verificationId'))
   }
 
-  getUser() {
-    const result = this.authService.isLoggedIn;
-    console.log(result);
-  }
-
-  // page was opening from middle so to open the page from top used this
   navigateToTop() {
     window.scrollTo(0, 0);
   }

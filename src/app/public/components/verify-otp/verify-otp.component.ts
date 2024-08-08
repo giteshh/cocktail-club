@@ -15,16 +15,24 @@ import {logEvent} from "@angular/fire/analytics";
   styleUrls: ['./verify-otp.component.css']
 })
 export class VerifyOtpComponent implements OnInit {
-  verify: any;
+  // verify: any;
   windowRef: any;
   verificationCode: string = '';
   verificationId: string = '';
-  user: any = {phoneNumber: ''};
+  user: any = {phoneNumber: '', email: '', fullName: ''};
   confirmationResult = '';
+
+  email;
+  fullName;
+
 
   constructor(private authService: AuthService,
               private router: Router,
               private ngZone: NgZone) {
+    this.email = localStorage.getItem('email') || '';
+    this.fullName = localStorage.getItem('fullName') || '';
+
+    console.log(localStorage.getItem('user') || '')
   }
 
   config = {
@@ -40,7 +48,7 @@ export class VerifyOtpComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.verify = (localStorage.getItem('verificationId') || '{}');
+    // this.verify = (localStorage.getItem('verificationId') || '{}');
   }
 
   onOtpChange(otp: string) {
@@ -50,7 +58,11 @@ export class VerifyOtpComponent implements OnInit {
   onSubmit() {
     this.authService.enterVerificationCode(this.verificationCode).then(res => {
       this.ngZone.run(() => {
-        this.router.navigate(['/update-profile']).then();
+        if (this.email && this.fullName) {
+          this.router.navigate(['/home']).then();
+        } else {
+          this.router.navigate(['/update-profile']).then();
+        }
       });
     }).catch((error) => {
       // Handle errors.

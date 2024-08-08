@@ -33,20 +33,13 @@ export class FastFoodComponent {
         }
       })
     }
-    if (!this.existingBurger) {
+    // if (!this.existingBurger) {
       this.appService.addToCart(burgers);
       this.toastr.success('Selected item has been added to the cart!', '', {
         positionClass: 'toast-top-center',
         timeOut: 3000,
         closeButton: true
       });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
-    }
   }
 
   addPizzaToCart(pizza: any) {
