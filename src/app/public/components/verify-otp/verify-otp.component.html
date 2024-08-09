@@ -9,6 +9,7 @@
         <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
       </div>
       <button type="submit" class="btn" (click)="onSubmit()">Verify OTP</button>
+      <a class="text-muted" href="#" routerLink="/signin">Cancel</a>
     </form>
   </div>
 </div>
