@@ -40,4 +40,13 @@ export class AppService {
     }
     arr[index].quantity = quantity;
   }
+
+  addToOrders(orders: any) {
+    let arr = [];
+    if (localStorage.getItem('cart')) {
+      arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
+    }
+    arr.push(orders);
+    localStorage.setItem('orders', JSON.stringify(arr));
+  }
 }

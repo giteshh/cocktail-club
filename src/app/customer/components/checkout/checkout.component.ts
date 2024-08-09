@@ -4,6 +4,16 @@ import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import firebase from "firebase/compat/app";
+import {Product} from "../../../../assets/data/products";
+import {AppService} from "../../../app.service";
+
+interface orderItems {
+  id: number,
+  name: string,
+  image: string,
+  price: number,
+  quantity: number,
+}
 
 @Component({
   selector: 'app-checkout',
@@ -19,10 +29,13 @@ export class CheckoutComponent {
   city;
   zipCode;
   total;
+  orders: Product [] = [];
+  cart: Product[] = [];
 
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
+              private appService: AppService,
               private router: Router,
               private toastr: ToastrService) {
 
@@ -32,6 +45,8 @@ export class CheckoutComponent {
     this.city = JSON.parse(localStorage.getItem('city') || '{}');
     this.zipCode = JSON.parse(localStorage.getItem('zipCode') || '{}');
     this.total = JSON.parse(localStorage.getItem('total') || '{}');
+
+    this.cart = JSON.parse(localStorage.getItem('cart') || '')
 
     this.checkoutForm = formBuilder.group({
       fullName: [this.fullName, Validators.required],
@@ -62,11 +77,11 @@ export class CheckoutComponent {
       city: city,
       zipCode: zipCode,
     }).then(() => {
-      if(!address){
-      localStorage.setItem(
-        'address',
-        JSON.stringify(this.checkoutForm.value.address)
-      );
+      if (!address) {
+        localStorage.setItem(
+          'address',
+          JSON.stringify(this.checkoutForm.value.address)
+        );
       }
       localStorage.setItem(
         'city',
@@ -90,7 +105,7 @@ export class CheckoutComponent {
   payWithRazor() {
     const options: any = {
       key: 'rzp_test_pKtL3VyA60NvPP',
-      amount: this.total * 100, // amount should be in paise format to display Rs 1255 without decimal point
+      amount: Math.round(this.total) * 100, // amount should be in paise format to display Rs 1255 without decimal point
       currency: 'INR',
       name: 'Cocktail Club', // company name or product name
       description: '',
@@ -113,22 +128,23 @@ export class CheckoutComponent {
     };
     options.handler = ((response: any, error: any) => {
       options.response = response;
-      console.log(response);
-      console.log(options);
       this.toastr.success('Order placed successfully', '', {
         positionClass: 'toast-top-right',
         timeOut: 3000,
       });
-      this.toastr.info('Waiting for Cocktail Club to accept your order', '', {
+      this.toastr.info('Cocktail Club accepted your order', '', {
         positionClass: 'toast-top-right',
         timeOut: 3000,
       });
+
+      this.appService.addToOrders(this.orders);
+
       this.router.navigate(['/orders'])
+      // localStorage.removeItem('cart');
       // call your backend api to verify payment signature & capture transaction
     });
     options.modal.ondismiss = (() => {
       // handle the case when user closes the form while transaction is in progress
-      console.log('Transaction cancelled.');
       this.toastr.warning('Transaction failed. Please try again...', '', {
         positionClass: 'toast-top-right',
         timeOut: 3000,
