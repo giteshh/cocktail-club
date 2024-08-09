@@ -9,14 +9,12 @@ import {AuthService} from "../services/auth.service";
 export class DashboardGuard implements CanActivate {
   userLoggedInStatus;
 
-  constructor(public authService: AuthService, public router: Router) {
+  constructor(public authService: AuthService,
+              public router: Router) {
     this.userLoggedInStatus = this.authService.userStatus();
   }
 
   canActivate(
-    // route: ActivatedRouteSnapshot,
-    // state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // return true;
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
@@ -24,12 +22,11 @@ export class DashboardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (!this.userLoggedInStatus) {
-      // window.alert('Access Denied, Only Logged in User Can Access This Page');
-      this.router.navigate(['sigin']);
+    if (this.userLoggedInStatus === true) {
+      this.router.navigate(['/home'])
+      return true;
     }
-    this.router.navigate(['home'])
-    return true;
+    this.router.navigate(['/signin']);
+    return false;
   }
-
 }

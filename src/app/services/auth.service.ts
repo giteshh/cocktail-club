@@ -15,7 +15,6 @@ export class AuthService {
 
   constructor(private fireAuth: AngularFireAuth,
               private router: Router) {
-    // this.userStatus();
   }
 
   signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
@@ -48,9 +47,9 @@ export class AuthService {
 
   doSignOut() {
     localStorage.removeItem('verificationId');
-    this.userLogInStatus = false;
     firebase.auth().signOut();
     this.router.navigate(['/signin']);
+    this.userLogInStatus = false;
     // localStorage.clear();
     // this.userStatus();
   }
@@ -58,14 +57,12 @@ export class AuthService {
   userStatus() {
     const user = (localStorage.getItem('verificationId') || '');
     if (user) {
+      this.router.navigate(['/home']);
       return this.userLogInStatus = true;
+    } else {
+      this.router.navigate(['/signin']);
+      return this.userLogInStatus = false;
     }
-    return this.userLogInStatus = false;
-  }
-
-  get isLoggedIn(): any {
-    const user = JSON.parse(localStorage.getItem('verificationId') ?? '');
-    return user !== null;
   }
 }
 
