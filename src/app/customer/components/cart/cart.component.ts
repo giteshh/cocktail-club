@@ -87,7 +87,7 @@ export class CartComponent {
 
   // placing order and removing items from localstorage
   placeOrder() {
-    if (!this.loggedIn) {
+    if (!this.authService.isLoggedIn) {
       this.router.navigate(['/signin']);
     } else {
       this.router.navigate(['/checkout']);

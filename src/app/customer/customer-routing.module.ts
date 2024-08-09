@@ -15,30 +15,26 @@ import {SnacksComponent} from "./components/snacks/snacks.component";
 import {ColdDrinkComponent} from "./components/cold-drink/cold-drink.component";
 import {PartyEssentialsComponent} from "./components/party-essentials/party-essentials.component";
 import {RentSpeakerComponent} from "./components/rent-speaker/rent-speaker.component";
-import {PublicComponent} from "../public/public.component";
+import {AuthGuard} from "../guards/auth.guard";
 
 const routes: Routes = [
-  {
-    path: '',
-    component: PublicComponent, children: [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', component: HomeComponent},
-      {path: 'fast-food', component: FastFoodComponent},
-      {path: 'fruit-juice', component: FruitJuiceComponent},
-      {path: 'beverage', component: BeverageComponent},
-      {path: 'cocktail', component: CocktailComponent},
-      {path: 'beers', component: BeersComponent},
-      {path: 'alcohol', component: AlcoholComponent},
-      {path: 'cigarettes', component: CigarettesComponent},
-      {path: 'snacks', component: SnacksComponent},
-      {path: 'cold-drink', component: ColdDrinkComponent},
-      {path: 'party-essentials', component: PartyEssentialsComponent},
-      {path: 'rent-speaker', component: RentSpeakerComponent},
-      {path: 'cart', component: CartComponent},
-      {path: 'checkout', component: CheckoutComponent},
-      {path: 'orders', component: OrdersComponent},
-    ]
-  }
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'fast-food', component: FastFoodComponent},
+  {path: 'fruit-juice', component: FruitJuiceComponent},
+  {path: 'beverage', component: BeverageComponent},
+  {path: 'cocktail', component: CocktailComponent},
+  {path: 'beers', component: BeersComponent},
+  {path: 'alcohol', component: AlcoholComponent},
+  {path: 'cigarettes', component: CigarettesComponent},
+  {path: 'snacks', component: SnacksComponent},
+  {path: 'cold-drink', component: ColdDrinkComponent},
+  {path: 'party-essentials', component: PartyEssentialsComponent},
+  {path: 'rent-speaker', component: RentSpeakerComponent},
+  {path: 'cart', component: CartComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'orders', component: OrdersComponent},
+
 ];
 
 @NgModule({

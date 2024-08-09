@@ -1,55 +1,40 @@
 <app-navbar></app-navbar>
 
-<div class="container-full">
+  <div class="container-full">
+    <p class="main-heading">Orders</p>
+    <br>
+    <table class="rwd-table">
+      <tbody>
+      <tr>
+        <th>Invoice Id</th>
+        <th>Date & Time</th>
+        <th>Order status</th>
+        <th>Amount</th>
+        <th>Payment Mode</th>
+        <th>Net Amount</th>
+      </tr>
+      <tr>
+        <td data-th="Supplier Code">
+          UPS5005
+        </td>
+        <td data-th="Supplier Name">
+          UPS
+        </td>
+        <td data-th="Invoice Number">
+          ASDF19218
+        </td>
+        <td data-th="Invoice Date">
+          06/25/2016
+        </td>
+        <td data-th="Due Date">
+          12/25/2016
+        </td>
+        <td data-th="Net Amount">
+          $8,322.12
+        </td>
+      </tr>
 
-  <div class="text-center" id="noItemInCart" *ngIf="ordersList">
-    <div class="custom-card-body">
-      <h2 class="custom-card-title">No orders found !</h2>
-      <a class="btn" routerLink="/home">Explore Now</a>
-    </div>
+      </tbody>
+    </table>
   </div>
-
-  <br>
-  <table class="rwd-table text-center" *ngIf="!ordersList">
-    <tbody>
-    <tr *ngIf="ordersList">
-      <th>S.No.</th>
-      <th>Date</th>
-      <th>Product Image</th>
-      <th>Product Name</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Total Amount</th>
-      <th>Order Status</th>
-    </tr>
-    <tr *ngFor="let item of ordersList; let i = index">
-      <td data-th="Supplier Code">
-        {{i + 1}}
-      </td>
-      <td data-th="Supplier Code">
-        {{date | date : "medium" }}
-      </td>
-      <td data-th="Supplier Name">
-        <img class="product-img" src="{{item.image}}">
-      </td>
-      <td data-th="Invoice Number">
-        {{item.name}}
-      </td>
-      <td data-th="Due Date">
-        {{item.description}}
-      </td>
-      <td data-th="Due Date">
-        {{item.quantity}}
-      </td>
-      <td data-th="Invoice Date">
-        {{item.price | currency: 'INR'}}
-      </td>
-      <td data-th="Net Amount">
-        {{status}} {{date | date: 'medium'}}
-      </td>
-    </tr>
-
-    </tbody>
-  </table>
-</div>
 

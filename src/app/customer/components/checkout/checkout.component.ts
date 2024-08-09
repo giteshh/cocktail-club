@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {AppService} from "../../../app.service";
+import firebase from "firebase/compat/app";
 
 @Component({
   selector: 'app-checkout',
@@ -19,48 +19,68 @@ export class CheckoutComponent {
   city;
   zipCode;
   total;
-  cart= [];
-  orders: any = [];
+
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
               private router: Router,
-              private toastr: ToastrService,
-              private appService: AppService) {
+              private toastr: ToastrService) {
 
-    this.fullName = JSON.parse(localStorage.getItem('fullName') || '');
-    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '');
-    this.address = (localStorage.getItem('address') || '');
-    this.city = (localStorage.getItem('city') || '');
-    this.zipCode = (localStorage.getItem('zipCode') || '');
-    this.total = JSON.parse(localStorage.getItem('total') || '');
-    this.cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    this.orders = this.orders.push(this.cart);
+    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
+    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
+    this.address = JSON.parse(localStorage.getItem('address') || '{}');
+    this.city = JSON.parse(localStorage.getItem('city') || '{}');
+    this.zipCode = JSON.parse(localStorage.getItem('zipCode') || '{}');
+    this.total = JSON.parse(localStorage.getItem('total') || '{}');
 
     this.checkoutForm = formBuilder.group({
       fullName: [this.fullName, Validators.required],
       phoneNumber: [this.phoneNumber, Validators.required],
-      address: [this.address, Validators.required],
-      city: [this.city, Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
       zipCode: [this.zipCode, Validators.required],
     })
   }
 
   onSubmit() {
-    localStorage.setItem(
-      'address',
-      JSON.stringify(this.checkoutForm.value.address)
-    );
 
-    localStorage.setItem(
-      'city',
-      JSON.stringify(this.checkoutForm.value.city)
-    );
-    localStorage.setItem(
-      'zipCode',
-      JSON.stringify(this.checkoutForm.value.zipCode)
-    );
-    this.payWithRazor();
+    let fullName: string = this.checkoutForm.value.fullName;
+    let address = JSON.stringify(this.checkoutForm.value.address);
+    let city = this.city;
+    let zipCode: string = this.checkoutForm.value.zipCode;
+
+    let userId = firebase.auth().currentUser?.uid;
+
+    firebase.firestore().collection("users").doc(userId).set({
+      phoneNumber: this.phoneNumber,
+      fullName: fullName,
+      photoURL: "",
+      orders: "",
+      paymentId: "",
+      role: 2,
+      address: address,
+      city: city,
+      zipCode: zipCode,
+    }).then(() => {
+      if(!address){
+      localStorage.setItem(
+        'address',
+        JSON.stringify(this.checkoutForm.value.address)
+      );
+      }
+      localStorage.setItem(
+        'city',
+        JSON.stringify(this.checkoutForm.value.city)
+      );
+      localStorage.setItem(
+        'zipCode',
+        JSON.stringify(this.checkoutForm.value.zipCode)
+      );
+      this.payWithRazor();
+
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 
   createRzpayOrder(data: any) {
@@ -72,7 +92,7 @@ export class CheckoutComponent {
       key: 'rzp_test_pKtL3VyA60NvPP',
       amount: this.total * 100, // amount should be in paise format to display Rs 1255 without decimal point
       currency: 'INR',
-      name: 'Cocktail Club',
+      name: 'Cocktail Club', // company name or product name
       description: '',
       id: Math.random().toString(36),
       prefill: {
@@ -93,24 +113,24 @@ export class CheckoutComponent {
     };
     options.handler = ((response: any, error: any) => {
       options.response = response;
-      console.log(options.response)
+      console.log(response);
+      console.log(options);
       this.toastr.success('Order placed successfully', '', {
-        positionClass: 'toast-top-center',
+        positionClass: 'toast-top-right',
         timeOut: 3000,
       });
-      this.toastr.info('Cocktail Club to accepted your order', '', {
-        positionClass: 'toast-top-center',
+      this.toastr.info('Waiting for Cocktail Club to accept your order', '', {
+        positionClass: 'toast-top-right',
         timeOut: 3000,
       });
-      this.appService.addToOrders(this.orders);
       this.router.navigate(['/orders'])
-      localStorage.removeItem('cart');
       // call your backend api to verify payment signature & capture transaction
     });
     options.modal.ondismiss = (() => {
       // handle the case when user closes the form while transaction is in progress
+      console.log('Transaction cancelled.');
       this.toastr.warning('Transaction failed. Please try again...', '', {
-        positionClass: 'toast-top-center',
+        positionClass: 'toast-top-right',
         timeOut: 3000,
       });
       this.router.navigate(['/cart'])

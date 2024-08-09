@@ -33,31 +33,11 @@ export class AppService {
     localStorage.setItem('cart', JSON.stringify(arr));
   }
 
-  emptyCart(index: number) {
-    let arr = [];
-    if (localStorage.getItem('cart')) {
-      arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
-    }
-    arr.splice(index, arr.length - 1);
-    localStorage.setItem('cart', JSON.stringify(arr));
-  }
-
   addQtyToCart(index: number, quantity: number) {
     let arr = [];
     if (localStorage.getItem('cart')) {
-      arr = JSON.parse(<string>localStorage.getItem('cart')) || "";
-    }
-    arr[index].quantity = quantity;
-  }
-
-  addToOrders(cart: any) {
-    let arr = [];
-    let date = new Date();
-    if (localStorage.getItem('cart')) {
       arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
     }
-    arr.push(cart);
-    // arr.push(date);
-    localStorage.setItem('orders', JSON.stringify(arr));
+    arr[index].quantity = quantity;
   }
 }
