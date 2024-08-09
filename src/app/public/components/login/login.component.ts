@@ -8,7 +8,6 @@ import {environment} from "../../../../environments/environment";
 import {ToastrService} from "ngx-toastr";
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -64,6 +63,13 @@ export class LoginComponent implements OnInit {
       },
     });
 
+    if (localStorage.getItem('verificationId') || '') {
+      this.router.navigate(['/update-profile']);
+    }
+    if (localStorage.getItem('fullName') || '' && localStorage.getItem('fullName') || '') {
+      this.router.navigate(['/home']);
+    }
+
     if (this.signinForm.value.phoneNumber) {
       // localStorage.setItem(
       //   'user',
@@ -72,7 +78,7 @@ export class LoginComponent implements OnInit {
       this.authService
         .signInWithPhoneNumber(appVerifier, '+91' + this.signinForm.value.phoneNumber)
         .then((confirmationResult) => {
-         localStorage.setItem(
+          localStorage.setItem(
             'verificationId',
             JSON.stringify(confirmationResult.verificationId)
           );
@@ -85,18 +91,18 @@ export class LoginComponent implements OnInit {
             JSON.stringify(this.signinForm.value)
           );
 
-            localStorage.setItem(
-              'uid',
-              JSON.stringify(confirmationResult.uid)
-            );
+          localStorage.setItem(
+            'uid',
+            JSON.stringify(confirmationResult.uid)
+          );
 
           this.toastr.success('OTP sent on your device!', '', {
             positionClass: 'toast-top-center',
             timeOut: 3000,
             closeButton: true
           });
-            this.router.navigate(['/verify-otp']).then();
-          })
+          this.router.navigate(['/verify-otp']).then();
+        })
     }
   }
 

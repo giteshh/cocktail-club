@@ -14,9 +14,6 @@ export class DashboardGuard implements CanActivate {
   }
 
   canActivate(
-    // route: ActivatedRouteSnapshot,
-    // state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // return true;
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
@@ -25,10 +22,10 @@ export class DashboardGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (!this.userLoggedInStatus) {
-      // window.alert('Access Denied, Only Logged in User Can Access This Page');
-      this.router.navigate(['sigin']);
+      this.router.navigate(['/sigin']);
+      return false;
     }
-    this.router.navigate(['home'])
+    this.router.navigate(['/home'])
     return true;
   }
 

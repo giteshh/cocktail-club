@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import firebase from "firebase/compat/app";
 
 @Component({
   selector: 'app-update-profile',
@@ -13,16 +12,14 @@ export class UpdateProfileComponent implements OnInit {
   public updateProfileForm: FormGroup;
   user: any = {};
   phoneNumber;
-  // verificationId;
   fullName;
   email;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router) {
     this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '');
-    // this.verificationId = JSON.parse(localStorage.getItem('verificationId') || '{}');
-    this.fullName = JSON.parse(localStorage.getItem('fullName') || '');
-    this.email = JSON.parse(localStorage.getItem('email') || '');
+    this.fullName = (localStorage.getItem('fullName') || '');
+    this.email = (localStorage.getItem('email') || '');
     this.user = JSON.parse(localStorage.getItem('user') || '');
 
     this.updateProfileForm = formBuilder.group({
@@ -53,11 +50,11 @@ export class UpdateProfileComponent implements OnInit {
     let fullName: string = updateProfileForm.value.fullName;
 
     localStorage.setItem(
-      'user',
+      'fullName',
       JSON.stringify(this.updateProfileForm.value.fullName)
     );
     localStorage.setItem(
-      'user',
+      'email',
       JSON.stringify(this.updateProfileForm.value.email)
     );
     this.router.navigate(['/home']);

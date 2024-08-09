@@ -15,11 +15,11 @@ import {SnacksComponent} from "./components/snacks/snacks.component";
 import {ColdDrinkComponent} from "./components/cold-drink/cold-drink.component";
 import {PartyEssentialsComponent} from "./components/party-essentials/party-essentials.component";
 import {RentSpeakerComponent} from "./components/rent-speaker/rent-speaker.component";
-import {AuthGuard} from "../guards/auth.guard";
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent},
   {path: 'fast-food', component: FastFoodComponent},
   {path: 'fruit-juice', component: FruitJuiceComponent},
   {path: 'beverage', component: BeverageComponent},

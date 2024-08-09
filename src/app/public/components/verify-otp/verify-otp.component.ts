@@ -32,7 +32,6 @@ export class VerifyOtpComponent implements OnInit {
     this.email = localStorage.getItem('email') || '';
     this.fullName = localStorage.getItem('fullName') || '';
 
-    console.log(localStorage.getItem('user') || '')
   }
 
   config = {
@@ -48,7 +47,6 @@ export class VerifyOtpComponent implements OnInit {
   };
 
   ngOnInit() {
-    // this.verify = (localStorage.getItem('verificationId') || '{}');
   }
 
   onOtpChange(otp: string) {
