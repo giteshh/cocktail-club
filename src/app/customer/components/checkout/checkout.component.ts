@@ -137,10 +137,10 @@ export class CheckoutComponent {
         timeOut: 3000,
       });
 
-      this.appService.addToOrders(this.orders);
+      this.appService.addToOrders(this.cart);
 
       this.router.navigate(['/orders'])
-      // localStorage.removeItem('cart');
+      localStorage.removeItem('cart');
       // call your backend api to verify payment signature & capture transaction
     });
     options.modal.ondismiss = (() => {

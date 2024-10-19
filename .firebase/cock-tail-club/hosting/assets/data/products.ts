@@ -12,8 +12,7 @@ const juices = [
     "id": 1,
     "name": "Fresh Orange",
     "price": 49,
-    "image": "/assets/images/juice/orange.png",
-    // "image": "https://img.freepik.com/free-photo/glass-orange-juice-placed-wood_1150-9666.jpg?w=996&t=st=1681462817~exp=1681463417~hmac=1ba7893b17bde0764d84a84ea8de99f1b8fe6a259a519244b388d039d16265fb",
+    "image": "/assets/images/products/juice/orange.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -21,8 +20,7 @@ const juices = [
     "id": 2,
     "name": "Mixed Fruit",
     "price": 89,
-    "image": "/assets/images/juice/mixedfruit.png",
-    // "image": "https://img.freepik.com/free-photo/summertime-smoothie-with-raspberry-blackberry-strawberry-ice_140725-3953.jpg?w=740&t=st=1681462942~exp=1681463542~hmac=c25fc1f4ac61835c2395228f205de16c8a65f342bce966538d089d8cbb3c7ed1",
+    "image": "/assets/images/products/juice/mixedfruit.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -30,8 +28,7 @@ const juices = [
     "id": 3,
     "name": "Lemonade",
     "price": 29,
-    "image": "/assets/images/juice/lemonade.png",
-    // "image": "https://img.freepik.com/free-photo/mojito-drink-with-lime-lemon-mint-wood-table_1150-12269.jpg?w=996&t=st=1681462965~exp=1681463565~hmac=6668feb4e0973f34a315f968d741b077c0e7181fa4244622e17b092c4863ab70",
+    "image": "/assets/images/products/juice/lemonade.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -39,8 +36,7 @@ const juices = [
     "id": 4,
     "name": "Pineapple",
     "price": 39,
-    "image": "/assets/images/juice/pineapple.png",
-    // "image": "https://img.freepik.com/free-photo/pineapple-juice-green-surface_1150-42297.jpg?w=996&t=st=1681464060~exp=1681464660~hmac=33d31575cc47ca95afe05bfbd59c50be80843c78aa7aabdf6483a65e2064f813",
+    "image": "/assets/images/products/juice/pineapple.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -48,8 +44,7 @@ const juices = [
     "id": 5,
     "name": "Watermelon",
     "price": 39,
-    "image": "/assets/images/juice/watermelon.png",
-    // "image": "https://img.freepik.com/free-photo/watermelon-smoothie_1339-457.jpg?w=360&t=st=1681463485~exp=1681464085~hmac=7ed6d164a3eb65dcbe8cf05fceaa1b0bded52fd1681f7b187e4266e2bf09aeb3",
+    "image": "/assets/images/products/juice/watermelon.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -57,8 +52,7 @@ const juices = [
     "id": 6,
     "name": "Mango",
     "price": 39,
-    "image": "/assets/images/juice/mango.png",
-    // "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/juice/mango.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -66,8 +60,7 @@ const juices = [
     "id": 7,
     "name": "Berry berry",
     "price": 39,
-    "image": "/assets/images/juice/berryberry.png",
-    // "image": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80",
+    "image": "/assets/images/products/juice/berryberry.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -78,8 +71,7 @@ const shakes = [
     "id": 8,
     "name": "Kiwi",
     "price": 89,
-    "image": "/assets/images/juice/kiwi.png",
-    // "image": "https://img.freepik.com/free-photo/healthy-kiwi-smoothie-summer-recipe_53876-32273.jpg?w=900&t=st=1681462820~exp=1681463420~hmac=9b798392904ba104ce961acdb0988aef47e16b87a5f3a9d4df0e3de1c72d9de1",
+    "image": "/assets/images/products/juice/kiwi.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -87,8 +79,7 @@ const shakes = [
     "id": 9,
     "name": "Mango",
     "price": 49,
-    "image": "/assets/images/juice/mangoshake.png",
-    // "image": "https://img.freepik.com/free-photo/delicious-indian-mango-drink-high-angle_23-2148734680.jpg?w=740&t=st=1681462893~exp=1681463493~hmac=d852ac749f918e1a06262d502ba5d5f244adbfe6f718d89bb94922c81563f4d9",
+    "image": "/assets/images/products/juice/mangoshake.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -96,8 +87,7 @@ const shakes = [
     "id": 10,
     "name": "Strawberry",
     "price": 59,
-    "image": "/assets/images/juice/strawberry.png",
-    // "image": "https://img.freepik.com/free-photo/jar-strawberry-refreshing-drink-with-various-sugar-sprinkles_181624-56040.jpg?w=740&t=st=1681462994~exp=1681463594~hmac=bbb4e18490209a5432345707b7347f4e0bf75e8e74fe5f75e76ba38bab4fb6d3",
+    "image": "/assets/images/products/juice/strawberry.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -105,8 +95,7 @@ const shakes = [
     "id": 11,
     "name": "Banana",
     "price": 39,
-    "image": "/assets/images/juice/banana.png",
-    // "image": "https://img.freepik.com/free-photo/delicious-banana-milkshake_144627-5663.jpg?w=740&t=st=1681463028~exp=1681463628~hmac=e061ca18bd4599c4745fe07a5940d11f763a660ad9106e09cb2890dcc48b32be",
+    "image": "/assets/images/products/juice/banana.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -114,8 +103,7 @@ const shakes = [
     "id": 12,
     "name": "Coconut Crush",
     "price": 119,
-    "image": "/assets/images/juice/coconutcrush.png",
-    // "image": "https://img.freepik.com/free-photo/fresh-strawberry-banana-smoothie-jar-wooden-table_123827-20782.jpg?w=996&t=st=1681464090~exp=1681464690~hmac=c9eac7540d6aaab4453a867e9e6039ebabb2ba780c65ae7cc42714a61907b47f",
+    "image": "/assets/images/products/juice/coconutcrush.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -123,8 +111,7 @@ const shakes = [
     "id": 13,
     "name": "Cold coco",
     "price": 89,
-    "image": "/assets/images/juice/coldcoco.png",
-    // "image": "https://images.unsplash.com/photo-1594489556673-c816408242f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80",
+    "image": "/assets/images/products/juice/coldcoco.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -132,8 +119,7 @@ const shakes = [
     "id": 14,
     "name": "Chocolate",
     "price": 79,
-    "image": "/assets/images/juice/chocolate.png",
-    // "image": "https://images.unsplash.com/photo-1595641190867-138b14a23a7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=347&q=80",
+    "image": "/assets/images/products/juice/chocolate.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -145,17 +131,15 @@ const burgers = [
     "id": 15,
     "name": "Double patty",
     "price": 169,
-    // "image": "https://img.freepik.com/free-photo/delicious-meat-sandwich-with-tomatoes-green-dark-surface-close-up-shot_179666-42483.jpg?w=996&t=st=1681404423~exp=1681405023~hmac=37f088b8e36830cc2edea148cc56889112f21a45be189e30c634880886ad6e09",
-    "image": "/assets/images/fastfood/doublepatty.png",
+    "image": "/assets/images/products/fastfood/doublepatty.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "id": 16,
-    "name": "Veggie Burger",
+    "name": "Veggie",
     "price": 39,
-    // "image": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?w=740&t=st=1681401662~exp=1681402262~hmac=e835df22eec5118e54dd33e0866697953d1f4079b782dda108289f7d5c9422e9",
-    "image": "/assets/images/fastfood/veggie.png",
+    "image": "/assets/images/products/fastfood/veggie.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -163,17 +147,15 @@ const burgers = [
     "id": 17,
     "name": "Burger + Fries",
     "price": 189,
-    "image": "/assets/images/fastfood/burger+fries.png",
-    // "image": "https://img.freepik.com/free-photo/big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion-wooden-table_2829-19631.jpg?w=996&t=st=1681404444~exp=1681405044~hmac=6ab49b1461fba4132b280affc3cfe8f42f64ca71eeb4c7a0b376df23beac26c2",
+    "image": "/assets/images/products/fastfood/burger+fries.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "id": 18,
-    "name": "Double Burger",
+    "name": "Double patty",
     "price": 229,
-    "image": "/assets/images/fastfood/doubleburger.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-chicken-burger-with-cheese-green-salad-wooden-desk-sandwich-fast-food-meal-food_140725-25937.jpg?w=996&t=st=1681404399~exp=1681404999~hmac=56a16adf2347bad587eb9d42d0e036e6363043c91f91bfe39e5356a16a29be47",
+    "image": "/assets/images/products/fastfood/doubleburger.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -181,8 +163,7 @@ const burgers = [
     "id": 19,
     "name": "Aaloo tikki",
     "price": 59,
-    "image": "/assets/images/fastfood/aalootikki.png",
-    // "image": "https://img.freepik.com/free-photo/burger-with-meat-cutlet-tomatoes-lettuce-cheese_141793-1132.jpg?w=360&t=st=1681405955~exp=1681406555~hmac=9cf1acad6207d388c2f4be61e31e4819a98f03b04c42711eb855819e9c5ea1ab",
+    "image": "/assets/images/products/fastfood/aalootikki.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -190,8 +171,7 @@ const burgers = [
     "id": 20,
     "name": "Black bun",
     "price": 199,
-    "image": "/assets/images/fastfood/blackbun.png",
-    // "image": "https://images.unsplash.com/photo-1582196016295-f8c8bd4b3a99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+    "image": "/assets/images/products/fastfood/blackbun.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -199,8 +179,7 @@ const burgers = [
     "id": 21,
     "name": "Mexican",
     "price": 99,
-    "image": "/assets/images/fastfood/mexican.png",
-    // "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=465&q=80",
+    "image": "/assets/images/products/fastfood/mexican.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -209,10 +188,9 @@ const burgers = [
 const pizza = [
   {
     "id": 22,
-    "name": "Cheesilious pizza",
+    "name": "Cheesilious",
     "price": 699,
-    "image": "/assets/images/fastfood/cheesilisious.png",
-    // "image": "https://img.freepik.com/free-photo/slice-crispy-pizza-with-meat-cheese_140725-6974.jpg?w=740&t=st=1681407925~exp=1681408525~hmac=f9563130426bf2153727cb9659a891243e4164993eb0fa9017f874838d2e2846",
+    "image": "/assets/images/products/fastfood/cheesilisious.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -220,26 +198,23 @@ const pizza = [
     "id": 23,
     "name": "Fresh veggie",
     "price": 399,
-    "image": "/assets/images/fastfood/freshveggie.png",
-    // "image": "https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?w=740&t=st=1681405880~exp=1681406480~hmac=282958a85d24a5a7a798f8105b4fd2f8359b945b69800835c2ea1fb6c5ddd3a3",
+    "image": "/assets/images/products/fastfood/freshveggie.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "id": 24,
-    "name": "Margherita pizza",
+    "name": "Margherita",
     "price": 299,
-    "image": "/assets/images/fastfood/margherita.png",
-    // "image": "https://img.freepik.com/free-photo/hawaiian-pizza-with-cooked-ham-pizza-sauce-cheese-pineapple_140725-10942.jpg?w=996&t=st=1681408264~exp=1681408864~hmac=414617723644629a9ac74d3bae1b5a8eb7cd2d51999937c0c9e157a8e446ba69",
+    "image": "/assets/images/products/fastfood/margherita.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "id": 25,
-    "name": "Pepperoni ",
+    "name": "Pepperoni",
     "price": 319,
-    "image": "/assets/images/fastfood/pepperoni.png",
-    // "image": "https://img.freepik.com/free-photo/slice-cut-from-classic-pepperoni-pizza-with-green-pepper-rolls_114579-1963.jpg?w=900&t=st=1681408362~exp=1681408962~hmac=56d22176d09eb50c8fc4f3f598cdc37051fafdf53ec029d1196f26c2ed1af040",
+    "image": "/assets/images/products/fastfood/pepperoni.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -247,8 +222,7 @@ const pizza = [
     "id": 26,
     "name": "Italian",
     "price": 549,
-    "image": "/assets/images/fastfood/italian.png",
-    // "image": "https://images.unsplash.com/photo-1555072956-7758afb20e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/fastfood/italian.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -256,8 +230,7 @@ const pizza = [
     "id": 27,
     "name": "Paneer onion",
     "price": 249,
-    "image": "/assets/images/fastfood/paneeronion.png",
-    // "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=481&q=80",
+    "image": "/assets/images/products/fastfood/paneeronion.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -265,8 +238,7 @@ const pizza = [
     "id": 28,
     "name": "Tandoori",
     "price": 449,
-    "image": "/assets/images/fastfood/anycombo.png",
-    // "image": "https://img.freepik.com/free-photo/two-kind-pizza-table_140725-5573.jpg?w=740&t=st=1681408398~exp=1681408998~hmac=b86366275089e8068bfb9541ae8ec96322eb2c11cda180390a8d75f87344a207",
+    "image": "/assets/images/products/fastfood/anycombo.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -289,8 +261,7 @@ const hotBeverage = [
     "id": 30,
     "name": "Latte",
     "price": 59,
-    "image": "/assets/images/beverage/latte.png",
-    // "image": "https://img.freepik.com/free-photo/latte-coffee_1122-2728.jpg?w=996&t=st=1681465650~exp=1681466250~hmac=f9c24b618dcf2f822b7060c949b40c0e58802746634b39a1636149fa36c4c840",
+    "image": "/assets/images/products/beverage/latte.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -298,8 +269,7 @@ const hotBeverage = [
     "id": 31,
     "name": "Vanilla Latte",
     "price": 99,
-    "image": "/assets/images/beverage/vanillalatte.png",
-    // "image": "https://img.freepik.com/free-photo/cup-coffee-with-heart-drawn-foam_1286-70.jpg?1&w=900&t=st=1681465689~exp=1681466289~hmac=a70382f0f38a6558b1800fcce5f851c76a9556d17d2168321cba31fe4c2cb2eb",
+    "image": "/assets/images/products/beverage/vanillalatte.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -307,8 +277,7 @@ const hotBeverage = [
     "id": 32,
     "name": "Cappuccino",
     "price": 49,
-    "image": "/assets/images/beverage/cappuccino.png",
-    // "image": "https://img.freepik.com/free-photo/beautiful-fresh-relax-morning-coffee-cup-set_1150-7052.jpg?w=996&t=st=1681465653~exp=1681466253~hmac=083965665e6f4b8e2807231a62f05e65df44d8162a42de10a3e011ebbeae3f38",
+    "image": "/assets/images/products/beverage/cappuccino.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -316,8 +285,7 @@ const hotBeverage = [
     "id": 33,
     "name": "Espresso",
     "price": 49,
-    "image": "/assets/images/beverage/espresso.png",
-    // "image": "https://img.freepik.com/free-photo/close-up-view-brown-coffee-seeds-with-coffee-dark_179666-32787.jpg?size=626&ext=jpg&ga=GA1.2.1144094626.1659512730&semt=sph",
+    "image": "/assets/images/products/beverage/espresso.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -325,8 +293,7 @@ const hotBeverage = [
     "id": 34,
     "name": "Americano",
     "price": 59,
-    "image": "/assets/images/beverage/americano.png",
-    // "image": "https://img.freepik.com/free-psd/coffee-cup-icon-isolated-3d-render-illustration_47987-8773.jpg?w=740&t=st=1681465601~exp=1681466201~hmac=9ddc02b4464b4fbfc85581b65552d0bdd74eb8feb449584efabfbdb2fe2e98c3",
+    "image": "/assets/images/products/beverage/americano.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -334,8 +301,7 @@ const hotBeverage = [
     "id": 35,
     "name": "Mocha",
     "price": 69,
-    "image": "/assets/images/beverage/mocha.png",
-    // "image": "https://img.freepik.com/free-vector/white-cup-hot-coffee-with-cinnamon-saucer-beans-wooden-table-realistic_1284-56783.jpg?w=826&t=st=1681465566~exp=1681466166~hmac=f2813861e3ed5411271bc34ecee7cc6ed03bd381627c39b6f820c4196cc8704d",
+    "image": "/assets/images/products/beverage/mocha.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -343,8 +309,7 @@ const hotBeverage = [
     "id": 36,
     "name": "Dark Coffee",
     "price": 39,
-    "image": "/assets/images/beverage/darkcoffee.png",
-    // "image": "https://img.freepik.com/free-photo/espresso-dark-background-steam-rises-coffee-coffee-breakfast-italian-cafe-shop-vertical-shot-selective-focus_166373-2022.jpg?w=360&t=st=1681465589~exp=1681466189~hmac=e393af4acacd55817695dcd0a9753a9042fb142863ffcbfe63598177263bf272",
+    "image": "/assets/images/products/beverage/darkcoffee.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -352,8 +317,7 @@ const hotBeverage = [
     "id": 37,
     "name": "Ginger Tea",
     "price": 19,
-    "image": "/assets/images/beverage/gingertea.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-cup-cappuccino-with-sugar_140725-11389.jpg?w=740&t=st=1681465670~exp=1681466270~hmac=f8dfc15b7e1f5c166034b1c3c66203f544b7cdfeaed620335ea547b37a616952",
+    "image": "/assets/images/products/beverage/gingertea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -361,8 +325,7 @@ const hotBeverage = [
     "id": 38,
     "name": "Cardamom Tea",
     "price": 19,
-    "image": "/assets/images/beverage/cardamon.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-cup-cappuccino-with-sugar_140725-11389.jpg?w=740&t=st=1681465670~exp=1681466270~hmac=f8dfc15b7e1f5c166034b1c3c66203f544b7cdfeaed620335ea547b37a616952",
+    "image": "/assets/images/products/beverage/cardamon.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -371,8 +334,7 @@ const hotBeverage = [
     "id": 39,
     "name": "Black Tea",
     "price": 19,
-    "image": "/assets/images/beverage/blacktea.png",
-    // "image": "https://img.freepik.com/free-photo/tea-splashes-white-cup-black-background_8353-1512.jpg?w=996&t=st=1681465756~exp=1681466356~hmac=b31a3b1c3e0fb6f46924ffa3a25b26f32eaf23c771102617a4842e0fdce37375",
+    "image": "/assets/images/products/beverage/blacktea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -380,8 +342,7 @@ const hotBeverage = [
     "id": 40,
     "name": "Hot Lemon Tea",
     "price": 29,
-    "image": "/assets/images/beverage/lemontea.png",
-    // "image": "https://images.unsplash.com/photo-1604450655696-bdb0b1993bf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/beverage/lemontea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -389,8 +350,7 @@ const hotBeverage = [
     "id": 41,
     "name": "Lemon grass tea",
     "price": 39,
-    "image": "/assets/images/beverage/lemongrass.png",
-    // "image": "https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "image": "/assets/images/products/beverage/lemongrass.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -398,8 +358,7 @@ const hotBeverage = [
     "id": 42,
     "name": "Masala Latte Tea",
     "price": 49,
-    "image": "/assets/images/beverage/masalatea.png",
-    // "image": "https://images.unsplash.com/photo-1557760834-2f62fc5250de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "image": "/assets/images/products/beverage/masalatea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -408,8 +367,7 @@ const hotBeverage = [
     "id": 43,
     "name": "Cookies -6N",
     "price": 29,
-    "image": "/assets/images/beverage/cookies.png",
-    // "image": "https://img.freepik.com/free-photo/pile-cookies-cloth-wooden-table_1150-19666.jpg?w=996&t=st=1681466197~exp=1681466797~hmac=b5416cfbcd5c81b43ccd6bb219335d19a4dc48406d01cfab4513be24f09242b4",
+    "image": "/assets/images/products/beverage/cookies.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -420,8 +378,7 @@ const coldBeverage = [
     "id": 44,
     "name": "Unicorn",
     "price": 249,
-    "image": "/assets/images/beverage/unicorn.png",
-    // "image": "https://img.freepik.com/free-photo/delicious-milkshake-pink-background_23-2148601255.jpg?w=360&t=st=1681464822~exp=1681465422~hmac=a08a2049936a1a7793a5211b1fdcb744264b12bf2edfd3be27396d22a861876f",
+    "image": "/assets/images/products/beverage/unicorn.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -429,8 +386,7 @@ const coldBeverage = [
     "id": 45,
     "name": "Chocolate Dive",
     "price": 149,
-    "image": "/assets/images/beverage/chocolatedrive.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-chocolate-dessert-glass-with-straw_23-2148603311.jpg?w=360&t=st=1681464679~exp=1681465279~hmac=0f45684f456c46cebae71f86dc18d4fa3ac7c4d07131b535e2887bf489c1a175",
+    "image": "/assets/images/products/beverage/chocolatedrive.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -438,8 +394,7 @@ const coldBeverage = [
     "id": 46,
     "name": "Strawberry",
     "price": 129,
-    "image": "/assets/images/beverage/strawberry.png",
-    // "image": "https://img.freepik.com/free-photo/strawberry-milkshake-with-ice-table_140725-5486.jpg?w=740&t=st=1681464666~exp=1681465266~hmac=5867629b9e41a5a900860ffdce36e95ff836d78b87d91243ae834c284e740f21",
+    "image": "/assets/images/products/beverage/strawberry.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -447,8 +402,7 @@ const coldBeverage = [
     "id": 47,
     "name": "Dark Chocolate",
     "price": 139,
-    "image": "/assets/images/beverage/darkchocolate.png",
-    // "image": "https://img.freepik.com/free-photo/glass-chocolate-shake-table_23-2148922869.jpg?w=360&t=st=1681464788~exp=1681465388~hmac=e61e6ea762c8aa133a46bb2206537f3a82f03ad05f1ab5a9d87419cfd82c4c7d",
+    "image": "/assets/images/products/beverage/darkchocolate.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -456,8 +410,7 @@ const coldBeverage = [
     "id": 48,
     "name": "Mango",
     "price": 119,
-    "image": "/assets/images/beverage/mangoshake.png",
-    // "image": "https://img.freepik.com/free-photo/delicious-indian-mango-drink-with-pistachio_23-2148734681.jpg?w=740&t=st=1681464810~exp=1681465410~hmac=1dfd6fb1e7976f55efcd4e7733016ab6b9cb6d4754f06aa01a15c6b7ff1cc15f",
+    "image": "/assets/images/products/beverage/mangoshake.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -465,8 +418,7 @@ const coldBeverage = [
     "id": 49,
     "name": "Cool buzz",
     "price": 169,
-    "image": "/assets/images/beverage/coolbuzz.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-milkshake-yellow-background_23-2148296095.jpg?w=360&t=st=1681464880~exp=1681465480~hmac=a76b1192e6b34b92704c59b1769ba94dfce44102f491546beefbd93b1a50349c",
+    "image": "/assets/images/products/beverage/coolbuzz.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -474,8 +426,7 @@ const coldBeverage = [
     "id": 50,
     "name": "Cold Coffee",
     "price": 149,
-    "image": "/assets/images/beverage/coldcoffee.png",
-    // "image": "https://img.freepik.com/free-photo/cup-three-layered-coffee-dark_140725-6011.jpg?w=360&t=st=1681465197~exp=1681465797~hmac=2df7f99e66dc0ee2683c009221037dfd3caa6a6597012099f39c48d628744e61",
+    "image": "/assets/images/products/beverage/coldcoffee.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -483,8 +434,7 @@ const coldBeverage = [
     "id": 51,
     "name": "Oreo Shake",
     "price": 169,
-    "image": "/assets/images/beverage/oreo.png",
-    // "image": "https://img.freepik.com/free-photo/milkshake-with-whipped-cream-oreo-cookie-top_140725-3457.jpg?w=740&t=st=1681465166~exp=1681465766~hmac=f1ea30dc5974f4a0cc05b45e81df10d9a881c1f718de1f8d5a2a95a31babf311",
+    "image": "/assets/images/products/beverage/oreo.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -492,8 +442,7 @@ const coldBeverage = [
     "id": 52,
     "name": "Pink Island",
     "price": 189,
-    "image": "/assets/images/beverage/pinkisland.png",
-    // "image": "https://img.freepik.com/free-photo/front-view-delicious-milkshake-wooden-table_23-2148296076.jpg?w=360&t=st=1681465162~exp=1681465762~hmac=ad823555aa00eeab2c973a2e039ba7f0905f9ef1d9173d2a4739badd227f999c",
+    "image": "/assets/images/products/beverage/pinkisland.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -501,8 +450,7 @@ const coldBeverage = [
     "id": 53,
     "name": "Choco Overload",
     "price": 249,
-    "image": "/assets/images/beverage/chocooverload.png",
-    // "image": "https://img.freepik.com/free-photo/glass-chocolate-shake-table_23-2148922877.jpg?w=740&t=st=1681465165~exp=1681465765~hmac=d285ab6e527e88b52deda9682490b12e11177ed5c40903bb5de45196a02fb5ff",
+    "image": "/assets/images/products/beverage/chocooverload.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -510,8 +458,7 @@ const coldBeverage = [
     "id": 54,
     "name": "Frozen princess",
     "price": 229,
-    "image": "/assets/images/beverage/frozenprincess.png",
-    // "image": "https://images.unsplash.com/photo-1594492415237-24f03f84c506?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/beverage/frozenprincess.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -519,8 +466,7 @@ const coldBeverage = [
     "id": 55,
     "name": "Iced Tea",
     "price": 69,
-    "image": "/assets/images/beverage/icedtea.png",
-    // "image": "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
+    "image": "/assets/images/products/beverage/icedtea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -528,8 +474,7 @@ const coldBeverage = [
     "id": 56,
     "name": "Iced coffee",
     "price": 79,
-    "image": "/assets/images/beverage/icedcoffee.png",
-    // "image": "https://images.unsplash.com/photo-1642647391072-6a2416f048e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=386&q=80",
+    "image": "/assets/images/products/beverage/icedcoffee.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -537,8 +482,7 @@ const coldBeverage = [
     "id": 57,
     "name": "Iced lemon tea",
     "price": 89,
-    "image": "/assets/images/beverage/icedlemontea.png",
-    // "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80",
+    "image": "/assets/images/products/beverage/icedlemontea.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -549,8 +493,7 @@ const cocktail = [
     "id": 58,
     "name": "Mojito",
     "price": 149,
-    "image": "/assets/images/cocktail/mojito.png",
-    // "image": "https://img.freepik.com/free-photo/lime-cocktail-mint-side-view_140725-11289.jpg?w=740&t=st=1681468178~exp=1681468778~hmac=6a775bb2f1c7a26b1f733adbfe9860b2fe507a29c03c4248bb93016d6175ca92",
+    "image": "/assets/images/products/cocktail/mojito.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -558,8 +501,7 @@ const cocktail = [
     "id": 59,
     "name": "Gin Buzz",
     "price": 349,
-    "image": "/assets/images/cocktail/ginbuzz.png",
-    // "image": "https://img.freepik.com/free-photo/red-cocktail-with-peeled-orange-skin-minced-ice-cubes_114579-3394.jpg?w=740&t=st=1681469502~exp=1681470102~hmac=49292b50f7763081cb65c78cadabea5fb4b12d52fd66055e91917c0278f2d0d1",
+    "image": "/assets/images/products/cocktail/ginbuzz.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -567,8 +509,7 @@ const cocktail = [
     "id": 60,
     "name": "Cool Blue",
     "price": 159,
-    "image": "/assets/images/cocktail/coolblue.png",
-    // "image": "https://img.freepik.com/free-photo/blue-lagoon-with-cucumber_140725-1306.jpg?w=826&t=st=1681469463~exp=1681470063~hmac=6c3e815a94423b4264ff2fe1acbb320fa6174a604f736dc71d904272bf2b88dd",
+    "image": "/assets/images/products/cocktail/coolblue.png", // "image": "https://img.freepik.com/free-photo/blue-lagoon-with-cucumber_140725-1306.jpg?w=826&t=st=1681469463~exp=1681470063~hmac=6c3e815a94423b4264ff2fe1acbb320fa6174a604f736dc71d904272bf2b88dd",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -576,8 +517,7 @@ const cocktail = [
     "id": 61,
     "name": "Bloody Mary",
     "price": 189,
-    "image": "/assets/images/cocktail/bloodymary.png",
-    // "image": "https://img.freepik.com/free-photo/red-cranberry-cocktail-with-lemon-slice_140725-44401.jpg?w=740&t=st=1681469855~exp=1681470455~hmac=9d2e9972ae321effb80a203877db9f6298b9d2faf675d523d02a642e220a451d",
+    "image": "/assets/images/products/cocktail/bloodymary.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -586,8 +526,7 @@ const cocktail = [
     "id": 62,
     "name": "Mai Tai",
     "price": 199,
-    "image": "/assets/images/cocktail/maitai.png",
-    // "image": "https://img.freepik.com/free-photo/cocktail-topped-with-orange-slice_141793-643.jpg?w=740&t=st=1681468208~exp=1681468808~hmac=41e8f4299d075dd525424b255055e971437850d35f6cc1b6c4fd5288b4f1cd41",
+    "image": "/assets/images/products/cocktail/maitai.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -595,8 +534,7 @@ const cocktail = [
     "id": 63,
     "name": "Apple Tini",
     "price": 139,
-    "image": "/assets/images/cocktail/appletini.png",
-    // "image": "https://img.freepik.com/free-photo/green-sparkling-water-christmas-table-with-red-candles_140725-10539.jpg?w=740&t=st=1681469337~exp=1681469937~hmac=35574143d0a44964423fe11f5869ad319bebbba890e566178b41b645926970aa",
+    "image": "/assets/images/products/cocktail/appletini.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -604,8 +542,7 @@ const cocktail = [
     "id": 64,
     "name": "Manhattan",
     "price": 189,
-    "image": "/assets/images/cocktail/manhattan.png",
-    // "image": "https://img.freepik.com/free-photo/red-sangria-table_140725-5427.jpg?w=740&t=st=1681470021~exp=1681470621~hmac=b5a4e30b45e19e53f3e5c78ba89ca616210999db3f87d64216b4eee0e91e7cef",
+    "image": "/assets/images/products/cocktail/manhattan.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -614,8 +551,7 @@ const cocktail = [
     "id": 65,
     "name": "Sazerac",
     "price": 229,
-    "image": "/assets/images/cocktail/sazerac.png",
-    // "image": "https://img.freepik.com/free-photo/lemon-cocktail-with-green-table_140725-4787.jpg?w=740&t=st=1681470093~exp=1681470693~hmac=fc23fdb9da6d5ef7069a0b5721d810357cc6880a06d3c364442f249462f68290",
+    "image": "/assets/images/products/cocktail/sazerac.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -623,8 +559,7 @@ const cocktail = [
     "id": 66,
     "name": "Screwdriver",
     "price": 239,
-    "image": "/assets/images/cocktail/screwdriver.png",
-    // "image": "https://img.freepik.com/free-photo/orange-cocktail-with-ice-orange-slies_140725-1588.jpg?w=740&t=st=1681470465~exp=1681471065~hmac=444ec4027da20f84c1c4e8113a6a07269f2277d74ce3d4f4b798eb15ff60d0a7",
+    "image": "/assets/images/products/cocktail/screwdriver.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -632,8 +567,7 @@ const cocktail = [
     "id": 67,
     "name": "Long Island",
     "price": 279,
-    "image": "/assets/images/cocktail/longisland.png",
-    // "image": "https://img.freepik.com/free-photo/strawberry-mojito-with-ice-table_140725-6824.jpg?w=740&t=st=1681470438~exp=1681471038~hmac=71d9542772e97f2085bf327d103ddbf6f3f489e059e10cc86b72fe6c77a19e1f",
+    "image": "/assets/images/products/cocktail/longisland.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -641,8 +575,7 @@ const cocktail = [
     "id": 68,
     "name": "Pina Colada",
     "price": 349,
-    "image": "/assets/images/cocktail/pinacolada.png",
-    // "image": "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/cocktail/pinacolada.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -650,8 +583,7 @@ const cocktail = [
     "id": 69,
     "name": "Berry Margarita",
     "price": 279,
-    "image": "/assets/images/cocktail/berrymargarita.png",
-    // "image": "https://images.unsplash.com/photo-1653075857867-a299801cf126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/cocktail/berrymargarita.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -659,8 +591,7 @@ const cocktail = [
     "id": 70,
     "name": "Lime Margarita",
     "price": 279,
-    "image": "/assets/images/cocktail/limemargarita.png",
-    // "image": "https://images.unsplash.com/photo-1618799805265-4f27cb61ede9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    "image": "/assets/images/products/cocktail/limemargarita.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
@@ -668,12 +599,772 @@ const cocktail = [
     "id": 71,
     "name": "Whiskey Sour",
     "price": 279,
-    "image": "/assets/images/cocktail/whiskeysour.png",
-    // "image": "https://images.unsplash.com/photo-1586338211598-e2d64cf97e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+    "image": "/assets/images/products/cocktail/whiskeysour.png",
     "quantity": 1,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
 
 ]
 
-export {Product, juices, shakes, burgers, pizza, fries, hotBeverage, coldBeverage, cocktail}
+const beers = [
+  {
+    "id": 72,
+    "name": "Budweiser Magnum",
+    "price": 280,
+    "image": "/assets/images/products/beers/budweiser-magnum.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 73,
+    "name": "Budweiser",
+    "price": 190,
+    "image": "/assets/images/products/beers/budweiser.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 74,
+    "name": "Carlsberg Elephant",
+    "price": 220,
+    "image": "/assets/images/products/beers/carlsberg-elephant.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 75,
+    "name": "Kingfisher Ultra",
+    "price": 180,
+    "image": "/assets/images/products/beers/kingfisher-ultra.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 76,
+    "name": "Kingfisher Strong",
+    "price": 200,
+    "image": "/assets/images/products/beers/kingfisher-strong.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 77,
+    "name": "Tuborg",
+    "price": 160,
+    "image": "/assets/images/products/beers/tuborg.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 78,
+    "name": "Bira Boom",
+    "price": 190,
+    "image": "/assets/images/products/beers/bira-boom.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 79,
+    "name": "Heineken",
+    "price": 240,
+    "image": "/assets/images/products/beers/heineken.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 80,
+    "name": "Godfather",
+    "price": 250,
+    "image": "/assets/images/products/beers/godfather.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 81,
+    "name": "Bira Blonde",
+    "price": 180,
+    "image": "/assets/images/products/beers/bira-blonde.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 82,
+    "name": "Carlsberg",
+    "price": 170,
+    "image": "/assets/images/products/beers/carlsberg.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 83,
+    "name": "Royal Challenge",
+    "price": 150,
+    "image": "/assets/images/products/beers/royal-challenge-beer.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 84,
+    "name": "Haywards 5000",
+    "price": 120,
+    "image": "/assets/images/products/beers/haywards5000.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 85,
+    "name": "Simba",
+    "price": 140,
+    "image": "/assets/images/products/beers/simba.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+]
+
+const alcohol = [
+  {
+    "id": 86,
+    "name": "Black Dog",
+    "price": 6500,
+    "image": "/assets/images/products/alcohol/black-dog.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 87,
+    "name": "Ballentine's",
+    "price": 5650,
+    "image": "/assets/images/products/alcohol/ballentines.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 88,
+    "name": "Jack Daniel's",
+    "price": 4590,
+    "image": "/assets/images/products/alcohol/jack-deniels.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 89,
+    "name": "Chivas Regal",
+    "price": 180,
+    "image": "/assets/images/products/alcohol/chivas-regal.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 90,
+    "name": "Jameson",
+    "price": 3059,
+    "image": "/assets/images/products/alcohol/jameson.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 91,
+    "name": "Red Label",
+    "price": 2830,
+    "image": "/assets/images/products/alcohol/red-label.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 92,
+    "name": "Blue Label",
+    "price": 2900,
+    "image": "/assets/images/products/alcohol/blue-label.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 93,
+    "name": "Indri",
+    "price": 3700,
+    "image": "/assets/images/products/alcohol/indri.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 94,
+    "name": "Teacher's",
+    "price": 2030,
+    "image": "/assets/images/products/alcohol/teachers.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 95,
+    "name": "Vat 69",
+    "price": 1856,
+    "image": "/assets/images/products/alcohol/vat69.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 96,
+    "name": "McDowell's No1",
+    "price": 1800,
+    "image": "/assets/images/products/alcohol/mcdowells-no1.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 97,
+    "name": "Blender's Pride",
+    "price": 1450,
+    "image": "/assets/images/products/alcohol/blenders-pride.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 98,
+    "name": "Royal Challenge",
+    "price": 970,
+    "image": "/assets/images/products/alcohol/royal-challenge.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 99,
+    "name": "Royal Stag",
+    "price": 990,
+    "image": "/assets/images/products/alcohol/royal-stag.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 100,
+    "name": "Old Monk",
+    "price": 1050,
+    "image": "/assets/images/products/alcohol/old-monk.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 101,
+    "name": "Champagne",
+    "price": 1200,
+    "image": "/assets/images/products/alcohol/champagne.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 102,
+    "name": "Absolut Vodka",
+    "price": 2090,
+    "image": "/assets/images/products/alcohol/absolut-vodka.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 103,
+    "name": "Magic Moments Orange",
+    "price": 880,
+    "image": "/assets/images/products/alcohol/magic-moments-orange.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 104,
+    "name": "Magic Moments-Apple",
+    "price": 880,
+    "image": "/assets/images/products/alcohol/magic-moments-apple.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 105,
+    "name": "Red Wine",
+    "price": 990,
+    "image": "/assets/images/products/alcohol/red-wine.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 106,
+    "name": "Joven Tequila",
+    "price": 2070,
+    "image": "/assets/images/products/alcohol/tequila.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+]
+
+const cigarettes = [
+  {
+    "id": 107,
+    "name": "Badi Goldflake",
+    "price": 65,
+    "image": "/assets/images/products/cigarettes/badi-goldflake.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 108,
+    "name": "Choti Goldflake",
+    "price": 56,
+    "image": "/assets/images/products/cigarettes/choti-goldflake.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 109,
+    "name": "Badi Goldflake Light",
+    "price": 45,
+    "image": "/assets/images/products/cigarettes/badi-goldflake-light.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 110,
+    "name": "Choti Goldflake Light",
+    "price": 40,
+    "image": "/assets/images/products/cigarettes/choti-goldflake-light.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 111,
+    "name": "Paan",
+    "price": 59,
+    "image": "/assets/images/products/cigarettes/goldflake-paan.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 112,
+    "name": "Regular",
+    "price": 30,
+    "image": "/assets/images/products/cigarettes/classic-regular.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 113,
+    "name": "Mild",
+    "price": 40,
+    "image": "/assets/images/products/cigarettes/classic-mild.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 114,
+    "name": "Ultramild",
+    "price": 80,
+    "image": "/assets/images/products/cigarettes/classic-ultramild.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 115,
+    "name": "Connect",
+    "price": 70,
+    "image": "/assets/images/products/cigarettes/classic-connect.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 116,
+    "name": "Double Switch",
+    "price": 65,
+    "image": "/assets/images/products/cigarettes/classic-doubleswitch.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 117,
+    "name": "Advance",
+    "price": 85,
+    "image": "/assets/images/products/cigarettes/advance.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 118,
+    "name": "Choti Advance",
+    "price": 95,
+    "image": "/assets/images/products/cigarettes/choti-advance.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 119,
+    "name": "Clove Mix",
+    "price": 97,
+    "image": "/assets/images/products/cigarettes/clove-mix.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 120,
+    "name": "Marlboro Double Switch",
+    "price": 99,
+    "image": "/assets/images/products/cigarettes/double-switch.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 121,
+    "name": "Pocket",
+    "price": 105,
+    "image": "/assets/images/products/cigarettes/pocket.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 122,
+    "name": "American Fruit",
+    "price": 120,
+    "image": "/assets/images/products/cigarettes/american-fruit.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 123,
+    "name": "American Clove",
+    "price": 110,
+    "image": "/assets/images/products/cigarettes/american-clove.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 124,
+    "name": "Flake Excel",
+    "price": 88,
+    "image": "/assets/images/products/cigarettes/flake-excel.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 125,
+    "name": "Flake Liberty",
+    "price": 88,
+    "image": "/assets/images/products/cigarettes/flake-liberty.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 126,
+    "name": "Flake Mint",
+    "price": 99,
+    "image": "/assets/images/products/cigarettes/flake-mint.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 127,
+    "name": "Bristol",
+    "price": 105,
+    "image": "/assets/images/products/cigarettes/bristol.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+]
+const snacks = [
+  {
+    "id": 128,
+    "name": "Peanuts",
+    "price": 20,
+    "image": "/assets/images/products/snacks/peanuts.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 129,
+    "name": "Cashew Nuts",
+    "price": 60,
+    "image": "/assets/images/products/snacks/cashew-nuts.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 130,
+    "name": "Simply Salted",
+    "price": 30,
+    "image": "/assets/images/products/snacks/simply-salted.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 131,
+    "name": "Cream & Onions",
+    "price": 30,
+    "image": "/assets/images/products/snacks/cream-and-onions.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 132,
+    "name": "Tomato Twist",
+    "price": 30,
+    "image": "/assets/images/products/snacks/tomato-twist.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 133,
+    "name": "Pringles",
+    "price": 70,
+    "image": "/assets/images/products/snacks/pringles.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 134,
+    "name": "Doritos",
+    "price": 50,
+    "image": "/assets/images/products/snacks/doritos.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+]
+
+const coldDrinks = [
+  {
+    "id": 135,
+    "name": "Sprite",
+    "price": 40,
+    "image": "/assets/images/products/cold-drink/sprite.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 136,
+    "name": "Soda",
+    "price": 50,
+    "image": "/assets/images/products/cold-drink/soda.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 137,
+    "name": "Coca Cola",
+    "price": 45,
+    "image": "/assets/images/products/cold-drink/coca-cola.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 138,
+    "name": "Pepsi",
+    "price": 40,
+    "image": "/assets/images/products/cold-drink/pepsi.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 139,
+    "name": "Mountain Dew",
+    "price": 45,
+    "image": "/assets/images/products/cold-drink/mountain-dew.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 140,
+    "name": "Sting",
+    "price": 20,
+    "image": "/assets/images/products/cold-drink/sting.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 141,
+    "name": "Jeeru",
+    "price": 20,
+    "image": "/assets/images/products/cold-drink/jeeru.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  }
+]
+const partyEssentials = [
+  {
+    "id": 142,
+    "name": "Vape Hookah",
+    "price": 650,
+    "image": "/assets/images/products/party-essentials/vape.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 143,
+    "name": "Bottle Opener",
+    "price": 50,
+    "image": "/assets/images/products/party-essentials/bottle-opener.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 144,
+    "name": "Lighter",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/lighter.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 145,
+    "name": "Match Box",
+    "price": 5,
+    "image": "/assets/images/products/party-essentials/matchbox.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 146,
+    "name": "Water Bottle",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/water-bottle.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 147,
+    "name": "Ice Cubes",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/ice-box.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+
+  {
+    "id": 148,
+    "name": "Beer Mug",
+    "price": 60,
+    "image": "/assets/images/products/party-essentials/beer-mug.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 149,
+    "name": "Disposable Glass",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/disposable-glass.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 150,
+    "name": "Disposable plate",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/disposable-plate.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 151,
+    "name": "Confetti/Bomber",
+    "price": 80,
+    "image": "/assets/images/products/party-essentials/confetti.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 152,
+    "name": "Playing Cards",
+    "price": 30,
+    "image": "/assets/images/products/party-essentials/cards.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 153,
+    "name": "UNO Cards",
+    "price": 40,
+    "image": "/assets/images/products/party-essentials/uno-cards.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 154,
+    "name": "Tissue Box",
+    "price": 50,
+    "image": "/assets/images/products/party-essentials/tissue-box.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 155,
+    "name": "Sunglass",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/party-glasses.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 156,
+    "name": "Party Mask",
+    "price": 10,
+    "image": "/assets/images/products/party-essentials/party-mask.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 157,
+    "name": "Perfume",
+    "price": 15,
+    "image": "/assets/images/products/party-essentials/perfume-spray.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 158,
+    "name": "Acidity Tablet",
+    "price": 40,
+    "image": "/assets/images/products/party-essentials/acidity-tablet.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 159,
+    "name": "Vomiting Tablet",
+    "price": 20,
+    "image": "/assets/images/products/party-essentials/vomit-tablet.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+]
+
+const rentSpeaker = [
+  {
+    "id": 160,
+    "name": "Party Speaker",
+    "price": 200,
+    "image": "/assets/images/products/rent-party-speaker/speaker.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 161,
+    "name": "Disco Lights",
+    "price": 250,
+    "image": "/assets/images/products/rent-party-speaker/disco-light.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "id": 162,
+    "name": "Hookah",
+    "price": 180,
+    "image": "/assets/images/products/rent-party-speaker/hookah.png",
+    "quantity": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+]
+
+export {
+  Product, juices, shakes, burgers, pizza, fries, hotBeverage,
+  coldBeverage, cocktail, beers, alcohol, cigarettes, snacks, coldDrinks, partyEssentials, rentSpeaker
+}
