@@ -8,7 +8,6 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import {NgOtpInputModule} from "ng-otp-input";
-import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 
 @NgModule({
@@ -16,11 +15,9 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
     PublicComponent,
     LoginComponent,
     VerifyOtpComponent,
-    UpdateProfileComponent,
-    SplashScreenComponent
+    UpdateProfileComponent
   ],
   exports: [
-    SplashScreenComponent
   ],
   imports: [
     CommonModule,

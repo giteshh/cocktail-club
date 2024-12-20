@@ -33,13 +33,12 @@ export class FastFoodComponent {
         }
       })
     }
-    // if (!this.existingBurger) {
-      this.appService.addToCart(burgers);
-      this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
+    this.appService.addToCart(burgers);
+    this.toastr.success('Selected item has been added to the cart!', '', {
+      positionClass: 'toast-top-center',
+      timeOut: 3000,
+      closeButton: true
+    });
   }
 
   addPizzaToCart(pizza: any) {
@@ -49,23 +48,32 @@ export class FastFoodComponent {
       this.cart.forEach((cart: any) => {
         if (cart.id == pizza.id) {
           this.existingPizza = true;
+          pizza.quantity += 1;
+          cart.quantity += 1;
+        }else{
+          this.appService.addToCart(pizza);
+          this.toastr.success('Selected item has been added to the cart!', '', {
+            positionClass: 'toast-top-center',
+            timeOut: 3000,
+            closeButton: true
+          });
         }
       })
     }
-    if (!this.existingPizza) {
-      this.appService.addToCart(pizza);
-      this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
-    }
+    // if (!this.existingPizza) {
+    // this.appService.addToCart(pizza);
+    // this.toastr.success('Selected item has been added to the cart!', '', {
+    //   positionClass: 'toast-top-center',
+    //   timeOut: 3000,
+    //   closeButton: true
+    // });
+    // } else {
+    //   this.toastr.info('Selected item already exists in the cart!', '', {
+    //     positionClass: 'toast-top-center',
+    //     timeOut: 3000,
+    //     closeButton: true
+    //   });
+    // }
   }
 
   addFriesToCart(fries: any) {

@@ -15,7 +15,7 @@ export class AuthService {
 
   constructor(private fireAuth: AngularFireAuth,
               private router: Router) {
-    // this.userStatus();
+    this.userStatus();
   }
 
   signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
@@ -51,8 +51,8 @@ export class AuthService {
     this.userLogInStatus = false;
     firebase.auth().signOut();
     this.router.navigate(['/signin']);
-    // localStorage.clear();
-    // this.userStatus();
+    localStorage.clear();
+    this.userStatus();
   }
 
   userStatus() {

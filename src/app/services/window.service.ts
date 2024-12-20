@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 function _window(): any {
   // return the global native browser window object
@@ -10,7 +10,8 @@ function _window(): any {
 })
 export class WindowService {
 
-  constructor() { }
+  constructor() {
+  }
 
   get nativeWindow(): any {
     return _window();
