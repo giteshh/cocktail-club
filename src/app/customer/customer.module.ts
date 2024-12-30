@@ -22,6 +22,7 @@ import { SnacksComponent } from './components/snacks/snacks.component';
 import { ColdDrinkComponent } from './components/cold-drink/cold-drink.component';
 import { PartyEssentialsComponent } from './components/party-essentials/party-essentials.component';
 import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.com
     SnacksComponent,
     ColdDrinkComponent,
     PartyEssentialsComponent,
-    RentSpeakerComponent
+    RentSpeakerComponent,
+    SearchComponent
 
   ],
   imports: [

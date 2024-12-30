@@ -15,6 +15,7 @@ import {SnacksComponent} from "./components/snacks/snacks.component";
 import {ColdDrinkComponent} from "./components/cold-drink/cold-drink.component";
 import {PartyEssentialsComponent} from "./components/party-essentials/party-essentials.component";
 import {RentSpeakerComponent} from "./components/rent-speaker/rent-speaker.component";
+import {SearchComponent} from "./components/search/search.component";
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'orders', component: OrdersComponent},
+  {path: 'search', component: SearchComponent},
 
 ];
 
