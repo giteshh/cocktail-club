@@ -13,7 +13,7 @@
         <p class="desc">{{item.description}}</p>
         <div class="price-btn-sec">
           <div class="sec-1">
-            <p><b>{{item.price | currency: 'INR'}}</b></p>
+            <p><b>{{item.price | currency: 'INR' : 'symbol' : '1.0-0'}}</b></p>
           </div>
           <div class="sec-2">
             <img (click)="addHotBeverageToCart(item)" class="cart-icon"
@@ -38,7 +38,7 @@
         <p class="desc">{{item.description}}</p>
         <div class="price-btn-sec">
           <div class="sec-1">
-            <p><b>{{item.price | currency: 'INR'}}</b></p>
+            <p><b>{{item.price | currency: 'INR' : 'symbol' : '1.0-0'}}</b></p>
           </div>
           <div class="sec-2">
             <img (click)="addColdBeverageToCart(item)" class="cart-icon"

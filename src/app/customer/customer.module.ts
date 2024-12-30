@@ -25,6 +25,7 @@ import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.com
 import { SearchComponent } from './components/search/search.component';
 
 
+
 @NgModule({
   declarations: [
     CustomerComponent,

@@ -7,7 +7,7 @@ interface Product {
   description: string
 }
 
-const juices = [
+const juices: Product[] = [
   {
     "id": 1,
     "name": "Fresh Orange",
@@ -66,7 +66,7 @@ const juices = [
   },
 
 ]
-const shakes = [
+const shakes: Product[] = [
   {
     "id": 8,
     "name": "Kiwi",
@@ -126,7 +126,7 @@ const shakes = [
 
 ]
 
-const burgers = [
+const burgers: Product[] = [
   {
     "id": 15,
     "name": "Double patty",
@@ -185,7 +185,7 @@ const burgers = [
   },
 
 ]
-const pizza = [
+const pizza: Product[] = [
   {
     "id": 22,
     "name": "Cheesilious",
@@ -245,7 +245,7 @@ const pizza = [
 
 ]
 
-const fries = [
+const fries: Product[] = [
   {
     "id": 29,
     "name": "French Fries",
@@ -256,7 +256,7 @@ const fries = [
   }
 ]
 
-const hotBeverage = [
+const hotBeverage: Product[] = [
   {
     "id": 30,
     "name": "Latte",
@@ -373,7 +373,7 @@ const hotBeverage = [
   },
 
 ]
-const coldBeverage = [
+const coldBeverage: Product[] = [
   {
     "id": 44,
     "name": "Unicorn",
@@ -488,7 +488,7 @@ const coldBeverage = [
   },
 
 ]
-const cocktail = [
+const cocktail: Product[] = [
   {
     "id": 58,
     "name": "Mojito",
@@ -606,7 +606,7 @@ const cocktail = [
 
 ]
 
-const beers = [
+const beers: Product[] = [
   {
     "id": 72,
     "name": "Budweiser Magnum",
@@ -724,7 +724,7 @@ const beers = [
 
 ]
 
-const alcohol = [
+const alcohol: Product[] = [
   {
     "id": 86,
     "name": "Black Dog",
@@ -898,7 +898,7 @@ const alcohol = [
 
 ]
 
-const cigarettes = [
+const cigarettes: Product[] = [
   {
     "id": 107,
     "name": "Badi Goldflake",
@@ -1070,7 +1070,7 @@ const cigarettes = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
 ]
-const snacks = [
+const snacks: Product[] = [
   {
     "id": 128,
     "name": "Peanuts",
@@ -1130,7 +1130,7 @@ const snacks = [
   }
 ]
 
-const coldDrinks = [
+const coldDrinks: Product[] = [
   {
     "id": 135,
     "name": "Sprite",
@@ -1189,7 +1189,7 @@ const coldDrinks = [
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   }
 ]
-const partyEssentials = [
+const partyEssentials: Product[] = [
   {
     "id": 142,
     "name": "Vape Hookah",
@@ -1337,7 +1337,7 @@ const partyEssentials = [
   },
 ]
 
-const rentSpeaker = [
+const rentSpeaker: Product[] = [
   {
     "id": 160,
     "name": "Party Speaker",
