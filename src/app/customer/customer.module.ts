@@ -26,6 +26,7 @@ import { SearchComponent } from './components/search/search.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { AnimatedProductCarouselComponent } from './components/animated-product-carousel/animated-product-carousel.component';
+import { FeatureProductsComponent } from './components/feature-products/feature-products.component';
 
 
 
@@ -50,7 +51,8 @@ import { AnimatedProductCarouselComponent } from './components/animated-product-
     PartyEssentialsComponent,
     RentSpeakerComponent,
     SearchComponent,
-    AnimatedProductCarouselComponent
+    AnimatedProductCarouselComponent,
+    FeatureProductsComponent
 
   ],
   imports: [
