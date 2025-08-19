@@ -57,6 +57,20 @@ nav {
   display: none;
 }
 
+//menu dropdown
+.menu-dropdown{
+  .dropdown-toggle{
+    border: none;
+    background-color: transparent;
+    margin-right: 25px;
+  }
+  ul{
+    width: 900px;
+    height: 550px;
+  }
+}
+
+
 /* User profile or dropdown styles and hover styles starts */
 .user-profile-picture {
   width: 35px;

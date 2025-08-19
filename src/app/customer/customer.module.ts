@@ -23,6 +23,9 @@ import { ColdDrinkComponent } from './components/cold-drink/cold-drink.component
 import { PartyEssentialsComponent } from './components/party-essentials/party-essentials.component';
 import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.component';
 import { SearchComponent } from './components/search/search.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { AnimatedProductCarouselComponent } from './components/animated-product-carousel/animated-product-carousel.component';
 
 
 
@@ -46,7 +49,8 @@ import { SearchComponent } from './components/search/search.component';
     ColdDrinkComponent,
     PartyEssentialsComponent,
     RentSpeakerComponent,
-    SearchComponent
+    SearchComponent,
+    AnimatedProductCarouselComponent
 
   ],
   imports: [
@@ -54,7 +58,9 @@ import { SearchComponent } from './components/search/search.component';
     CustomerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PublicModule
+    PublicModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class CustomerModule { }
