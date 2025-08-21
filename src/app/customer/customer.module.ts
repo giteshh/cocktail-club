@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { CustomerRoutingModule } from './customer-routing.module';
-import { CustomerComponent } from './customer.component';
+import {CustomerRoutingModule} from './customer-routing.module';
+import {CustomerComponent} from './customer.component';
 import {HomeComponent} from "./components/home/home.component";
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {FastFoodComponent} from "./components/fast-food/fast-food.component";
@@ -11,23 +11,29 @@ import {BeverageComponent} from "./components/beverage/beverage.component";
 import {CocktailComponent} from "./components/cocktail/cocktail.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import { CheckoutComponent } from './components/checkout/checkout.component';
+import {CheckoutComponent} from './components/checkout/checkout.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { OrdersComponent } from './components/orders/orders.component';
+import {OrdersComponent} from './components/orders/orders.component';
 import {PublicModule} from "../public/public.module";
-import { BeersComponent } from './components/beers/beers.component';
-import { AlcoholComponent } from './components/alcohol/alcohol.component';
-import { CigarettesComponent } from './components/cigarettes/cigarettes.component';
-import { SnacksComponent } from './components/snacks/snacks.component';
-import { ColdDrinkComponent } from './components/cold-drink/cold-drink.component';
-import { PartyEssentialsComponent } from './components/party-essentials/party-essentials.component';
-import { RentSpeakerComponent } from './components/rent-speaker/rent-speaker.component';
-import { SearchComponent } from './components/search/search.component';
+import {BeersComponent} from './components/beers/beers.component';
+import {AlcoholComponent} from './components/alcohol/alcohol.component';
+import {CigarettesComponent} from './components/cigarettes/cigarettes.component';
+import {SnacksComponent} from './components/snacks/snacks.component';
+import {ColdDrinkComponent} from './components/cold-drink/cold-drink.component';
+import {PartyEssentialsComponent} from './components/party-essentials/party-essentials.component';
+import {RentSpeakerComponent} from './components/rent-speaker/rent-speaker.component';
+import {SearchComponent} from './components/search/search.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { AnimatedProductCarouselComponent } from './components/animated-product-carousel/animated-product-carousel.component';
-import { FeatureProductsComponent } from './components/feature-products/feature-products.component';
-
+import {
+  AnimatedProductCarouselComponent
+} from './components/animated-product-carousel/animated-product-carousel.component';
+import {FeatureProductsComponent} from './components/feature-products/feature-products.component';
+import {TestimonialsComponent} from "./components/testimonials/testimonials.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HireComponent } from './components/hire/hire.component';
+import { HireCarouselComponent } from './components/hire-carousel/hire-carousel.component';
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 
 @NgModule({
@@ -52,7 +58,10 @@ import { FeatureProductsComponent } from './components/feature-products/feature-
     RentSpeakerComponent,
     SearchComponent,
     AnimatedProductCarouselComponent,
-    FeatureProductsComponent
+    FeatureProductsComponent,
+    TestimonialsComponent,
+    HireComponent,
+    HireCarouselComponent
 
   ],
   imports: [
@@ -62,7 +71,10 @@ import { FeatureProductsComponent } from './components/feature-products/feature-
     ReactiveFormsModule,
     PublicModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ]
 })
-export class CustomerModule { }
+export class CustomerModule {
+}

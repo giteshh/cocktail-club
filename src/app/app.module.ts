@@ -21,6 +21,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {PageNotFoundComponent} from "./public/components/page-not-found/page-not-found.component";
 import {HttpClientModule} from "@angular/common/http";
 import firebase from "firebase/compat/app";
+import {CarouselModule} from "ngx-owl-carousel-o";
+
 
 
 firebase.initializeApp(environment.firebase);
@@ -47,7 +49,8 @@ firebase.initializeApp(environment.firebase);
     ToastrModule.forRoot(),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    CarouselModule
   ],
   bootstrap: [AppComponent]
 })
