@@ -1,129 +1,267 @@
-<nav class="navbar navbar-expand-lg sticky-top bg-white">
+<!--<nav class="navbar navbar-expand-lg sticky-top">-->
+<!--  <div class="container-fluid">-->
+<!--    <div class="sec-1">-->
+<!--      <a class="navbar-brand" routerLink="/home">-->
+<!--        <img src="../../../../assets/images/navbar/cocktail.gif" alt="logo">-->
+<!--        <h4>Cocktail Club</h4>-->
+<!--      </a>-->
+<!--    </div>-->
+
+
+<!--    <div class="sec-2">-->
+<!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"-->
+<!--              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+<!--      <div class="collapse navbar-collapse">-->
+
+<!--        &lt;!&ndash; menu &ndash;&gt;-->
+<!--        <div class="menu-dropdown">-->
+<!--          <div class="dropdown-menu-center">-->
+<!--            <button class="dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"-->
+<!--                    aria-expanded="false">-->
+<!--              Menu-->
+<!--            </button>-->
+<!--            <ul class="dropdown-menu">-->
+<!--              <li><a class="nav-link" *ngIf="shouldDisplayLink('/home')" routerLink="../home">-->
+<!--                Home-->
+<!--              </a></li>-->
+<!--              <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--              <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="navbar-nav">-->
+<!--          &lt;!&ndash;    search&ndash;&gt;-->
+<!--          <div class="searchBar">-->
+<!--            <input id="searchQueryInput"-->
+<!--                   type="text"-->
+<!--                   class="search-input"-->
+<!--                   [placeholder]="currentPlaceholder"-->
+<!--                   (focus)="onFocus()"-->
+<!--                   (blur)="onBlur()"-->
+<!--                   [(ngModel)]="searchTerm"/>-->
+<!--            <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" (click)="onSearch()">-->
+<!--              <svg style="width:24px;height:24px" viewBox="0 0 24 24">-->
+<!--                <path fill="#666666"-->
+<!--                      d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>-->
+<!--              </svg>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="dropdown nav-item">-->
+<!--            <button type="button" class="btn dropdown-toggle border-0 nav-link" data-bs-toggle="dropdown">-->
+<!--              &lt;!&ndash;              <a class="nav-link">&ndash;&gt;-->
+<!--              <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">-->
+<!--              &lt;!&ndash;              </a>&ndash;&gt;-->
+<!--            </button>-->
+<!--            <ul class="dropdown-menu dropdown-menu" *ngIf="userLoggedIn">-->
+<!--              <li class="dropdown-item"><b>Hi {{ fullName }}</b></li>-->
+<!--              <li><a class="dropdown-item" href="#" routerLink="/update-profile">Edit Profile</a></li>-->
+<!--              <li><a class="dropdown-item" href="#" routerLink="/orders">My Orders</a></li>-->
+<!--              <li><a class="dropdown-item" href="#" (click)="logOut()">Logout</a></li>-->
+<!--            </ul>-->
+<!--            <ul class="dropdown-menu dropdown-menu-center" *ngIf="!userLoggedIn">-->
+<!--              <li><a class="dropdown-item" href="#" routerLink="/signin">Sign in/Sign up</a></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">-->
+<!--            <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">-->
+<!--          </a>-->
+<!--          &lt;!&ndash;          <span class="badge badge-warning" id='lblCartCount'>{{quantity}}</span>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+<!--  <div id="category-links">-->
+<!--    <div>-->
+<!--      &lt;!&ndash;      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"&ndash;&gt;-->
+<!--      &lt;!&ndash;              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">&ndash;&gt;-->
+<!--      &lt;!&ndash;        <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
+<!--      &lt;!&ndash;      </button>&ndash;&gt;-->
+<!--      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+<!--        <div class="navbar-nav">-->
+<!--&lt;!&ndash;          <a class="nav-link" *ngIf="shouldDisplayLink('/home')" routerLink="../home">&ndash;&gt;-->
+<!--&lt;!&ndash;            Home&ndash;&gt;-->
+<!--&lt;!&ndash;          </a>&ndash;&gt;-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/cocktail')" routerLink="../cocktail">-->
+<!--            Cocktails-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/fruit-juice')" routerLink="../fruit-juice">-->
+<!--            Juices-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/beverage')" routerLink="../beverage">-->
+<!--            Beverages-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">-->
+<!--            Fast Food-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/beers')" routerLink="../beers">-->
+<!--            Beers-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/alcohol')" routerLink="../alcohol">-->
+<!--            Alcohol-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/cigarettes')" routerLink="../cigarettes">-->
+<!--            Cigarettes-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/snacks')" routerLink="../snacks">-->
+<!--            Snacks-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/cold-drink')" routerLink="../cold-drink">-->
+<!--            Cold Drinks-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/party-essentials')" routerLink="../party-essentials">-->
+<!--            Party Essentials-->
+<!--          </a>-->
+<!--          <a class="nav-link" *ngIf="shouldDisplayLink('/rent-speaker')" routerLink="../rent-speaker">-->
+<!--            Rent Party Speaker-->
+<!--          </a>-->
+<!--          <a class="nav-link" id="showOnMobileScreen" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">-->
+<!--            <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</nav>-->
+
+
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
-    <div class="sec-1">
-      <a class="navbar-brand" routerLink="/home">
-        <img src="../../../../assets/images/navbar/cocktail.gif" alt="logo">
-        <h4>Cocktail Club</h4>
-      </a>
-    </div>
+    <a class="navbar-brand" routerLink="/home">
+      <img src="../../../../assets/images/navbar/cocktail.gif" alt="logo">
+      <h4>Cocktail Club</h4>
+    </a>
 
-
-    <div class="sec-2">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse">
-
-        <!-- menu -->
-        <div class="menu-dropdown">
-          <div class="dropdown-center">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-              Menu
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="navbar-nav">
-          <!--    search-->
-          <div class="searchBar">
-            <input id="searchQueryInput"
-                   type="text"
-                   class="search-input"
-                   [placeholder]="currentPlaceholder"
-                   (focus)="onFocus()"
-                   (blur)="onBlur()"
-                   [(ngModel)]="searchTerm"/>
-            <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" (click)="onSearch()">
-              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                <path fill="#666666"
-                      d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
-              </svg>
-            </button>
-          </div>
-          <div class="dropdown nav-item">
-            <button type="button" class="btn dropdown-toggle border-0 nav-link" data-bs-toggle="dropdown">
-              <!--              <a class="nav-link">-->
-              <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">
-              <!--              </a>-->
-            </button>
-            <ul class="dropdown-menu dropdown-menu" *ngIf="userLoggedIn">
-              <li class="dropdown-item"><b>Hi {{ fullName }}</b></li>
-              <li><a class="dropdown-item" href="#" routerLink="/update-profile">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="#" routerLink="/orders">My Orders</a></li>
-              <li><a class="dropdown-item" href="#" (click)="logOut()">Logout</a></li>
-            </ul>
-            <ul class="dropdown-menu dropdown-menu-center" *ngIf="!userLoggedIn">
-              <li><a class="dropdown-item" href="#" routerLink="/signin">Sign in/Sign up</a></li>
-            </ul>
-          </div>
-
-          <a class="nav-link" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
-            <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">
-          </a>
-          <!--          <span class="badge badge-warning" id='lblCartCount'>{{quantity}}</span>-->
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-  <div id="category-links">
-    <div>
-      <!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"-->
-      <!--              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-      <!--        <span class="navbar-toggler-icon"></span>-->
-      <!--      </button>-->
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
           <a class="nav-link" *ngIf="shouldDisplayLink('/home')" routerLink="../home">
             Home
           </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/cocktail')" routerLink="../cocktail">
-            Cocktails
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Menu
           </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/fruit-juice')" routerLink="../fruit-juice">
-            Juices
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/beverage')" routerLink="../beverage">
-            Beverages
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
-            Fast Food
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/beers')" routerLink="../beers">
-            Beers
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/alcohol')" routerLink="../alcohol">
-            Alcohol
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/cigarettes')" routerLink="../cigarettes">
-            Cigarettes
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/snacks')" routerLink="../snacks">
-            Snacks
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/cold-drink')" routerLink="../cold-drink">
-            Cold Drinks
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/party-essentials')" routerLink="../party-essentials">
-            Party Essentials
-          </a>
-          <a class="nav-link" *ngIf="shouldDisplayLink('/rent-speaker')" routerLink="../rent-speaker">
-            Rent Party Speaker
-          </a>
-          <a class="nav-link" id="showOnMobileScreen" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
-            <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">
-          </a>
-        </div>
+          <ul class="dropdown-menu mega-menu" data-bs-auto-close="true">
+            <div class="mega-menu-content">
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/cocktail')" routerLink="../cocktail">
+                <img src="../../../../assets/images/navbar/cocktail.png" class="img-thumbnail" alt="...">
+                Cocktails
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/fruit-juice')"
+                 routerLink="../fruit-juice">
+                <img src="../../../../assets/images/navbar/juice.png" class="img-thumbnail" alt="...">
+                Juices
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/beverage')" routerLink="../beverage">
+                <img src="../../../../assets/images/navbar/beverage.png" class="img-thumbnail" alt="...">
+                Beverages
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
+                <img src="../../../../assets/images/navbar/fastfood.png" class="img-thumbnail" alt="...">
+                Fast Food
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/beers')" routerLink="../beers">
+                <img src="../../../../assets/images/navbar/beer.png" class="img-thumbnail" alt="...">
+                Beers
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/alcohol')" routerLink="../alcohol">
+                <img src="../../../../assets/images/navbar/alcohol.png" class="img-thumbnail" alt="...">
+                Alcohol
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/cigarettes')" routerLink="../cigarettes">
+                <img src="../../../../assets/images/navbar/cigeratte.png" class="img-thumbnail" alt="...">
+                Cigarettes
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/snacks')" routerLink="../snacks">
+                <img src="../../../../assets/images/navbar/snacks.png" class="img-thumbnail" alt="...">
+                Snacks
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/cold-drink')" routerLink="../cold-drink">
+                <img src="../../../../assets/images/navbar/cold-drink.png" class="img-thumbnail" alt="...">
+                Cold Drinks
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/party-essentials')" routerLink="../party-essentials">
+                <img src="../../../../assets/images/navbar/party-essentials.png" class="img-thumbnail" alt="...">
+                Party Essentials
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" *ngIf="shouldDisplayLink('/rent-speaker')" routerLink="../rent-speaker">
+                <img src="../../../../assets/images/navbar/speaker.png" class="img-thumbnail" alt="...">
+                Rent Party Speaker
+              </a>
+            </li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="searchBar">
+        <input id="searchQueryInput"
+               type="text"
+               class="search-input"
+               [placeholder]="currentPlaceholder"
+               (focus)="onFocus()"
+               (blur)="onBlur()"
+               [(ngModel)]="searchTerm"/>
+        <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" (click)="onSearch()">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#666666"
+                  d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+          </svg>
+        </button>
       </div>
+
+      <!--      user-dropdown-->
+      <div class="dropdown nav-item">
+        <button type="button" class="btn dropdown-toggle border-0 nav-link" data-bs-toggle="dropdown">
+          <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" *ngIf="userLoggedIn">
+          <li class="dropdown-item"><b>Hi {{ fullName }}</b></li>
+          <li><a class="dropdown-item" href="#" routerLink="/update-profile">Edit Profile</a></li>
+          <li><a class="dropdown-item" href="#" routerLink="/orders">My Orders</a></li>
+          <li><a class="dropdown-item" href="#" (click)="logOut()">Logout</a></li>
+        </ul>
+        <ul class="dropdown-menu" *ngIf="!userLoggedIn">
+          <li><a class="dropdown-item" href="#" routerLink="/signin">Sign in/Sign up</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" id="showOnMobileScreen" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
+        <img class="nav-icons" src="../../../../assets/images/navbar/cart.png" alt="cart">
+      </a>
     </div>
   </div>
-
 </nav>

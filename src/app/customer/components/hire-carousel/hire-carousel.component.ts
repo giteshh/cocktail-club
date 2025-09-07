@@ -39,11 +39,11 @@ export class HireCarouselComponent implements OnInit {
       role: 'Marketing Manager',
       img: '../assets/images/home/hire/rent-speaker.jpg'
     },
-    {
-      name: 'James Wilson',
-      role: 'Product Manager',
-      img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3687&auto=format&fit=crop'
-    }
+    // {
+    //   name: 'James Wilson',
+    //   role: 'Product Manager',
+    //   img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3687&auto=format&fit=crop'
+    // }
   ];
 
   currentIndex = 0;

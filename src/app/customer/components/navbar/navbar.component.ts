@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {AppService} from "../../../app.service";
@@ -137,4 +137,5 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.router.navigate(['/search'], {queryParams: {search: this.searchTerm}});
     }
   }
+
 }
