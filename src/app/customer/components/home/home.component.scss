@@ -214,29 +214,30 @@
   }
 
   .imgOnLeft-right-section img, .imgOnRight-left-section img {
-    width: 100%;
-    padding: 25px;
+    width: 90%;
+    //padding: 25px !important;
   }
 
   .imgOnLeft-section h1, .imgOnRight-section h1 {
-    font-size: 25px;
+    font-size: 32px;
     letter-spacing: 1px;
   }
 
   .imgOnLeft-section p, .imgOnRight-section p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .btn {
-    padding: 8px 24px;
+    padding: 10px 80px;
     border-radius: 30px;
     margin-top: 15px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .sale-offer {
-    font-size: 10px;
+    font-size: 12px;
   }
+
   .text-line {
     font-variation-settings: "wght" 100, "ital" 0;
     font-family: Oddval Variable;
