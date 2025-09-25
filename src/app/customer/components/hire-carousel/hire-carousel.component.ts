@@ -15,28 +15,27 @@ export class HireCarouselComponent implements OnInit {
   teamMembers: TeamMember[] = [
     {
       name: 'Hire Chef',
-      role: 'Founder',
-
+      role: 'Skilled chefs serving up mouthwatering meals for your house party.',
       img: '../assets/images/home/hire/chef.jpg'
     },
     {
       name: 'Hire Waiters',
-      role: 'Creative Director',
+      role: 'Professional waitstaff delivering seamless service with style.',
       img: '../assets/images/home/hire/waiters.jpg'
     },
     {
       name: 'Hire Cleaning Services',
-      role: 'Lead Developer',
+      role: 'Party cleanup pros who make the mess disappear.',
       img: '../assets/images/home/hire/cleaning-service.jpg'
     },
     {
       name: 'Hire DJ',
-      role: 'UX Designer',
+      role: 'Bring the beats home with DJs who know how to rock a house party.',
       img: '../assets/images/home/hire/dj.jpg'
     },
     {
       name: 'Rent Speaker',
-      role: 'Marketing Manager',
+      role: 'Powerful speakers to turn up the vibe in your living room or backyard.',
       img: '../assets/images/home/hire/rent-speaker.jpg'
     },
     // {

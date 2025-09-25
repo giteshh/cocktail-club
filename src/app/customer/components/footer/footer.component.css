@@ -1,15 +1,17 @@
 footer {
   min-height: 250px;
   padding: 10px 0 0 0;
-  margin: 110px 0 -44px 0;
-  border-top: 1px solid silver;
-  color: black;
+  /*margin: 110px 0 -44px 0;*/
+  /*border-top: 1px solid silver;*/
+  color: white;
+  background-color: #292130;
 }
 
 footer p {
   font-size: 12px;
   padding-bottom: 0;
   margin-bottom: 8px;
+  color: silver;
 }
 
 h4 {

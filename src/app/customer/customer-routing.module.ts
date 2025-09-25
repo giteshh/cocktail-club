@@ -1,21 +1,22 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from "./components/home/home.component";
-import {FastFoodComponent} from "./components/fast-food/fast-food.component";
-import {FruitJuiceComponent} from "./components/fruit-juice/fruit-juice.component";
-import {BeverageComponent} from "./components/beverage/beverage.component";
-import {CocktailComponent} from "./components/cocktail/cocktail.component";
-import {CartComponent} from "./components/cart/cart.component";
-import {CheckoutComponent} from "./components/checkout/checkout.component";
-import {OrdersComponent} from "./components/orders/orders.component";
-import {BeersComponent} from "./components/beers/beers.component";
-import {AlcoholComponent} from "./components/alcohol/alcohol.component";
-import {CigarettesComponent} from "./components/cigarettes/cigarettes.component";
-import {SnacksComponent} from "./components/snacks/snacks.component";
-import {ColdDrinkComponent} from "./components/cold-drink/cold-drink.component";
-import {PartyEssentialsComponent} from "./components/party-essentials/party-essentials.component";
-import {RentSpeakerComponent} from "./components/rent-speaker/rent-speaker.component";
+import {HomeComponent} from "./pages/home/home.component";
+import {FastFoodComponent} from "./pages/fast-food/fast-food.component";
+import {FruitJuiceComponent} from "./pages/fruit-juice/fruit-juice.component";
+import {BeverageComponent} from "./pages/beverage/beverage.component";
+import {CocktailComponent} from "./pages/cocktail/cocktail.component";
+import {CartComponent} from "./pages/cart/cart.component";
+import {CheckoutComponent} from "./pages/checkout/checkout.component";
+import {OrdersComponent} from "./pages/orders/orders.component";
+import {BeersComponent} from "./pages/beers/beers.component";
+import {AlcoholComponent} from "./pages/alcohol/alcohol.component";
+import {CigarettesComponent} from "./pages/cigarettes/cigarettes.component";
+import {SnacksComponent} from "./pages/snacks/snacks.component";
+import {ColdDrinkComponent} from "./pages/cold-drink/cold-drink.component";
+import {PartyEssentialsComponent} from "./pages/party-essentials/party-essentials.component";
+import {RentSpeakerComponent} from "./pages/rent-speaker/rent-speaker.component";
 import {SearchComponent} from "./components/search/search.component";
+import {HireComponent} from "./pages/hire/hire.component";
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'hire', component: HireComponent},
 
 ];
 

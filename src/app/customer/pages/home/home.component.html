@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+  <!--  carousel section-->
+  <div class="carousel-img-section">
+    <app-navbar></app-navbar>
+    <div class="carousel-sec-1">
+      <div class="text-line-container">
+        <div class="text-line">Bring</div>
+        <div class="text-line">The</div>
+        <div class="text-line">Bar</div>
+        <div class="text-line">Home</div>
+      </div>
+    </div>
+  </div>
+
+  <app-feature-products></app-feature-products>
+
+  <app-animated-product-carousel></app-animated-product-carousel>
+
+  <!--  rent a speaker section-->
+  <div class="imgOnRight-section sec-1">
+    <div class="imgOnRight-left-section">
+      <img routerLink="/rent-speaker" (click)="navigateToTop()"
+           src="../../../../assets/images/home/rent-speaker.jpg" alt="rent-speaker">
+      <!--      <img routerLink="/rent-speaker" (click)="navigateToTop()"-->
+      <!--           src="../../../../assets/images/home/rent-hookah.jpg" alt="rent-speaker">-->
+    </div>
+    <div class="imgOnRight-right-section">
+      <h1>Rent a Speaker, Hookah & more...</h1>
+      <p class="text-center">So your party feel like a party!</p>
+      <span class="sale-offer">Speaker Starting from INR 400 per day.</span>
+      <br>
+      <button class="btn" routerLink="/rent-speaker" (click)="navigateToTop()">Explore Rent Section</button>
+    </div>
+  </div>
+
+  <app-hire-carousel></app-hire-carousel>
+
+  <app-testimonials></app-testimonials>
+
+  <app-footer></app-footer>
+</div>

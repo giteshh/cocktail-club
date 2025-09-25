@@ -8,6 +8,7 @@ section {
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   padding: 20px 0;
+  margin-top: 25px;
 }
 
 .about-title {
@@ -49,14 +50,14 @@ section {
 
 .card {
   position: absolute;
-  width: 280px;
-  height: 380px;
+  width: 450px;
+  height: 400px;
   background: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  padding:0;
+  padding: 0;
 }
 
 .card img {
@@ -67,6 +68,7 @@ section {
   margin-top: 0;
   background-color: #fff;
   margin-left: 0;
+  border-radius: 20px;
 }
 
 .card.center {
@@ -125,12 +127,12 @@ section {
 
 .member-info {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 0;
   transition: all 0.5s ease-out;
 }
 
 .member-name {
-  color: rgb(8, 42, 123);
+  color: #FF6907;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -142,10 +144,10 @@ section {
 .member-name::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 50%;
   width: 100px;
-  height: 2px;
-  background: rgb(8, 42, 123);
+  height: 5px;
+  background: #FF6907;
 }
 
 .member-name::before {
@@ -157,34 +159,31 @@ section {
 }
 
 .member-role {
-  color: #848696;
-  font-size: 1.5rem;
-  font-weight: 500;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #5d5f61;
+  font-size: 1.25rem;
   padding: 10px 0;
   margin-top: -15px;
   position: relative;
 }
+
 .dots {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(8, 42, 123, 0.2);
+  background: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot.active {
-  background: rgb(8, 42, 123);
+  background: #FF6907;
   transform: scale(1.2);
 }
 
@@ -192,7 +191,7 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(8, 42, 123, 0.6);
+  background: #FF6907;
   color: white;
   width: 40px;
   height: 40px;
@@ -207,6 +206,7 @@ section {
   border: none;
   outline: none;
   padding-bottom: 4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 .nav-arrow:hover {
@@ -216,19 +216,35 @@ section {
 
 .nav-arrow.left {
   left: 20px;
-  padding-right: 3px;
+  padding-right: 8px;
+  font-size: 45px;
 }
 
 .nav-arrow.right {
   right: 20px;
-  padding-left: 3px;
+  padding-left: 8px;
+  font-size: 45px;
+}
+
+.btn {
+  padding: 13px 30px;
+  border-radius: 30px;
+  margin-top: 20px;
+  color: white;
+  font-weight: 550;
+  background-color: rgb(255, 105, 7);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 992px) {
+  section {
+    width: 100%;
+    margin-top: 250px;
+  }
 }
 
 @media (max-width: 768px) {
-  section {
-    width: 100%;
-    margin-top: 50px;
-  }
+
 
   .about-title {
     font-size: 4.5rem;

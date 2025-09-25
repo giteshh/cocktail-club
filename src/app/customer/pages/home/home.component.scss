@@ -1,0 +1,257 @@
+.container-fluid {
+  padding: 0;
+  background-color: #FED8B3;
+}
+
+.carousel-img-section {
+  background-image: url("/assets/images/home/party-at-home.jpg");
+  background-color: #292130;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-sec-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.text-line-container {
+  margin-top: 100px;
+}
+
+.carousel-img-section img {
+  width: 320px;
+  height: 310px;
+}
+
+@font-face {
+  font-family: Oddval Variable;
+  src: url("https://garet.typeforward.com/assets/fonts/campaigns/OddvalVariable-VariableVF.woff2")
+}
+
+.text-line {
+  font-variation-settings: "wght" 100, "ital" 0;
+  font-family: Oddval Variable, sans-serif;
+  font-size: 20vh;
+  line-height: 80%;
+  color: yellow;
+  text-shadow: 0 0 100px black;
+  white-space: nowrap;
+  margin-top: 20px;
+  text-align: center;
+
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: change;
+  transition-timing-function: ease-in-out;
+
+  @for $line from 1 through 10 {
+    &:nth-child(#{$line}) {
+      animation-delay: #{$line * 0.3s};
+    }
+  }
+}
+
+@keyframes change {
+  0% {
+    font-variation-settings: "wght" 100;
+  }
+
+  50% {
+    font-variation-settings: "wght" 900;
+  }
+
+  100% {
+    font-variation-settings: "wght" 100;
+  }
+}
+
+
+.text-lt {
+  font-weight: lighter;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: rgb(255, 105, 7);
+}
+
+.text-dk {
+  font-weight: bolder;
+  font-size: 60px;
+  letter-spacing: 3px;
+  color: rgb(255, 105, 7);
+}
+
+.carousel-img-section p {
+  font-size: 15px;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.imgOnLeft-section, .imgOnRight-section {
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.imgOnLeft-left-section, .imgOnRight-right-section {
+  padding: 60px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.imgOnLeft-section h1, .imgOnRight-section h1 {
+  color: rgb(255, 105, 7);
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-family: "Gochi Hand", cursive;
+}
+
+.imgOnLeft-section p, .imgOnRight-section p {
+  color: #1e3932;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;;
+}
+
+.imgOnRight-left-section {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.imgOnLeft-right-section img, .imgOnRight-left-section img {
+  width: 360px;
+  border-radius: 5%;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.btn {
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin-top: 18px;
+  color: white;
+  background-color: rgb(255, 105, 7);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.sale-offer {
+  font-size: 13px;
+  color: #808080;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .imgOnRight-section {
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-fluid {
+    width: 100%;
+  }
+
+  .text-lt {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .text-dk {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .carousel-img-section {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    height: 100%;
+    background-position: center center;
+  }
+
+  .carousel-img-section p {
+    font-size: 12px;
+    text-align: justify;
+    line-height: 20px;
+  }
+
+  .carousel-sec-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-line-container {
+    margin-top: 80px;
+  }
+
+  .text-line {
+    font-variation-settings: "wght" 100, "ital" 0;
+    font-family: Oddval Variable;
+    font-size: 5vh;
+    line-height: 80%;
+    width: 100%;
+    color: yellow;
+    text-shadow: 0 0 100px black;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+
+  .carousel-sec-2 {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .carousel-img-section img {
+    width: 50%;
+    height: 100%;
+  }
+
+  .sec-1 {
+    flex-direction: column-reverse;
+  }
+
+  .sec-2 {
+    flex-direction: column;
+  }
+
+  .sec-3 {
+    flex-direction: column-reverse;
+  }
+
+  .sec-4 {
+    flex-direction: column;
+  }
+
+  .imgOnLeft-right-section img, .imgOnRight-left-section img {
+    width: 90%;
+  }
+
+  .imgOnLeft-section h1, .imgOnRight-section h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+
+  .imgOnLeft-section p, .imgOnRight-section p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 80px;
+    border-radius: 30px;
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  .sale-offer {
+    font-size: 12px;
+  }
+}
+

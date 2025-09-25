@@ -1,0 +1,32 @@
+<div class="demo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <span class="top-icon"><i class="fa fa-quote-left"></i></span>
+        <h2 class="text-center mt-5 mb-5 text-white testimonial-heading">
+          Cravings = Satisfied
+        </h2>
+
+        <owl-carousel-o [options]="customOptions" class="owl-theme" id="testimonial-slider">
+          <ng-container *ngFor="let t of testimonials">
+            <ng-template carouselSlide>
+              <div class="testimonial">
+                <div class="pic">
+                  <img [src]="t.img" alt="{{t.title}}">
+                </div>
+                <div class="testimonial-content">
+                  <p class="description">{{ t.description }}</p>
+                  <h3 class="testimonial-title fst-italic">-{{ t.title }}</h3>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+        <p class="text-secondary text-end small fst-italic">
+          If you want to write review, send us an email along with
+          your order id.</p>
+        <span class="bottom-icon"><i class="fa fa-quote-right"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

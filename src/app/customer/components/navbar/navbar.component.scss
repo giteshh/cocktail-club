@@ -1,10 +1,9 @@
 .navbar {
   background-color: rgba(255, 255, 255, 0.2);
-  //background-color: rgba(0,0,0,0.3);
 }
 
 .nav-link {
-  color: white;
+  color: #FF6907;
   font-weight: 550;
 }
 
@@ -39,9 +38,9 @@
 .mega-menu {
   width: 70vw;
   margin-top: 10px;
- padding: 10px;
+  padding: 10px;
 
-  .mega-menu-content{
+  .mega-menu-content {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;

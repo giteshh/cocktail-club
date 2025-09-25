@@ -1,0 +1,136 @@
+.top-icon,
+.bottom-icon {
+  display: block;
+  font-size: 70px;
+  color: #FF6907;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial {
+  padding: 0 40px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  z-index: 1;
+  height: 220px !important;
+  border-radius: 20px;
+}
+
+.testimonial:after {
+  content: "";
+  width: 150px;
+  height: 110%;
+  background: #ff9f3c;
+  opacity: 0.8;
+  position: absolute;
+  top: -20px;
+  left: -178px;
+  transform: matrix(1, 0, 0.5, 1, 120, 0);
+  z-index: -1;
+}
+
+.testimonial .pic {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  float: left;
+  margin: 40px 55px 0 0;
+  position: relative;
+}
+
+.testimonial .pic img {
+  width: 100%;
+  height: auto;
+}
+
+.testimonial .testimonial-content {
+  width: 70%;
+  float: right;
+  padding: 30px 0;
+}
+
+.testimonial .testimonial-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 20px;
+  text-transform: capitalize;
+  color: #FF6907;
+  float: right;
+}
+
+.testimonial-heading {
+  color: #FF6907 !important;
+}
+
+.testimonial .description {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 550;
+}
+
+.owl-theme .owl-controls .owl-page span {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border: 2px solid #ffff;
+}
+
+.owl-theme .owl-controls .owl-page:active span {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 992px) {
+  .testimonial {
+    text-align: center;
+    width: 100%;
+    height: 320px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .testimonial {
+    text-align: center;
+    height: 300px !important;
+  }
+
+  .testimonial .pic {
+    float: none;
+    margin: 20px auto 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial .testimonial-content {
+    width: 100%;
+    float: none;
+    padding: 20px 0;
+  }
+
+  .testimonial .description {
+    font-size: 14px;
+  }
+
+  .testimonial .testimonial-title {
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .testimonial {
+    padding: 0 20px;
+  }
+
+  .testimonial .testimonial-title {
+    font-size: 22px;
+  }
+}
