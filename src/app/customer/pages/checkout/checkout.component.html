@@ -28,22 +28,6 @@
            class="text-danger">
         Invalid Address
       </div>
-      <div class="input">
-        <i class="fa fa-city"></i>
-        <input formControlName="city" type="text" placeholder="City"/>
-      </div>
-      <div *ngIf="checkoutForm.controls['city'].touched && checkoutForm.controls['city'].invalid"
-           class="text-danger">
-        Invalid City
-      </div>
-      <div class="input">
-        <i class="fa fa-location-dot"></i>
-        <input formControlName="zipCode" type="text" placeholder="Zip Code"/>
-      </div>
-      <div *ngIf="checkoutForm.controls['zipCode'].touched && checkoutForm.controls['zipCode'].invalid"
-           class="text-danger">
-        Invalid Zip code
-      </div>
 
       <button type="submit" class="btn">Continue to pay {{total | currency:"INR"}}</button>
       <a class="text-muted" href="#" routerLink="/cart">Cancel</a>

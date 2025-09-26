@@ -1,11 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import firebase from "firebase/compat/app";
 import {Product} from "../../../../assets/data/products";
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
+import {CartItem, Order} from "../../../../assets/data/cart-items";
+import {AuthService} from "../../../services/auth.service";
+import {firstValueFrom} from "rxjs";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 interface orderItems {
   id: number,
@@ -20,87 +24,82 @@ interface orderItems {
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent {
-  checkoutForm: FormGroup;
+export class CheckoutComponent implements OnInit {
+  checkoutForm: FormGroup | any;
   user: any;
-  fullName;
-  phoneNumber;
-  address;
-  city;
-  zipCode;
-  total;
+  fullName: any;
+  phoneNumber: any;
+  address: any;
+  total: number = 0;
   orders: Product [] = [];
-  cart: Product[] = [];
+  cart: CartItem[] = [];
+  userId: string = '';
 
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
+              private authService: AuthService,
               private appService: AppService,
               private router: Router,
-              private toastr: ToastrService) {
-
-    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
-    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '{}');
-    this.address = JSON.parse(localStorage.getItem('address') || '{}');
-    this.city = JSON.parse(localStorage.getItem('city') || '{}');
-    this.zipCode = JSON.parse(localStorage.getItem('zipCode') || '{}');
-    this.total = JSON.parse(localStorage.getItem('total') || '{}');
-
-    this.cart = JSON.parse(localStorage.getItem('cart') || '')
-
-    this.checkoutForm = formBuilder.group({
-      fullName: [this.fullName, Validators.required],
-      phoneNumber: [this.phoneNumber, Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      zipCode: [this.zipCode, Validators.required],
-    })
+              private toastr: ToastrService,
+              private fireAuth: AngularFireAuth,) {
   }
 
-  onSubmit() {
+  async ngOnInit() {
+    this.cart = await this.appService.getCart();
+    this.calculateTotal();
 
-    let fullName: string = this.checkoutForm.value.fullName;
-    let address = JSON.stringify(this.checkoutForm.value.address);
-    let city = this.city;
-    let zipCode: string = this.checkoutForm.value.zipCode;
+    // Init form
+    this.checkoutForm = this.formBuilder.group({
+      fullName: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      address: ['', Validators.required],
+    });
 
-    let userId = firebase.auth().currentUser?.uid;
-
-    firebase.firestore().collection("users").doc(userId).set({
-      phoneNumber: this.phoneNumber,
-      fullName: fullName,
-      photoURL: "",
-      orders: "",
-      paymentId: "",
-      role: 2,
-      address: address,
-      city: city,
-      zipCode: zipCode,
-    }).then(() => {
-      if (!address) {
-        localStorage.setItem(
-          'address',
-          JSON.stringify(this.checkoutForm.value.address)
-        );
+    // Prefill form with user profile
+    this.fireAuth.authState.subscribe(async (user) => {
+      if (user) {
+        this.userId = user.uid;
+        const profile = await this.authService.getUserProfile(user.uid);
+        if (profile) {
+          console.log('Profile fetched:', profile);
+          this.checkoutForm.patchValue({
+            fullName: profile.fullName ?? '',
+            phoneNumber: profile.phoneNumber ?? '',
+            address: profile.address ?? '',
+          });
+        }
+      } else {
+        this.router.navigate(['/signin']);
       }
-      localStorage.setItem(
-        'city',
-        JSON.stringify(this.checkoutForm.value.city)
-      );
-      localStorage.setItem(
-        'zipCode',
-        JSON.stringify(this.checkoutForm.value.zipCode)
-      );
+    });
+  }
+
+  calculateTotal() {
+    this.total = this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  }
+
+  async onSubmit() {
+    if (this.checkoutForm.invalid) return;
+
+    const order: any = {
+      items: this.cart,
+      total: this.total,
+      date: new Date()
+    };
+
+    try {
+      await this.appService.placeOrder(order);
       this.payWithRazor();
 
-    }).catch((error) => {
-      console.log(error)
-    })
+      this.toastr.success('Order placed successfully!', '', {timeOut: 3000});
+      this.router.navigate(['/orders']);
+    } catch (error) {
+      console.error(error);
+      this.toastr.error('Failed to place order.', '', {timeOut: 3000});
+    }
   }
 
-  createRzpayOrder(data: any) {
-    this.payWithRazor();
-  }
 
   payWithRazor() {
     const options: any = {
