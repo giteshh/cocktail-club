@@ -1,9 +1,18 @@
 import {Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
 import {debounceTime, switchMap} from 'rxjs/operators';
 import {Subject} from "rxjs";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+
+interface UserProfile {
+  fullName: string;
+  phoneNumber: string;
+  address: string;
+  email?: string;
+}
 
 @Component({
   selector: 'app-navbar',
@@ -14,9 +23,10 @@ import {Subject} from "rxjs";
 
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  userLoggedIn = this.authService.userStatus();
-  // userLoggedIn = this.authService.isLoggedIn;
-  fullName;
+  userLoggedIn = false;
+  userPhone: any = '';
+  userName: any = '';
+  userAddress: any = '';
   quantity;
 
   // for search
@@ -41,8 +51,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private authService: AuthService,
-              private appService: AppService) {
-    this.fullName = JSON.parse(localStorage.getItem('fullName') || '{}');
+              private appService: AppService,
+              private firestore: AngularFirestore,
+              private fireAuth: AngularFireAuth) {
     this.quantity = Number(localStorage.getItem('quantity'));
   }
 
@@ -56,6 +67,33 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.fireAuth.authState.subscribe(async (user) => {
+      if (user) {
+        this.userLoggedIn = true;
+        const uid = user.uid;
+
+        const userDoc = await this.firestore
+          .collection<UserProfile>('users')
+          .doc(uid)
+          .ref.get();
+
+        if (userDoc.exists) {
+          const userData = userDoc.data() as UserProfile;
+
+          this.userPhone = userData?.phoneNumber || '';
+          this.userName = userData?.fullName || '';
+          this.userAddress = userData?.address || '';
+        } else {
+          console.log('No profile found in Firestore for this user.');
+        }
+      } else {
+        this.userLoggedIn = false;
+        this.userName = '';
+        this.userPhone = '';
+        this.userAddress = '';
+      }
+    });
+
     this.startPlaceholderAnimation();
   }
 

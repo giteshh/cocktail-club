@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <app-navbar></app-navbar>
-  <div class="text-center" id="noItemInCart" *ngIf="!showButton">
+  <div class="text-center" id="noItemInCart" *ngIf="!cart">
     <div class="custom-card-body">
       <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">
       <h2 class="custom-card-title">404, no delicious food item found !</h2>
@@ -11,12 +11,12 @@
   </div>
 
   <div class="row m-0 page-heading">
-    <h3 class="text-center" *ngIf="showButton">Your Cart</h3>
+    <h3 class="text-center" *ngIf="cart">Your Cart</h3>
     <div class="col-md-2"></div>
     <div class="col-md-4">
       <div class="mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
         <div class="row no-gutters">
-          <a (click)="removeCartItem(i)" class="text-danger" data-toggle="tooltip" data-placement="top" title="Remove">
+          <a (click)="removeCartItem(item)" class="text-danger" data-toggle="tooltip" data-placement="top" title="Remove">
             <i class="fa fa-x"></i>
           </a>
           <div class="left col-md-4">
@@ -28,7 +28,7 @@
               <p class="item-description">{{ item.description }}</p>
               <label>Quantity</label>
               <input type="number" min="1" max="5" value="{{item.quantity}}"
-                     (change)="addQty(i, $event)">
+                     (change)="addQty(item, item.quantity)">
               <!--            <br>-->
               <p id="itemPrice">{{ item.price | currency:'INR' }}</p>
             </div>
@@ -40,7 +40,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-4">
       <div class="total-cart-mobile">
-        <div class="mt-5" *ngIf="showButton">
+        <div class="mt-5" *ngIf="cart">
           <div class="custom-card-body">
             <table class="table">
               <tr>

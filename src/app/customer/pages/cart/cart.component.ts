@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
 import {Product} from "../../../../assets/data/products";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
+import {CartItem} from "../../../../assets/data/cart-items";
 
 interface cartItems {
   id: number,
@@ -31,10 +32,9 @@ export class CartComponent {
   cgst = 0;
   deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20);
   productPrice = 0;
-  cartProducts: cartItems[] = [];
   existingProduct = false;
   showButton = false;
-  cart: Product[] = [];
+  cart: CartItem[] = [];
   loggedIn;
 
   constructor(private appService: AppService,
@@ -45,54 +45,44 @@ export class CartComponent {
   }
 
   // get all the items added to cart from localstorage
-  getCartItems() {
-    this.cart = this.appService.getCart();
-    if (this.cart) {
-      this.doTotal();
-      this.showButton = this.cart.length > 0;
-    } else {
-      this.showButton = false;
-    }
+  async getCartItems() {
+    this.cart = await this.appService.getCart();
+    this.doTotal();
   }
 
 
-  addQty(index: number, e: any) {
-    this.appService.addQtyToCart(index, e.target.value);
-    this.getCartItems();
+  async addQty(item: CartItem, qty: number) {
+    await this.appService.updateQuantity(item.id, qty);
+    await this.getCartItems();
   }
 
   // remove selected item from cart and localstorage
-  removeCartItem(index: number) {
-    this.appService.removeFromCart(index);
-    this.getCartItems();
+  async removeCartItem(item: CartItem) {
+    await this.appService.removeFromCart(item.id);
+    await this.getCartItems();
   }
 
 
   doTotal() {
-    this.total = 0;
-    this.cart.forEach((product: Product) => {
-      let finalPrice = (product.price * Number(product.quantity));
-      this.total += finalPrice;
-      this.quantity += Number(product.quantity);
-    });
-    this.productPrice = this.total;
-    this.sgst = (this.total * 5) / 100;
-    this.cgst = (this.total * 5) / 100;
-    this.total += this.deliveryCharge + this.sgst + this.cgst;
-    localStorage.setItem(
-      'total',
-      JSON.stringify(this.total)
-    );
+    this.total = this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    this.quantity = this.cart.reduce((sum, item) => sum + item.quantity, 0);
   }
 
   // placing order and removing items from localstorage
-  placeOrder() {
-    if (!this.authService.userStatus()) {
+  async placeOrder() {
+    // Ensure user is logged in via Firebase
+    const isLoggedIn = await this.authService.isLoggedInAsync(); // see note below
+    if (!isLoggedIn) {
       this.router.navigate(['/signin']);
-    } else {
-      this.router.navigate(['/checkout']);
-      this.getCartItems();
+      return;
     }
+
+    // Load latest cart from Firestore before navigating
+    await this.getCartItems(); // make this method async and Firestore-based
+
+    // Navigate to checkout after cart is ready
+    this.router.navigate(['/checkout']);
   }
+
 }
 

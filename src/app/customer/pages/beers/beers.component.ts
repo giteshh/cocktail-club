@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {beers, Product} from "../../../../assets/data/products";
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 
 
@@ -21,30 +21,37 @@ export class BeersComponent {
               private toastr: ToastrService) {
   }
 
-  addToCart(beers: any) {
-    this.existingProduct = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == beers.id) {
-          this.existingProduct = true;
-        }
-      })
-    }
-    if (!this.existingProduct) {
-      this.appService.addToCart(beers);
-      this.toastr.success('Selected item has been added to the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
-      });
-    }
+  async addToCart(beers: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
 
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === beers.id);
+
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(beers);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true,
+      });
+    }
   }
 }

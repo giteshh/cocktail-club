@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Product, burgers, pizza, fries} from "../../../../assets/data/products";
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -23,81 +23,104 @@ export class FastFoodComponent {
               private toastr: ToastrService) {
   }
 
-  addBurgerToCart(burgers: any) {
-    this.existingBurger = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == burgers.id) {
-          this.existingBurger = true;
-        }
-      })
-    }
-    this.appService.addToCart(burgers);
-    this.toastr.success('Selected item has been added to the cart!', '', {
-      positionClass: 'toast-top-center',
-      timeOut: 3000,
-      closeButton: true
-    });
-  }
+  async addBurgerToCart(burgers: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
 
-  addPizzaToCart(pizza: any) {
-    this.existingPizza = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == pizza.id) {
-          this.existingPizza = true;
-          pizza.quantity += 1;
-          cart.quantity += 1;
-        }else{
-          this.appService.addToCart(pizza);
-          this.toastr.success('Selected item has been added to the cart!', '', {
-            positionClass: 'toast-top-center',
-            timeOut: 3000,
-            closeButton: true
-          });
-        }
-      })
-    }
-    // if (!this.existingPizza) {
-    // this.appService.addToCart(pizza);
-    // this.toastr.success('Selected item has been added to the cart!', '', {
-    //   positionClass: 'toast-top-center',
-    //   timeOut: 3000,
-    //   closeButton: true
-    // });
-    // } else {
-    //   this.toastr.info('Selected item already exists in the cart!', '', {
-    //     positionClass: 'toast-top-center',
-    //     timeOut: 3000,
-    //     closeButton: true
-    //   });
-    // }
-  }
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === burgers.id);
 
-  addFriesToCart(fries: any) {
-    this.existingFries = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == fries.id) {
-          this.existingFries = true;
-        }
-      })
-    }
-    if (!this.existingFries) {
-      this.appService.addToCart(fries);
-      this.toastr.success('Selected item has been added to the cart!', '', {
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(burgers);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
         positionClass: 'toast-top-center',
         timeOut: 3000,
-        closeButton: true
+        closeButton: true,
       });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
+    }
+  }
+
+  async addPizzaToCart(pizza: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
+
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === pizza.id);
+
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(pizza);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
         positionClass: 'toast-top-center',
         timeOut: 3000,
-        closeButton: true
+        closeButton: true,
+      });
+    }
+  }
+
+  async addFriesToCart(fries: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
+
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === fries.id);
+
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(fries);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true,
       });
     }
   }

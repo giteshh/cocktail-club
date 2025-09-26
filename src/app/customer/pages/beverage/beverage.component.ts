@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Product, coldBeverage, hotBeverage} from "../../../../assets/data/products";
-import {AppService} from "../../../app.service";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -22,55 +22,71 @@ export class BeverageComponent {
               private toastr: ToastrService) {
   }
 
-  addHotBeverageToCart(hotBeverages: any) {
-    this.existingHotBeverages = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == hotBeverages.id) {
-          this.existingHotBeverages = true;
-        }
-      })
-    }
-    if (!this.existingHotBeverages) {
-      this.appService.addToCart(hotBeverages);
-      this.toastr.success('Selected item has been added to the cart!', '', {
+  async addHotBeverageToCart(hotBeverages: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
+
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === hotBeverages.id);
+
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(hotBeverages);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
         positionClass: 'toast-top-center',
         timeOut: 3000,
-        closeButton: true
-      });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
+        closeButton: true,
       });
     }
 
   }
 
-  addColdBeverageToCart(coldBeverages: any) {
-    this.existingColdBeverages = false;
-    if (this.appService.getCart()) {
-      this.cart = this.appService.getCart();
-      this.cart.forEach((cart: any) => {
-        if (cart.id == coldBeverages.id) {
-          this.existingColdBeverages = true;
-        }
-      })
-    }
-    if (!this.existingColdBeverages) {
-      this.appService.addToCart(coldBeverages);
-      this.toastr.success('Selected item has been added to the cart!', '', {
+  async addColdBeverageToCart(coldBeverages: any) {
+    try {
+      // Get current cart from Firestore
+      const currentCart = await this.appService.getCart();
+
+      // Check if item already exists
+      const existingProduct = currentCart.some((item) => item.id === coldBeverages.id);
+
+      if (!existingProduct) {
+        // Add item to Firestore cart
+        await this.appService.addToCart(coldBeverages);
+
+        this.toastr.success('Selected item has been added to the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      } else {
+        this.toastr.info('Selected item already exists in the cart!', '', {
+          positionClass: 'toast-top-center',
+          timeOut: 3000,
+          closeButton: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error adding item to cart:', error);
+      this.toastr.error('Failed to add item to the cart.', '', {
         positionClass: 'toast-top-center',
         timeOut: 3000,
-        closeButton: true
-      });
-    } else {
-      this.toastr.info('Selected item already exists in the cart!', '', {
-        positionClass: 'toast-top-center',
-        timeOut: 3000,
-        closeButton: true
+        closeButton: true,
       });
     }
 

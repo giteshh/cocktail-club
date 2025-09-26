@@ -170,9 +170,9 @@
 
   .carousel-img-section {
     width: 100%;
+    height: 70vh;
     padding: 0;
     flex-direction: column;
-    height: 100%;
     background-position: center center;
   }
 
@@ -194,13 +194,13 @@
   .text-line {
     font-variation-settings: "wght" 100, "ital" 0;
     font-family: Oddval Variable;
-    font-size: 5vh;
+    font-size: 10vh;
     line-height: 80%;
     width: 100%;
     color: yellow;
     text-shadow: 0 0 100px black;
     white-space: nowrap;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   .carousel-sec-2 {

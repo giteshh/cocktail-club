@@ -15,14 +15,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 import {environment} from "../environments/environment";
+import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
-import {AngularFireModule} from '@angular/fire/compat';
 import {PageNotFoundComponent} from "./public/components/page-not-found/page-not-found.component";
 import {HttpClientModule} from "@angular/common/http";
 import firebase from "firebase/compat/app";
 import {CarouselModule} from "ngx-owl-carousel-o";
-
+import {AuthService} from "./services/auth.service";
 
 
 firebase.initializeApp(environment.firebase);
