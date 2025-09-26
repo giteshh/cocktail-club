@@ -1,6 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {ToastrService} from "ngx-toastr";
+
+interface UserProfile {
+  fullName: string;
+  phoneNumber: string;
+  address: string;
+  email?: string;
+}
 
 @Component({
   selector: 'app-update-profile',
@@ -11,25 +21,44 @@ export class UpdateProfileComponent implements OnInit {
 
   public updateProfileForm: FormGroup;
   user: any = {};
-  phoneNumber;
-  fullName;
-  email;
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router) {
-    this.phoneNumber = JSON.parse(localStorage.getItem('phoneNumber') || '');
-    this.fullName = (localStorage.getItem('fullName') || '');
-    this.email = (localStorage.getItem('email') || '');
-    this.user = JSON.parse(localStorage.getItem('user') || '');
-
-    this.updateProfileForm = formBuilder.group({
-      fullName: [this.fullName, Validators.required],
-      phoneNumber: [{value: this.phoneNumber, disabled: true}, Validators.required],
-      email: [this.email, Validators.required],
-    })
+              private router: Router,
+              private firestore: AngularFirestore,
+              private fireAuth: AngularFireAuth,
+              private toastr: ToastrService) {
+    this.updateProfileForm = this.formBuilder.group({
+      fullName: ['', Validators.required],
+      phoneNumber: [
+        '', [Validators.required, Validators.pattern('^[0-9]*$'),
+          Validators.minLength(10), Validators.maxLength(10)]],
+      address: ['', Validators.required],
+      email: [{value: '', disabled: true}],
+    });
   }
 
   ngOnInit() {
+    this.fireAuth.authState.subscribe(async (user) => {
+      if (user) {
+        this.user = user;
+
+        try {
+          // Fetch profile from Firestore
+          const userDoc = await this.firestore.collection('users').doc(user.uid).ref.get();
+          const profile = userDoc.data() as UserProfile;
+
+          // Patch the form with Firestore data
+          this.updateProfileForm.patchValue({
+            fullName: profile?.fullName || '',
+            phoneNumber: profile?.phoneNumber || user.phoneNumber || '',
+            address: profile?.address || '',
+            email: user.email || '',
+          });
+        } catch (err) {
+          console.error('Error fetching user profile:', err);
+        }
+      }
+    });
   }
 
   markProfileFormTouched() {
@@ -43,20 +72,31 @@ export class UpdateProfileComponent implements OnInit {
     }
   }
 
-
-  onSubmit(updateProfileForm: any) {
+  async onSubmit() {
     this.markProfileFormTouched();
-    let email: string = updateProfileForm.value.email;
-    let fullName: string = updateProfileForm.value.fullName;
 
-    localStorage.setItem(
-      'fullName',
-      JSON.stringify(this.updateProfileForm.value.fullName)
-    );
-    localStorage.setItem(
-      'email',
-      JSON.stringify(this.updateProfileForm.value.email)
-    );
-    this.router.navigate(['/home']);
+    if (this.updateProfileForm.invalid || !this.user) return;
+
+    // getRawValue() includes disabled fields
+    const profileData = this.updateProfileForm.getRawValue();
+
+    try {
+      await this.firestore.collection('users').doc(this.user.uid).set(profileData, {merge: true});
+
+      this.toastr.success('Profile updated successfully!', '', {
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true,
+      });
+
+      this.router.navigate(['/home']);
+    } catch (error) {
+      this.toastr.error('Error saving profile.', '', {
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true,
+      });
+      console.error(error);
+    }
   }
 }

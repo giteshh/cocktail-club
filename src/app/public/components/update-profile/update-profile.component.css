@@ -64,6 +64,29 @@ p {
   font-size: 16px;
 }
 
+.text-area-input {
+  position: relative;
+  display: flex;
+}
+
+.text-area-input i {
+  position: absolute;
+  top: 10px;
+  width: 36px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.text-area-input textarea {
+  padding-left: 30px;
+  width: 100%;
+}
+
+.text-area-input textarea::placeholder {
+  color: lightslategrey;
+  padding: 0 10px;
+}
+
 .btn {
   width: 100%;
   border: none;
@@ -82,7 +105,7 @@ a {
   text-decoration: none;
 }
 
-#disabledInput input{
+#disabledInput input {
   background-color: lightgrey;
 }
 

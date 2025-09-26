@@ -3,20 +3,30 @@
     <div class="header">
       <h1>Cocktail Club</h1>
     </div>
-    <form [formGroup]="signinForm" (ngSubmit)="onSubmit($event)">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
       <div class="input">
-        <i class="fa fa-phone"></i>
-        <input formControlName="phoneNumber" type="text" placeholder="eg 9174520052"/>
+        <i class="fa fa-envelope"></i>
+        <input formControlName="email" type="email" placeholder="Enter your email"/>
       </div>
-      <div *ngIf="signinForm.controls['phoneNumber'].touched && signinForm.controls['phoneNumber'].invalid"
+      <div *ngIf="signinForm.controls['email'].touched && signinForm.controls['email'].invalid"
            class="text-danger">
-        Invalid Phone number
+        Invalid Email
       </div>
-      <div id="recaptcha-container"></div>
+
+      <div class="input">
+        <i class="fa fa-lock"></i>
+        <input formControlName="password" type="password" placeholder="Enter your password"/>
+      </div>
+      <div *ngIf="signinForm.controls['password'].touched && signinForm.controls['password'].invalid"
+           class="text-danger">
+        Invalid Password
+      </div>
+
       <button type="submit" class="btn">Sign In</button>
     </form>
     <p class="text-danger text-center"><strong> * You must be 18 years or above to Log in or Sign up</strong></p>
-    <p id="termAndConditionsText">By continuing, you agree to our <span class="text-underline">Terms of service & Privacy policy</span>
+    <p id="termAndConditionsText">By continuing, you agree to our <span class="text-underline">
+      Terms of service & Privacy policy</span>
     </p>
   </div>
 </div>

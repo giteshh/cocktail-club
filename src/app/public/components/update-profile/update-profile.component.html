@@ -4,7 +4,12 @@
       <h1>Cocktail Club</h1>
       <p>Update profile to continue</p>
     </div>
-    <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit(updateProfileForm)">
+    <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+      <div class="input" id="disabledInput">
+        <i class="fa fa-envelope"></i>
+        <input formControlName="email" type="email"/>
+      </div>
+
       <div class="input">
         <i class="fa fa-user"></i>
         <input formControlName="fullName" type="text" placeholder="Full name"/>
@@ -13,18 +18,29 @@
            class="text-danger">
         Invalid name
       </div>
+
       <div class="input">
-        <i class="fa fa-envelope"></i>
-        <input formControlName="email" type="email" placeholder="Email"/>
-      </div>
-      <div *ngIf="updateProfileForm.controls['email'].touched && updateProfileForm.controls['email'].invalid"
-           class="text-danger">
-        Invalid email
-      </div>
-      <div class="input" id="disabledInput">
         <i class="fa fa-phone"></i>
-        <input formControlName="phoneNumber" type="tel" aria-disabled="true"/>
+        <input formControlName="phoneNumber" type="tel" placeholder="Enter Mobile Number"/>
       </div>
+      <div
+        *ngIf="updateProfileForm.controls['phoneNumber'].touched && updateProfileForm.controls['phoneNumber'].invalid"
+        class="text-danger">
+        Invalid Mobile
+      </div>
+
+      <!--      text area-->
+      <div class="text-area-input">
+        <i class="fa fa-home"></i>
+        <textarea class="form-control" formControlName="address" type="text"
+                  placeholder="Enter Full Delivery Address" rows="3"></textarea>
+      </div>
+      <div
+        *ngIf="updateProfileForm.controls['address'].touched && updateProfileForm.controls['address'].invalid"
+        class="text-danger">
+        Invalid Address
+      </div>
+
       <button type="submit" class="btn" [disabled]="updateProfileForm.invalid">Update Profile</button>
       <a class="text-muted" href="#" routerLink="/cart">Cancel</a>
     </form>

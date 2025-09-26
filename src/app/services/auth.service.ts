@@ -1,7 +1,8 @@
-import {Injectable, NgZone} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
-import firebase from 'firebase/compat/app';
+import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {firstValueFrom} from "rxjs";
 
 
 @Injectable({
@@ -10,62 +11,65 @@ import {Router} from "@angular/router";
 
 
 export class AuthService {
-  confirmationResult?: firebase.auth.ConfirmationResult;
+
   userLogInStatus: any;
 
-  constructor(private fireAuth: AngularFireAuth,
-              private router: Router) {
+  constructor(private router: Router,
+              private fireAuth: AngularFireAuth,
+              private firestore: AngularFirestore) {
     this.userStatus();
   }
 
-  signInWithPhoneNumber(recaptchaVerifier: any, phoneNumber: any) {
-    return new Promise<any>((resolve, reject) => {
-      this.fireAuth
-        .signInWithPhoneNumber(phoneNumber, recaptchaVerifier)
-        .then((confirmationResult) => {
-          this.confirmationResult = confirmationResult;
-          resolve(confirmationResult);
-        })
-        .catch((error) => {
-          reject('SMS not sent');
-        });
-    });
+  // Register new user
+  signUpWithEmailPassword(email: string, password: string): Promise<any> {
+    return this.fireAuth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => userCredential.user);
   }
 
-  enterVerificationCode(code: string) {
-    return new Promise<any>((resolve, reject) => {
-      this.confirmationResult
-        ?.confirm(code)
-        .then(async (result) => {
-          const user = result.user;
-          resolve(user);
-        })
-        .catch((error) => {
-          reject(error.message);
-        });
-    });
+  // Login existing user
+  signInWithEmailPassword(email: string, password: string): Promise<any> {
+    return this.fireAuth
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredential) => userCredential.user);
   }
+
+  // Get user profile from Firestore
+  getUserProfile(uid: string): Promise<any> {
+    return this.firestore
+      .collection('users')
+      .doc(uid)
+      .ref.get()
+      .then((doc) => (doc.exists ? doc.data() : null));
+  }
+
+  // Check if email exists
+  checkEmailExists(email: string): Promise<string[]> {
+    return this.fireAuth.fetchSignInMethodsForEmail(email);
+  }
+
 
   doSignOut() {
-    localStorage.removeItem('verificationId');
-    this.userLogInStatus = false;
-    firebase.auth().signOut();
-    this.router.navigate(['/signin']);
     localStorage.clear();
-    this.userStatus();
+    this.userLogInStatus = false;
+    this.fireAuth.signOut().then(() => {
+      this.router.navigate(['/signin']);
+      this.userStatus();
+    });
   }
 
   userStatus() {
-    const user = (localStorage.getItem('verificationId') || '');
-    if (user) {
-      return this.userLogInStatus = true;
-    }
-    return this.userLogInStatus = false;
+    const user = localStorage.getItem('user');
+    this.userLogInStatus = !!user;
+    return this.userLogInStatus;
   }
 
-  get isLoggedIn(): any {
-    const user = JSON.parse(localStorage.getItem('verificationId') ?? '');
-    return user !== null;
+  async isLoggedInAsync(): Promise<boolean> {
+    return new Promise((resolve) => {
+      this.fireAuth.authState.subscribe(user => {
+        resolve(!!user);
+      });
+    });
   }
 }
 
