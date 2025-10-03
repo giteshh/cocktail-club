@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <app-navbar></app-navbar>
-  <div class="text-center" id="noItemInCart" *ngIf="!cart">
+  <div class="text-center" id="noItemInCart" *ngIf="cart.length === 0">
     <div class="custom-card-body">
       <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">
       <h2 class="custom-card-title">404, no delicious food item found !</h2>
@@ -11,7 +11,7 @@
   </div>
 
   <div class="row m-0 page-heading">
-    <h3 class="text-center" *ngIf="cart">Your Cart</h3>
+    <h3 class="text-center" *ngIf="cart.length > 0">Your Cart</h3>
     <div class="col-md-2"></div>
     <div class="col-md-4">
       <div class="mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
@@ -42,7 +42,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-4">
       <div class="total-cart-mobile">
-        <div class="mt-5" *ngIf="cart">
+        <div class="mt-5" *ngIf="cart.length > 0">
           <div class="custom-card-body">
             <table class="table">
               <tr>
