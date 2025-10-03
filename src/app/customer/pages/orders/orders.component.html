@@ -1,31 +1,58 @@
-
-<div class="container-fluid">
 <app-navbar></app-navbar>
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="table-primary">
-      <tr>
-        <th>S. NO.</th>
-        <th>Date & Time</th>
-        <th>Product Name</th>
-        <th>Description</th>
-        <th>Net Amount</th>
-        <th>Order status</th>
-      </tr>
-      </thead>
-      <tbody>
-      <ng-container *ngFor="let order of ordersList; let i = index">
-        <tr *ngFor="let item of ordersList; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ item.date?.toDate() | date:'medium' }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.price | currency:'INR' }}</td>
-          <td>{{ item.status }}</td>
-        </tr>
-      </ng-container>
-      </tbody>
-    </table>
-  </div>
-</div>
+<div class="container-fluid px-3 px-md-5 py-4">
+  <h2 class="mb-4">Your Orders</h2>
 
+  <div *ngIf="ordersList.length === 0" class="text-muted text-center">
+    No orders yet.
+  </div>
+
+  <ng-container *ngFor="let order of ordersList; let i = index">
+    <div class="card mb-4 order-card">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Order #{{ i + 1 }}</strong>
+          <br>
+          <small class="text-muted">Ordered on: {{ order.createdAt?.toDate() | date: 'medium' }}</small>
+          <br>
+          <span class="small text-primary">{{ order.status }}</span>
+        </div>
+
+        <div>
+          <div>Order Total: {{ order.total | currency: 'INR' }}</div>
+          <!-- Unique collapse ID using order.id -->
+          <button class="btn btn-sm btn-primary mt-3"
+                  type="button"
+                  (click)="toggleShowMore(order.id)"
+                  [attr.aria-expanded]="expandedOrders[order.id] || false"
+                  [attr.aria-controls]="'collapse' + order.id">
+            {{ expandedOrders[order.id] ? 'Hide Details' : 'Show Details' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapse section with unique ID -->
+      <div [id]="'collapse' + order.id"
+           class="collapse"
+           [class.show]="expandedOrders[order.id]">
+        <div class="card-body">
+          <div *ngFor="let item of order.items" class="mb-3 pb-2">
+            <div class="row">
+              <div class="col-8">
+                <div class="font-weight-bold">{{ item.name }}
+                </div>
+              </div>
+              <div class="col-4 text-right">
+                <div class="text-muted">
+                  {{ item.quantity }} N x {{ item.price }} =
+                  {{ item.price * item.quantity | currency: 'INR' }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>

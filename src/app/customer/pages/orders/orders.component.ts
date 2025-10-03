@@ -1,14 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {CartItem, Order} from "../../../../assets/data/cart-items";
+import {Order} from "../../../../assets/data/cart-items";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Subscription} from "rxjs";
-
-interface FlatOrderItem extends CartItem {
-  orderId: string;
-  date: any;
-  status: string;
-}
 
 @Component({
   selector: 'app-orders',
@@ -16,13 +10,15 @@ interface FlatOrderItem extends CartItem {
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit, OnDestroy {
-  ordersList: FlatOrderItem[] = [];
+  ordersList: Order[] = [];
   orderStatusTimers: any[] = [];
   private userId: string = '';
   private ordersSub: Subscription | any = null;
+  expandedOrders: { [orderId: string]: boolean } = {};
 
   constructor(private firestore: AngularFirestore,
-              private fireAuth: AngularFireAuth) { }
+              private fireAuth: AngularFireAuth) {
+  }
 
   ngOnInit() {
     this.fireAuth.authState.subscribe(user => {
@@ -33,26 +29,17 @@ export class OrdersComponent implements OnInit, OnDestroy {
         .collection<Order>('orders', ref =>
           ref.where('userId', '==', this.userId).orderBy('createdAt', 'desc')
         )
-        .valueChanges({ idField: 'id' })
+        .valueChanges({idField: 'id'})
         .subscribe((orders: Order[]) => {
-          console.log(orders);
-          this.ordersList = [];
-
-          orders.forEach(order => {
-            order.items.forEach(item => {
-              this.ordersList.push({
-                ...item,
-                orderId: order.id,
-                date: order.createdAt,
-                status: order.status || 'pending'
-              });
-            });
-            this.startOrderStatusTimer(order);
-          });
-
-          console.log('Flattened orders:', this.ordersList);
+          console.log('Grouped Orders:', orders);
+          this.ordersList = orders;
+          orders.forEach(order => this.startOrderStatusTimer(order));
         });
     });
+  }
+
+  toggleShowMore(orderId: string) {
+    this.expandedOrders[orderId] = !this.expandedOrders[orderId];
   }
 
   startOrderStatusTimer(order: Order) {
