@@ -1,16 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Product} from "../../../../assets/data/products";
 import {CartItem, Order} from "../../../../assets/data/cart-items";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Subscription} from "rxjs";
 
-interface orderItems {
-  id: number,
-  name: string,
-  image: string,
-  price: number,
-  quantity: number,
+interface FlatOrderItem extends CartItem {
+  orderId: string;
+  date: any;
+  status: string;
 }
 
 @Component({
@@ -19,39 +16,43 @@ interface orderItems {
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit, OnDestroy {
-
-  ordersList: Order[] = [];
+  ordersList: FlatOrderItem[] = [];
   orderStatusTimers: any[] = [];
-  private userId: string | null = null;
-  ordersSub: Subscription | any = null;
+  private userId: string = '';
+  private ordersSub: Subscription | any = null;
 
-  constructor(
-    private firestore: AngularFirestore,
-    private fireAuth: AngularFireAuth
-  ) {}
+  constructor(private firestore: AngularFirestore,
+              private fireAuth: AngularFireAuth) { }
 
-  async ngOnInit() {
-    // Wait for user to be logged in
-    const user = await this.fireAuth.authState.pipe().toPromise();
-    if (!user) {
-      console.log('No user logged in');
-      return;
-    }
-    this.userId = user.uid;
+  ngOnInit() {
+    this.fireAuth.authState.subscribe(user => {
+      if (!user) return;
+      this.userId = user.uid;
 
-    // Fetch orders for this user from Firestore
-    this.ordersSub = this.firestore
-      .collection<Order>('orders', ref =>
-        ref.where('userId', '==', this.userId).orderBy('createdAt', 'desc')
-      )
-      .valueChanges({ idField: 'id' })
-      .subscribe((orders: Order[]) => {
-        console.log('Fetched orders:', orders);
-        this.ordersList = orders;
+      this.ordersSub = this.firestore
+        .collection<Order>('orders', ref =>
+          ref.where('userId', '==', this.userId).orderBy('createdAt', 'desc')
+        )
+        .valueChanges({ idField: 'id' })
+        .subscribe((orders: Order[]) => {
+          console.log(orders);
+          this.ordersList = [];
 
-        // Start updating status for each order
-        this.ordersList.forEach(order => this.startOrderStatusTimer(order));
-      });
+          orders.forEach(order => {
+            order.items.forEach(item => {
+              this.ordersList.push({
+                ...item,
+                orderId: order.id,
+                date: order.createdAt,
+                status: order.status || 'pending'
+              });
+            });
+            this.startOrderStatusTimer(order);
+          });
+
+          console.log('Flattened orders:', this.ordersList);
+        });
+    });
   }
 
   startOrderStatusTimer(order: Order) {

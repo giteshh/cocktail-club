@@ -6,6 +6,31 @@ export interface FeatureProducts {
 
 export const featureProducts: FeatureProducts[] = [
   {
+    "name": "Double patty",
+    "price": 169,
+    "image": "/assets/images/products/fastfood/doublepatty.png",
+  },
+  {
+    "name": "Veggie",
+    "price": 39,
+    "image": "/assets/images/products/fastfood/veggie.png",
+  },
+  {
+    "name": "Mexican",
+    "price": 99,
+    "image": "/assets/images/products/fastfood/mexican.png",
+  },
+  {
+    "name": "Pepperoni",
+    "price": 319,
+    "image": "/assets/images/products/fastfood/pepperoni.png",
+  },
+  {
+    "name": "Italian",
+    "price": 549,
+    "image": "/assets/images/products/fastfood/italian.png",
+  },
+  {
     "name": "Mai Tai",
     "image": "/assets/images/products/cocktail/maitai.png",
     "price": 139
@@ -24,16 +49,6 @@ export const featureProducts: FeatureProducts[] = [
     "name": "Champagne",
     "image": "/assets/images/products/alcohol/champagne.png",
     "price": 1200
-  },
-  {
-    "name": "Coca Cola",
-    "image": "/assets/images/products/cold-drink/coca-cola.png",
-    "price": 45
-  },
-  {
-    "name": "Vape Hookah",
-    "image": "/assets/images/products/party-essentials/vape.png",
-    "price": 650
   },
   {
     "name": "Kiwi",
@@ -61,24 +76,13 @@ export const featureProducts: FeatureProducts[] = [
     "price": 149
   },
   {
-    "name": "Hookah",
-    "image": "/assets/images/products/rent-party-speaker/hookah.png",
-    "price": 180
+    "name": "Unicorn",
+    "price": 249,
+    "image": "/assets/images/products/beverage/unicorn.png",
   },
   {
-    "name": "Party Speaker",
-    "image": "/assets/images/products/rent-party-speaker/speaker.png",
-    "price": 200
+    "name": "Gin Buzz",
+    "price": 349,
+    "image": "/assets/images/products/cocktail/ginbuzz.png",
   },
-  {
-    "name": "Bottle Opener",
-    "image": "/assets/images/products/party-essentials/bottle-opener.png",
-    "price": 50
-  },
-  {
-    "name": "Ice Cubes",
-    "image": "/assets/images/products/party-essentials/ice-box.png",
-    "price": 20
-  },
-
 ]

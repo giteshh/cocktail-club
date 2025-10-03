@@ -1,42 +1,31 @@
-<app-navbar></app-navbar>
 
-<div class="container-full">
-  <br>
-  <table class="rwd-table">
-    <thead>
-    <tr>
-      <th>S. NO.</th>
-      <th>Date & Time</th>
-      <th>Product Name</th>
-      <th>Description</th>
-      <th>Net Amount</th>
-      <th>Order Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <ng-container *ngFor="let order of ordersList; let i = index">
-      <tr *ngFor="let item of order.items; let j = index">
-        <td data-th="S. NO.">
-          {{ i + 1 }}.{{ j + 1 }}
-        </td>
-        <td data-th="Date & Time">
-          {{ order.date | date:'medium' }}
-        </td>
-        <td data-th="Product Name">
-          {{ item.name }}
-        </td>
-        <td data-th="Description">
-          {{ item.description }}
-        </td>
-        <td data-th="Net Amount">
-          {{ item.price | currency:'INR' }}
-        </td>
-        <td data-th="Order Status">
-          {{ order.status || 'Pending' }}
-        </td>
+<div class="container-fluid">
+<app-navbar></app-navbar>
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="table-primary">
+      <tr>
+        <th>S. NO.</th>
+        <th>Date & Time</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Net Amount</th>
+        <th>Order status</th>
       </tr>
-    </ng-container>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let order of ordersList; let i = index">
+        <tr *ngFor="let item of ordersList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.date?.toDate() | date:'medium' }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.price | currency:'INR' }}</td>
+          <td>{{ item.status }}</td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
 </div>
 

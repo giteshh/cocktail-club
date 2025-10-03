@@ -10,6 +10,7 @@ import {CartItem, Order} from "../../../../assets/data/cart-items";
 import {AuthService} from "../../../services/auth.service";
 import {firstValueFrom} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 interface orderItems {
   id: number,
@@ -42,7 +43,8 @@ export class CheckoutComponent implements OnInit {
               private appService: AppService,
               private router: Router,
               private toastr: ToastrService,
-              private fireAuth: AngularFireAuth,) {
+              private fireAuth: AngularFireAuth,
+              private firestore: AngularFirestore,) {
   }
 
   async ngOnInit() {
@@ -82,18 +84,31 @@ export class CheckoutComponent implements OnInit {
   async onSubmit() {
     if (this.checkoutForm.invalid) return;
 
-    const order: any = {
+    const order: Order = {
       items: this.cart,
       total: this.total,
-      date: new Date()
+      date: new Date(),
+      status: 'pending',
+      createdAt: new Date(),
+      id: this.firestore.createId() // generate a unique ID
     };
 
     try {
+      // Store the order in Firestore properly
       await this.appService.placeOrder(order);
-      this.payWithRazor();
 
       this.toastr.success('Order placed successfully!', '', {timeOut: 3000});
+
+      // Clear cart in UI
+      this.cart = [];
+      this.calculateTotal();
+
+      // Navigate to orders page
       this.router.navigate(['/orders']);
+
+      // Optional: handle Razorpay payment
+      this.payWithRazor(order);
+
     } catch (error) {
       console.error(error);
       this.toastr.error('Failed to place order.', '', {timeOut: 3000});
@@ -101,57 +116,43 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  payWithRazor() {
+
+  payWithRazor(order: Order) {
     const options: any = {
       key: 'rzp_test_pKtL3VyA60NvPP',
-      amount: Math.round(this.total) * 100, // amount should be in paise format to display Rs 1255 without decimal point
+      amount: Math.round(order.total) * 100, // paise
       currency: 'INR',
-      name: 'Cocktail Club', // company name or product name
+      name: 'Cocktail Club',
       description: '',
-      id: Math.random().toString(36),
       prefill: {
-        name: 'Cocktail Club',
+        name: this.checkoutForm.value.fullName,
         email: 'info@cocktailclub.com',
-        phone: '9898989898',
+        phone: this.checkoutForm.value.phoneNumber,
         method: "card"
       },
-      modal: {
-        escape: false,
-      },
-      notes: {
-        msg: 'Thank you for shopping with Cocktail Club'
-      },
-      theme: {
-        color: '#FF6912'
+      notes: { msg: 'Thank you for shopping with Cocktail Club' },
+      theme: { color: '#FF6912' }
+    };
+
+    options.handler = (response: any) => {
+      this.toastr.success('Payment successful', '', { timeOut: 3000 });
+      // Here you can update the order in Firestore with paymentId if needed
+      this.firestore.collection('orders').doc(order.id).update({
+        paymentId: response.razorpay_payment_id,
+        status: 'completed'
+      });
+    };
+
+    options.modal = {
+      escape: false,
+      ondismiss: () => {
+        this.toastr.warning('Transaction failed or closed', '', { timeOut: 3000 });
       }
     };
-    options.handler = ((response: any, error: any) => {
-      options.response = response;
-      this.toastr.success('Order placed successfully', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 3000,
-      });
-      this.toastr.info('Cocktail Club accepted your order', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 3000,
-      });
 
-      this.appService.addToOrders(this.cart);
-
-      this.router.navigate(['/orders'])
-      localStorage.removeItem('cart');
-      // call your backend api to verify payment signature & capture transaction
-    });
-    options.modal.ondismiss = (() => {
-      // handle the case when user closes the form while transaction is in progress
-      this.toastr.warning('Transaction failed. Please try again...', '', {
-        positionClass: 'toast-top-right',
-        timeOut: 3000,
-      });
-      this.router.navigate(['/cart'])
-    });
     const rzp = new this.winRef.nativeWindow.Razorpay(options);
     rzp.open();
   }
+
 
 }

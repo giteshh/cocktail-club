@@ -48,65 +48,68 @@ export class LoginComponent implements OnInit {
     const password = this.signinForm.value.password;
 
     try {
-      // ✅ Check if email exists
-      const methods = await this.authService.checkEmailExists(email);
+      // Try to sign up first
+      const newUser = await this.authService.signUpWithEmailPassword(email, password);
 
-      if (methods.length > 0) {
-        // Email exists → login
-        const user = await this.authService.signInWithEmailPassword(email, password);
+      const profile = await this.authService.getUserProfile(newUser.uid);
 
-        const profile = await this.authService.getUserProfile(user.uid);
-
-        if (profile?.fullName && profile?.phoneNumber && profile?.address) {
-          this.router.navigate(['/home']);
-        } else {
-          this.router.navigate(['/update-profile']);
-        }
-
-        this.toastr.success('Welcome back!', '', {
-          positionClass: 'toast-top-center',
-          timeOut: 3000,
-          closeButton: true,
-        });
-
+      if (profile?.fullName && profile?.phoneNumber && profile?.address) {
+        this.router.navigate(['/home']);
       } else {
-        // Email does not exist → register
-        const newUser = await this.authService.signUpWithEmailPassword(email, password);
-
-        // Optional: create Firestore doc immediately
-        // await this.authService.firestore.collection('users').doc(newUser.uid).set({
-        //   email: email,
-        //   fullName: '',
-        //   phoneNumber: '',
-        //   address: '',
-        // });
-
         this.router.navigate(['/update-profile']);
-        this.toastr.success('Account created! Please complete your profile.', '', {
-          positionClass: 'toast-top-center',
-          timeOut: 3000,
-          closeButton: true,
-        });
       }
+
+      this.toastr.success('Account created! Please complete your profile.', '', {
+        positionClass: 'toast-top-center',
+        timeOut: 3000,
+        closeButton: true,
+      });
 
     } catch (error: any) {
-      console.error('Auth error:', error);
+      if (error.code === 'auth/email-already-in-use') {
+        // Email exists → try login
+        try {
+          const user = await this.authService.signInWithEmailPassword(email, password);
+          const profile = await this.authService.getUserProfile(user.uid);
 
-      if (error.code === 'auth/wrong-password') {
-        this.toastr.error('Incorrect password', 'Login Failed', {
-          positionClass: 'toast-top-center',
-          timeOut: 3000,
-          closeButton: true,
-        });
+          if (profile?.fullName && profile?.phoneNumber && profile?.address) {
+            this.router.navigate(['/home']);
+          } else {
+            this.router.navigate(['/update-profile']);
+          }
+
+          this.toastr.success('Welcome back!', '', {
+            positionClass: 'toast-top-center',
+            timeOut: 3000,
+            closeButton: true,
+          });
+
+        } catch (signInError: any) {
+          if (signInError.code === 'auth/wrong-password') {
+            this.toastr.error('Incorrect password', 'Login Failed', {
+              positionClass: 'toast-top-center',
+              timeOut: 3000,
+              closeButton: true,
+            });
+          } else {
+            this.toastr.error(signInError.message || 'Login failed', 'Error', {
+              positionClass: 'toast-top-center',
+              timeOut: 3000,
+              closeButton: true,
+            });
+          }
+        }
+
       } else {
-        this.toastr.error(error.message || 'Login failed', 'Error', {
+        // Any other signup errors
+        this.toastr.error(error.message || 'Registration failed', 'Error', {
           positionClass: 'toast-top-center',
           timeOut: 3000,
           closeButton: true,
         });
       }
+
+      console.error('Auth error:', error);
     }
   }
-
-
 }

@@ -21,11 +21,26 @@ export class AuthService {
   }
 
   // Register new user
-  signUpWithEmailPassword(email: string, password: string): Promise<any> {
-    return this.fireAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => userCredential.user);
+  async signUpWithEmailPassword(email: string, password: string): Promise<any> {
+    try {
+      const userCredential = await this.fireAuth.createUserWithEmailAndPassword(email, password);
+      return userCredential.user;
+    } catch (error: any) {
+      if (error.code === 'auth/email-already-in-use') {
+        // Try to sign in if email already exists
+        try {
+          const userCredential = await this.fireAuth.signInWithEmailAndPassword(email, password);
+          return userCredential.user;
+        } catch (signInError) {
+          throw signInError;
+        }
+      } else {
+        // Other errors
+        throw error;
+      }
+    }
   }
+
 
   // Login existing user
   signInWithEmailPassword(email: string, password: string): Promise<any> {
