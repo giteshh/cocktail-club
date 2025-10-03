@@ -15,7 +15,7 @@ export class AuthService {
   userLogInStatus: any;
 
   constructor(private router: Router,
-              private fireAuth: AngularFireAuth,
+              public fireAuth: AngularFireAuth,
               private firestore: AngularFirestore) {
     this.userStatus();
   }

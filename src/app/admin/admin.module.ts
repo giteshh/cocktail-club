@@ -1,21 +1,29 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {AdminRoutingModule} from './admin-routing.module';
 import {AdminComponent} from "./admin.component";
 import {RouterModule} from "@angular/router";
+import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
+
+import {ReactiveFormsModule} from "@angular/forms";
+import {AdminOrdersComponent} from './components/admin-orders/admin-orders.component';
+import {NavbarComponent} from "./components/navbar/navbar.component";
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    DashboardComponent
+    AdminDashboardComponent,
+    NavbarComponent,
+    AdminOrdersComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

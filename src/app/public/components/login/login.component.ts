@@ -53,7 +53,9 @@ export class LoginComponent implements OnInit {
 
       const profile = await this.authService.getUserProfile(newUser.uid);
 
-      if (profile?.fullName && profile?.phoneNumber && profile?.address) {
+      if (profile?.role === 'admin') {
+        this.router.navigate(['/admin']);
+      } else if (profile?.fullName && profile?.phoneNumber && profile?.address) {
         this.router.navigate(['/home']);
       } else {
         this.router.navigate(['/update-profile']);
@@ -66,13 +68,16 @@ export class LoginComponent implements OnInit {
       });
 
     } catch (error: any) {
+
       if (error.code === 'auth/email-already-in-use') {
         // Email exists → try login
         try {
           const user = await this.authService.signInWithEmailPassword(email, password);
           const profile = await this.authService.getUserProfile(user.uid);
 
-          if (profile?.fullName && profile?.phoneNumber && profile?.address) {
+          if (profile?.role === 'admin') {
+            this.router.navigate(['/admin']);
+          } else if (profile?.fullName && profile?.phoneNumber && profile?.address) {
             this.router.navigate(['/home']);
           } else {
             this.router.navigate(['/update-profile']);
@@ -112,4 +117,5 @@ export class LoginComponent implements OnInit {
       console.error('Auth error:', error);
     }
   }
+
 }

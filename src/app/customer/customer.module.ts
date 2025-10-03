@@ -65,6 +65,9 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
     NavbarComponent
 
   ],
+  exports: [
+    NavbarComponent
+  ],
   imports: [
     CommonModule,
     CustomerRoutingModule,
