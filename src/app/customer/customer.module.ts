@@ -4,7 +4,6 @@ import {CommonModule} from '@angular/common';
 import {CustomerRoutingModule} from './customer-routing.module';
 import {CustomerComponent} from './customer.component';
 import {HomeComponent} from "./pages/home/home.component";
-import {NavbarComponent} from "./components/navbar/navbar.component";
 import {FastFoodComponent} from "./pages/fast-food/fast-food.component";
 import {FruitJuiceComponent} from "./pages/fruit-juice/fruit-juice.component";
 import {BeverageComponent} from "./pages/beverage/beverage.component";
@@ -31,9 +30,10 @@ import {
 import {FeatureProductsComponent} from './pages/feature-products/feature-products.component';
 import {TestimonialsComponent} from "./pages/testimonials/testimonials.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { HireComponent } from './pages/hire/hire.component';
-import { HireCarouselComponent } from './components/hire-carousel/hire-carousel.component';
+import {HireComponent} from './pages/hire/hire.component';
+import {HireCarouselComponent} from './components/hire-carousel/hire-carousel.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
+import {NavbarComponent} from "./components/navbar/navbar.component";
 
 
 @NgModule({
@@ -61,7 +61,8 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     FeatureProductsComponent,
     TestimonialsComponent,
     HireComponent,
-    HireCarouselComponent
+    HireCarouselComponent,
+    NavbarComponent
 
   ],
   imports: [
