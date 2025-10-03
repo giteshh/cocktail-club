@@ -7,13 +7,15 @@ import { LoginComponent } from './components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import {NgOtpInputModule} from "ng-otp-input";
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
   declarations: [
     PublicComponent,
     LoginComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ForgotPasswordComponent
   ],
   exports: [
   ],
