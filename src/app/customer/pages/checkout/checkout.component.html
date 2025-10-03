@@ -20,16 +20,18 @@
            class="text-danger">
         Invalid Phone Number
       </div>
-      <div class="input">
-        <i class="fa fa-house"></i>
-        <input formControlName="address" type="text" placeholder="House No. / Colony name"/>
+      <!--      text area-->
+      <div class="text-area-input">
+        <i class="fa fa-home"></i>
+        <textarea class="form-control" formControlName="address" type="text"
+                  placeholder="Enter Full Delivery Address" rows="3"></textarea>
       </div>
       <div *ngIf="checkoutForm.controls['address'].touched && checkoutForm.controls['address'].invalid"
            class="text-danger">
         Invalid Address
       </div>
 
-      <button type="submit" class="btn">Continue to pay {{total | currency:"INR"}}</button>
+      <button type="submit" class="btn">Continue to pay {{ total | currency:"INR" }}</button>
       <a class="text-muted" href="#" routerLink="/cart">Cancel</a>
     </form>
   </div>

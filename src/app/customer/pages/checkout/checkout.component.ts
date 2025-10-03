@@ -36,6 +36,11 @@ export class CheckoutComponent implements OnInit {
   cart: CartItem[] = [];
   userId: string = '';
 
+  productPrice: number = 0;
+  sgst: number = 0;
+  cgst: number = 0;
+  deliveryCharge: number = Math.floor(Math.random() * (50 - 20) + 20);
+
 
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
@@ -48,9 +53,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.cart = await this.appService.getCart();
-    this.calculateTotal();
-
     // Init form
     this.checkoutForm = this.formBuilder.group({
       fullName: ['', Validators.required],
@@ -58,13 +60,17 @@ export class CheckoutComponent implements OnInit {
       address: ['', Validators.required],
     });
 
-    // Prefill form with user profile
     this.fireAuth.authState.subscribe(async (user) => {
       if (user) {
         this.userId = user.uid;
+
+        // Get cart from Firestore using your AppService
+        this.cart = await this.appService.getCart();
+        this.calculateTotal();
+
+        // Get user profile
         const profile = await this.authService.getUserProfile(user.uid);
         if (profile) {
-          console.log('Profile fetched:', profile);
           this.checkoutForm.patchValue({
             fullName: profile.fullName ?? '',
             phoneNumber: profile.phoneNumber ?? '',
@@ -78,7 +84,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   calculateTotal() {
-    this.total = this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    this.productPrice = this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    this.sgst = this.productPrice * 0.05;
+    this.cgst = this.productPrice * 0.05;
+    this.deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20); // you can decide to fix this somewhere
+    this.total = this.productPrice + this.sgst + this.cgst + this.deliveryCharge;
   }
 
   async onSubmit() {
@@ -90,31 +100,21 @@ export class CheckoutComponent implements OnInit {
       date: new Date(),
       status: 'pending',
       createdAt: new Date(),
-      id: this.firestore.createId() // generate a unique ID
+      id: this.firestore.createId()
     };
 
     try {
-      // Store the order in Firestore properly
       await this.appService.placeOrder(order);
-
       this.toastr.success('Order placed successfully!', '', {timeOut: 3000});
-
-      // Clear cart in UI
       this.cart = [];
       this.calculateTotal();
-
-      // Navigate to orders page
       this.router.navigate(['/orders']);
-
-      // Optional: handle Razorpay payment
       this.payWithRazor(order);
-
     } catch (error) {
       console.error(error);
       this.toastr.error('Failed to place order.', '', {timeOut: 3000});
     }
   }
-
 
 
   payWithRazor(order: Order) {
@@ -130,12 +130,12 @@ export class CheckoutComponent implements OnInit {
         phone: this.checkoutForm.value.phoneNumber,
         method: "card"
       },
-      notes: { msg: 'Thank you for shopping with Cocktail Club' },
-      theme: { color: '#FF6912' }
+      notes: {msg: 'Thank you for shopping with Cocktail Club'},
+      theme: {color: '#FF6912'}
     };
 
     options.handler = (response: any) => {
-      this.toastr.success('Payment successful', '', { timeOut: 3000 });
+      this.toastr.success('Payment successful', '', {timeOut: 3000});
       // Here you can update the order in Firestore with paymentId if needed
       this.firestore.collection('orders').doc(order.id).update({
         paymentId: response.razorpay_payment_id,
@@ -146,7 +146,7 @@ export class CheckoutComponent implements OnInit {
     options.modal = {
       escape: false,
       ondismiss: () => {
-        this.toastr.warning('Transaction failed or closed', '', { timeOut: 3000 });
+        this.toastr.warning('Transaction failed or closed', '', {timeOut: 3000});
       }
     };
 

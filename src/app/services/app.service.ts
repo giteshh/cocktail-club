@@ -29,8 +29,7 @@ export class AppService {
 
     return doc.exists ? (doc.data()?.items || []) : [];
   }
-
-
+  
   async addToCart(item: CartItem) {
     const uid = await this.getUserUid();
     const cartRef = this.firestore.collection('carts').doc(uid);

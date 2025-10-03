@@ -16,7 +16,8 @@
     <div class="col-md-4">
       <div class="mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
         <div class="row no-gutters">
-          <a (click)="removeCartItem(item)" class="text-danger" data-toggle="tooltip" data-placement="top" title="Remove">
+          <a (click)="removeCartItem(item)" class="text-danger" data-toggle="tooltip" data-placement="top"
+             title="Remove">
             <i class="fa fa-x"></i>
           </a>
           <div class="left col-md-4">
@@ -25,12 +26,13 @@
           <div class="right col-md-8">
             <div class="custom-card-body" id="cardBody-mobile">
               <p class="custom-card-title" id="itemName">{{ item.name }}</p>
-              <p class="item-description">{{ item.description }}</p>
-              <label>Quantity</label>
-              <input type="number" min="1" max="5" value="{{item.quantity}}"
-                     (change)="addQty(item, item.quantity)">
+              <!--              <p class="item-description">{{ item.description }}</p>-->
+              <label>Quantity :</label>
+              <input type="number" min="1"
+                     [(ngModel)]="item.quantity" (change)="addQty(item, item.quantity)"
+                     name="quantity-{{ i }}" class="w-20">
               <!--            <br>-->
-              <p id="itemPrice">{{ item.price | currency:'INR' }}</p>
+              <p id="itemPrice">Price : {{ item.price | currency:'INR' }}</p>
             </div>
           </div>
           <hr>
@@ -71,7 +73,7 @@
             <hr>
             <div class="text-center">
               <button class="btn btn-sm btn-primary mt-3 mb-3" (click)="placeOrder()">
-                <i class="fa fa-shopping-bag fa-lg mr-2"></i>
+                <i class="fa fa-shopping-bag mr-2"></i>
                 Place Order
               </button>
             </div>

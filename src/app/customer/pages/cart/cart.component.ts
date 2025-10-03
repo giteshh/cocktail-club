@@ -19,13 +19,11 @@ interface cartItems {
   styleUrls: ['./cart.component.css']
 })
 
-
 export class CartComponent {
   product: Product[] = [];
   total = 0;
   quantity = 0;
   totalPrice = 0; //sum of all products added
-
   min = 20;
   max = 50;
   sgst = 0;
@@ -64,7 +62,17 @@ export class CartComponent {
 
 
   doTotal() {
-    this.total = this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    // 1. Total product price
+    this.productPrice = this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // 2. SGST and CGST (5% each of product price)
+    this.sgst = this.productPrice * 0.05;
+    this.cgst = this.productPrice * 0.05;
+
+    // 3. Final total amount (product price + taxes + delivery)
+    this.total = this.productPrice + this.sgst + this.cgst + this.deliveryCharge;
+
+    // 4. Total quantity of items
     this.quantity = this.cart.reduce((sum, item) => sum + item.quantity, 0);
   }
 
