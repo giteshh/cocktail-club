@@ -14,6 +14,7 @@ h2 {
   width: 70%;
   border-radius: 10px;
   overflow: hidden;
+  padding: 20px;
 }
 
 .order-card .card-header {
@@ -25,6 +26,7 @@ h2 {
 }
 
 .btn {
+  width: 220px;
   padding: 8px 30px;
   border-radius: 30px;
   margin-top: 15px;
@@ -32,4 +34,20 @@ h2 {
   background-color: rgb(255, 105, 7);
   border: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+.list-group-m .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -30px;
+  text-align: center;
+  font-size: 0.90rem;
+}
+
+.list-group-m hr {
+  margin-bottom: -10px !important;
 }
