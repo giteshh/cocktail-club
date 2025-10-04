@@ -6,7 +6,7 @@ import {AdminComponent} from "./admin.component";
 import {RouterModule} from "@angular/router";
 import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
 
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminOrdersComponent} from './components/admin-orders/admin-orders.component';
 import {NavbarComponent} from "./components/navbar/navbar.component";
 
@@ -23,6 +23,7 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
     AdminRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule {

@@ -14,6 +14,7 @@ h2 {
   width: 70%;
   border-radius: 10px;
   overflow: hidden;
+  padding: 16px;
 }
 
 .order-card .card-header {
@@ -32,4 +33,184 @@ h2 {
   background-color: rgb(255, 105, 7);
   border: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-groups {
+  display: flex;
+  gap: 8px;
+}
+
+.list-group-m .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -30px;
+  text-align: center;
+  font-size: 0.90rem;
+}
+
+.list-group-m hr {
+  margin-bottom: -10px !important;
+}
+
+/*download pdf*/
+table.invoice {
+  background: #fff;
+
+  .unp {
+    text-align: center;
+  }
+
+  .num {
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: .8em;
+  }
+
+  tr, td {
+    background: #fff;
+    text-align: left;
+    font-weight: 400;
+    color: #322d28;
+  }
+
+  tr {
+    &.header {
+      td {
+        img {
+          max-width: 300px;
+        }
+
+        h2 {
+          text-align: right;
+          /*font-family: $brandfont;*/
+          font-weight: 200;
+          font-size: 2rem;
+          color: #6c9d20;
+        }
+      }
+    }
+
+    &.intro {
+      td {
+        &:nth-child(2) {
+          text-align: right;
+        }
+      }
+    }
+
+    &.details {
+      > td {
+        padding-top: 4rem;
+        padding-bottom: 0;
+      }
+
+      td, th {
+        &.id,
+        &.qty {
+          text-align: center;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+
+      table {
+        thead, tbody {
+          position: relative;
+
+          &:after {
+            content: '';
+            height: 1px;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            margin-top: -1px;
+            background: #c8c3be;
+          }
+        }
+      }
+    }
+
+    &.totals {
+      td {
+        padding-top: 0;
+      }
+
+      table {
+        tr {
+          td {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &:nth-child(1) {
+              font-weight: 500;
+            }
+
+            &:nth-child(2) {
+              text-align: right;
+              font-weight: 200;
+            }
+          }
+
+          &:nth-last-child(2) {
+
+            td {
+              padding-bottom: .5em;
+
+              &:last-child {
+                position: relative;
+
+                &:after {
+                  content: '';
+                  height: 4px;
+                  width: 110%;
+                  border-top: 1px solid #6c9d20;
+                  border-bottom: 1px solid #6c9d20;
+                  position: relative;
+                  right: 0;
+                  bottom: -.575rem;
+                  display: block;
+                }
+              }
+            }
+
+          }
+
+          &.total {
+            td {
+              font-size: 1.2em;
+              padding-top: .5em;
+              font-weight: 700;
+
+              &:last-child {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.additional-info {
+  h5 {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*font-family: $brandfont;*/
+    color: #6c9d20;
+  }
 }

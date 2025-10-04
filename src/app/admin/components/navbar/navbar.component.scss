@@ -28,12 +28,23 @@
 .navbar-brand h4 {
   text-align: center;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 2px;
   color: #FF6907;
   margin-left: 15px;
   padding-top: 10px;
 }
+
+.primary-color-text {
+  margin-left: 15px;
+  float: right;
+  cursor: pointer;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
 
 .mega-menu {
   width: 70vw;
@@ -87,19 +98,19 @@
 }
 
 //#lblCartCount {
-  //  font-weight: bold;
-  //  font-size: 12px;
-  //  height: 20px;
-  //  width: 20px;
-  //  border-radius: 50%;
-  //  text-align: center;
-  //  //background: rgb(255, 105, 7);
-  //  margin-left: -20px;
-  //}
+//  font-weight: bold;
+//  font-size: 12px;
+//  height: 20px;
+//  width: 20px;
+//  border-radius: 50%;
+//  text-align: center;
+//  //background: rgb(255, 105, 7);
+//  margin-left: -20px;
+//}
 //
 //.category-links {
-  //  //background-color: rgba(255, 255, 247, 0.2);
-  //}
+//  //background-color: rgba(255, 255, 247, 0.2);
+//}
 
 .searchBar {
   width: 450px;
