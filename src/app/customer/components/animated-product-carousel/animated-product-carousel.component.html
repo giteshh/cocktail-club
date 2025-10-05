@@ -1,129 +1,29 @@
-<div class="slider-wrapper">
-  <main #main>
-    <h1>Discover Your Favorites</h1>
+<h1>Discover Your Favorites</h1>
+<div class="slider">
+  <div class="slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+    <img *ngFor="let slide of slides; let i = index"
+         [src]="slide.image"
+         class="slide"
+         [class.active]="i === currentSlide"
+         [alt]="slide.title"/>
+  </div>
 
-    <div #slideRow class="slide-row" id="slide-row">
-      <div class="slide-col">
-        <div class="content">
-          <h2>Cocktails</h2>
-          <p>Eat. Sleep. Cocktail. Repeat.</p>
-          <span class="sale-offer">* Buy 1 Get 1 on Cocktails upto INR 599/-. Happy Hour O'clock.</span>
-          <br>
-          <button class="explore-btn" routerLink="/cocktail" (click)="navigateToTop()">Explore Cocktails</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/cocktail" (click)="navigateToTop()"
-               src="../../../../assets/images/home/cocktail.jpg" alt="cocktail">
-        </div>
-      </div>
+  <div class="bottom-center">
+    <h3 class="luxury-heading">{{ slides[currentSlide].title }}</h3>
+    <p class="luxury-subtitle">{{ slides[currentSlide].tagline }}</p>
 
-      <div class="slide-col">
-        <div class="content">
-          <h2>Beer</h2>
-          <p>Would you say no to another?</p>
-          <span class="sale-offer">* 2% flat off on selected beers.</span>
-          <br>
-          <button class="explore-btn" routerLink="/beers" (click)="navigateToTop()">Explore Beers</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/beers" (click)="navigateToTop()"
-               src="../../../../assets/images/home/beer.jpg" alt="beer">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Alcohol</h2>
-          <p>Get the party started</p>
-          <span class="sale-offer">* INR 200 off upto INR 2599/-.</span>
-          <br>
-          <button class="explore-btn" routerLink="/alcohol" (click)="navigateToTop()">Explore Drinks</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/alcohol" (click)="navigateToTop()"
-               src="../../../../assets/images/home/alcohol.jpg" alt="alcohol">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Beverages</h2>
-          <p>Beverages that refreshes the body. Refreshes the soul.</p>
-          <span class="sale-offer">* Buy 1 Get 1 on all hot and cold beverages</span>
-          <br>
-          <button class="explore-btn" routerLink="/beverage" (click)="navigateToTop()">Explore Beverages</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/beverage" (click)="navigateToTop()"
-               src="../../../../assets/images/home/beverage.jpg" alt="beverage">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Fast Food</h2>
-          <p>Fast Fuel for Hungry Souls.</p>
-          <span class="sale-offer">* Free medium pizza of your choice on above order of INR 999/-.</span>
-          <br>
-          <button class="explore-btn" routerLink="/fast-food" (click)="navigateToTop()">Explore Fast Food</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/fast-food" (click)="navigateToTop()"
-               src="../../../../assets/images/home/fastfood.jpg" alt="fast-food">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Fruit Juices</h2>
-          <p>Quench your thirst, feel alive!</p>
-          <span class="sale-offer">* Buy 1 Get 1 on all small glass.</span>
-          <br>
-          <button class="explore-btn" routerLink="/fruit-juice" (click)="navigateToTop()">Explore Juices</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/cold-drink" (click)="navigateToTop()"
-               src="../../../../assets/images/home/fruit-juice.jpg" alt="cold-drink">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Snacks</h2>
-          <p>Chakhna For Everyone</p>
-          <span class="sale-offer">* Free chips on beers and alcohols above INR  999/-.</span>
-          <br>
-          <button class="explore-btn" routerLink="/snacks" (click)="navigateToTop()">Explore Snacks</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/snacks" (click)="navigateToTop()"
-               src="../../../../assets/images/home/snacks.jpg" alt="snacks">
-        </div>
-      </div>
-
-      <div class="slide-col">
-        <div class="content">
-          <h2>Cigarettes</h2>
-          <p>Cigarette... Get Your Cigarette Here.</p>
-          <span class="sale-offer">* INR 5 off on all products (pack)</span>
-          <br>
-          <button class="explore-btn" routerLink="/cigarettes" (click)="navigateToTop()">Explore Cigarettes</button>
-        </div>
-        <div class="hero">
-          <img routerLink="/cigarettes" (click)="navigateToTop()"
-               src="../../../../assets/images/home/cigarettes.jpg" alt="cigarettes">
-        </div>
-      </div>
-
+    <div class="buttons">
+      <button class="btn primary" [routerLink]="slides[currentSlide].link" (click)="navigateToTop()">
+        Explore {{ slides[currentSlide].title }}
+      </button>
     </div>
-  </main>
 
-  <div class="indicator">
-    <button
-      #btn
-      class="btn"
-      *ngFor="let i of buttons; index as idx"
-      [class.active]="idx === currentIndex"
-      (click)="goToSlide(idx)"></button>
+    <div class="indicators">
+      <span *ngFor="let slide of slides; let i = index"
+            class="dot"
+            [class.active]="i === currentSlide"
+            (click)="showSlide(i)">
+      </span>
+    </div>
   </div>
 </div>
