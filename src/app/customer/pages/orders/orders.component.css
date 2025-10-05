@@ -10,6 +10,12 @@ h2 {
   color: rgb(255, 105, 7);
 }
 
+.order-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .order-card {
   width: 70%;
   border-radius: 10px;
@@ -26,7 +32,7 @@ h2 {
 }
 
 .btn-primary {
-  width: 220px;
+  width: 230px;
   padding: 8px 30px;
   border-radius: 30px;
   margin-top: 15px;
@@ -60,4 +66,17 @@ h2 {
 
 .list-group-m hr {
   margin-bottom: -10px !important;
+}
+
+@media (max-width: 992px) {
+  .order-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-container {
+    flex-direction: column;
+    text-align: center;
+  }
 }

@@ -1,5 +1,5 @@
-.container-fluid {
-  margin-top: 120px;
+.container {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +93,6 @@ table.invoice {
 
         h2 {
           text-align: right;
-          /*font-family: $brandfont;*/
           font-weight: 200;
           font-size: 2rem;
           color: #6c9d20;
@@ -210,7 +209,31 @@ table.invoice {
     font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
-    /*font-family: $brandfont;*/
     color: #6c9d20;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .order-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100% !important;
+  }
+
+  .button-groups {
+    display: flex;
+    flex-direction: column;
   }
 }
