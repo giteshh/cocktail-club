@@ -40,8 +40,7 @@ export class CheckoutComponent implements OnInit {
   sgst: number = 0;
   cgst: number = 0;
   deliveryCharge: number = Math.floor(Math.random() * (50 - 20) + 20);
-
-
+  
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
               private authService: AuthService,
@@ -87,7 +86,7 @@ export class CheckoutComponent implements OnInit {
     this.productPrice = this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     this.sgst = this.productPrice * 0.05;
     this.cgst = this.productPrice * 0.05;
-    this.deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20); // you can decide to fix this somewhere
+    this.deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20);
     this.total = this.productPrice + this.sgst + this.cgst + this.deliveryCharge;
   }
 
@@ -115,7 +114,6 @@ export class CheckoutComponent implements OnInit {
       this.toastr.error('Failed to place order.', '', {timeOut: 3000});
     }
   }
-
 
   payWithRazor(order: Order) {
     const options: any = {
@@ -153,6 +151,4 @@ export class CheckoutComponent implements OnInit {
     const rzp = new this.winRef.nativeWindow.Razorpay(options);
     rzp.open();
   }
-
-
 }

@@ -38,11 +38,11 @@ export class HireCarouselComponent implements OnInit {
       role: 'Powerful speakers to turn up the vibe in your living room or backyard.',
       img: '../assets/images/home/hire/rent-speaker.jpg'
     },
-    // {
-    //   name: 'James Wilson',
-    //   role: 'Product Manager',
-    //   img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3687&auto=format&fit=crop'
-    // }
+    {
+      name: 'Rent Hookahs',
+      role: 'Clouds of fun incoming—party mode: ON.',
+      img: '../assets/images/home/hire/rent-hookah2.jpg'
+    }
   ];
 
   currentIndex = 0;

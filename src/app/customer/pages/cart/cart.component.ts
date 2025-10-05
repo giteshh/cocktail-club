@@ -5,14 +5,6 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {CartItem} from "../../../../assets/data/cart-items";
 
-interface cartItems {
-  id: number,
-  name: string,
-  image: string,
-  price: number,
-  quantity: number,
-}
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -23,7 +15,6 @@ export class CartComponent {
   product: Product[] = [];
   total = 0;
   quantity = 0;
-  totalPrice = 0; //sum of all products added
   min = 20;
   max = 50;
   sgst = 0;
@@ -31,7 +22,6 @@ export class CartComponent {
   deliveryCharge = Math.floor(Math.random() * (50 - 20) + 20);
   productPrice = 0;
   existingProduct = false;
-  showButton = false;
   cart: CartItem[] = [];
   loggedIn;
 
@@ -48,7 +38,6 @@ export class CartComponent {
     this.doTotal();
   }
 
-
   async addQty(item: CartItem, qty: number) {
     await this.appService.updateQuantity(item.id, qty);
     await this.getCartItems();
@@ -59,7 +48,6 @@ export class CartComponent {
     await this.appService.removeFromCart(item.id);
     await this.getCartItems();
   }
-
 
   doTotal() {
     // 1. Total product price
@@ -79,14 +67,14 @@ export class CartComponent {
   // placing order and removing items from localstorage
   async placeOrder() {
     // Ensure user is logged in via Firebase
-    const isLoggedIn = await this.authService.isLoggedInAsync(); // see note below
+    const isLoggedIn = await this.authService.isLoggedInAsync();
     if (!isLoggedIn) {
       this.router.navigate(['/signin']);
       return;
     }
 
     // Load latest cart from Firestore before navigating
-    await this.getCartItems(); // make this method async and Firestore-based
+    await this.getCartItems();
 
     // Navigate to checkout after cart is ready
     this.router.navigate(['/checkout']);
