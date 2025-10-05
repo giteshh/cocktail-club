@@ -30,7 +30,7 @@ export interface Order {
   total: number;
   date: any;
   paymentId?: string;
-  status?: string; // 'pending', 'completed'
+  status?: string;
   createdAt: any;
   id: string;
 }

@@ -1,5 +1,27 @@
 <app-admin-navbar></app-admin-navbar>
 
-<div class="container-fluid">
-  <app-admin-orders></app-admin-orders>
+<div class="container py-4">
+  <h2 class="mb-5 text-center">Sales Statistics</h2>
+
+  <div class="cards-container">
+    <div class="card text-center">
+      <h4 class="mb-4 mt-3">Total Orders</h4>
+      <h1 class="text-primary">{{ totalOrders }}</h1>
+    </div>
+
+    <div class="card text-center">
+      <h4 class="mb-4 mt-3">Total Items Sold</h4>
+      <h1 class="text-success">{{ totalItemsSold }}</h1>
+    </div>
+
+    <div class="card text-center">
+      <h4 class="mb-4 mt-3">Total Sales</h4>
+      <h1 class="text-warning">{{ totalSales | currency: 'INR' }}</h1>
+    </div>
+
+    <div class="card text-center">
+      <h4 class="mb-4 mt-3 text-danger">Cancelled Orders</h4>
+      <h1 class="text-danger">{{ cancelledOrders }}</h1>
+    </div>
+  </div>
 </div>

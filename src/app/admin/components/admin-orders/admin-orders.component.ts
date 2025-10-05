@@ -66,11 +66,20 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
         const enrichedOrders = await Promise.all(
           orders.map(async order => {
             const user = await this.getUserById(order.userId);
+
+            // If status is missing or empty, set it
+            if (!order.status || order.status.trim() === '') {
+              await this.firestore.collection('orders').doc(order.id).update({
+                status: 'Waiting for CC to accept your order'
+              });
+              order.status = 'Waiting for CC to accept your order';
+            }
+
             return {...order, user};
           })
         );
 
-        // Detect new or pending orders
+        // Detect new or pending orders for notification
         enrichedOrders.forEach(order => {
           if (
             order.status === 'Waiting for CC to accept your order' &&
@@ -112,7 +121,6 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
 
     return null;
   }
-
 
   async getOrderDetails(order: Order): Promise<{ order: Order; user: UserProfile | null }> {
     const user = await this.getUserById(order.userId);
@@ -166,7 +174,6 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
       delete this.expandedOrders[orderId];
     }
   }
-
 
   async downloadInvoicePdf(order: Order) {
     const {user} = await this.getOrderDetails(order);
