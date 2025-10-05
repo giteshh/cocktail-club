@@ -1,5 +1,5 @@
 <app-admin-navbar></app-admin-navbar>
-<div class="container-fluid">
+<div class="container">
   <h2 class="mb-4">Customer Orders</h2>
 
   <div *ngIf="ordersList.length === 0" class="alert alert-info">
@@ -7,14 +7,18 @@
   </div>
 
   <ng-container *ngFor="let order of ordersList; let i = index">
-    <div class="card mb-4 order-card" [ngClass]="{ 'cancelled-order': isCancelled(order) }">
+    <div class="mb-4 order-card card" [ngClass]="{ 'cancelled-order': isCancelled(order) }">
 
       <div class="card-content">
         <div>
-          <small class="fw-bold">Customer Name: {{ order.user?.fullName || 'Unknown' }}</small><br>
-          <small class="text-success">Order #{{ order.id }}</small><br>
-          <small>Order Total: {{ order.total | currency: 'INR' }}</small><br>
-          <small class="text-muted">Ordered on: {{ order.createdAt?.toDate() | date: 'medium' }}</small><br>
+          <small class="fw-bold">Customer Name: {{ order.user?.fullName || 'Unknown' }}</small>
+          <br>
+          <small class="text-success">Order #{{ order.id }}</small>
+          <br>
+          <small>Order Total: <b>{{ order.total | currency: 'INR' }}</b></small>
+          <br>
+          <small class="text-muted">Ordered on: {{ order.createdAt?.toDate() | date: 'medium' }}</small>
+          <br>
 
           <!-- Toggle Details -->
           <button class="btn btn-sm btn-primary mt-4"
@@ -35,9 +39,9 @@
           <label class="fw-bold mt-3">Order Status</label>
 
           <!-- STATUS SELECT - Disabled if cancelled -->
-          <select class="form-select form-select-sm mt-3 mb-2 p-2"
+          <select class="form-select form-select mt-3 mb-2 p-2"
                   style="width: 320px"
-                  [ngModel]="order.status"
+                  [ngModel]="order.status || 'Waiting for CC to accept your order'"
                   (ngModelChange)="changeStatus(order, $event)"
                   [disabled]="isCancelled(order)">
             <option *ngFor="let status of orderStatuses" [value]="status">
@@ -90,7 +94,6 @@
       </div>
     </div>
   </ng-container>
-
 </div>
 
 
