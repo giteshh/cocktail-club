@@ -1,10 +1,10 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
-import {firstValueFrom, map, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {UserProfile} from "../../../../assets/data/cart-items";
-import {doc, getDoc} from "@angular/fire/firestore";
+
 
 export interface CartItem {
   id: number;
@@ -34,16 +34,26 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
   ordersList: Order[] = [];
   private ordersSub: Subscription | any = null;
   expandedOrders: { [orderId: string]: boolean } = {};
-
-  customerName: any;
+  notificationAudio = new Audio('/assets/notification-tones/orders_received.mp3');
 
   orderStatuses = [
     'Waiting for CC to accept your order',
     'Order Accepted',
     'Preparing your order',
     'Out for delivery',
-    'Delivered at your Doorsteps'
+    'Delivered at your Doorsteps',
+    'Cancelled by Customer',
+    'Cancelled by Cocktail Club'
   ];
+
+  adminChangeableStatuses = [
+    'Order Accepted',
+    'Preparing your order',
+    'Out for delivery',
+    'Delivered at your Doorsteps',
+    'Cancelled by Cocktail Club'
+  ];
+
 
   constructor(private firestore: AngularFirestore) {
   }
@@ -53,16 +63,41 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
       .collection<Order>('orders', ref => ref.orderBy('createdAt', 'desc'))
       .valueChanges({idField: 'id'})
       .subscribe(async orders => {
-        // Fetch user for each order
-        this.ordersList = await Promise.all(
+        const enrichedOrders = await Promise.all(
           orders.map(async order => {
             const user = await this.getUserById(order.userId);
-            return {...order, user}; // attach user to order
+            return {...order, user};
           })
         );
+
+        // Detect new or pending orders
+        enrichedOrders.forEach(order => {
+          if (
+            order.status === 'Waiting for CC to accept your order' &&
+            !this.expandedOrders[order.id]
+          ) {
+            this.startNotificationForOrder(order.id);
+          } else if (
+            order.status !== 'Waiting for CC to accept your order' &&
+            this.expandedOrders[order.id]
+          ) {
+            this.stopNotificationForOrder(order.id);
+          }
+        });
+
+        this.ordersList = enrichedOrders;
       });
   }
 
+  isCancelled(order: Order): boolean {
+    return order.status === 'Cancelled by Customer' || order.status === 'Cancelled by Cocktail Club';
+  }
+
+  isOrderClosed(status: string): boolean {
+    return status === 'Delivered at your Doorsteps' ||
+      status === 'Cancelled by Customer' ||
+      status === 'Cancelled by Cocktail Club';
+  }
 
   async getUserById(userId: string): Promise<UserProfile | null> {
     const docRef = this.firestore.collection<UserProfile>('users').doc(userId).ref;
@@ -107,6 +142,31 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
   toggleShowMore(orderId: string) {
     this.expandedOrders[orderId] = !this.expandedOrders[orderId];
   }
+
+  // play notification on receiving order
+  startNotificationForOrder(orderId: string) {
+    this.notificationAudio.loop = false;
+    this.notificationAudio.volume = 1.0;
+
+    const playSound = () => {
+      this.notificationAudio.currentTime = 0;
+      this.notificationAudio.play().catch(err => console.warn('Audio play failed:', err));
+    };
+
+    playSound(); // Play immediately
+    const interval: any = setInterval(playSound, 10000); // Repeat every 10 seconds
+
+    this.expandedOrders[orderId] = interval;
+  }
+
+  stopNotificationForOrder(orderId: string) {
+    const timer: any = this.expandedOrders[orderId];
+    if (timer) {
+      clearInterval(timer);
+      delete this.expandedOrders[orderId];
+    }
+  }
+
 
   async downloadInvoicePdf(order: Order) {
     const {user} = await this.getOrderDetails(order);
@@ -224,5 +284,7 @@ export class AdminOrdersComponent implements OnInit, OnDestroy {
     if (this.ordersSub) {
       this.ordersSub.unsubscribe();
     }
+    // Stop all playing sounds
+    Object.values(this.expandedOrders).forEach((timer: any) => clearInterval(timer));
   }
 }

@@ -7,27 +7,24 @@
   </div>
 
   <ng-container *ngFor="let order of ordersList; let i = index">
-    <div class="card mb-4 order-card">
+    <div class="card mb-4 order-card" [ngClass]="{ 'cancelled-order': isCancelled(order) }">
 
       <div class="card-content">
         <div>
-          <small class="fw-bold">Customer Name : {{ order.user?.fullName || 'Unknown' }}</small>
-          <br>
-          <small class="text-success">Order #{{ order.id }}</small>
-          <br>
-          <small>Order Total: {{ order.total | currency: 'INR' }}</small>
-          <br>
-          <small class="text-muted">Ordered on: {{ order.createdAt?.toDate() | date: 'medium' }}</small>
-          <br>
-          <!-- Unique collapse ID using order.id -->
+          <small class="fw-bold">Customer Name: {{ order.user?.fullName || 'Unknown' }}</small><br>
+          <small class="text-success">Order #{{ order.id }}</small><br>
+          <small>Order Total: {{ order.total | currency: 'INR' }}</small><br>
+          <small class="text-muted">Ordered on: {{ order.createdAt?.toDate() | date: 'medium' }}</small><br>
+
+          <!-- Toggle Details -->
           <button class="btn btn-sm btn-primary mt-4"
                   type="button"
                   (click)="toggleShowMore(order.id)"
                   [attr.aria-expanded]="expandedOrders[order.id] || false"
                   [attr.aria-controls]="'collapse' + order.id">
-                      <span *ngIf="expandedOrders[order.id]; else showMore">
-                          <i class="fa-solid fa-eye-slash ms-1"></i> Hide Order Details
-                      </span>
+          <span *ngIf="expandedOrders[order.id]; else showMore">
+            <i class="fa-solid fa-eye-slash ms-1"></i> Hide Order Details
+          </span>
             <ng-template #showMore>
               <i class="fa-solid fa-eye ms-1"></i> Show Order Details
             </ng-template>
@@ -35,40 +32,41 @@
         </div>
 
         <div>
-          <label class="fw-bold">Order Status</label>
+          <label class="fw-bold mt-3">Order Status</label>
+
+          <!-- STATUS SELECT - Disabled if cancelled -->
           <select class="form-select form-select-sm mt-3 mb-2 p-2"
                   style="width: 320px"
                   [ngModel]="order.status"
-                  (ngModelChange)="changeStatus(order, $event)">
+                  (ngModelChange)="changeStatus(order, $event)"
+                  [disabled]="isCancelled(order)">
             <option *ngFor="let status of orderStatuses" [value]="status">
               {{ status }}
             </option>
           </select>
 
-          <span class="text-danger fw-bold mt-2 mb-2" *ngIf="!getNextStatus(order.status)">Order Closed</span>
+          <span class="text-danger fw-bold mt-2 mb-2"
+                *ngIf="isOrderClosed(order.status)">
+                Order Closed
+          </span>
+
+          <br>
+          <!-- CANCELLATION BADGE -->
+          <span *ngIf="isCancelled(order)" class="badge bg-danger mt-2">Order {{ order.status }}</span>
+
+          <!-- INVOICE BUTTONS - hidden if cancelled -->
           <div class="button-groups">
-            <!-- Unique collapse ID using order.id -->
-            <!--            <button class="btn btn-sm btn-primary mt-3"-->
-            <!--                    type="button"-->
-            <!--                    (click)="toggleShowMore(order.id)"-->
-            <!--                    [attr.aria-expanded]="expandedOrders[order.id] || false"-->
-            <!--                    [attr.aria-controls]="'collapse' + order.id">-->
-            <!--            <span *ngIf="expandedOrders[order.id]; else showMore">-->
-            <!--                <i class="fa-solid fa-eye-slash ms-1"></i> Hide Order Details-->
-            <!--            </span>-->
-            <!--              <ng-template #showMore>-->
-            <!--                <i class="fa-solid fa-eye ms-1"></i> Show Order Details-->
-            <!--              </ng-template>-->
-            <!--            </button>-->
             <button class="btn btn-sm btn-primary mt-3"
                     type="button"
-                    (click)="downloadInvoicePdf(order)">
+                    (click)="downloadInvoicePdf(order)"
+                    *ngIf="!isCancelled(order)">
               <i class="fa-solid fa-file-arrow-down"></i> Download Invoice
             </button>
-            <!--          <br>-->
+
             <button class="btn btn-sm btn-primary mt-3"
                     type="button"
-                    (click)="printOrderInvoice(order)">
+                    (click)="printOrderInvoice(order)"
+                    *ngIf="!isCancelled(order)">
               <i class="fa-solid fa-print"></i> Print Invoice
             </button>
           </div>
@@ -92,6 +90,7 @@
       </div>
     </div>
   </ng-container>
+
 </div>
 
 
