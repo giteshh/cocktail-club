@@ -25,13 +25,23 @@ h2 {
   align-items: center;
 }
 
-.btn {
+.btn-primary {
   width: 220px;
   padding: 8px 30px;
   border-radius: 30px;
   margin-top: 15px;
   color: white;
   background-color: rgb(255, 105, 7);
+  border: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.btn-danger {
+  width: 220px;
+  padding: 8px 30px;
+  border-radius: 30px;
+  margin-top: 15px;
+  color: white;
   border: none;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
 }

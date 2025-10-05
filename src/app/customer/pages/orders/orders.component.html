@@ -20,18 +20,26 @@
 
         <div>
           <div>Order Total: <b class="text-success">{{ order.total | currency: 'INR' }}</b></div>
+          <!-- Show cancel button only if eligible -->
+          <button class="btn btn-sm btn-danger mt-3"
+                  type="button"
+                  *ngIf="canCancel(order)"
+                  (click)="cancelOrder(order)">
+            Cancel Order
+          </button>
+
+          <!-- Show cancelled status -->
+          <span *ngIf="isCancelled(order)" class="badge bg-danger fw-bold mt-3">
+            Order {{ order.status === 'Cancelled by Customer' ? 'cancelled by you' : 'was cancelled by Cocktail Club' }}
+          </span>
+
+
+          <br>
           <!-- Unique collapse ID using order.id -->
           <button class="btn btn-sm btn-primary mt-3"
                   type="button"
-                  (click)="toggleShowMore(order.id)"
-                  [attr.aria-expanded]="expandedOrders[order.id] || false"
-                  [attr.aria-controls]="'collapse' + order.id">
-            {{ expandedOrders[order.id] ? 'Hide Order Details' : 'Show Order Details' }}
-          </button>
-          <br>
-          <button class="btn btn-sm btn-primary mt-3"
-                  type="button"
-                  (click)="downloadInvoicePdf(order)">
+                  (click)="downloadInvoicePdf(order)"
+                  *ngIf="!isCancelled(order)">
             <i class="fa-solid fa-file-arrow-down"></i> Download Invoice
           </button>
         </div>
