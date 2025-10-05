@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h2 class="mb-4">Registered Users</h2>
+
+  <div *ngIf="usersList.length === 0" class="alert alert-info">
+    No users found.
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer's Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of usersList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phoneNumber || '-' }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
