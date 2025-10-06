@@ -5,13 +5,20 @@
       <h4>Cocktail Club Co. Admin</h4>
     </a>
 
-    <button class="btn btn-sm btn-primary" (click)="toggleStatus()">
-      {{ isOpen ? 'Close CC' : 'Open CC' }}
-    </button>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button
+        class="btn"
+        [ngClass]="isOpen ? 'btn-danger' : 'btn-success'"
+        (click)="toggleStatus()">
+        <i [ngClass]="isOpen ? 'fa-shop-lock' : 'fa-shop'"
+           class="fa-solid mx-2"></i>
+        {{ isOpen ? 'Close CC' : 'Open CC' }}
+      </button>
 
-    <p class="primary-color-text text-danger" (click)="doLogOut()">
-      <i class="fa-solid fa-power-off"></i>Logout
-    </p>
+      <button class="btn btn-sm btn-light text-danger fw-bold" (click)="doLogOut()">
+        <i class="fa-solid fa-power-off mx-2"></i>Logout
+      </button>
+    </div>
   </div>
 </nav>
 

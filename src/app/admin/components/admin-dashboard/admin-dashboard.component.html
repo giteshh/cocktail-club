@@ -1,27 +1,39 @@
 <app-admin-navbar></app-admin-navbar>
 
-<div class="container py-4">
+<div class="container mt-4 py-4">
   <h2 class="mb-5 text-center">Sales Statistics</h2>
 
   <div class="cards-container">
-    <div class="card text-center">
-      <h4 class="mb-4 mt-3">Total Orders</h4>
-      <h1 class="text-primary">{{ totalOrders }}</h1>
+    <div class="card text-center card-1">
+      <img src="assets/images/admin/total-orders.jpg" alt="Total Orders" class="card-img-top">
+      <div class="text-container">
+        <h4 class="mb-4 mt-3">Total Orders</h4>
+        <h1 class="text-primary">{{ totalOrders }}</h1>
+      </div>
     </div>
 
-    <div class="card text-center">
-      <h4 class="mb-4 mt-3">Total Items Sold</h4>
-      <h1 class="text-success">{{ totalItemsSold }}</h1>
+    <div class="card text-center card-2">
+      <img src="assets/images/admin/total-items-sold.jpg" alt="Total items sold" class="card-img-top">
+      <div class="text-container">
+        <h4 class="mb-4 mt-3">Total Items Sold</h4>
+        <h1 class="text-success">{{ totalItemsSold }}</h1>
+      </div>
     </div>
 
-    <div class="card text-center">
-      <h4 class="mb-4 mt-3">Total Earnings</h4>
-      <h1 class="text-info">{{ totalSales | currency: 'INR' }}</h1>
+    <div class="card text-center card-3">
+      <img src="assets/images/admin/total-earnings.jpg" alt="Total earnings" class="card-img-top">
+      <div class="text-container">
+        <h4 class="mb-4 mt-3">Total Earnings</h4>
+        <h1 class="text-info">{{ totalSales | currency: 'INR' }}</h1>
+      </div>
     </div>
 
-    <div class="card text-center">
-      <h4 class="mb-4 mt-3 text-danger">Cancelled Orders</h4>
-      <h1 class="text-danger">{{ cancelledOrders }}</h1>
+    <div class="card text-center card-4">
+      <img src="assets/images/admin/cancelled-orders.jpg" alt="Cancelled Orders" class="card-img-top">
+      <div class="text-container">
+        <h4 class="mb-4 mt-3 text-danger">Cancelled Orders</h4>
+        <h1 class="text-danger">{{ cancelledOrders }}</h1>
+      </div>
     </div>
   </div>
 </div>

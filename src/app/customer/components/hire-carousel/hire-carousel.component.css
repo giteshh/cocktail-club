@@ -239,15 +239,15 @@ section {
 @media (max-width: 992px) {
   section {
     width: 100%;
-    margin-top: -150px;
-    margin-bottom: -220px;
+    /*margin-top: -150px;*/
+    /*margin-bottom: -220px;*/
   }
 }
 
 @media (max-width: 768px) {
   section {
-    margin-top: -280px;
-    margin-bottom: -250px;
+    /*margin-top: -280px;*/
+    /*margin-bottom: -250px;*/
   }
 
   .about-title {
