@@ -66,7 +66,8 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

@@ -18,11 +18,13 @@ import {RentSpeakerComponent} from "./pages/rent-speaker/rent-speaker.component"
 import {SearchComponent} from "./components/search/search.component";
 import {HireComponent} from "./pages/hire/hire.component";
 import {AuthGuard} from "../guards/auth.guard";
+import {CustomerComponent} from "./customer.component";
 
 
 const routes: Routes = [
   {
     path: '',
+    component: CustomerComponent,
     canActivateChild: [AuthGuard],
     children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
