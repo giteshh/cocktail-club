@@ -4,8 +4,14 @@
       <img src="../../../../assets/images/navbar/cocktail.gif" alt="logo">
       <h4>Cocktail Club Co. Admin</h4>
     </a>
+
+    <button class="btn btn-sm btn-primary" (click)="toggleStatus()">
+      {{ isOpen ? 'Close CC' : 'Open CC' }}
+    </button>
+
     <p class="primary-color-text text-danger" (click)="doLogOut()">
-      <i class="fa-solid fa-power-off"></i>Logout</p>
+      <i class="fa-solid fa-power-off"></i>Logout
+    </p>
   </div>
 </nav>
 
