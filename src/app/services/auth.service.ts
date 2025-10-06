@@ -41,7 +41,6 @@ export class AuthService {
     }
   }
 
-
   // Login existing user
   signInWithEmailPassword(email: string, password: string): Promise<any> {
     return this.fireAuth
