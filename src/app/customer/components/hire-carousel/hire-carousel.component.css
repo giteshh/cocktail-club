@@ -159,7 +159,8 @@ section {
 }
 
 .member-role {
-  color: #5d5f61;
+  color: black;
+  /*color: #5d5f61;*/
   font-size: 1.25rem;
   padding: 10px 0;
   margin-top: -15px;

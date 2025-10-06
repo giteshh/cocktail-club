@@ -42,6 +42,11 @@ export class HireCarouselComponent implements OnInit {
       name: 'Rent Hookahs',
       role: 'Clouds of fun incoming—party mode: ON.',
       img: '../assets/images/home/hire/rent-hookah2.jpg'
+    },
+    {
+      name: 'Rent Refrigerator',
+      role: `Never Let your Beers and Cold drinks Go Warm Again!`,
+      img: '../assets/images/home/hire/fridge.jpg'
     }
   ];
 
