@@ -28,9 +28,9 @@ export interface OrdersDoc {
 export interface Order {
   items: CartItem[];
   total: number;
-  date: any;
   paymentId?: string;
   status?: string;
   createdAt: any;
   id: string;
+  userId?: string;
 }

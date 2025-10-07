@@ -11,6 +11,7 @@ import {AuthService} from "../../../services/auth.service";
 import {firstValueFrom} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {Auth} from "@angular/fire/auth";
 
 interface orderItems {
   id: number,
@@ -40,7 +41,7 @@ export class CheckoutComponent implements OnInit {
   sgst: number = 0;
   cgst: number = 0;
   deliveryCharge: number = Math.floor(Math.random() * (50 - 20) + 20);
-  
+
   constructor(private formBuilder: FormBuilder,
               private winRef: WindowService,
               private authService: AuthService,
@@ -94,58 +95,61 @@ export class CheckoutComponent implements OnInit {
     if (this.checkoutForm.invalid) return;
 
     const order: Order = {
+      id: this.firestore.createId(),
+      userId: this.userId,
       items: this.cart,
       total: this.total,
-      date: new Date(),
-      status: 'pending',
       createdAt: new Date(),
-      id: this.firestore.createId()
+      status: 'Waiting for CC to accept your order'
     };
 
-    try {
-      await this.appService.placeOrder(order);
-      this.toastr.success('Order placed successfully!', '', {timeOut: 3000});
-      this.cart = [];
-      this.calculateTotal();
-      this.router.navigate(['/orders']);
-      this.payWithRazor(order);
-    } catch (error) {
-      console.error(error);
-      this.toastr.error('Failed to place order.', '', {timeOut: 3000});
-    }
+    // Open Razorpay checkout — order not created yet
+    this.payWithRazor(order);
   }
 
   payWithRazor(order: Order) {
     const options: any = {
       key: 'rzp_test_pKtL3VyA60NvPP',
-      amount: Math.round(order.total) * 100, // paise
+      amount: Math.round(order.total) * 100, // convert to paise
       currency: 'INR',
       name: 'Cocktail Club',
-      description: '',
+      description: 'Cocktail Club Order Payment',
       prefill: {
         name: this.checkoutForm.value.fullName,
         email: 'info@cocktailclub.com',
-        phone: this.checkoutForm.value.phoneNumber,
-        method: "card"
+        contact: this.checkoutForm.value.phoneNumber,
       },
       notes: {msg: 'Thank you for shopping with Cocktail Club'},
-      theme: {color: '#FF6912'}
-    };
+      theme: {color: '#FF6912'},
 
-    options.handler = (response: any) => {
-      this.toastr.success('Payment successful', '', {timeOut: 3000});
-      // Here you can update the order in Firestore with paymentId if needed
-      this.firestore.collection('orders').doc(order.id).update({
-        paymentId: response.razorpay_payment_id,
-        status: 'completed'
-      });
-    };
+      handler: async (response: any) => {
+        // Payment successful — only now save order in Firestore
+        try {
+          await this.firestore.collection('orders').doc(order.id).set({
+            ...order,
+            paymentId: response.razorpay_payment_id,
+            paymentStatus: 'Success',
+          });
 
-    options.modal = {
-      escape: false,
-      ondismiss: () => {
-        this.toastr.warning('Transaction failed or closed', '', {timeOut: 3000});
-      }
+          this.toastr.success('Payment successful! Order placed.', '', {timeOut: 3000});
+
+          // clear cart
+          this.cart = [];
+          await this.appService.clearCart();
+
+          this.router.navigate(['/orders']);
+        } catch (err) {
+          console.error('Error saving order after payment:', err);
+          this.toastr.error('Failed to save order after payment.', '', {timeOut: 3000});
+        }
+      },
+
+      modal: {
+        escape: false,
+        ondismiss: () => {
+          this.toastr.warning('Payment cancelled or failed.', '', {timeOut: 3000});
+        },
+      },
     };
 
     const rzp = new this.winRef.nativeWindow.Razorpay(options);

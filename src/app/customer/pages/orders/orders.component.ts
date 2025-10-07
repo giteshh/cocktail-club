@@ -81,6 +81,7 @@ export class OrdersComponent implements OnInit {
       'Order Accepted'
     ];
 
+    // order can be cancelled within 5 mints or until preparing
     if (timeDiffMins <= 5 || cancellableStatuses.includes(order.status)) {
       this.firestore.collection('orders').doc(order.id).update({
         status: 'Cancelled by Customer',
