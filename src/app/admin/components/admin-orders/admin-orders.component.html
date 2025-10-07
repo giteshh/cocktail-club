@@ -7,10 +7,11 @@
   </div>
 
   <ng-container *ngFor="let order of ordersList; let i = index">
-    <div class="mb-4 order-card card" [ngClass]="{ 'cancelled-order': isCancelled(order) }">
+    <div class="mb-4 order-card card" [ngClass]="{ 'cancelled-order': isCancelled(order),
+     'new-order-blink': order.status === 'Waiting for CC to accept your order'}">
 
       <div class="card-content">
-        <div>
+        <div class="left-content">
           <small class="fw-bold">Customer Name: {{ order.user?.fullName || 'Unknown' }}</small>
           <br>
           <small class="text-success">Order #{{ order.id }}</small>
@@ -35,28 +36,33 @@
           </button>
         </div>
 
-        <div>
-          <label class="fw-bold mt-3">Order Status</label>
+        <div class="right-content">
+          <div>
+                     <span class="badge bg-danger mt-2 mb-2 p-2"
+                           *ngIf="isOrderClosed(order.status)">
+                          Order Closed
+                    </span>
+            <!-- CANCELLATION BADGE -->
+            <span *ngIf="isCancelled(order)" class="badge bg-danger p-2 mt-2">Order {{ order.status }}</span>
+          </div>
 
-          <!-- STATUS SELECT - Disabled if cancelled -->
-          <select class="form-select form-select mt-3 mb-2 p-2"
-                  style="width: 320px"
-                  [ngModel]="order.status || 'Waiting for CC to accept your order'"
-                  (ngModelChange)="changeStatus(order, $event)"
-                  [disabled]="isCancelled(order)">
-            <option *ngFor="let status of orderStatuses" [value]="status">
-              {{ status }}
-            </option>
-          </select>
+          <div>
+            <label class="fw-bold mt-3">Order Status</label>
 
-          <span class="text-danger fw-bold mt-2 mb-2"
-                *ngIf="isOrderClosed(order.status)">
-                Order Closed
-          </span>
-
-          <br>
-          <!-- CANCELLATION BADGE -->
-          <span *ngIf="isCancelled(order)" class="badge bg-danger mt-2">Order {{ order.status }}</span>
+            <!-- STATUS SELECT - Disabled if cancelled -->
+            <select
+              class="form-select w-100 mt-3 mb-2 p-2"
+              style="width: 320px"
+              [(ngModel)]="order.status"
+              [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="changeStatus(order, $event)"
+              [disabled]="isCancelled(order)"
+            >
+              <option *ngFor="let status of orderStatuses" [ngValue]="status">
+                {{ status }}
+              </option>
+            </select>
+          </div>
 
           <!-- INVOICE BUTTONS - hidden if cancelled -->
           <div class="button-groups">
@@ -86,7 +92,8 @@
             <li class="list-group-item text-muted">
               <p>{{ item.name }} X {{ item.quantity }}</p>
               <p>{{ item.quantity }} N x {{ item.price }} =
-                {{ item.price * item.quantity | currency: 'INR' }}</p>
+                {{ item.price * item.quantity | currency: 'INR' }}
+              </p>
             </li>
             <hr>
           </ul>

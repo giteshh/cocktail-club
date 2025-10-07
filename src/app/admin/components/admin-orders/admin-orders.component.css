@@ -45,6 +45,14 @@ h2 {
   width: 100%;
 }
 
+.left-content {
+  width: 50%;
+}
+
+.right-content {
+  width: 50%;
+}
+
 .button-groups {
   display: flex;
   gap: 8px;
@@ -213,6 +221,24 @@ table.invoice {
   }
 }
 
+/* Highlight new orders */
+.new-order-blink {
+  animation: blinkBackground 1.5s infinite;
+}
+
+@keyframes blinkBackground {
+  0% {
+    background-color: #ffe6e6; /* light red */
+  }
+  50% {
+    background-color: #fff5cc; /* light yellow */
+  }
+  100% {
+    background-color: #ffe6e6;
+  }
+}
+
+
 @media screen and (max-width: 992px) {
   .order-card {
     width: 100%;
@@ -225,6 +251,14 @@ table.invoice {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+  }
+
+  .left-content {
+    width: 100%;
+  }
+
+  .right-content {
     width: 100%;
   }
 
