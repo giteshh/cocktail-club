@@ -22,6 +22,7 @@ import {PageNotFoundComponent} from "./public/components/page-not-found/page-not
 import {HttpClientModule} from "@angular/common/http";
 import firebase from "firebase/compat/app";
 import {CarouselModule} from "ngx-owl-carousel-o";
+import { LoaderComponent } from './shared/loader/loader.component';
 
 
 firebase.initializeApp(environment.firebase);
@@ -30,7 +31,8 @@ firebase.initializeApp(environment.firebase);
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

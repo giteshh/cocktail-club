@@ -4,6 +4,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {CartDoc, CartItem, Order, OrdersDoc} from "../../assets/data/cart-items";
 import {firstValueFrom} from "rxjs";
 import firebase from "firebase/compat/app";
+import {LoaderService} from "./loader.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import firebase from "firebase/compat/app";
 export class AppService {
 
   constructor(private firestore: AngularFirestore,
-              private auth: AngularFireAuth) {
+              private auth: AngularFireAuth,
+              private loaderService: LoaderService) {
   }
 
   private async getUserUid(): Promise<string> {
@@ -24,42 +26,57 @@ export class AppService {
   }
 
   async getCart(): Promise<CartItem[]> {
-    const uid = await this.getUserUid();
-    const doc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
-
-    return doc.exists ? (doc.data()?.items || []) : [];
+    this.loaderService.show();
+    try {
+      const uid = await this.getUserUid();
+      const doc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
+      return doc.exists ? (doc.data()?.items || []) : [];
+    } finally {
+      this.loaderService.hide();
+    }
   }
-  
-  async addToCart(item: CartItem) {
-    const uid = await this.getUserUid();
-    const cartRef = this.firestore.collection('carts').doc(uid);
-    const cartDoc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
-    let items: CartItem[] = [];
 
-    if (cartDoc.exists) {
-      items = (cartDoc.data()?.items || []) as CartItem[];
-      const existingIndex = items.findIndex((i) => i.id === item.id);
-      if (existingIndex >= 0) {
-        items[existingIndex].quantity += item.quantity;
+
+  async addToCart(item: CartItem) {
+    this.loaderService.show();
+    try {
+      const uid = await this.getUserUid();
+      const cartRef = this.firestore.collection('carts').doc(uid);
+      const cartDoc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
+      let items: CartItem[] = [];
+
+      if (cartDoc.exists) {
+        items = (cartDoc.data()?.items || []) as CartItem[];
+        const existingIndex = items.findIndex((i) => i.id === item.id);
+        if (existingIndex >= 0) {
+          items[existingIndex].quantity += item.quantity;
+        } else {
+          items.push(item);
+        }
       } else {
         items.push(item);
       }
-    } else {
-      items.push(item);
-    }
 
-    await cartRef.set({items}, {merge: true});
+      await cartRef.set({items}, {merge: true});
+    } finally {
+      this.loaderService.hide();
+    }
   }
 
   async removeFromCart(itemId: number) {
-    const uid = await this.getUserUid();
-    const cartRef = this.firestore.collection('carts').doc(uid);
-    const cartDoc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
-    if (!cartDoc.exists) return;
+    this.loaderService.show();
+    try {
+      const uid = await this.getUserUid();
+      const cartRef = this.firestore.collection('carts').doc(uid);
+      const cartDoc = await this.firestore.collection<CartDoc>('carts').doc(uid).ref.get();
+      if (!cartDoc.exists) return;
 
-    let items: CartItem[] = cartDoc.data()?.items || [];
-    items = items.filter((i) => i.id !== itemId);
-    await cartRef.set({items}, {merge: true});
+      let items: CartItem[] = cartDoc.data()?.items || [];
+      items = items.filter((i) => i.id !== itemId);
+      await cartRef.set({items}, {merge: true});
+    } finally {
+      this.loaderService.hide();
+    }
   }
 
   async updateQuantity(itemId: number, quantity: number) {
@@ -77,6 +94,7 @@ export class AppService {
   }
 
   async addToOrders(order: any): Promise<void> {
+    this.loaderService.show();
     try {
       const uid = await this.getUserUid();
       const ordersRef = this.firestore.collection<OrdersDoc>('orders').doc(uid);
@@ -94,24 +112,36 @@ export class AppService {
     } catch (error) {
       console.error('Error adding order:', error);
       throw error;
+    } finally {
+      this.loaderService.hide();
     }
   }
 
   async clearCart() {
-    const uid = await this.getUserUid();
-    await this.firestore.collection('carts').doc(uid).set({items: []});
+    this.loaderService.show();
+    try {
+      const uid = await this.getUserUid();
+      await this.firestore.collection('carts').doc(uid).set({items: []});
+    } finally {
+      this.loaderService.hide();
+    }
   }
 
   async placeOrder(order: Order): Promise<void> {
-    const uid = await this.getUserUid();
+    this.loaderService.show();
+    try {
+      const uid = await this.getUserUid();
 
-    await this.firestore.collection('orders').add({
-      ...order,
-      userId: uid,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      status: 'pending'
-    });
+      await this.firestore.collection('orders').add({
+        ...order,
+        userId: uid,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        status: 'pending'
+      });
 
-    await this.clearCart();
+      await this.clearCart();
+    } finally {
+      this.loaderService.hide();
+    }
   }
 }

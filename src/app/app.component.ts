@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {LoaderService} from "./services/loader.service";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AppComponent {
   title = 'cocktail-club';
+  isLoading$ = this.loaderService.isLoading$;
 
-  constructor() {
-
+  constructor(private loaderService: LoaderService) {
   }
 
 }

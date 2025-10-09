@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {firstValueFrom} from "rxjs";
+import {LoaderService} from "./loader.service";
 
 
 @Injectable({
@@ -15,6 +16,7 @@ export class AuthService {
   userLogInStatus: any;
 
   constructor(private router: Router,
+              private loaderService: LoaderService,
               public fireAuth: AngularFireAuth,
               private firestore: AngularFirestore) {
     this.userStatus();
@@ -22,6 +24,7 @@ export class AuthService {
 
   // Register new user
   async signUpWithEmailPassword(email: string, password: string): Promise<any> {
+    this.loaderService.show();
     try {
       const userCredential = await this.fireAuth.createUserWithEmailAndPassword(email, password);
       return userCredential.user;
@@ -38,23 +41,31 @@ export class AuthService {
         // Other errors
         throw error;
       }
+    } finally {
+      this.loaderService.hide();
     }
   }
 
   // Login existing user
-  signInWithEmailPassword(email: string, password: string): Promise<any> {
-    return this.fireAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => userCredential.user);
+  async signInWithEmailPassword(email: string, password: string): Promise<any> {
+    this.loaderService.show();
+    try {
+      const userCredential = await this.fireAuth.signInWithEmailAndPassword(email, password);
+      return userCredential.user;
+    } finally {
+      this.loaderService.hide();
+    }
   }
 
   // Get user profile from Firestore
-  getUserProfile(uid: string): Promise<any> {
-    return this.firestore
-      .collection('users')
-      .doc(uid)
-      .ref.get()
-      .then((doc) => (doc.exists ? doc.data() : null));
+  async getUserProfile(uid: string): Promise<any> {
+    this.loaderService.show();
+    try {
+      const doc = await this.firestore.collection('users').doc(uid).ref.get();
+      return doc.exists ? doc.data() : null;
+    } finally {
+      this.loaderService.hide();
+    }
   }
 
   // Check if email exists
