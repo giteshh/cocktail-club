@@ -16,7 +16,7 @@
               <p><b>{{ item.price | currency: 'INR' }}</b></p>
             </div>
             <div class="sec-2">
-              <img (click)="addToCart(item)" class="cart-icon" src="../../../../assets/images/addtocart.png">
+              <img (click)="addToCart(item)" class="cart-icon" src="{{environment.imageUrl}}/addtocart.png">
             </div>
           </div>
         </div>

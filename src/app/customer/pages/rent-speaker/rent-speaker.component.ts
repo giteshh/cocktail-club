@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Product, rentSpeaker} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-rent-speaker',
@@ -54,4 +55,6 @@ export class RentSpeakerComponent {
     }
 
   }
+
+  protected readonly environment = environment;
 }

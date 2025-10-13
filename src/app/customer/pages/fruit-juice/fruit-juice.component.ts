@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {AppService} from "../../../services/app.service";
 import {Product, juices, shakes} from "../../../../assets/data/products";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 
 @Component({
@@ -92,4 +93,5 @@ export class FruitJuiceComponent {
     }
   }
 
+  protected readonly environment = environment;
 }

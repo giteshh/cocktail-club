@@ -2,7 +2,7 @@
   <app-navbar></app-navbar>
   <div class="text-center" id="noItemInCart" *ngIf="cart.length === 0">
     <div class="custom-card-body">
-      <img class="cart-icon" src="../../../../assets/images/navbar/donut.png">
+      <img class="cart-icon" src="{{environment.imageUrl}}/navbar/donut.png" alt="donut">
       <h2 class="custom-card-title">404, no delicious food item found !</h2>
       <p class="custom-card-text">Simply click "Explore Now" to peruse our scrumptious
         menu and load your cart with delightful items.</p>
@@ -21,7 +21,7 @@
             <i class="fa fa-x"></i>
           </a>
           <div class="left col-md-4">
-            <img src="{{ item.image }}" class="custom-card-image m-3" alt="...">
+            <img src="{{ item.image }}" class="custom-card-image m-3" alt="{{item.name}}">
           </div>
           <div class="right col-md-8">
             <div class="custom-card-body" id="cardBody-mobile">

@@ -5,6 +5,7 @@ import {Subscription} from "rxjs";
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {UserProfile} from "../../../../assets/data/cart-items";
+import {environment} from "../../../../environments/environment";
 
 export interface CartItem {
   id: number;
@@ -119,7 +120,7 @@ export class OrdersComponent implements OnInit {
     const doc = new jsPDF();
 
     const img = new Image();
-    img.src = '/assets/images/navbar/cocktail.png';
+    img.src = `${environment.imageUrl}/navbar/cocktail.png`;
 
     // Add Logo (wait for it to load)
     await new Promise(resolve => {

@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {environment} from "../../../../environments/environment";
 
 interface TeamMember {
   name: string;
@@ -16,37 +17,37 @@ export class HireCarouselComponent implements OnInit {
     {
       name: 'Hire Chef',
       role: 'Skilled chefs serving up mouthwatering meals for your house party.',
-      img: '../assets/images/home/hire/chef.jpg'
+      img: `${environment.imageUrl}/home/hire/chef.jpg`
     },
     {
       name: 'Hire Waiters',
       role: 'Professional waitstaff delivering seamless service with style.',
-      img: '../assets/images/home/hire/waiters.jpg'
+      img: `${environment.imageUrl}/home/hire/waiters.jpg`
     },
     {
       name: 'Hire Cleaning Services',
       role: 'Party cleanup pros who make the mess disappear.',
-      img: '../assets/images/home/hire/cleaning-service.jpg'
+      img: `${environment.imageUrl}/home/hire/cleaning-service.jpg`
     },
     {
       name: 'Hire DJ',
       role: 'Bring the beats home with DJs who know how to rock a house party.',
-      img: '../assets/images/home/hire/dj.jpg'
+      img: `${environment.imageUrl}/home/hire/dj.jpg`
     },
     {
       name: 'Rent Speaker',
       role: 'Powerful speakers to turn up the vibe in your living room or backyard.',
-      img: '../assets/images/home/hire/rent-speaker.jpg'
+      img: `${environment.imageUrl}/home/hire/rent-speaker.jpg`
     },
     {
       name: 'Rent Hookahs',
       role: 'Clouds of fun incoming—party mode: ON.',
-      img: '../assets/images/home/hire/rent-hookah2.jpg'
+      img: `${environment.imageUrl}/home/hire/rent-hookah2.jpg`
     },
     {
       name: 'Rent Refrigerator',
       role: `Never Let your Beers and Cold drinks Go Warm Again!`,
-      img: '../assets/images/home/hire/fridge.jpg'
+      img: `${environment.imageUrl}/home/hire/fridge.jpg`
     }
   ];
 

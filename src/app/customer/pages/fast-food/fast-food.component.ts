@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Product, burgers, pizza, fries} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-fast-food',
@@ -125,4 +126,5 @@ export class FastFoodComponent {
     }
   }
 
+  protected readonly environment = environment;
 }

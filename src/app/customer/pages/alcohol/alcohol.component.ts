@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {alcohol, Product} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-alcohol',
@@ -52,4 +53,6 @@ export class AlcoholComponent {
       });
     }
   }
+
+  protected readonly environment = environment;
 }

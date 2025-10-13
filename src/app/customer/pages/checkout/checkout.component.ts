@@ -3,15 +3,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import firebase from "firebase/compat/app";
 import {Product} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {CartItem, Order} from "../../../../assets/data/cart-items";
 import {AuthService} from "../../../services/auth.service";
-import {firstValueFrom} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {Auth} from "@angular/fire/auth";
 
 interface orderItems {
   id: number,

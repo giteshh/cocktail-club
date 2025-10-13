@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {cigarettes, Product} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-cigarettes',
@@ -19,7 +20,7 @@ export class CigarettesComponent {
               private toastr: ToastrService) {
   }
 
- async addToCart(cigarettes: any) {
+  async addToCart(cigarettes: any) {
     try {
       // Get current cart from Firestore
       const currentCart = await this.appService.getCart();
@@ -53,4 +54,6 @@ export class CigarettesComponent {
     }
 
   }
+
+  protected readonly environment = environment;
 }

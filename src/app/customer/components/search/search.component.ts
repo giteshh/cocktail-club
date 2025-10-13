@@ -4,6 +4,7 @@ import {cocktail, Product} from "../../../../assets/data/products";
 import {ActivatedRoute} from "@angular/router";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-search',
@@ -74,4 +75,6 @@ export class SearchComponent implements OnInit {
     }
 
   }
+
+  protected readonly environment = environment;
 }

@@ -6,6 +6,7 @@ import {debounceTime, switchMap} from 'rxjs/operators';
 import {Subject} from "rxjs";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {environment} from "../../../../environments/environment";
 
 interface UserProfile {
   fullName: string;
@@ -176,4 +177,5 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+  protected readonly environment = environment;
 }

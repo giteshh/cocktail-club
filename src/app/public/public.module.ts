@@ -9,7 +9,6 @@ import {UpdateProfileComponent} from './components/update-profile/update-profile
 import {NgOtpInputModule} from "ng-otp-input";
 import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
 import {ClosedComponent} from './components/closed/closed.component';
-import {CustomerModule} from "../customer/customer.module";
 
 
 @NgModule({
@@ -18,7 +17,7 @@ import {CustomerModule} from "../customer/customer.module";
     LoginComponent,
     UpdateProfileComponent,
     ForgotPasswordComponent,
-    ClosedComponent
+    ClosedComponent,
   ],
   exports: [],
   imports: [

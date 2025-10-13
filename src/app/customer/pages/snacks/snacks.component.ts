@@ -3,6 +3,7 @@ import {Product, snacks} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 import {CartItem} from "../../../../assets/data/cart-items";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-snacks',
@@ -54,4 +55,5 @@ export class SnacksComponent {
     }
   }
 
+  protected readonly environment = environment;
 }

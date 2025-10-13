@@ -4,6 +4,7 @@ import {Product} from "../../../../assets/data/products";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {CartItem} from "../../../../assets/data/cart-items";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-cart',
@@ -80,5 +81,6 @@ export class CartComponent {
     this.router.navigate(['/checkout']);
   }
 
+  protected readonly environment = environment;
 }
 

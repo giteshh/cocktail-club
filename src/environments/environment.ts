@@ -8,6 +8,7 @@ export const environment = {
   apiUrl,
   lastUpdatedOn,
   envName,
+  imageUrl: 'https://giteshh.github.io/cocktail-club-product-images/',
   firebase: {
     apiKey: "AIzaSyBUsQyQzVEpIJ8Ma2xSx1lAe1WHKCQwuGg",
     authDomain: "cock-tail-club.firebaseapp.com",
@@ -18,7 +19,7 @@ export const environment = {
     measurementId: "G-EHLC69E60D"
   },
   CountryJson: [
-    { name: 'India', dial_code: '+91', code: 'IN' },
+    {name: 'India', dial_code: '+91', code: 'IN'},
   ]
 };
 

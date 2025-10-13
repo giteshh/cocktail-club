@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {coldDrinks, Product} from "../../../../assets/data/products";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-cold-drink',
@@ -53,4 +54,6 @@ export class ColdDrinkComponent {
     }
 
   }
+
+  protected readonly environment = environment;
 }

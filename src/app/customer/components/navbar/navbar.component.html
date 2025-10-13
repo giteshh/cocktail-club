@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/home">
-      <img src="../../../../assets/images/navbar/cocktail.gif" alt="logo">
+      <img src="{{environment.imageUrl}}/navbar/cocktail.gif" alt="logo">
       <h4>Cocktail Club Co.</h4>
     </a>
 
@@ -25,69 +25,69 @@
             <div class="mega-menu-content">
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/cocktail')" routerLink="../cocktail">
-                  <img src="../../../../assets/images/navbar/cocktail.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/cocktail.png" class="img-thumbnail" alt="...">
                   Cocktails
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/fruit-juice')"
                    routerLink="../fruit-juice">
-                  <img src="../../../../assets/images/navbar/juice.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/juice.png" class="img-thumbnail" alt="...">
                   Juices
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/beverage')" routerLink="../beverage">
-                  <img src="../../../../assets/images/navbar/beverage.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/beverage.png" class="img-thumbnail" alt="...">
                   Beverages
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/fast-food')" routerLink="../fast-food">
-                  <img src="../../../../assets/images/navbar/fastfood.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/fastfood.png" class="img-thumbnail" alt="...">
                   Fast Food
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/beers')" routerLink="../beers">
-                  <img src="../../../../assets/images/navbar/beer.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/beer.png" class="img-thumbnail" alt="...">
                   Beers
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/alcohol')" routerLink="../alcohol">
-                  <img src="../../../../assets/images/navbar/alcohol.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/alcohol.png" class="img-thumbnail" alt="...">
                   Alcohol
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/cigarettes')" routerLink="../cigarettes">
-                  <img src="../../../../assets/images/navbar/cigeratte.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/cigeratte.png" class="img-thumbnail" alt="...">
                   Cigarettes
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/snacks')" routerLink="../snacks">
-                  <img src="../../../../assets/images/navbar/snacks.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/snacks.png" class="img-thumbnail" alt="...">
                   Snacks
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/cold-drink')" routerLink="../cold-drink">
-                  <img src="../../../../assets/images/navbar/cold-drink.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/cold-drink.png" class="img-thumbnail" alt="...">
                   Cold Drinks
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/party-essentials')"
                    routerLink="../party-essentials">
-                  <img src="../../../../assets/images/navbar/party-essentials.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/party-essentials.png" class="img-thumbnail" alt="...">
                   Party Essentials
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" *ngIf="shouldDisplayLink('/rent-speaker')" routerLink="../rent-speaker">
-                  <img src="../../../../assets/images/navbar/speaker.png" class="img-thumbnail" alt="...">
+                  <img src="{{environment.imageUrl}}/navbar/speaker.png" class="img-thumbnail" alt="...">
                   Rent Party Speaker
                 </a>
               </li>
@@ -115,7 +115,7 @@
       <!--      user-dropdown-->
       <div class="dropdown nav-item">
         <button type="button" class="btn dropdown-toggle border-0 nav-link" data-bs-toggle="dropdown">
-          <img class="user-profile-picture" src="../../../../assets/images/navbar/profile.png" alt="profile">
+          <img class="user-profile-picture" src="{{environment.imageUrl}}/navbar/profile.png" alt="profile">
         </button>
         <ul class="dropdown-menu dropdown-menu-end" *ngIf="userLoggedIn">
           <li class="dropdown-item"><b>Hi {{ userName }}</b></li>
@@ -128,7 +128,7 @@
         </ul>
       </div>
       <a class="nav-link" id="showOnMobileScreen" *ngIf="shouldDisplayLink('/cart')" routerLink="../cart">
-        <img class="nav-icons cart-icon" src="../../../../assets/images/navbar/cart.png" alt="cart">
+        <img class="nav-icons cart-icon" src="{{environment.imageUrl}}/navbar/cart.png" alt="cart">
       </a>
     </div>
   </div>
