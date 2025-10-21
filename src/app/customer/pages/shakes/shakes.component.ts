@@ -1,17 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from "../../../services/app.service";
 import {ProductsInterface} from "../../../../assets/data/products-interface";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
-import {environment} from "../../../../environments/environment";
-
+import {environment} from 'src/environments/environment';
 
 @Component({
-  selector: 'app-fruit-juice',
-  templateUrl: './fruit-juice.component.html',
-  styleUrls: ['./fruit-juice.component.css']
+  selector: 'app-shakes',
+  templateUrl: './shakes.component.html',
+  styleUrls: ['./shakes.component.css']
 })
-export class FruitJuiceComponent implements OnInit {
-  juices: ProductsInterface[] = [];
+export class ShakesComponent implements OnInit {
+  shakes: ProductsInterface[] = [];
   cart: ProductsInterface[] = [];
   existingProduct = false;
 
@@ -20,20 +19,21 @@ export class FruitJuiceComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.juices = await this.appService.getProductsByCategory('juices');
+    this.shakes = await this.appService.getProductsByCategory('shakes');
   }
+  
 
-  async addJuiceToCart(juices: any) {
+  async addShakeToCart(shakes: any) {
     try {
       // Get current cart from Firestore
       const currentCart = await this.appService.getCart();
 
       // Check if item already exists
-      const existingProduct = currentCart.some((item) => item.id === juices.id);
+      const existingProduct = currentCart.some((item) => item.id === shakes.id);
 
       if (!existingProduct) {
         // Add item to Firestore cart
-        await this.appService.addToCart(juices);
+        await this.appService.addToCart(shakes);
 
         this.toastr.success('Selected item has been added to the cart!', '', {
           positionClass: 'toast-top-center',
@@ -55,7 +55,6 @@ export class FruitJuiceComponent implements OnInit {
         closeButton: true,
       });
     }
-
   }
 
   protected readonly environment = environment;

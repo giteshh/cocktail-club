@@ -4,9 +4,7 @@ import {CommonModule} from '@angular/common';
 import {CustomerRoutingModule} from './customer-routing.module';
 import {CustomerComponent} from './customer.component';
 import {HomeComponent} from "./pages/home/home.component";
-import {FastFoodComponent} from "./pages/fast-food/fast-food.component";
 import {FruitJuiceComponent} from "./pages/fruit-juice/fruit-juice.component";
-import {BeverageComponent} from "./pages/beverage/beverage.component";
 import {CocktailComponent} from "./pages/cocktail/cocktail.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {FooterComponent} from "./components/footer/footer.component";
@@ -34,6 +32,11 @@ import {HireComponent} from './pages/hire/hire.component';
 import {HireCarouselComponent} from './components/hire-carousel/hire-carousel.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {NavbarComponent} from "./components/navbar/navbar.component";
+import {HotBeveragesComponent} from './pages/hot-beverages/hot-beverages.component';
+import {ColdBeveragesComponent} from './pages/cold-beverages/cold-beverages.component';
+import {ShakesComponent} from './pages/shakes/shakes.component';
+import {BurgersComponent} from './pages/burgers/burgers.component';
+import {PizzaComponent} from './pages/pizza/pizza.component';
 
 
 @NgModule({
@@ -41,9 +44,7 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
     CustomerComponent,
     HomeComponent,
     NavbarComponent,
-    FastFoodComponent,
     FruitJuiceComponent,
-    BeverageComponent,
     CocktailComponent,
     CartComponent,
     FooterComponent,
@@ -62,7 +63,12 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
     TestimonialsComponent,
     HireComponent,
     HireCarouselComponent,
-    NavbarComponent
+    NavbarComponent,
+    HotBeveragesComponent,
+    ColdBeveragesComponent,
+    ShakesComponent,
+    BurgersComponent,
+    PizzaComponent
 
   ],
   exports: [

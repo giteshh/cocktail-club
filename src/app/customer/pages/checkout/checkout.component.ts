@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WindowService} from "../../../services/window.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {Product} from "../../../../assets/data/products";
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {AppService} from "../../../services/app.service";
 import {CartItem, Order} from "../../../../assets/data/cart-items";
 import {AuthService} from "../../../services/auth.service";
@@ -30,7 +30,7 @@ export class CheckoutComponent implements OnInit {
   phoneNumber: any;
   address: any;
   total: number = 0;
-  orders: Product [] = [];
+  orders: ProductsInterface [] = [];
   cart: CartItem[] = [];
   userId: string = '';
 

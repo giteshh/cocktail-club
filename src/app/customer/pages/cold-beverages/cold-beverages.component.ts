@@ -1,17 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from "../../../services/app.service";
 import {ProductsInterface} from "../../../../assets/data/products-interface";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
-import {environment} from "../../../../environments/environment";
-
+import {environment} from 'src/environments/environment';
 
 @Component({
-  selector: 'app-fruit-juice',
-  templateUrl: './fruit-juice.component.html',
-  styleUrls: ['./fruit-juice.component.css']
+  selector: 'app-cold-beverages',
+  templateUrl: './cold-beverages.component.html',
+  styleUrls: ['./cold-beverages.component.css']
 })
-export class FruitJuiceComponent implements OnInit {
-  juices: ProductsInterface[] = [];
+export class ColdBeveragesComponent implements OnInit {
+  coldBeverages: ProductsInterface[] = [];
   cart: ProductsInterface[] = [];
   existingProduct = false;
 
@@ -20,10 +19,10 @@ export class FruitJuiceComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.juices = await this.appService.getProductsByCategory('juices');
+    this.coldBeverages = await this.appService.getProductsByCategory('coldBeverages');
   }
 
-  async addJuiceToCart(juices: any) {
+  async addColdBeverageToCart(juices: any) {
     try {
       // Get current cart from Firestore
       const currentCart = await this.appService.getCart();

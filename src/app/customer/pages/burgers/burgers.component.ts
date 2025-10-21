@@ -1,39 +1,38 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from "../../../services/app.service";
 import {ProductsInterface} from "../../../../assets/data/products-interface";
+import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
-import {environment} from "../../../../environments/environment";
-
+import {environment} from 'src/environments/environment';
 
 @Component({
-  selector: 'app-fruit-juice',
-  templateUrl: './fruit-juice.component.html',
-  styleUrls: ['./fruit-juice.component.css']
+  selector: 'app-burgers',
+  templateUrl: './burgers.component.html',
+  styleUrls: ['./burgers.component.css']
 })
-export class FruitJuiceComponent implements OnInit {
-  juices: ProductsInterface[] = [];
+export class BurgersComponent implements OnInit {
+  burgers: ProductsInterface[] = []
   cart: ProductsInterface[] = [];
-  existingProduct = false;
+  existingBurger = false;
 
   constructor(private appService: AppService,
               private toastr: ToastrService) {
   }
 
   async ngOnInit() {
-    this.juices = await this.appService.getProductsByCategory('juices');
+    this.burgers = await this.appService.getProductsByCategory('burgers');
   }
 
-  async addJuiceToCart(juices: any) {
+  async addBurgerToCart(burgers: any) {
     try {
       // Get current cart from Firestore
       const currentCart = await this.appService.getCart();
 
       // Check if item already exists
-      const existingProduct = currentCart.some((item) => item.id === juices.id);
+      const existingProduct = currentCart.some((item) => item.id === burgers.id);
 
       if (!existingProduct) {
         // Add item to Firestore cart
-        await this.appService.addToCart(juices);
+        await this.appService.addToCart(burgers);
 
         this.toastr.success('Selected item has been added to the cart!', '', {
           positionClass: 'toast-top-center',
@@ -55,7 +54,6 @@ export class FruitJuiceComponent implements OnInit {
         closeButton: true,
       });
     }
-
   }
 
   protected readonly environment = environment;

@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
-import {FastFoodComponent} from "./pages/fast-food/fast-food.component";
 import {FruitJuiceComponent} from "./pages/fruit-juice/fruit-juice.component";
-import {BeverageComponent} from "./pages/beverage/beverage.component";
 import {CocktailComponent} from "./pages/cocktail/cocktail.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {CheckoutComponent} from "./pages/checkout/checkout.component";
@@ -19,6 +17,11 @@ import {SearchComponent} from "./components/search/search.component";
 import {HireComponent} from "./pages/hire/hire.component";
 import {AuthGuard} from "../guards/auth.guard";
 import {CustomerComponent} from "./customer.component";
+import {HotBeveragesComponent} from "./pages/hot-beverages/hot-beverages.component";
+import {ColdBeveragesComponent} from "./pages/cold-beverages/cold-beverages.component";
+import {ShakesComponent} from "./pages/shakes/shakes.component";
+import {BurgersComponent} from "./pages/burgers/burgers.component";
+import {PizzaComponent} from "./pages/pizza/pizza.component";
 
 
 const routes: Routes = [
@@ -29,9 +32,12 @@ const routes: Routes = [
     children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
-      {path: 'fast-food', component: FastFoodComponent},
+      {path: 'burgers', component: BurgersComponent},
+      {path: 'pizza', component: PizzaComponent},
       {path: 'fruit-juice', component: FruitJuiceComponent},
-      {path: 'beverage', component: BeverageComponent},
+      {path: 'shakes', component: ShakesComponent},
+      {path: 'hot-beverages', component: HotBeveragesComponent},
+      {path: 'cold-beverages', component: ColdBeveragesComponent},
       {path: 'cocktail', component: CocktailComponent},
       {path: 'beers', component: BeersComponent},
       {path: 'alcohol', component: AlcoholComponent},

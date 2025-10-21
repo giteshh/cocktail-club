@@ -8,7 +8,7 @@ export const environment = {
   apiUrl,
   lastUpdatedOn,
   envName,
-  imageUrl: 'https://giteshh.github.io/cocktail-club-product-images/',
+  imageUrl: 'https://giteshh.github.io/cocktail-club-product-images',
   firebase: {
     apiKey: "AIzaSyBUsQyQzVEpIJ8Ma2xSx1lAe1WHKCQwuGg",
     authDomain: "cock-tail-club.firebaseapp.com",

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {Product, rentSpeaker} from "../../../../assets/data/products";
+import {Component, OnInit} from '@angular/core';
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 import {environment} from "../../../../environments/environment";
@@ -9,16 +9,17 @@ import {environment} from "../../../../environments/environment";
   templateUrl: './rent-speaker.component.html',
   styleUrls: ['./rent-speaker.component.css']
 })
-export class RentSpeakerComponent {
-
-  rentSpeakers = rentSpeaker;
-  rentSpeaker: Product[] = [];
-
-  cart: Product[] = [];
+export class RentSpeakerComponent implements OnInit {
+  rentSpeakers: ProductsInterface[] = [];
+  cart: ProductsInterface[] = [];
   existingProduct = false;
 
   constructor(private appService: AppService,
               private toastr: ToastrService) {
+  }
+
+  async ngOnInit() {
+    this.rentSpeakers = await this.appService.getProductsByCategory('rent-speaker');
   }
 
   async addToCart(rentSpeaker: any) {

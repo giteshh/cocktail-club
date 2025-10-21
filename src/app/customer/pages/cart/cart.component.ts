@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AppService} from "../../../services/app.service";
-import {Product} from "../../../../assets/data/products";
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {CartItem} from "../../../../assets/data/cart-items";
@@ -13,7 +13,7 @@ import {environment} from "../../../../environments/environment";
 })
 
 export class CartComponent {
-  product: Product[] = [];
+  product: ProductsInterface[] = [];
   total = 0;
   quantity = 0;
   min = 20;

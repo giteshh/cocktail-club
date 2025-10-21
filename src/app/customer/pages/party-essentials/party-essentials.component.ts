@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {partyEssentials, Product} from "../../../../assets/data/products";
+import {Component, OnInit} from '@angular/core';
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 import {environment} from "../../../../environments/environment";
@@ -9,15 +9,17 @@ import {environment} from "../../../../environments/environment";
   templateUrl: './party-essentials.component.html',
   styleUrls: ['./party-essentials.component.css']
 })
-export class PartyEssentialsComponent {
-  partyEssentials = partyEssentials;
-  partyEssential: Product[] = [];
-
-  cart: Product[] = [];
+export class PartyEssentialsComponent implements OnInit {
+  partyEssentials: ProductsInterface[] = [];
+  cart: ProductsInterface[] = [];
   existingProduct = false;
 
   constructor(private appService: AppService,
               private toastr: ToastrService) {
+  }
+
+  async ngOnInit() {
+    this.partyEssentials = await this.appService.getProductsByCategory('partyEssentials');
   }
 
   async addToCart(partyEssentials: any) {

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {cigarettes, Product} from "../../../../assets/data/products";
+import {Component, OnInit} from '@angular/core';
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
 import {environment} from "../../../../environments/environment";
@@ -9,15 +9,17 @@ import {environment} from "../../../../environments/environment";
   templateUrl: './cigarettes.component.html',
   styleUrls: ['./cigarettes.component.css']
 })
-export class CigarettesComponent {
-  cigarettes = cigarettes;
-  cigarette: Product[] = [];
-
-  cart: Product[] = [];
+export class CigarettesComponent implements OnInit {
+  cigarettes: ProductsInterface[] = [];
+  cart: ProductsInterface[] = [];
   existingProduct = false;
 
   constructor(private appService: AppService,
               private toastr: ToastrService) {
+  }
+
+  async ngOnInit() {
+    this.cigarettes = await this.appService.getProductsByCategory('cigarettes');
   }
 
   async addToCart(cigarettes: any) {
