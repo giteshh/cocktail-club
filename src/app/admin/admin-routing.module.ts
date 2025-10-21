@@ -4,14 +4,12 @@ import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashbo
 import {AdminOrdersComponent} from "./components/admin-orders/admin-orders.component";
 import {AdminGuard} from "../guards/admin.guard";
 import {CustomersListComponent} from "./components/customers-list/customers-list.component";
-import {DataUploadToFirebaseComponent} from "./components/data-upload-to-firebase/data-upload-to-firebase.component";
 
 
 const routes: Routes = [
   {path: 'dashboard', component: AdminDashboardComponent},
   {path: 'admin-orders', component: AdminOrdersComponent, canActivate: [AdminGuard]},
   {path: 'customers-list', component: CustomersListComponent, canActivate: [AdminGuard]},
-  {path: 'product-data-upload', component: DataUploadToFirebaseComponent, canActivate: [AdminGuard]},
 ];
 
 @NgModule({

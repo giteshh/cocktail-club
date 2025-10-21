@@ -10,7 +10,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminOrdersComponent} from './components/admin-orders/admin-orders.component';
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {CustomersListComponent} from './components/customers-list/customers-list.component';
-import {DataUploadToFirebaseComponent} from "./components/data-upload-to-firebase/data-upload-to-firebase.component";
 
 
 @NgModule({
@@ -19,8 +18,7 @@ import {DataUploadToFirebaseComponent} from "./components/data-upload-to-firebas
     AdminDashboardComponent,
     NavbarComponent,
     AdminOrdersComponent,
-    CustomersListComponent,
-    DataUploadToFirebaseComponent
+    CustomersListComponent
   ],
   imports: [
     CommonModule,
