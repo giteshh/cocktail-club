@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {AppService} from "../../../services/app.service";
 import {debounceTime, switchMap} from 'rxjs/operators';
@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   typingInterval: any;
   searchTerm: string = '';
   @Output() searchEvent = new EventEmitter<string>();
-  private searchSubject = new Subject<string>();
+  searchTermChanged: Subject<string> = new Subject<string>();
 
   constructor(private router: Router,
               private authService: AuthService,
@@ -56,11 +56,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
               private firestore: AngularFirestore,
               private fireAuth: AngularFireAuth) {
     this.quantity = Number(localStorage.getItem('quantity'));
-  }
-
-  shouldDisplayLink(link: string): boolean {
-    // Check if the current route matches the provided link
-    return this.router.url !== link;
   }
 
   logOut() {
@@ -94,6 +89,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.userAddress = '';
       }
     });
+
+    this.searchTermChanged
+      .pipe(debounceTime(800))
+      .subscribe(() => {
+        this.onSearch();
+      });
 
     this.startPlaceholderAnimation();
   }
@@ -147,35 +148,61 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.startPlaceholderAnimation();
   }
 
-  onSearch() {
-    this.searchTerm.toLowerCase().trim();
+  categoryMap: { [key: string]: string } = {
+    'alcohol': '/alcohol',
+    'alcohols': '/alcohol',
+    'pizza': '/pizza',
+    'pizzas': '/pizza',
+    'burger': '/burgers',
+    'burgers': '/burgers',
+    'beer': '/beers',
+    'beers': '/beers',
+    'shake': '/shakes',
+    'shakes': '/shakes',
+    'beverage': '/beverage',
+    'beverages': '/beverage',
+    'coffee': '/beverage',
+    'cigarette': '/cigarettes',
+    'cigarettes': '/cigarettes',
+    'chips': '/snacks',
+    'cold drink': '/cold-drink',
+    'cold drinks': '/cold-drink',
+    'party essential': '/party-essentials',
+    'party essentials': '/party-essentials',
+    'party': '/party-essentials',
+    'juice': '/fruit-juice',
+    'juices': '/fruit-juice',
+    'fruit juice': '/fruit-juice',
+    'fruit juices': '/fruit-juice',
+  };
 
-    if (this.searchTerm === 'alcohol' || this.searchTerm === 'alcohols') {
-      this.router.navigate(['/alcohol']);
-    } else if (this.searchTerm === 'pizza' || this.searchTerm === 'burger' || this.searchTerm === 'burgers'
-      || this.searchTerm === 'fast food' || this.searchTerm === 'fries') {
-      this.router.navigate(['/fast-food'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'beer' || this.searchTerm === 'beers') {
-      this.router.navigate(['/beers'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'shakes' || this.searchTerm === 'shake' || this.searchTerm === 'beverage'
-      || this.searchTerm === 'beverages' || this.searchTerm === 'coffee') {
-      this.router.navigate(['/beverage'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'cigarette' || this.searchTerm === 'cigarettes') {
-      this.router.navigate(['/cigarettes'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'chips') {
-      this.router.navigate(['/snacks'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'cold drinks' || this.searchTerm === 'cold drink') {
-      this.router.navigate(['/cold-drink'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'party essential' || this.searchTerm === 'party essentials'
-      || this.searchTerm === 'party') {
-      this.router.navigate(['/party-essentials'], {queryParams: {search: this.searchTerm}});
-    } else if (this.searchTerm === 'juice' || this.searchTerm === 'juices'
-      || this.searchTerm === 'fruit juices' || this.searchTerm === 'fruit juice') {
-      this.router.navigate(['/fruit-juice'], {queryParams: {search: this.searchTerm}});
+  onSearchTermChange(term: string) {
+    this.searchTermChanged.next(term);
+  }
+
+  onSearch() {
+    const term = this.searchTerm.trim().toLowerCase();
+    const path = this.categoryMap[term];
+
+    if (path) {
+      // Known category — go to that page
+      this.router.navigate([path], {
+        queryParams: {
+          search: this.searchTerm,
+          category: path.slice(1)
+        }
+      });
     } else {
-      this.router.navigate(['/search'], {queryParams: {search: this.searchTerm}});
+      // Not a known category — perform product name search
+      this.router.navigate(['/search'], {
+        queryParams: {
+          search: this.searchTerm
+          // No category needed
+        }
+      });
     }
   }
+
 
   protected readonly environment = environment;
 }

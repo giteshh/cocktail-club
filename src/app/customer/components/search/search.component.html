@@ -6,7 +6,7 @@
     <div class="card-container">
       <div class="card" *ngFor="let item of results">
         <a>
-          <img src="{{item.image}}"/>
+          <img src="{{item.image}}" alt="{{item.name}}"/>
         </a>
         <div class="card-body">
           <h5 class="mb-1">{{ item.name }}</h5>
@@ -16,7 +16,8 @@
               <p><b>{{ item.price | currency: 'INR' }}</b></p>
             </div>
             <div class="sec-2">
-              <img (click)="addToCart(item)" class="cart-icon" src="{{environment.imageUrl}}/addtocart.png">
+              <img (click)="addToCart(item)" class="cart-icon" src="{{environment.imageUrl}}/public/addtocart.png"
+                   alt="add to cart">
             </div>
           </div>
         </div>

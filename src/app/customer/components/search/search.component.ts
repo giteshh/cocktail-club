@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../../../services/data.service";
-import {cocktail, Product} from "../../../../assets/data/products";
+import {ProductsInterface} from "../../../../assets/data/products-interface";
 import {ActivatedRoute} from "@angular/router";
 import {AppService} from "../../../services/app.service";
 import {ToastrService} from "ngx-toastr";
@@ -13,46 +12,52 @@ import {environment} from "../../../../environments/environment";
 })
 export class SearchComponent implements OnInit {
   searchTerm: string = '';
-  results: Product[] = [];
-  cart: Product[] = [];
+  results: ProductsInterface[] = [];
+  cart: ProductsInterface[] = [];
   existingProduct = false;
+  category: string = '';
 
-  constructor(private route: ActivatedRoute,
-              private appService: AppService,
-              private toastr: ToastrService,
-              private dataService: DataService) {
+  constructor(
+    private route: ActivatedRoute,
+    private appService: AppService,
+    private toastr: ToastrService,
+  ) {
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.searchTerm = params['search'] || '';
+      this.category = params['category'] || '';
       this.filterResults();
     });
   }
 
   filterResults() {
-    if (this.searchTerm.trim()) {
-      this.results = this.dataService.getAllProducts().filter(item =>
-        item.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
-    } else {
-      this.results = this.dataService.getAllProducts();
-    }
+    this.appService.searchProducts(this.category, this.searchTerm)
+      .then(products => {
+        this.results = products;
+        if (products.length === 0) {
+          this.toastr.info('No products matched your search.', '', {
+            positionClass: 'toast-top-center',
+            timeOut: 3000,
+            closeButton: true,
+          });
+        }
+      })
+      .catch(error => {
+        this.toastr.error('Failed to load products');
+        console.error(error);
+      });
   }
 
 
-  async addToCart(cocktails: any) {
+  async addToCart(product: ProductsInterface) {
     try {
-      // Get current cart from Firestore
       const currentCart = await this.appService.getCart();
+      const exists = currentCart.some((item) => item.id === product.id);
 
-      // Check if item already exists
-      const existingProduct = currentCart.some((item) => item.id === cocktails.id);
-
-      if (!existingProduct) {
-        // Add item to Firestore cart
-        await this.appService.addToCart(cocktails);
-
+      if (!exists) {
+        await this.appService.addToCart(product);
         this.toastr.success('Selected item has been added to the cart!', '', {
           positionClass: 'toast-top-center',
           timeOut: 3000,
@@ -73,7 +78,6 @@ export class SearchComponent implements OnInit {
         closeButton: true,
       });
     }
-
   }
 
   protected readonly environment = environment;

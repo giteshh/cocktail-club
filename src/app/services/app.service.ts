@@ -5,6 +5,8 @@ import {CartDoc, CartItem, Order, OrdersDoc} from "../../assets/data/cart-items"
 import {firstValueFrom} from "rxjs";
 import firebase from "firebase/compat/app";
 import {LoaderService} from "./loader.service";
+import {productsByCategory} from "../../assets/data/products-details";
+import {ProductsInterface} from "../../assets/data/products-interface";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,53 @@ export class AppService {
     return user.uid;
   }
 
+  async getProductsByCategory(category: string): Promise<ProductsInterface[]> {
+    this.loaderService.show();
+    try {
+      const products = productsByCategory[category.toLowerCase()] || [];
+      return products;
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      return [];
+    } finally {
+      this.loaderService.hide();
+    }
+  }
+
+  async searchProducts(category: string, searchTerm: string): Promise<ProductsInterface[]> {
+    this.loaderService.show();
+    try {
+      let allProducts: ProductsInterface[] = [];
+
+      const normalizedTerm = searchTerm.trim().toLowerCase().replace(/\s+/g, ' ');
+      const searchWords = normalizedTerm.split(' ');
+
+      if (category) {
+        // Search only in the specified category
+        allProducts = await this.getProductsByCategory(category);
+      } else {
+        // Search across all categories
+        const allCategoryKeys = Object.keys(productsByCategory);
+        for (const key of allCategoryKeys) {
+          const categoryProducts = productsByCategory[key];
+          allProducts.push(...categoryProducts);
+        }
+      }
+
+      return allProducts.filter(product => {
+        const productName = product.name.toLowerCase();
+        return searchWords.every(word => productName.includes(word));
+      });
+
+    } catch (error) {
+      console.error('Error searching products:', error);
+      return [];
+    } finally {
+      this.loaderService.hide();
+    }
+  }
+
+
   async getCart(): Promise<CartItem[]> {
     this.loaderService.show();
     try {
@@ -35,7 +84,6 @@ export class AppService {
       this.loaderService.hide();
     }
   }
-
 
   async addToCart(item: CartItem) {
     this.loaderService.show();
