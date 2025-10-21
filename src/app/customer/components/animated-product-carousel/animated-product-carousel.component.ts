@@ -40,7 +40,7 @@ export class AnimatedProductCarouselComponent implements OnInit, OnDestroy {
       tagline: 'Beverages that refreshes the body. Refreshes the soul.',
       offer: '* Buy 1 Get 1 on all hot and cold beverages',
       image: `${environment.imageUrl}/home/beverage.jpg`,
-      link: '/beverage'
+      link: '/hot-beverages'
     },
     {
       title: 'Fast Food',

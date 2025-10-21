@@ -18,7 +18,6 @@ import {CigarettesComponent} from './pages/cigarettes/cigarettes.component';
 import {SnacksComponent} from './pages/snacks/snacks.component';
 import {ColdDrinkComponent} from './pages/cold-drink/cold-drink.component';
 import {PartyEssentialsComponent} from './pages/party-essentials/party-essentials.component';
-import {RentSpeakerComponent} from './pages/rent-speaker/rent-speaker.component';
 import {SearchComponent} from './components/search/search.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -37,6 +36,8 @@ import {ColdBeveragesComponent} from './pages/cold-beverages/cold-beverages.comp
 import {ShakesComponent} from './pages/shakes/shakes.component';
 import {BurgersComponent} from './pages/burgers/burgers.component';
 import {PizzaComponent} from './pages/pizza/pizza.component';
+import {RentalsOrHireComponent} from './pages/rentals-or-hire/rentals-or-hire.component';
+import { HowWeDeliverComponent } from './components/how-we-deliver/how-we-deliver.component';
 
 
 @NgModule({
@@ -56,7 +57,6 @@ import {PizzaComponent} from './pages/pizza/pizza.component';
     SnacksComponent,
     ColdDrinkComponent,
     PartyEssentialsComponent,
-    RentSpeakerComponent,
     SearchComponent,
     AnimatedProductCarouselComponent,
     FeatureProductsComponent,
@@ -68,7 +68,9 @@ import {PizzaComponent} from './pages/pizza/pizza.component';
     ColdBeveragesComponent,
     ShakesComponent,
     BurgersComponent,
-    PizzaComponent
+    PizzaComponent,
+    RentalsOrHireComponent,
+    HowWeDeliverComponent
 
   ],
   exports: [

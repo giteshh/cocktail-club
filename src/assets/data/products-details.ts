@@ -1324,31 +1324,145 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
   ],
-  rentSpeaker: [
+  rentals: [
     {
       "id": 160,
-      "name": "Party Speaker",
-      "price": 200,
-      "image": `${environment.imageUrl}/products/rent-party-speaker/speaker.png`,
+      "name": "Marshall Speaker",
+      "price": 1800,
+      "image": `${environment.imageUrl}/products/rentals/marshall-speaker.png`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 161,
-      "name": "Disco Lights",
-      "price": 250,
-      "image": `${environment.imageUrl}/products/rent-party-speaker/disco-light.png`,
+      "name": "Bose Speaker",
+      "price": 1000,
+      "image": `${environment.imageUrl}/products/rentals/bose-speaker.png`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 162,
-      "name": "Hookah",
-      "price": 180,
-      "image": `${environment.imageUrl}/products/rent-party-speaker/hookah.png`,
+      "name": "JBL Mini Speaker",
+      "price": 300,
+      "image": `${environment.imageUrl}/products/rentals/jbl-mini-speaker.png`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
+    {
+      "id": 163,
+      "name": "JBL Speaker",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/jbl-speaker.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 164,
+      "name": "Sony Speaker",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/sony-speaker.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 165,
+      "name": "Boat Speaker",
+      "price": 350,
+      "image": `${environment.imageUrl}/products/rentals/boat-speaker.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 166,
+      "name": "Mic",
+      "price": 250,
+      "image": `${environment.imageUrl}/products/rentals/mic.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 167,
+      "name": "Disco Lights",
+      "price": 280,
+      "image": `${environment.imageUrl}/products/rentals/disco-light.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 168,
+      "name": "Lights",
+      "price": 150,
+      "image": `${environment.imageUrl}/products/rentals/lights.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
+  ],
+  hire: [
+    {
+      "id": 169,
+      "name": "Hookah",
+      "price": 280,
+      "image": `${environment.imageUrl}/products/rentals/hookah.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 170,
+      "name": "Mini Fridge",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/refrigerator.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 171,
+      "name": "DJ",
+      "price": 8000,
+      "image": `${environment.imageUrl}/products/rentals/dj.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 172,
+      "name": "Chef",
+      "price": 520,
+      "image": `${environment.imageUrl}/products/rentals/chef.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 173,
+      "name": "Waiters",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/waiter.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 174,
+      "name": "Waitress",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/waitress.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 175,
+      "name": "Maid",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/maid.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 176,
+      "name": "Cleaning Service",
+      "price": 500,
+      "image": `${environment.imageUrl}/products/rentals/cleaning-service.png`,
+      "quantity": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }
   ]
 }
 

@@ -12,7 +12,6 @@ import {CigarettesComponent} from "./pages/cigarettes/cigarettes.component";
 import {SnacksComponent} from "./pages/snacks/snacks.component";
 import {ColdDrinkComponent} from "./pages/cold-drink/cold-drink.component";
 import {PartyEssentialsComponent} from "./pages/party-essentials/party-essentials.component";
-import {RentSpeakerComponent} from "./pages/rent-speaker/rent-speaker.component";
 import {SearchComponent} from "./components/search/search.component";
 import {HireComponent} from "./pages/hire/hire.component";
 import {AuthGuard} from "../guards/auth.guard";
@@ -22,6 +21,7 @@ import {ColdBeveragesComponent} from "./pages/cold-beverages/cold-beverages.comp
 import {ShakesComponent} from "./pages/shakes/shakes.component";
 import {BurgersComponent} from "./pages/burgers/burgers.component";
 import {PizzaComponent} from "./pages/pizza/pizza.component";
+import {RentalsOrHireComponent} from "./pages/rentals-or-hire/rentals-or-hire.component";
 
 
 const routes: Routes = [
@@ -45,7 +45,7 @@ const routes: Routes = [
       {path: 'snacks', component: SnacksComponent},
       {path: 'cold-drink', component: ColdDrinkComponent},
       {path: 'party-essentials', component: PartyEssentialsComponent},
-      {path: 'rent-speaker', component: RentSpeakerComponent},
+      {path: 'rentals', component: RentalsOrHireComponent},
       {path: 'cart', component: CartComponent},
       {path: 'checkout', component: CheckoutComponent},
       {path: 'orders', component: OrdersComponent},
