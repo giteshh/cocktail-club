@@ -5,6 +5,7 @@ interface TeamMember {
   name: string;
   role: string;
   img: string;
+  route: string;
 }
 
 @Component({
@@ -17,37 +18,44 @@ export class HireCarouselComponent implements OnInit {
     {
       name: 'Hire Chef',
       role: 'Skilled chefs serving up mouthwatering meals for your house party.',
-      img: `${environment.imageUrl}/home/hire/chef.jpg`
+      img: `${environment.imageUrl}/home/hire/chef.jpg`,
+      route: '/hire'
     },
     {
       name: 'Hire Waiters',
       role: 'Professional waitstaff delivering seamless service with style.',
-      img: `${environment.imageUrl}/home/hire/waiters.jpg`
+      img: `${environment.imageUrl}/home/hire/waiters.jpg`,
+      route: '/hire'
     },
     {
       name: 'Hire Cleaning Services',
       role: 'Party cleanup pros who make the mess disappear.',
-      img: `${environment.imageUrl}/home/hire/cleaning-service.jpg`
+      img: `${environment.imageUrl}/home/hire/cleaning-service.jpg`,
+      route: '/hire'
     },
     {
       name: 'Hire DJ',
       role: 'Bring the beats home with DJs who know how to rock a house party.',
-      img: `${environment.imageUrl}/home/hire/dj.jpg`
+      img: `${environment.imageUrl}/home/hire/dj.jpg`,
+      route: '/hire'
     },
     {
       name: 'Rent Speaker',
       role: 'Powerful speakers to turn up the vibe in your living room or backyard.',
-      img: `${environment.imageUrl}/home/hire/rent-speaker.jpg`
+      img: `${environment.imageUrl}/home/hire/rent-speaker.jpg`,
+      route: '/rentals'
     },
     {
       name: 'Rent Hookahs',
       role: 'Clouds of fun incoming—party mode: ON.',
-      img: `${environment.imageUrl}/home/hire/rent-hookah2.jpg`
+      img: `${environment.imageUrl}/home/hire/rent-hookah2.jpg`,
+      route: '/rentals'
     },
     {
       name: 'Rent Refrigerator',
       role: `Never Let your Beers and Cold drinks Go Warm Again!`,
-      img: `${environment.imageUrl}/home/hire/fridge.jpg`
+      img: `${environment.imageUrl}/home/hire/fridge.jpg`,
+      route: '/rentals'
     }
   ];
 

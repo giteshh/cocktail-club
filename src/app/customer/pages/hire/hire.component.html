@@ -1,1 +1,29 @@
-<p>hire works!</p>
+<div class="container-fluid">
+  <app-navbar></app-navbar>
+
+  <h3 class="mt-3 page-heading">Elevate Every Occasion – Hire with Ease.</h3>
+  <hr>
+  <div class="card-container">
+    <div class="card" *ngFor="let item of hire">
+      <a>
+        <img src="{{item.image}}" alt="{{item.name}}"/>
+      </a>
+      <div class="card-body">
+        <h5 class="mb-1">{{ item.name }}</h5>
+        <p class="desc">{{ item.description }}</p>
+        <div class="price-btn-sec">
+          <div class="sec-1">
+            <p><b>{{ item.price | currency:'INR' : 'symbol' : '1.0-0' }}</b></p>
+          </div>
+          <div class="sec-2">
+            <img (click)="addToCart(item)" class="cart-icon" src="{{environment.imageUrl}}/public/addtocart.png"
+                 alt="add to cart">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
