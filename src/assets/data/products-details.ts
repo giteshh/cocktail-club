@@ -7,7 +7,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 1,
       "name": "Fresh Orange",
       "price": 49,
-      "image": `${environment.imageUrl}/products/juice/orange.png`,
+      "image": `${environment.imageUrl}/products/juice/orange.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -15,7 +15,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 2,
       "name": "Mixed Fruit",
       "price": 89,
-      "image": `${environment.imageUrl}/products/juice/mixedfruit.png`,
+      "image": `${environment.imageUrl}/products/juice/mixedfruit.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -23,7 +23,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 3,
       "name": "Lemonade",
       "price": 29,
-      "image": `${environment.imageUrl}/products/juice/lemonade.png`,
+      "image": `${environment.imageUrl}/products/juice/lemonade.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -31,7 +31,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 4,
       "name": "Pineapple",
       "price": 39,
-      "image": `${environment.imageUrl}/products/juice/pineapple.png`,
+      "image": `${environment.imageUrl}/products/juice/pineapple.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -39,7 +39,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 5,
       "name": "Watermelon",
       "price": 39,
-      "image": `${environment.imageUrl}/products/juice/watermelon.png`,
+      "image": `${environment.imageUrl}/products/juice/watermelon.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -47,7 +47,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 6,
       "name": "Mango",
       "price": 39,
-      "image": `${environment.imageUrl}/products/juice/mango.png`,
+      "image": `${environment.imageUrl}/products/juice/mango.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -55,7 +55,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 7,
       "name": "Berry berry",
       "price": 39,
-      "image": `${environment.imageUrl}/products/juice/berryberry.png`,
+      "image": `${environment.imageUrl}/products/juice/berryberry.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -125,7 +125,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 15,
       "name": "Double patty",
       "price": 169,
-      "image": `${environment.imageUrl}/products/burgers/doublepatty.png`,
+      "image": `${environment.imageUrl}/products/burgers/doublepatty.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -133,23 +133,23 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 16,
       "name": "Veggie",
       "price": 39,
-      "image": `${environment.imageUrl}/products/burgers/veggie.png`,
+      "image": `${environment.imageUrl}/products/burgers/veggie.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 17,
-      "name": "Burger + Fries",
+      "name": "Burger Combo",
       "price": 189,
-      "image": `${environment.imageUrl}/products/burgers/burger+fries.png`,
+      "image": `${environment.imageUrl}/products/burgers/burger-combo.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
       "id": 18,
-      "name": "Double patty",
+      "name": "Cheese",
       "price": 229,
-      "image": `${environment.imageUrl}/products/burgers/doubleburger.png`,
+      "image": `${environment.imageUrl}/products/burgers/cheeseburger.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -157,7 +157,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 19,
       "name": "Aaloo tikki",
       "price": 59,
-      "image": `${environment.imageUrl}/products/burgers/aalootikki.png`,
+      "image": `${environment.imageUrl}/products/burgers/aalootikki.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -165,7 +165,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 20,
       "name": "Black bun",
       "price": 199,
-      "image": `${environment.imageUrl}/products/burgers/blackbun.png`,
+      "image": `${environment.imageUrl}/products/burgers/blackbun.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -173,7 +173,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 21,
       "name": "Mexican",
       "price": 99,
-      "image": `${environment.imageUrl}/products/burgers/mexican.png`,
+      "image": `${environment.imageUrl}/products/burgers/mexican.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -184,7 +184,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 22,
       "name": "Cheesilious",
       "price": 699,
-      "image": `${environment.imageUrl}/products/pizza/cheesilisious.png`,
+      "image": `${environment.imageUrl}/products/pizza/cheesilisious.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -192,7 +192,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 23,
       "name": "Fresh veggie",
       "price": 399,
-      "image": `${environment.imageUrl}/products/pizza/freshveggie.png`,
+      "image": `${environment.imageUrl}/products/pizza/freshveggie.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -200,7 +200,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 24,
       "name": "Margherita",
       "price": 299,
-      "image": `${environment.imageUrl}/products/pizza/margherita.png`,
+      "image": `${environment.imageUrl}/products/pizza/margherita.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -208,7 +208,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 25,
       "name": "Pepperoni",
       "price": 319,
-      "image": `${environment.imageUrl}/products/pizza/pepperoni.png`,
+      "image": `${environment.imageUrl}/products/pizza/pepperoni.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -216,7 +216,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 26,
       "name": "Italian",
       "price": 549,
-      "image": `${environment.imageUrl}/products/pizza/italian.png`,
+      "image": `${environment.imageUrl}/products/pizza/itallian.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -224,7 +224,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 27,
       "name": "Paneer onion",
       "price": 249,
-      "image": `${environment.imageUrl}/products/pizza/paneeronion.png`,
+      "image": `${environment.imageUrl}/products/pizza/paneeronion.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -232,7 +232,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 28,
       "name": "Tandoori",
       "price": 449,
-      "image": `${environment.imageUrl}/products/pizza/anycombo.png`,
+      "image": `${environment.imageUrl}/products/pizza/tandoori.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -485,7 +485,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 58,
       "name": "Mojito",
       "price": 149,
-      "image": `${environment.imageUrl}/products/cocktail/mojito.png`,
+      "image": `${environment.imageUrl}/products/cocktail/mojito.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -493,7 +493,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 59,
       "name": "Gin Buzz",
       "price": 349,
-      "image": `${environment.imageUrl}/products/cocktail/ginbuzz.png`,
+      "image": `${environment.imageUrl}/products/cocktail/ginbuzz.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -501,7 +501,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 60,
       "name": "Cool Blue",
       "price": 159,
-      "image": `${environment.imageUrl}/products/cocktail/coolblue.png`,
+      "image": `${environment.imageUrl}/products/cocktail/coolblue.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -509,7 +509,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 61,
       "name": "Bloody Mary",
       "price": 189,
-      "image": `${environment.imageUrl}/products/cocktail/bloodymary.png`,
+      "image": `${environment.imageUrl}/products/cocktail/bloodymary.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -518,7 +518,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 62,
       "name": "Mai Tai",
       "price": 199,
-      "image": `${environment.imageUrl}/products/cocktail/maitai.png`,
+      "image": `${environment.imageUrl}/products/cocktail/maitai.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -526,7 +526,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 63,
       "name": "Apple Tini",
       "price": 139,
-      "image": `${environment.imageUrl}/products/cocktail/appletini.png`,
+      "image": `${environment.imageUrl}/products/cocktail/appletini.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -534,7 +534,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 64,
       "name": "Manhattan",
       "price": 189,
-      "image": `${environment.imageUrl}/products/cocktail/manhattan.png`,
+      "image": `${environment.imageUrl}/products/cocktail/manhattan.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -543,7 +543,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 65,
       "name": "Sazerac",
       "price": 229,
-      "image": `${environment.imageUrl}/products/cocktail/sazerac.png`,
+      "image": `${environment.imageUrl}/products/cocktail/sazerac.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -551,7 +551,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 66,
       "name": "Screwdriver",
       "price": 239,
-      "image": `${environment.imageUrl}/products/cocktail/screwdriver.png`,
+      "image": `${environment.imageUrl}/products/cocktail/screwdriver.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -559,7 +559,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 67,
       "name": "Long Island",
       "price": 279,
-      "image": `${environment.imageUrl}/products/cocktail/longisland.png`,
+      "image": `${environment.imageUrl}/products/cocktail/longisland.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -567,7 +567,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 68,
       "name": "Pina Colada",
       "price": 349,
-      "image": `${environment.imageUrl}/products/cocktail/pinacolada.png`,
+      "image": `${environment.imageUrl}/products/cocktail/pinacolada.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -575,7 +575,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 69,
       "name": "Berry Margarita",
       "price": 279,
-      "image": `${environment.imageUrl}/products/cocktail/berrymargarita.png`,
+      "image": `${environment.imageUrl}/products/cocktail/berrymargarita.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -583,7 +583,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 70,
       "name": "Lime Margarita",
       "price": 279,
-      "image": `${environment.imageUrl}/products/cocktail/limemargarita.png`,
+      "image": `${environment.imageUrl}/products/cocktail/limemargarita.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -591,7 +591,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 71,
       "name": "Whiskey Sour",
       "price": 279,
-      "image": `${environment.imageUrl}/products/cocktail/whiskeysour.png`,
+      "image": `${environment.imageUrl}/products/cocktail/whiskeysour.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },

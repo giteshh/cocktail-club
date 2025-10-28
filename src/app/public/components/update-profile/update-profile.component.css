@@ -11,7 +11,6 @@
   width: 480px;
   padding: 32px;
   border-radius: 8px;
-  background-color: #ffffff;
   box-shadow: 2px 4px 8px #6b728040;
   text-align: center;
 }
@@ -33,7 +32,7 @@ h1 {
 
 p {
   font-size: 14px;
-  color: #6b7280;
+  color: #1f2937;
 }
 
 .input {
@@ -45,14 +44,13 @@ p {
   width: 100%;
   padding: 15px 45px;
   border-radius: 12px;
-  background-color: #FFF;
-  border: 1px solid #DFE3E7;
+  border: 1px solid #1f2937;
   color: #1f2937;
   font-size: 16px;
 }
 
 .input input::placeholder {
-  color: lightslategrey;
+  color: #1f2937;
 }
 
 .input i {
@@ -60,7 +58,7 @@ p {
   width: 36px;
   position: absolute;
   transform: translateY(-50%);
-  color: #6b7280;
+  color: #1f2937;
   font-size: 16px;
 }
 
@@ -73,17 +71,19 @@ p {
   position: absolute;
   top: 10px;
   width: 36px;
-  color: #6b7280;
+  color: #1f2937;
   font-size: 16px;
 }
 
 .text-area-input textarea {
   padding-left: 30px;
   width: 100%;
+  color: #1f2937;
+  border: 1px solid #1f2937;
 }
 
 .text-area-input textarea::placeholder {
-  color: lightslategrey;
+  color: #1f2937;
   padding: 0 10px;
 }
 
@@ -106,7 +106,7 @@ a {
 }
 
 #disabledInput input {
-  background-color: lightgrey;
+  color: #1f2937;
 }
 
 @media only screen and (max-width: 768px) {
