@@ -100,7 +100,7 @@ export class AnimatedProductCarouselComponent implements OnInit, OnDestroy {
   startAutoSlide() {
     this.intervalId = setInterval(() => {
       this.showSlide(this.currentSlide + 1);
-    }, 40000);
+    }, 4000);
   }
 
   navigateToTop() {

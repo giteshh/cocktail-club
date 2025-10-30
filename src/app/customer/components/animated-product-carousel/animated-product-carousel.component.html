@@ -3,9 +3,8 @@
 <div class="slider">
   <div class="slider-content">
     <!-- LEFT SIDE: Images & Indicators -->
-    <div class="left-panel">
-      <div class="slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
-           [ngStyle]="{'background-color': slides[currentSlide].background}">
+    <div class="left-panel" [ngStyle]="{'background-color': slides[currentSlide].background}">
+      <div class="slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
         <img *ngFor="let slide of slides; let i = index"
              [src]="slide.image"
              class="slide"
