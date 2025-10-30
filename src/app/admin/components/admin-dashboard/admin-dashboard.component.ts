@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {Subscription} from "rxjs";
+import {environment} from "../../../../environments/environment";
 
 interface OrderItem {
   name: string;
@@ -62,4 +63,6 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.ordersSub?.unsubscribe();
   }
+
+  protected readonly environment = environment;
 }

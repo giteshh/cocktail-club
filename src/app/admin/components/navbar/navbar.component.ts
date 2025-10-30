@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-admin-navbar',
@@ -29,4 +30,5 @@ export class NavbarComponent {
     this.authService.doSignOut();
   }
 
+  protected readonly environment = environment;
 }
