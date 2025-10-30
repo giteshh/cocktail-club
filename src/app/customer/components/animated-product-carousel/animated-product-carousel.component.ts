@@ -19,56 +19,64 @@ export class AnimatedProductCarouselComponent implements OnInit, OnDestroy {
       tagline: 'Eat. Sleep. Cocktail. Repeat.',
       offer: '* Buy 1 Get 1 on Cocktails upto INR 599/-. Happy Hour O\'clock.',
       image: `${environment.imageUrl}/home/cocktail.jpg`,
-      link: '/cocktail'
+      link: '/cocktail',
+      background: '#A6F6FF'
     },
     {
-      title: 'Beer',
+      title: 'Beers',
       tagline: 'Would you say no to another?',
       offer: '* 2% flat off on selected beers.',
       image: `${environment.imageUrl}/home/beer.jpg`,
-      link: '/beers'
+      link: '/beers',
+      background: '#FF8266'
     },
     {
       title: 'Alcohol',
       tagline: 'Get the party started',
       offer: '* INR 200 off upto INR 2599/-.',
       image: `${environment.imageUrl}/home/alcohol.jpg`,
-      link: '/alcohol'
+      link: '/alcohol',
+      background: '#FCD76F'
     },
     {
       title: 'Beverages',
       tagline: 'Beverages that refreshes the body. Refreshes the soul.',
       offer: '* Buy 1 Get 1 on all hot and cold beverages',
       image: `${environment.imageUrl}/home/beverage.jpg`,
-      link: '/hot-beverages'
+      link: '/hot-beverages',
+      background: '#FF8661'
     },
     {
       title: 'Fast Food',
       tagline: 'Fast Fuel for Hungry Souls.',
       offer: '* Free medium pizza of your choice on above order of INR 999/-.',
       image: `${environment.imageUrl}/home/fastfood.jpg`,
-      link: '/fast-food'
+      link: '/fast-food',
+      background: '#A7D8DD'
     },
     {
       title: 'Fruit Juices',
       tagline: 'Quench your thirst, feel alive!',
       offer: '* Buy 1 Get 1 on all small glass.',
       image: `${environment.imageUrl}/home/fruit-juice.jpg`,
-      link: '/fruit-juice'
+      link: '/fruit-juice',
+      background: '#F7C6DC'
     },
     {
       title: 'Snacks',
       tagline: 'Chakhna For Everyone',
       offer: '* Free chips on beers and alcohols above INR 999/-.',
       image: `${environment.imageUrl}/home/snacks.jpg`,
-      link: '/snacks'
+      link: '/snacks',
+      background: '#F3DA9A'
     },
     {
       title: 'Cigarettes',
       tagline: 'Cigarette... Get Your Cigarette Here.',
       offer: '* INR 5 off on all products (pack)',
       image: `${environment.imageUrl}/home/cigarettes.jpg`,
-      link: '/cigarettes'
+      link: '/cigarettes',
+      background: '#fff'
     }
   ];
 
@@ -92,7 +100,7 @@ export class AnimatedProductCarouselComponent implements OnInit, OnDestroy {
   startAutoSlide() {
     this.intervalId = setInterval(() => {
       this.showSlide(this.currentSlide + 1);
-    }, 4000);
+    }, 40000);
   }
 
   navigateToTop() {

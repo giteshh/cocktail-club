@@ -1,29 +1,36 @@
 <h1>Discover Your Favorites</h1>
+
 <div class="slider">
-  <div class="slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-    <img *ngFor="let slide of slides; let i = index"
-         [src]="slide.image"
-         class="slide"
-         [class.active]="i === currentSlide"
-         [alt]="slide.title"/>
+  <div class="slider-content">
+    <!-- LEFT SIDE: Images & Indicators -->
+    <div class="left-panel">
+      <div class="slides" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+           [ngStyle]="{'background-color': slides[currentSlide].background}">
+        <img *ngFor="let slide of slides; let i = index"
+             [src]="slide.image"
+             class="slide"
+             [class.active]="i === currentSlide"
+             [alt]="slide.title"/>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Title, subtitle, and button -->
+    <div class="bottom-center" [ngStyle]="{'background-color': slides[currentSlide].background}">
+      <h3 class="luxury-heading">{{ slides[currentSlide].title }}</h3>
+      <p class="luxury-subtitle">{{ slides[currentSlide].tagline }}</p>
+
+      <div class="buttons">
+        <button class="btn primary" [routerLink]="slides[currentSlide].link" (click)="navigateToTop()">
+          Explore {{ slides[currentSlide].title }}
+        </button>
+      </div>
+    </div>
   </div>
-
-  <div class="bottom-center">
-    <h3 class="luxury-heading">{{ slides[currentSlide].title }}</h3>
-    <p class="luxury-subtitle">{{ slides[currentSlide].tagline }}</p>
-
-    <div class="buttons">
-      <button class="btn primary" [routerLink]="slides[currentSlide].link" (click)="navigateToTop()">
-        Explore {{ slides[currentSlide].title }}
-      </button>
-    </div>
-
-    <div class="indicators">
-      <span *ngFor="let slide of slides; let i = index"
-            class="dot"
-            [class.active]="i === currentSlide"
-            (click)="showSlide(i)">
-      </span>
-    </div>
+  <div class="indicators">
+        <span *ngFor="let slide of slides; let i = index"
+              class="dot"
+              [class.active]="i === currentSlide"
+              (click)="showSlide(i)">
+        </span>
   </div>
 </div>
