@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -7,10 +8,15 @@
 
 .container-fluid {
   margin: 0 auto;
+  padding: 0 !important;
 }
 
 .page-heading {
-  padding-top: 80px !important;
+  margin-top: 100px !important;
+  font-family: "Caveat", cursive;
+  font-size: 30px !important;
+  text-align: center;
+  font-weight: bold;
 }
 
 .card-container {

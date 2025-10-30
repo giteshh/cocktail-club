@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 h1 {
   text-align: center;
-  font-weight: 550;
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: clamp(4.2rem, 4vw, 3.6rem);
   color: rgb(255, 105, 7);
   margin-bottom: 40px !important;
+  font-family: "Caveat", cursive;
 }
 
 .slider {
@@ -121,7 +123,7 @@ h1 {
 }
 
 .btn {
-  padding: 6px 30px;
+  padding: 10px 30px;
   border-radius: 30px;
   color: white;
   font-weight: 550;

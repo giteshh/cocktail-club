@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.carousel-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+  margin: 50px 0 50px 0;
+}
+
+.carousel-container h2 {
+  text-align: center;
+  margin: 10px 0 80px 0;
+  color: rgb(255, 105, 7);
+  font-size: clamp(4.2rem, 4vw, 3.6rem);
+  font-family: "Caveat", cursive;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  animation: scrolling 30s linear infinite;
+  width: max-content;
+}
+
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: transform 0.3s ease;
+  padding: 0;
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+}
+
+.product-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+}
+
+.product-price {
+  color: rgb(255, 105, 7);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: -20px;
+  padding: 10px;
+}
+
+/* Animation for infinite horizontal scrolling */
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-container:hover .carousel {
+  animation-play-state: paused;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}

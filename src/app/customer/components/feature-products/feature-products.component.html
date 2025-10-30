@@ -1,0 +1,26 @@
+<!--<div class="carousel-container">-->
+<!--  <h2>Trending on the Table</h2>-->
+<!--  <div class="carousel" #carousel>-->
+<!--    <div class="carousel-image" *ngFor="let item of featureProducts">-->
+<!--      <img [src]="item.image" alt="{{ item.name }}"/>-->
+<!--      <div class="product-name">{{ item.name }}</div>-->
+<!--      <div class="product-price">{{ item.price | currency:'INR' }}</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="carousel-container">
+  <h2>Trending on the Table</h2>
+  <div class="carousel">
+    <div class="card" *ngFor="let item of featureProducts.concat(featureProducts)">
+      <div class="image-container">
+        <img [src]="item.image" alt="{{ item.name }}"/>
+        <div class="product-name">{{ item.name }}</div>
+      </div>
+      <!--      <div class="product-price">{{ item.price | currency:'INR' }}</div>-->
+      <!--      <button class="btn btn-primary">Add to Cart</button>-->
+    </div>
+  </div>
+</div>
+

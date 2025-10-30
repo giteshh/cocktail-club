@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 .top-icon,
 .bottom-icon {
   display: block;
@@ -23,6 +25,7 @@
   color: black;
   z-index: 1;
   height: 220px !important;
+  width: 100% !important;
   border-radius: 20px;
 }
 
@@ -40,12 +43,14 @@
 }
 
 .testimonial .pic {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   overflow: hidden;
   float: left;
   margin: 40px 55px 0 0;
   position: relative;
+  border-radius: 50%;
+  border: 5px solid #FFAE5C;
 }
 
 .testimonial .pic img {
@@ -70,6 +75,8 @@
 
 .testimonial-heading {
   color: #FF6907 !important;
+  font-family: "Caveat", cursive;
+  font-size: 50px;
 }
 
 .testimonial .description {

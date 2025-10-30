@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 .navbar {
-  background-color: rgba(254, 216, 179);
+  background-image: linear-gradient(to right top, #fed8b3, #fdcca7, #fdc09c, #fdb393, #fca68c);
 }
 
 .nav-link {
@@ -26,12 +28,12 @@
 
 .navbar-brand h4 {
   text-align: center;
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 35px;
-  letter-spacing: 2px;
   color: #FF6907;
   margin-left: 15px;
   padding-top: 10px;
+  font-family: "Caveat", cursive;
 }
 
 .mega-menu {

@@ -719,7 +719,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 86,
       "name": "Black Dog",
       "price": 6500,
-      "image": `${environment.imageUrl}/products/alcohol/black-dog.png`,
+      "image": `${environment.imageUrl}/products/alcohol/black-dog.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -727,7 +727,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 87,
       "name": "Ballentine's",
       "price": 5650,
-      "image": `${environment.imageUrl}/products/alcohol/ballentines.png`,
+      "image": `${environment.imageUrl}/products/alcohol/ballentines.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -735,7 +735,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 88,
       "name": "Jack Daniel's",
       "price": 4590,
-      "image": `${environment.imageUrl}/products/alcohol/jack-deniels.png`,
+      "image": `${environment.imageUrl}/products/alcohol/jack-deniels.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -743,7 +743,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 89,
       "name": "Chivas Regal",
       "price": 180,
-      "image": `${environment.imageUrl}/products/alcohol/chivas-regal.png`,
+      "image": `${environment.imageUrl}/products/alcohol/chivas-regal.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -752,7 +752,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 90,
       "name": "Jameson",
       "price": 3059,
-      "image": `${environment.imageUrl}/products/alcohol/jameson.png`,
+      "image": `${environment.imageUrl}/products/alcohol/jameson.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -760,7 +760,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 91,
       "name": "Red Label",
       "price": 2830,
-      "image": `${environment.imageUrl}/products/alcohol/red-label.png`,
+      "image": `${environment.imageUrl}/products/alcohol/red-label.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -768,7 +768,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 92,
       "name": "Blue Label",
       "price": 2900,
-      "image": `${environment.imageUrl}/products/alcohol/blue-label.png`,
+      "image": `${environment.imageUrl}/products/alcohol/blue-label.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -777,7 +777,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 93,
       "name": "Indri",
       "price": 3700,
-      "image": `${environment.imageUrl}/products/alcohol/indri.png`,
+      "image": `${environment.imageUrl}/products/alcohol/indri.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -785,7 +785,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 94,
       "name": "Teacher's",
       "price": 2030,
-      "image": `${environment.imageUrl}/products/alcohol/teachers.png`,
+      "image": `${environment.imageUrl}/products/alcohol/teachers.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -793,7 +793,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 95,
       "name": "Vat 69",
       "price": 1856,
-      "image": `${environment.imageUrl}/products/alcohol/vat69.png`,
+      "image": `${environment.imageUrl}/products/alcohol/vat69.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -801,7 +801,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 96,
       "name": "McDowell's No1",
       "price": 1800,
-      "image": `${environment.imageUrl}/products/alcohol/mcdowells-no1.png`,
+      "image": `${environment.imageUrl}/products/alcohol/mcdowells-no1.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -809,7 +809,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 97,
       "name": "Blender's Pride",
       "price": 1450,
-      "image": `${environment.imageUrl}/products/alcohol/blenders-pride.png`,
+      "image": `${environment.imageUrl}/products/alcohol/blenders-pride.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -817,7 +817,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 98,
       "name": "Royal Challenge",
       "price": 970,
-      "image": `${environment.imageUrl}/products/alcohol/royal-challenge.png`,
+      "image": `${environment.imageUrl}/products/alcohol/royal-challenge.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -825,7 +825,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 99,
       "name": "Royal Stag",
       "price": 990,
-      "image": `${environment.imageUrl}/products/alcohol/royal-stag.png`,
+      "image": `${environment.imageUrl}/products/alcohol/royal-stag.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -833,7 +833,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 100,
       "name": "Old Monk",
       "price": 1050,
-      "image": `${environment.imageUrl}/products/alcohol/old-monk.png`,
+      "image": `${environment.imageUrl}/products/alcohol/old-monk.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -841,7 +841,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 101,
       "name": "Champagne",
       "price": 1200,
-      "image": `${environment.imageUrl}/products/alcohol/champagne.png`,
+      "image": `${environment.imageUrl}/products/alcohol/champagne.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -849,7 +849,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 102,
       "name": "Absolut Vodka",
       "price": 2090,
-      "image": `${environment.imageUrl}/products/alcohol/absolut-vodka.png`,
+      "image": `${environment.imageUrl}/products/alcohol/absolut-vodka.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -857,7 +857,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 103,
       "name": "Magic Moments Orange",
       "price": 880,
-      "image": `${environment.imageUrl}/products/alcohol/magic-moments-orange.png`,
+      "image": `${environment.imageUrl}/products/alcohol/magic-moments-orange.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -865,7 +865,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 104,
       "name": "Magic Moments-Apple",
       "price": 880,
-      "image": `${environment.imageUrl}/products/alcohol/magic-moments-apple.png`,
+      "image": `${environment.imageUrl}/products/alcohol/magic-moments-apple.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -873,7 +873,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 105,
       "name": "Red Wine",
       "price": 990,
-      "image": `${environment.imageUrl}/products/alcohol/red-wine.png`,
+      "image": `${environment.imageUrl}/products/alcohol/red-wine.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
@@ -881,7 +881,7 @@ export const productsByCategory: Record<string, ProductsInterface[]> = {
       "id": 106,
       "name": "Joven Tequila",
       "price": 2070,
-      "image": `${environment.imageUrl}/products/alcohol/tequila.png`,
+      "image": `${environment.imageUrl}/products/alcohol/tequila.jpg`,
       "quantity": 1,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },

@@ -24,8 +24,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {
   AnimatedProductCarouselComponent
 } from './components/animated-product-carousel/animated-product-carousel.component';
-import {FeatureProductsComponent} from './pages/feature-products/feature-products.component';
-import {TestimonialsComponent} from "./pages/testimonials/testimonials.component";
+import {FeatureProductsComponent} from './components/feature-products/feature-products.component';
+import {TestimonialsComponent} from "./components/testimonials/testimonials.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HireComponent} from './pages/hire/hire.component';
 import {HireCarouselComponent} from './components/hire-carousel/hire-carousel.component';
@@ -37,7 +37,7 @@ import {ShakesComponent} from './pages/shakes/shakes.component';
 import {BurgersComponent} from './pages/burgers/burgers.component';
 import {PizzaComponent} from './pages/pizza/pizza.component';
 import {RentalsOrHireComponent} from './pages/rentals-or-hire/rentals-or-hire.component';
-import { HowWeDeliverComponent } from './components/how-we-deliver/how-we-deliver.component';
+import {HowWeDeliverComponent} from './components/how-we-deliver/how-we-deliver.component';
 
 
 @NgModule({

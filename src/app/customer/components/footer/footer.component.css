@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 footer {
   min-height: 250px;
-  padding: 10px 0 0 0;
+  padding: 15px 0 0 0;
   color: white;
-  background-color: #292130;
+  background-image: linear-gradient(to right top, #292130, #302837, #38303e, #3f3845, #47404c);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 footer p {
-  font-size: 12px;
+  font-size: 13px;
   padding-bottom: 0;
   margin-bottom: 8px;
   color: silver;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 34px;
+  font-family: "Caveat", cursive;
 }
 
 footer #flex {
